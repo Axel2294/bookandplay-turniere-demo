@@ -7,16 +7,33 @@
 :root{--green:#08754e;--dark:#122b2a;--bg:#f3f7f6;--muted:#60736f;--border:#dce7e3;--white:#fff;--accent:#dcf3e8;--orange:#ad6817}
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--dark)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}.header{max-width:1300px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:15px 22px}.brand{font-size:23px;letter-spacing:-.8px;font-weight:850;color:var(--green)}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1.5px;font-weight:700}.demo{background:var(--accent);padding:5px 10px;border-radius:30px;color:var(--green);font-size:12px;font-weight:800}main{max-width:1300px;margin:24px auto;padding:0 22px 50px}.titlebar{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:20px}.titlebar h1{font-size:clamp(25px,3vw,38px);margin:0}.sub{margin:5px 0;color:var(--muted)}.btn{border:none;border-radius:10px;background:var(--green);color:white;padding:10px 15px;font-weight:720}.btn.alt{background:white;color:var(--dark);border:1px solid var(--border)}.btn.danger{color:#9a2727;border-color:#f0caca}.btn.small{font-size:13px;padding:7px 10px}.buttonrow{display:flex;gap:9px;flex-wrap:wrap}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.stat,.panel{border:1px solid var(--border);border-radius:14px;background:white}.stat{padding:15px}.stat b{display:block;font-size:27px}.stat span{color:var(--muted);font-size:13px}.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--border);margin:20px 0}.tab{padding:12px 15px;border:0;background:none;color:var(--muted);font-weight:700;border-bottom:3px solid transparent}.tab.active{color:var(--green);border-color:var(--green)}.panel{padding:20px;margin:15px 0}.panel h2{font-size:19px;margin:0 0 12px}.panel h3{font-size:16px;margin:14px 0 8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}label{display:block;font-size:13px;font-weight:700;margin:0 0 5px}input,select{background:white;border:1px solid #c9d9d4;border-radius:9px;padding:10px;width:100%;color:var(--dark)}input[type=checkbox]{width:auto;accent-color:var(--green)}.field{margin-bottom:14px}.hint{font-size:13px;color:var(--muted);line-height:1.55}.notice{background:#eff8f3;border:1px solid #b9dfcb;color:#175b3d;border-radius:10px;padding:11px;margin:10px 0}.warn{background:#fff7ec;border:1px solid #f1d2a6;color:#874e16;border-radius:10px;padding:11px;margin:10px 0}.error{background:#fff1f1;border-color:#f1bebe;color:#a42525}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:11px 9px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle}th{color:var(--muted);font-size:12px;letter-spacing:.3px}td:last-child,th:last-child{text-align:right}.pill{display:inline-block;border-radius:25px;background:#eef3f0;color:#50655e;font-size:12px;padding:4px 8px;font-weight:700}.pill.playing{background:#dff2e6;color:#07613c}.pill.finished{background:#e1eafe;color:#2d559e}.court{padding:17px;border:1px solid var(--border);border-radius:12px;background:#fff}.court h3{margin:0 0 8px}.court p{min-height:45px;margin:9px 0;color:var(--muted);font-size:14px}.fixture{border:1px solid var(--border);border-radius:11px;padding:13px;margin:9px 0;display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:10px;align-items:center}.fixture .matchlabel{font-size:12px;color:var(--muted)}.fixture .teams{font-weight:730}.fixture .details{font-size:12px;color:var(--muted);margin-top:4px}.formInline{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.score{width:90px!important;padding:8px!important}.empty{padding:34px 10px;text-align:center;color:var(--muted)}.footer{color:var(--muted);font-size:12px;margin-top:30px;line-height:1.6}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.statusline{font-size:13px;color:var(--muted)}.kbd{font-family:ui-monospace,monospace;background:#f0f4f2;padding:2px 6px;border-radius:4px}.sep{height:1px;background:var(--border);margin:18px 0}@media(max-width:800px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.fixture{grid-template-columns:1fr}.header{padding:12px 14px}main{padding:0 13px}.panel{padding:15px}}@media(max-width:520px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.brand{font-size:19px}.titlebar h1{font-size:26px}.stat{padding:10px}.stat b{font-size:22px}}
 .set-result{padding:18px;border:1px solid var(--border);border-radius:12px;margin:12px 0}.set-result h3{margin:0 0 12px}.set-scroll{overflow-x:auto}.set-grid{display:grid;grid-template-columns:minmax(135px,2fr) repeat(var(--sets), minmax(64px,1fr));gap:8px;align-items:center;min-width:440px}.set-head{font-size:12px;color:var(--muted);font-weight:750;text-align:center}.set-grid .set-cell{max-width:85px;text-align:center;margin:0 auto;padding:8px}.set-teams{font-size:13px;font-weight:700}.set-help{font-size:12px;color:var(--muted);margin:10px 0}.set-result .actions{justify-content:flex-end}.legacy-score{width:110px!important}
+
+/* BOOKANDPLAY V2.4 - plan and tournament report */
+.plan-group{margin:18px 0 25px;break-inside:avoid}.plan-group h3{padding:9px 12px;background:#e7f4ee;border-radius:7px;color:#075c40}.plan-table{width:100%;border-collapse:collapse;font-size:13px}.plan-table th,.plan-table td{padding:9px 8px;border-bottom:1px solid #dce7e3;vertical-align:top}.plan-table th:last-child,.plan-table td:last-child{text-align:left}.plan-table .plan-score{font-weight:700;white-space:nowrap}.plan-pair{font-weight:650}.bracket{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.bracket-match{border:1px solid var(--border);background:#f8fbf9;border-radius:10px;padding:12px;break-inside:avoid}.bracket-match strong{display:block;margin:5px 0}.podium{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.podium-item{padding:18px 12px;border:1px solid var(--border);border-radius:12px;background:#f8fbf9;text-align:center}.podium-item .place{font-size:25px;font-weight:800;color:#08754e}.report-meta{color:var(--muted);margin-bottom:18px}.printonly{display:none}.report-action{display:flex;gap:10px;flex-wrap:wrap}.print-header{display:none}.place-list{margin:8px 0;padding:0;list-style:none}.place-list li{padding:10px 0;border-bottom:1px solid var(--border)}
+@media(max-width:720px){.bracket,.podium{grid-template-columns:1fr}.plan-table{font-size:12px}}
+@media print{
+ @page{size:A4 landscape;margin:13mm}
+ body{background:white;color:#172b2a;font-size:11pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ header,.titlebar,.stats,.tabs,.footer,#messages,.no-print,.report-action{display:none!important}
+ main{padding:0!important;margin:0!important;max-width:none!important}
+ .panel{border:0;border-radius:0;box-shadow:none;margin:0 0 12px;padding:0}
+ .print-header{display:block;margin-bottom:15px;border-bottom:2px solid #08754e;padding-bottom:8px}
+ .printonly{display:block}
+ .plan-group{break-inside:auto;margin-bottom:15px}.plan-group h3{break-after:avoid}
+ .plan-table tr{break-inside:avoid}.plan-table th,.plan-table td{padding:5px 7px}
+ .bracket-match,.podium-item{background:white}
+ h2,h3{break-after:avoid}
+}
 </style>
 </head>
 <body>
-<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V2.3.1</span></div></header>
+<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V2.4 · MULTISPORT</span></div></header>
 <main>
 <div class="titlebar"><div><h1 id="heading">Turnierkonsole</h1><p class="sub" id="subtitle">Anmeldung, Auslosung, Courts und Ergebnisse in einer Oberfläche</p></div><div class="buttonrow"><button class="btn alt small" onclick="loadExample()">Beispieldaten laden</button><button class="btn alt small" onclick="downloadData()">Daten exportieren</button><button class="btn alt small danger" onclick="resetDemo()">Zurücksetzen</button></div></div>
 <div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
 <nav class="tabs" aria-label="Turnierfunktionen" id="tabs"></nav>
 <div id="view"></div>
-<p class="footer">BOOKANDPLAY Demo: Alle Daten werden ausschließlich in diesem Browser mittels localStorage gespeichert. Kein Server, keine echten Zahlungsvorgänge und keine Verbindung zur produktiven BOOKANDPLAY-Platzverwaltung. Bitte ausschließlich Testdaten verwenden. Die Zählweisen sind Demonstrationsregeln, keine verbindlichen Verbandsregeln. Die automatische Court-Zuweisung prüft noch keine Ruhepausen oder bestehenden Anlagenbuchungen.</p>
+<p class="footer">BOOKANDPLAY Demo: Alle Daten werden ausschließlich in diesem Browser mittels localStorage gespeichert. Kein Server, keine echten Zahlungsvorgänge und keine Verbindung zur produktiven BOOKANDPLAY-Platzverwaltung. Bitte ausschließlich Testdaten verwenden. Tennis, Padel, Pickleball und Beachvolleyball haben eigene Demo-Zählweisen; die vollständige Einhaltung offizieller Verbandsregeln wird nicht zugesichert. Im DTB-Testprofil werden Ruhepausen nach § 40 anhand der gespeicherten Spielzeiten geprüft; echte BOOKANDPLAY-Buchungen und vollständige Verbandsvorgaben werden noch nicht geprüft.</p>
 </main>
 <script>
 'use strict';
@@ -24,10 +41,17 @@ const KEY='bap-tournament-demo-v1';
 const types={round:'Jeder gegen jeden',ko:'K.-o.-System',groups:'Gruppen + K.-o.'};
 const labels={scheduled:'Geplant',playing:'Läuft',finished:'Beendet'};
 const exampleNames=['Müller / Schmidt','Weber / Fischer','Becker / Kruse','Lange / Roth','Meier / Schulz','Braun / Wolf','Hansen / Koch','Peters / Neumann'];
-const empty=()=>({name:'Sommer-Doppelcup 2027',sport:'Tennis',format:'groups',courtCount:4,groupSize:4,qualify:2,players:[],matches:[],stage:'draft',drawVersion:0,autoAssign:false,scoreMode:'tennis',tennisSetsToWin:2,tennisDecider:'matchtb'});
+const empty=()=>({name:'Sommer-Doppelcup 2027',sport:'Tennis',format:'groups',courtCount:4,groupSize:4,qualify:2,players:[],matches:[],stage:'draft',drawVersion:0,autoAssign:false,scoreMode:'tennis',tennisSetsToWin:2,tennisDecider:'matchtb',ruleProfile:'club',demoOffsetMin:0,officialTournament:false,associationRef:''});
 let state;try{state=JSON.parse(localStorage.getItem(KEY))||empty()}catch(_){state=empty()}
 if(state.autoAssign===undefined)state.autoAssign=false;if(!state.scoreMode)state.scoreMode='tennis';if(![2,3].includes(Number(state.tennisSetsToWin)))state.tennisSetsToWin=2;if(!['matchtb','full'].includes(state.tennisDecider))state.tennisDecider='matchtb';
+if(!['club','dtb'].includes(state.ruleProfile))state.ruleProfile='club';if(!Number.isFinite(Number(state.demoOffsetMin)))state.demoOffsetMin=0;
+if(state.officialTournament===undefined)state.officialTournament=false;
+if(!state.associationRef)state.associationRef='';
 let tab='overview',flash='';
+const sports=['Tennis','Padel','Pickleball','Beachvolleyball'];
+const sportDescriptions={Tennis:'2 oder 3 Gewinnsätze, voller Entscheidungssatz oder Match-Tie-Break',Padel:'2 Gewinnsätze, voller Entscheidungssatz oder Match-Tie-Break',Pickleball:'2 gewonnene Games bis 11, mindestens 2 Punkte Vorsprung',Beachvolleyball:'2 Gewinnsätze; Sätze 1/2 bis 21, Entscheidungssatz bis 15, jeweils 2 Punkte Vorsprung'};
+function setSport(value){assert(!state.matches.length,'Sportart nach Auslosung gesperrt.');state.sport=value;if(value!=='Tennis')state.ruleProfile='club';if(value==='Padel')state.tennisSetsToWin=2;save()}
+
 function save(){localStorage.setItem(KEY,JSON.stringify(state));render()}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function assert(ok,msg){if(!ok)throw Error(msg)}
@@ -36,10 +60,34 @@ function guarded(fn){try{fn()}catch(e){notify(e.message,true)}}
 function team(id){return state.players.find(p=>p.id===id)}
 function name(id){return id?team(id)?.name||'Unbekannt':'Noch offen'}
 function finished(m){return m.status==='finished'}
+function demoNow(){return Date.now()+Math.max(0,Number(state.demoOffsetMin)||0)*60000}
+function timeFmt(ms){return new Date(ms).toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'})}
+// DTB TO 2026 §40 (rest upon player request). Demo chooses automatic enforcement.
+function restMinutes(duration){return duration<60?30:duration<=90?60:90}
+function participantsOfMatch(m){return [m.a,m.b].filter(Boolean)}
+function lastRestInfo(id){
+ const previous=state.matches.filter(m=>finished(m)&&participantsOfMatch(m).includes(id)&&m.finishedAt).sort((a,b)=>Date.parse(b.finishedAt)-Date.parse(a.finishedAt))[0];
+ if(!previous)return null;
+ const finish=Date.parse(previous.finishedAt),start=Date.parse(previous.startedAt);
+ if(!Number.isFinite(finish)||!Number.isFinite(start)||finish<start)return {missing:true,match:previous};
+ const duration=(finish-start)/60000;
+ const pause=restMinutes(duration);
+ return {pause,duration,until:finish+pause*60000,match:previous};
+}
+function matchRestProblem(m){
+ if(state.ruleProfile!=='dtb'||state.sport!=='Tennis')return null;
+ for(const id of participantsOfMatch(m)){
+  const r=lastRestInfo(id);
+  if(r?.missing)return `${name(id)}: Spielzeit des vorherigen Matches fehlt. DTB-Pause nicht berechenbar.`;
+  if(r&&demoNow()<r.until)return `${name(id)}: Ruhepause bis ${timeFmt(r.until)} (${r.pause} Min. nach ${Math.round(r.duration)} Min. Spiel).`;
+ }
+ return null;
+}
+
 function resultWinner(m){return m.winner||null}
 function openMatches(){return state.matches.filter(m=>m.status!=='finished')}
 function busyPlayers(){return new Set(state.matches.filter(m=>m.status==='playing').flatMap(m=>[m.a,m.b]).filter(Boolean))}
-function availableMatches(){const busy=busyPlayers();return state.matches.filter(m=>m.status==='scheduled'&&m.a&&m.b&&!busy.has(m.a)&&!busy.has(m.b)&&ready(m))}
+function availableMatches(){const busy=busyPlayers();return state.matches.filter(m=>m.status==='scheduled'&&m.a&&m.b&&!busy.has(m.a)&&!busy.has(m.b)&&ready(m)&&!matchRestProblem(m))}
 function ready(m){return !m.dependencies||m.dependencies.every(id=>state.matches.some(x=>x.id===id&&x.status==='finished'))}
 function complete(){return state.matches.length>0&&state.matches.every(finished)}
 function matchId(){return 'm'+Math.random().toString(36).slice(2,10)}
@@ -75,12 +123,20 @@ function groupRanks(group){
    const ga=Number(m.pointsA)||0,gb=Number(m.pointsB)||0;
    a.gamesWon+=ga;a.gamesLost+=gb;b.gamesWon+=gb;b.gamesLost+=ga;
   }
-  if(m.winner===m.a){a.points+=2;a.w++;b.l++}else if(m.winner===m.b){b.points+=2;b.w++;a.l++}
+  if(m.winner===m.a){a.points+=state.ruleProfile==='dtb'?1:2;a.w++;b.l++}else if(m.winner===m.b){b.points+=state.ruleProfile==='dtb'?1:2;b.w++;a.l++}
  }
  const rows=[...stats.values()];for(const row of rows){row.setDiff=row.setsWon-row.setsLost;row.gameDiff=row.gamesWon-row.gamesLost;row.diff=row.gameDiff}
  // Prototype policy: points, set difference, game difference, name. Official
  // tournaments may instead require head-to-head and ratio-based tie-breakers.
- return rows.sort((a,b)=>b.points-a.points||b.setDiff-a.setDiff||b.gameDiff-a.gameDiff||name(a.id).localeCompare(name(b.id),'de'));
+ return rows.sort((a,b)=>{
+ const v=b.points-a.points||b.setDiff-a.setDiff||b.setsWon-a.setsWon||b.gameDiff-a.gameDiff||b.gamesWon-a.gamesWon;
+ if(v)return v;
+ if(state.ruleProfile==='dtb'){
+  const encounter=state.matches.find(m=>m.stage==='group'&&m.group===group&&finished(m)&&((m.a===a.id&&m.b===b.id)||(m.a===b.id&&m.b===a.id)));
+  if(encounter)return encounter.winner===a.id?-1:encounter.winner===b.id?1:0;
+ }
+ return name(a.id).localeCompare(name(b.id),'de');
+ });
 }
 function groupsComplete(){return state.matches.filter(m=>m.stage==='group').length>0&&state.matches.filter(m=>m.stage==='group').every(finished)}
 function hasFinal(){return state.matches.some(m=>m.stage==='final')}
@@ -93,7 +149,7 @@ function resolveDependencies(){for(const m of state.matches){if(!m.sources||m.st
 function draw(){assert(state.players.length>=2,'Mindestens zwei Teams anmelden.');assert(state.players.every(p=>p.checked),'Für die Demo müssen alle Teams eingecheckt sein.');assert(!state.matches.length,'Die vorhandene Auslosung zuerst zurücksetzen.');let ids=shuffle(state.players.map(p=>p.id));if(state.format==='round')state.matches=roundRobin(ids,null);else if(state.format==='ko')state.matches=buildKO(ids);else{const count=state.groupSize;assert(ids.length%count===0,'Teilnehmerzahl muss durch die Gruppengröße teilbar sein.');const groups=ids.length/count;assert(groups>=2,'Mindestens zwei Gruppen erforderlich.');assert(groups*state.qualify>=2,'Mindestens zwei Qualifikanten erforderlich.');state.players.forEach(p=>p.group=null);for(let i=0;i<groups;i++){const letter=String.fromCharCode(65+i);const subset=ids.slice(i*count,(i+1)*count);subset.forEach(id=>team(id).group=letter);state.matches.push(...roundRobin(subset,letter))}}
  state.stage='running';state.drawVersion++;save();notify(`Auslosung erstellt: ${state.matches.length} Begegnungen.`)}
 function resetDraw(){assert(state.matches.every(m=>m.status==='scheduled'),'Die Auslosung kann nur vor dem ersten Spiel zurückgesetzt werden.');if(!confirm('Auslosung und Court-Zuweisungen löschen?'))return;state.matches=[];state.players.forEach(p=>p.group=null);state.stage='registration';save()}
-function startMatch(id,court){const m=state.matches.find(x=>x.id===id);assert(m&&m.status==='scheduled','Spiel ist nicht startbereit.');assert(m.a&&m.b&&ready(m),'Vorherige Runden noch nicht abgeschlossen.');assert(!state.matches.some(x=>x.court===court&&x.status==='playing'),'Court bereits belegt.');assert(!state.matches.some(x=>x.status==='playing'&&[m.a,m.b].some(p=>p===x.a||p===x.b)),'Mindestens ein Spieler spielt bereits.');m.court=court;m.status='playing';state.stage='running';save()}
+function startMatch(id,court){const m=state.matches.find(x=>x.id===id);assert(m&&m.status==='scheduled','Spiel ist nicht startbereit.');assert(m.a&&m.b&&ready(m),'Vorherige Runden noch nicht abgeschlossen.');assert(!state.matches.some(x=>x.court===court&&x.status==='playing'),'Court bereits belegt.');assert(!state.matches.some(x=>x.status==='playing'&&[m.a,m.b].some(p=>p===x.a||p===x.b)),'Mindestens ein Spieler spielt bereits.');assert(!matchRestProblem(m),matchRestProblem(m)||'Ruhepause');m.court=court;m.status='playing';m.startedAt=new Date(demoNow()).toISOString();state.stage='running';save()}
 // Maximum-cardinality matching of currently available teams for small club tournaments.
 // For larger draws, use a deterministic greedy fallback to keep the browser responsive.
 function optimalAssignments(candidates, maxCourts){
@@ -135,12 +191,14 @@ function assignNextAvailable(){
  if(!freeCourts.length)return 0;
  const candidates=availableMatches();
  const selections=optimalAssignments(candidates,freeCourts.length);
- selections.forEach((m,i)=>{m.court=freeCourts[i];m.status='playing';m.startedAt=new Date().toISOString()});
+ selections.forEach((m,i)=>{m.court=freeCourts[i];m.status='playing';m.startedAt=new Date(demoNow()).toISOString()});
  if(selections.length){state.stage='running';save()}
  return selections.length;
 }
 function autoAssign(){const count=assignNextAvailable();notify(count?`${count} Begegnung(en) automatisch zugewiesen. Keine Team-Doppelbelegung.`:'Keine weiteren spielfertigen Begegnungen für freie Courts.');}
 function toggleAuto(value){state.autoAssign=value;save();if(value&&state.matches.length)autoAssign();}
+function updateDemoOffset(value){state.demoOffsetMin=Number(value);save()}
+
 function parseTennisScore(raw){
  const toWin=Number(state.tennisSetsToWin)||2;
  const decision=state.tennisDecider||'matchtb';
@@ -167,16 +225,40 @@ function parseTennisScore(raw){
  return {winnerIndex:wins[0]===toWin?0:1,pointsA:games[0],pointsB:games[1],sets,score:tokens.join(' ')};
 }
 
+
+function parseSportScore(raw){
+ const sport=state.sport;
+ if(sport==='Tennis'||sport==='Padel'){
+  const prior=state.tennisSetsToWin;
+  try {if(sport==='Padel')state.tennisSetsToWin=2;return parseTennisScore(raw)}
+  finally {state.tennisSetsToWin=prior}
+ }
+ assert(sport==='Pickleball'||sport==='Beachvolleyball','Diese Sportart hat kein aktives Regelprofil.');
+ const tokens=raw.trim().split(/\s+/).filter(Boolean);
+ assert(tokens.length>=2&&tokens.length<=3,'2 Gewinnsätze bzw. Games notwendig (maximal 3).');
+ const wins=[0,0],totals=[0,0],sets=[];
+ tokens.forEach((token,i)=>{
+  const hit=/^(\d{1,3}):(\d{1,3})$/.exec(token);
+  assert(hit,'Bitte Werte als A:B eintragen.');
+  const a=+hit[1],b=+hit[2],high=Math.max(a,b),low=Math.min(a,b);
+  const target=sport==='Pickleball'?11:(i===2?15:21);
+  assert(high>=target&&high-low>=2&&(high===target||high-low===2),`Satz ${i+1}: Sieg ab ${target} mit zwei Punkten Vorsprung erforderlich.`);
+  assert(!wins.includes(2), 'Das Match ist bereits entschieden; keine weiteren Sätze zulässig.');
+  wins[a>b?0:1]++;totals[0]+=a;totals[1]+=b;sets.push({a,b,matchTiebreak:false});
+ });
+ assert(wins.includes(2),'Ein Team muss zwei Sätze bzw. Games gewinnen.');
+ return {winnerIndex:wins[0]===2?0:1,pointsA:totals[0],pointsB:totals[1],sets,score:tokens.join(' ')};
+}
 function finishMatch(id,score){
  const m=state.matches.find(x=>x.id===id);assert(m&&m.status==='playing','Zunächst Spiel starten.');
  let a,b,formatted,sets=null,winnerIndex;
- if(state.sport==='Tennis'&&state.scoreMode!=='legacy'){
-  const parsed=parseTennisScore(score);a=parsed.pointsA;b=parsed.pointsB;formatted=parsed.score;sets=parsed.sets;winnerIndex=parsed.winnerIndex;
+ if(sports.includes(state.sport)){
+  const parsed=parseSportScore(score);a=parsed.pointsA;b=parsed.pointsB;formatted=parsed.score;sets=parsed.sets;winnerIndex=parsed.winnerIndex;
  }else{
   const parsed=score.trim().match(/^(\d{1,3})\s*:\s*(\d{1,3})$/);assert(parsed,'Ergebnis als A:B eingeben, z. B. 11:7.');
   a=+parsed[1];b=+parsed[2];assert(a!==b,'Unentschieden sind nicht erlaubt.');formatted=`${a}:${b}`;winnerIndex=a>b?0:1;
  }
- m.pointsA=a;m.pointsB=b;m.score=formatted;m.sets=sets;m.winner=winnerIndex===0?m.a:m.b;m.loser=winnerIndex===0?m.b:m.a;m.status='finished';m.finishedAt=new Date().toISOString();m.court=null;
+ m.pointsA=a;m.pointsB=b;m.score=formatted;m.sets=sets;m.winner=winnerIndex===0?m.a:m.b;m.loser=winnerIndex===0?m.b:m.a;m.status='finished';m.finishedAt=new Date(demoNow()).toISOString();m.court=null;
  resolveDependencies();
  if(state.autoAssign)assignNextAvailable();
  if(complete()&&state.format!=='groups')state.stage='finished';if(state.format==='groups'&&hasFinal()&&complete())state.stage='finished';save();
@@ -188,17 +270,49 @@ function loadExample(){if(state.matches.length&&!confirm('Aktuellen Demostand du
 function resetDemo(){if(!confirm('Alle lokal gespeicherten Demodaten löschen?'))return;state=empty();tab='overview';save()}
 function downloadData(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='bookandplay-turnier-demo.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function updateSetting(key,val){assert(!state.matches.length,'Einstellungen nach Auslosung gesperrt.');state[key]=val;save()}
-function tabsHtml(){const t=[['overview','Übersicht'],['setup','Turnier anlegen'],['participants','Teilnehmer'],['draw','Auslosung'],['courts','Courts'],['results','Ergebnisse']];document.getElementById('tabs').innerHTML=t.map(([id,label])=>`<button class="tab ${tab===id?'active':''}" onclick="switchTab('${id}')">${label}</button>`).join('')}
+function tabsHtml(){const t=[['overview','Übersicht'],['setup','Turnier anlegen'],['participants','Teilnehmer'],['draw','Auslosung'],['courts','Courts'],['results','Ergebnisse'],['plan','Turnierplan'],['closing','Abschluss']];document.getElementById('tabs').innerHTML=t.map(([id,label])=>`<button class="tab ${tab===id?'active':''}" onclick="switchTab('${id}')">${label}</button>`).join('')}
 function switchTab(id){tab=id;render()}
-function render(){document.getElementById('heading').textContent=state.name||'Turnierkonsole';document.getElementById('subtitle').textContent=`${state.sport} · ${types[state.format]} · ${state.courtCount} Courts · ${state.stage==='finished'?'Abgeschlossen':state.matches.length?'Turnier läuft':'Vorbereitung'}`;document.getElementById('messages').innerHTML=flash;flash='';const playing=state.matches.filter(m=>m.status==='playing').length,done=state.matches.filter(finished).length;document.getElementById('stats').innerHTML=[[state.players.length,'Teams'],[state.matches.length,'Begegnungen'],[playing,'Laufen gerade'],[done,'Beendet']].map(([n,t])=>`<div class="stat"><b>${n}</b><span>${t}</span></div>`).join('');tabsHtml();document.getElementById('view').innerHTML={overview:overview,setup:setup,participants:participants,draw:drawView,courts:courtsView,results:resultsView}[tab]()}
-function overview(){return `<div class="grid"><section class="panel"><h2>Nächste Schritte</h2><p class="hint">1. Turnier konfigurieren. 2. Teilnehmer hinzufügen und einchecken. 3. Auslosung durchführen. 4. Spiele starten und Ergebnisse melden.</p><div class="actions"><button class="btn" onclick="switchTab('${state.players.length?'draw':'participants'}')">${state.players.length?'Zur Auslosung':'Teilnehmer erfassen'}</button><button class="btn alt" onclick="switchTab('setup')">Einstellungen</button></div></section><section class="panel"><h2>Turnierstatus</h2><p><span class="pill ${state.stage==='finished'?'finished':state.matches.length?'playing':''}">${({draft:'Entwurf',registration:'Anmeldung',running:'Läuft',finished:'Abgeschlossen'})[state.stage]}</span></p><p class="hint">${state.matches.length?'Auslosung Version '+state.drawVersion+' · '+openMatches().length+' Begegnungen offen':'Noch keine Auslosung erstellt.'}</p>${state.format==='groups'&&groupsComplete()&&!hasFinal()?'<button class="btn" onclick="guarded(buildFinals)">Finalrunde erstellen</button>':''}</section></div><section class="panel"><h2>Umfang dieser Demo</h2><p class="hint">Gruppen mit Finalrunde, K.-o.-Turniere und Jeder-gegen-jeden. Tennissätze mit Match-Tie-Break, automatische Court-Zuteilung, Live-Courtstatus, Satz- und Spieldifferenz in Gruppentabellen und Datenexport. Keine reale Anmeldung, Zahlung, Benachrichtigung oder Buchungsintegration.</p></section>`}
-function setup(){const locked=state.matches.length>0?'disabled':'';return `<section class="panel"><h2>Turnier konfigurieren</h2><div class="grid"><div class="field"><label>Turniername</label><input ${locked} value="${esc(state.name)}" id="sName"></div><div class="field"><label>Sportart</label><select ${locked} id="sSport">${['Tennis','Padel','Pickleball','Badminton','Squash'].map(v=>`<option ${state.sport===v?'selected':''}>${v}</option>`).join('')}</select></div>${state.sport==='Tennis'?`<div class="field"><label>Gewinnsätze pro Tennis-Match</label><select ${locked} id="sTennisSets"><option value="2" ${state.tennisSetsToWin===2?'selected':''}>2 Gewinnsätze (Best of 3)</option><option value="3" ${state.tennisSetsToWin===3?'selected':''}>3 Gewinnsätze (Best of 5)</option></select></div><div class="field"><label>Entscheidungssatz</label><select ${locked} id="sDecider"><option value="full" ${state.tennisDecider==='full'?'selected':''}>Normaler Satz bis 6 (ggf. 7:6)</option><option value="matchtb" ${state.tennisDecider==='matchtb'?'selected':''}>Match-Tie-Break bis 10 (nur Best of 3)</option></select><p class="hint">Bei drei Gewinnsätzen wird immer ein normaler Entscheidungssatz gespielt. Diese Demo verwendet im regulären Satz den Tie-Break bei 6:6.</p></div>`:''}<div class="field"><label>Turnierformat</label><select ${locked} id="sFormat">${Object.entries(types).map(([id,label])=>`<option value="${id}" ${id===state.format?'selected':''}>${label}</option>`).join('')}</select></div><div class="field"><label>Anzahl Courts</label><select ${locked} id="sCourts">${[1,2,3,4,5,6,8,10].map(n=>`<option ${n===state.courtCount?'selected':''}>${n}</option>`).join('')}</select></div><div class="field"><label>Teams pro Gruppe (Gruppenformat)</label><select ${locked} id="sGroup">${[2,3,4,5,6,8].map(n=>`<option ${n===state.groupSize?'selected':''}>${n}</option>`).join('')}</select></div><div class="field"><label>Qualifikanten pro Gruppe (Gruppenformat)</label><select ${locked} id="sQualify">${[1,2].map(n=>`<option ${n===state.qualify?'selected':''}>${n}</option>`).join('')}</select></div></div><button class="btn" ${locked} onclick="guarded(()=>{state.name=document.getElementById('sName').value.trim()||'Unbenanntes Turnier';state.sport=document.getElementById('sSport').value;state.format=document.getElementById('sFormat').value;state.courtCount=+document.getElementById('sCourts').value;state.groupSize=+document.getElementById('sGroup').value;state.qualify=+document.getElementById('sQualify').value;if(state.sport==='Tennis'){state.tennisSetsToWin=+document.getElementById('sTennisSets').value;state.tennisDecider=state.tennisSetsToWin===3?'full':document.getElementById('sDecider').value;}save();notify('Einstellungen gespeichert.')})">Einstellungen speichern</button><p class="hint">${locked?'Nach erfolgter Auslosung sind die Grundeinstellungen gesperrt.':'Das Format „Gruppen + K.-o.“ benötigt mindestens zwei gleich große Gruppen. Die Kreuzpaarungen sind für zwei oder vier Gruppen mit je zwei Qualifikanten ausdrücklich definiert; andere Kombinationen nutzen eine einfachere Setzfolge.'}</p></section>`}
-function participants(){return `<section class="panel"><h2>Teilnehmer und Check-in</h2>${!state.matches.length?`<div class="formInline"><input id="newPlayer" style="max-width:360px" placeholder="Spieler / Doppelteam eingeben" onkeydown="if(event.key==='Enter')guarded(addPlayer)"><button class="btn" onclick="guarded(addPlayer)">Hinzufügen</button></div>`:'<p class="hint">Nach der Auslosung können Teilnehmer nicht mehr geändert werden.</p>'}<div class="tablewrap"><table><thead><tr><th>Name</th><th>Check-in</th><th>Gruppe</th><th>Aktion</th></tr></thead><tbody>${state.players.map(p=>`<tr><td>${esc(p.name)}</td><td><label><input type="checkbox" ${p.checked?'checked':''} ${state.matches.length?'disabled':''} onchange="state.players.find(p=>p.id==='${p.id}').checked=this.checked;save()"> Anwesend</label></td><td>${p.group||'–'}</td><td>${!state.matches.length?`<button class="btn alt small danger" onclick="removePlayer('${p.id}')">Entfernen</button>`:'–'}</td></tr>`).join('')}</tbody></table></div>${!state.players.length?'<div class="empty">Noch keine Teilnehmer. Lade Beispieldaten oder füge Teams hinzu.</div>':''}</section>`}
+function render(){document.getElementById('heading').textContent=state.name||'Turnierkonsole';document.getElementById('subtitle').textContent=`${state.sport} · ${types[state.format]} · ${state.courtCount} Courts · ${state.stage==='finished'?'Abgeschlossen':state.matches.length?'Turnier läuft':'Vorbereitung'}`;document.getElementById('messages').innerHTML=flash;flash='';const playing=state.matches.filter(m=>m.status==='playing').length,done=state.matches.filter(finished).length;document.getElementById('stats').innerHTML=[[state.players.length,'Teams'],[state.matches.length,'Begegnungen'],[playing,'Laufen gerade'],[done,'Beendet']].map(([n,t])=>`<div class="stat"><b>${n}</b><span>${t}</span></div>`).join('');tabsHtml();document.getElementById('view').innerHTML={overview:overview,setup:setup,participants:participants,draw:drawView,courts:courtsView,results:resultsView,plan:planView,closing:closingView}[tab]()}
+function overview(){return `<div class="grid"><section class="panel"><h2>Nächste Schritte</h2><p class="hint">1. Turnier konfigurieren. 2. Teilnehmer hinzufügen und einchecken. 3. Auslosung durchführen. 4. Spiele starten und Ergebnisse melden.</p><div class="actions"><button class="btn" onclick="switchTab('${state.players.length?'draw':'participants'}')">${state.players.length?'Zur Auslosung':'Teilnehmer erfassen'}</button><button class="btn alt" onclick="switchTab('setup')">Einstellungen</button></div></section><section class="panel"><h2>Turnierstatus</h2><p><span class="pill ${state.stage==='finished'?'finished':state.matches.length?'playing':''}">${({draft:'Entwurf',registration:'Anmeldung',running:'Läuft',finished:'Abgeschlossen'})[state.stage]}</span></p><p class="hint">${state.matches.length?'Auslosung Version '+state.drawVersion+' · '+openMatches().length+' Begegnungen offen':'Noch keine Auslosung erstellt.'}</p>${state.format==='groups'&&groupsComplete()&&!hasFinal()?'<button class="btn" onclick="guarded(buildFinals)">Finalrunde erstellen</button>':''}</section></div><section class="panel"><h2>Umfang dieser Demo</h2><p class="hint">Gruppen mit Finalrunde, K.-o.-Turniere und Jeder-gegen-jeden. sportartspezifische Ergebnisregeln für Tennis, Padel, Pickleball und Beachvolleyball, automatische Court-Zuteilung, Live-Courtstatus, Satz- und Spieldifferenz in Gruppentabellen und Datenexport. Keine reale Anmeldung, Zahlung, Benachrichtigung oder Buchungsintegration.</p></section>`}
+function setup(){
+ const locked=state.matches.length>0?'disabled':'';
+ const racquet=state.sport==='Tennis'||state.sport==='Padel';
+ return `<section class="panel"><h2>Turnier konfigurieren</h2><p class="hint">Ein Turnier-Assistent für vier Sportarten. Die Zählweise wird automatisch aus dem Sportprofil geladen.</p><div class="grid">
+ <div class="field"><label>Turniername</label><input ${locked} value="${esc(state.name)}" id="sName"></div>
+ <div class="field"><label>Sportart</label><select ${locked} id="sSport" onchange="guarded(()=>setSport(this.value))">${sports.map(v=>`<option ${state.sport===v?'selected':''}>${v}</option>`).join('')}</select><p class="hint">${esc(sportDescriptions[state.sport])}</p></div>
+ ${racquet?`<div class="field"><label>Gewinnsätze</label><select ${locked} id="sTennisSets" ${state.sport==='Padel'?'disabled':''}><option value="2" ${state.tennisSetsToWin===2||state.sport==='Padel'?'selected':''}>2 Gewinnsätze (Best of 3)</option>${state.sport==='Tennis'?`<option value="3" ${state.tennisSetsToWin===3?'selected':''}>3 Gewinnsätze (Best of 5)</option>`:''}</select></div><div class="field"><label>Entscheidungssatz</label><select ${locked} id="sDecider"><option value="full" ${state.tennisDecider==='full'?'selected':''}>Normaler Satz bis 6</option><option value="matchtb" ${state.tennisDecider==='matchtb'?'selected':''}>Match-Tie-Break bis 10</option></select></div>`:''}
+ <div class="field"><label>Regelprofil</label><select ${locked} id="sRuleProfile"> <option value="club" ${state.ruleProfile==='club'?'selected':''}>Vereinsturnier / Demo</option>${state.sport==='Tennis'?`<option value="dtb" ${state.ruleProfile==='dtb'?'selected':''}>DTB 2026 – unvollständiger Regeltest</option>`:''}</select><p class="hint">Nur im Tennis-DTB-Test werden die bisher implementierten 30/60/90-Minuten-Ruhepausen automatisch geprüft. Weitere Sportarten benötigen eigene Veranstalter- und Verbandsregeln.</p></div>
+ <div class="field"><label>Offizielles Turnier (Vorbereitung, keine Übermittlung)</label><label style="font-weight:400"><input type="checkbox" ${locked} id="sOfficial" ${state.officialTournament?'checked':''}> Verbandsdaten erfassen</label><p class="hint">Es findet keine Übermittlung und keine LK-Berechnung statt.</p></div>
+ <div class="field"><label>Verbands-/Turnierreferenz (optional)</label><input ${locked} id="sAssociation" value="${esc(state.associationRef||'')}" placeholder="z. B. Verbands-Turniernummer"></div>
+ <div class="field"><label>Turnierformat</label><select ${locked} id="sFormat">${Object.entries(types).map(([id,label])=>`<option value="${id}" ${id===state.format?'selected':''}>${label}</option>`).join('')}</select></div>
+ <div class="field"><label>Courts / Spielfelder</label><select ${locked} id="sCourts">${[1,2,3,4,5,6,8,10].map(n=>`<option ${n===state.courtCount?'selected':''}>${n}</option>`).join('')}</select></div>
+ <div class="field"><label>Teams pro Gruppe</label><select ${locked} id="sGroup">${[2,3,4,5,6,8].map(n=>`<option ${n===state.groupSize?'selected':''}>${n}</option>`).join('')}</select></div>
+ <div class="field"><label>Qualifikanten pro Gruppe</label><select ${locked} id="sQualify">${[1,2].map(n=>`<option ${n===state.qualify?'selected':''}>${n}</option>`).join('')}</select></div>
+ </div><button class="btn" ${locked} onclick="guarded(saveSetup)">Einstellungen speichern</button><p class="hint">${locked?'Nach der Auslosung sind Spielregeln gesperrt, um vorhandene Ergebnisse zu schützen.':'Sportartwechsel setzt das sichtbare Sportprofil sofort. Bitte danach alle Einstellungen speichern.'}</p></section>`;
+}
+function saveSetup(){
+ assert(!state.matches.length,'Nach Auslosung gesperrt.');
+ state.name=document.getElementById('sName').value.trim()||'Unbenanntes Turnier';
+ state.format=document.getElementById('sFormat').value;
+ state.courtCount=+document.getElementById('sCourts').value;
+ state.groupSize=+document.getElementById('sGroup').value;
+ state.qualify=+document.getElementById('sQualify').value;
+ state.ruleProfile=state.sport==='Tennis'?document.getElementById('sRuleProfile').value:'club';
+ state.officialTournament=document.getElementById('sOfficial').checked;
+ state.associationRef=document.getElementById('sAssociation').value.trim();
+ if(state.sport==='Tennis'||state.sport==='Padel'){
+  state.tennisSetsToWin=state.sport==='Padel'?2:+document.getElementById('sTennisSets').value;
+  state.tennisDecider=state.tennisSetsToWin===3?'full':document.getElementById('sDecider').value;
+ }
+ save();notify('Multisport-Turniereinstellungen gespeichert.');
+}
+function participants(){return `<section class="panel"><h2>Teilnehmer und Check-in</h2>${!state.matches.length?`<div class="formInline"><input id="newPlayer" style="max-width:360px" placeholder="Spieler / Doppelteam eingeben" onkeydown="if(event.key==='Enter')guarded(addPlayer)"><button class="btn" onclick="guarded(addPlayer)">Hinzufügen</button></div>`:'<p class="hint">Nach der Auslosung können Teilnehmer nicht mehr geändert werden.</p>'}<div class="tablewrap"><table><thead><tr><th>Name</th>${state.sport==='Tennis'?'<th>DTB-Spielerkennung</th><th>LK (Anzeige)</th>':''}<th>Check-in</th><th>Gruppe</th><th>Aktion</th></tr></thead><tbody>${state.players.map(p=>`<tr><td>${esc(p.name)}</td>${state.sport==='Tennis'?`<td><input aria-label="DTB-Spielerkennung ${esc(p.name)}" placeholder="optional" style="min-width:110px" value="${esc(p.dtbId||'')}" onchange="updatePlayerMeta('${p.id}','dtbId',this.value)"></td><td><input aria-label="LK ${esc(p.name)}" placeholder="z. B. 14,2" style="min-width:95px" value="${esc(p.lk||'')}" onchange="updatePlayerMeta('${p.id}','lk',this.value)"></td>`:''}<td><label><input type="checkbox" ${p.checked?'checked':''} ${state.matches.length?'disabled':''} onchange="state.players.find(p=>p.id==='${p.id}').checked=this.checked;save()"> Anwesend</label></td><td>${p.group||'–'}</td><td>${!state.matches.length?`<button class="btn alt small danger" onclick="removePlayer('${p.id}')">Entfernen</button>`:'–'}</td></tr>`).join('')}</tbody></table></div>${!state.players.length?'<div class="empty">Noch keine Teilnehmer. Lade Beispieldaten oder füge Teams hinzu.</div>':''}</section>`}
+function updatePlayerMeta(id,key,val){const p=team(id);assert(p,'Teilnehmer nicht gefunden.');p[key]=String(val).trim().slice(0,80);save()}
 function drawView(){const has=state.matches.length>0;return `<section class="panel"><h2>Auslosung</h2><p class="hint">Format: ${types[state.format]}. Die Auslosung wird erst nach dem Check-in aller Teams in dieser Demo freigegeben.</p><div class="actions"><button class="btn" ${has?'disabled':''} onclick="guarded(draw)">Auslosung erzeugen</button><button class="btn alt danger" ${!has||state.matches.some(x=>x.status!=='scheduled')?'disabled':''} onclick="guarded(resetDraw)">Auslosung löschen</button>${state.format==='groups'?`<button class="btn alt" ${!groupsComplete()||hasFinal()?'disabled':''} onclick="guarded(buildFinals)">Finalrunde erzeugen</button>`:''}</div>${has?`<p class="hint">Auslosung Version ${state.drawVersion} · ${state.matches.length} Spiele</p>`:''}</section>${state.format==='groups'&&has?groupTables():''}${has?`<section class="panel"><h2>Begegnungen</h2>${matchList(state.matches)}</section>`:''}`}
 function matchList(ms){return ms.length?ms.map(m=>`<div class="fixture"><div class="matchlabel">${esc(m.round)}${m.group?' · '+m.group:''}</div><div><div class="teams">${esc(name(m.a))} <span style="color:#9caeaa">vs.</span> ${esc(name(m.b))}</div><div class="details">${m.court?'Platz '+m.court+' · ':''}${m.score?'Ergebnis '+esc(m.score)+' · ':''}${m.stage==='final'?'Finalrunde':m.stage==='group'?'Gruppenphase':'K.-o.'}</div></div><div><span class="pill ${m.status}">${labels[m.status]}</span></div></div>`).join(''):'<p class="empty">Keine Spiele vorhanden.</p>'}
 function groupTables(){
  const groups=[...new Set(state.players.map(x=>x.group))].filter(Boolean).sort();
- return `<div class="grid">${groups.map(g=>{const rows=groupRanks(g);const old=rows.some(r=>r.legacy>0);return `<section class="panel"><h2>Gruppe ${g}</h2><div class="tablewrap"><table><thead><tr><th>Team</th><th title="Matchsiege">S</th><th title="Tabellenpunkte">P</th><th title="Gewonnene und verlorene Sätze">Sätze</th><th title="Satzdifferenz">Satz-Diff.</th><th title="Gewonnene und verlorene Spiele (ohne Match-Tie-Break-Punkte)">Spiele</th><th title="Spieldifferenz">Spiel-Diff.</th></tr></thead><tbody>${rows.map(row=>`<tr><td>${esc(name(row.id))}</td><td>${row.w}</td><td>${row.points}</td><td>${row.setsWon}:${row.setsLost}${row.legacy?'*':''}</td><td>${row.setDiff>0?'+':''}${row.setDiff}</td><td>${row.gamesWon}:${row.gamesLost}</td><td>${row.gameDiff>0?'+':''}${row.gameDiff}</td></tr>`).join('')}</tbody></table></div>${old?'<p class="hint">* Mindestens ein älteres Demo-Ergebnis enthält keine Satzdaten. Die Satzstatistik zeigt nur die vollständig erfassten Matches; die Spielstatistik enthält zusätzlich ältere Punktresultate.</p>':''}<p class="hint">Demo-Reihenfolge: Tabellenpunkte, Satzdifferenz, Spieldifferenz. Ein Match-Tie-Break zählt als Satz, seine Punkte zählen nicht als Spiele.</p></section>`}).join('')}</div>`
+ return `<div class="grid">${groups.map(g=>{const rows=groupRanks(g);const old=rows.some(r=>r.legacy>0);return `<section class="panel"><h2>Gruppe ${g}</h2><div class="tablewrap"><table><thead><tr><th>Team</th><th title="Matchsiege">S</th><th title="Tabellenpunkte">P</th><th title="Gewonnene und verlorene Sätze">Sätze</th><th title="Satzdifferenz">Satz-Diff.</th><th title="Gewonnene und verlorene Spiele oder Punkte">${['Pickleball','Beachvolleyball'].includes(state.sport)?'Punkte':'Spiele'}</th><th title="Spiel- bzw. Punktdifferenz">${['Pickleball','Beachvolleyball'].includes(state.sport)?'Punkt-Diff.':'Spiel-Diff.'}</th></tr></thead><tbody>${rows.map(row=>`<tr><td>${esc(name(row.id))}</td><td>${row.w}</td><td>${row.points}</td><td>${row.setsWon}:${row.setsLost}${row.legacy?'*':''}</td><td>${row.setDiff>0?'+':''}${row.setDiff}</td><td>${row.gamesWon}:${row.gamesLost}</td><td>${row.gameDiff>0?'+':''}${row.gameDiff}</td></tr>`).join('')}</tbody></table></div>${old?'<p class="hint">* Mindestens ein älteres Demo-Ergebnis enthält keine Satzdaten. Die Satzstatistik zeigt nur die vollständig erfassten Matches; die Spielstatistik enthält zusätzlich ältere Punktresultate.</p>':''}<p class="hint">${state.ruleProfile==='dtb'?'DTB-Test nach § 40a: 1 Tabellenpunkt je Sieg; Vergleich über Punkt-, Satz- und Spieldifferenz, danach gewonnene Sätze/Spiele und direkten Vergleich.':'Vereinsmodus: 2 Tabellenpunkte je Sieg; Vergleich über Punkte, Satz- und Spieldifferenz.'} ${['Tennis','Padel'].includes(state.sport)?'Match-Tie-Break-Punkte zählen nicht als normale Spiele.':'Punkte aus allen Sätzen zählen für die Punktdifferenz.'}</p></section>`}).join('')}</div>`
 }
 function setScoreFields(m){
  const count=state.tennisSetsToWin*2-1;
@@ -225,7 +339,7 @@ function finishSetScore(id){
  assert(tokens.length,'Mindestens ein Satz muss eingetragen sein.');
  finishMatch(id,tokens.join(' '));
 }
-function courtsView(){const running=state.matches.filter(m=>m.status==='playing'),free=availableMatches();return `<section class="panel"><h2>Courts und Spielaufruf</h2><p class="hint">Automatik berücksichtigt freie Courts, spielfertige Begegnungen und verhindert doppelte Teambelegung. Ruhepausen und echte BOOKANDPLAY-Reservierungen werden noch nicht geprüft.</p><div class="actions"><button class="btn" onclick="guarded(autoAssign)">Freie Plätze automatisch belegen</button><label style="display:flex;align-items:center;gap:8px"><input type="checkbox" ${state.autoAssign?'checked':''} onchange="guarded(()=>toggleAuto(this.checked))"> Nach jedem Ergebnis automatisch nachbelegen</label></div><div class="grid">${Array.from({length:state.courtCount},(_,i)=>{const court=i+1,m=running.find(m=>m.court===court);return `<div class="court"><h3>Platz ${court} <span class="pill ${m?'playing':''}">${m?'Belegt':'Frei'}</span></h3>${m?`<p>${esc(name(m.a))}<br>gegen<br>${esc(name(m.b))}</p><button class="btn alt small" onclick="switchTab('results')">Ergebnis erfassen</button>`:`<p>Freier Court – nächstes Spiel auswählen</p><select id="court${court}"><option value="">Spiel wählen</option>${free.map(x=>`<option value="${x.id}">${esc(name(x.a))} – ${esc(name(x.b))}</option>`).join('')}</select><div class="actions"><button class="btn small" ${!free.length?'disabled':''} onclick="guarded(()=>{const id=document.getElementById('court${court}').value;assert(id,'Bitte Spiel auswählen.');startMatch(id,${court})})">Spiel starten</button></div>`}</div>`}).join('')}</div></section><section class="panel"><h2>Noch offene Begegnungen</h2>${matchList(state.matches.filter(m=>m.status!=='finished'))}</section>`}
+function courtsView(){const running=state.matches.filter(m=>m.status==='playing'),free=availableMatches();return `<section class="panel"><h2>Courts und Spielaufruf</h2><p class="hint">Automatik berücksichtigt freie Courts, spielfertige Begegnungen und verhindert doppelte Teambelegung. ${state.ruleProfile==='dtb'?'DTB-Ruhepausen werden anhand von Start- und Endzeiten geprüft; 30/60/90 Minuten.':'Vereinsmodus ohne automatische Ruhepausen.'} Echte BOOKANDPLAY-Reservierungen und Einzelspieler-Konflikte über mehrere Doppelteams werden noch nicht geprüft.</p>${state.ruleProfile==='dtb'?`<div class="notice"><b>DTB-Testprofil (§ 40)</b> · Vorheriges Match &lt;60 Min.: 30 Min. Ruhe, 60–90 Min.: 60 Min. Ruhe, &gt;90 Min.: 90 Min. Ruhe. Im Verbandsregelwerk stehen diese Pausen Spielern auf Wunsch zu; die Demo erzwingt sie vorsorglich. <label>Demo-Uhrzeit vorspulen: <select onchange="updateDemoOffset(this.value)">${[0,30,60,90,120,180].map(n=>`<option value="${n}" ${state.demoOffsetMin===n?'selected':''}>${n} Minuten</option>`).join('')}</select></label><small>Nur Simulation, nicht für echte Turniere verwenden.</small></div>`:''}<div class="actions"><button class="btn" onclick="guarded(autoAssign)">Freie Plätze automatisch belegen</button><label style="display:flex;align-items:center;gap:8px"><input type="checkbox" ${state.autoAssign?'checked':''} onchange="guarded(()=>toggleAuto(this.checked))"> Nach jedem Ergebnis automatisch nachbelegen</label></div><div class="grid">${Array.from({length:state.courtCount},(_,i)=>{const court=i+1,m=running.find(m=>m.court===court);return `<div class="court"><h3>Platz ${court} <span class="pill ${m?'playing':''}">${m?'Belegt':'Frei'}</span></h3>${m?`<p>${esc(name(m.a))}<br>gegen<br>${esc(name(m.b))}</p><button class="btn alt small" onclick="switchTab('results')">Ergebnis erfassen</button>`:`<p>Freier Court – nächstes Spiel auswählen</p><select id="court${court}"><option value="">Spiel wählen</option>${free.map(x=>`<option value="${x.id}">${esc(name(x.a))} – ${esc(name(x.b))}</option>`).join('')}</select><div class="actions"><button class="btn small" ${!free.length?'disabled':''} onclick="guarded(()=>{const id=document.getElementById('court${court}').value;assert(id,'Bitte Spiel auswählen.');startMatch(id,${court})})">Spiel starten</button></div>`}</div>`}).join('')}</div>${state.ruleProfile==='dtb'?`<div class="hint">Pausenbedingt wartende Begegnungen: ${state.matches.filter(m=>m.status==='scheduled'&&m.a&&m.b&&ready(m)&&matchRestProblem(m)).map(m=>`<p>${esc(name(m.a))} – ${esc(name(m.b))}: ${esc(matchRestProblem(m))}</p>`).join('')||'Keine.'}</div>`:''}</section><section class="panel"><h2>Noch offene Begegnungen</h2>${matchList(state.matches.filter(m=>m.status!=='finished'))}</section>`}
 function setScoreFields(m){
  const count=state.tennisSetsToWin*2-1;
  const matchtb=state.tennisSetsToWin===2&&state.tennisDecider==='matchtb';
@@ -233,10 +347,122 @@ function setScoreFields(m){
  const row=(id,label)=>`<div class="set-teams">${esc(label)}</div>`+Array.from({length:count},(_,i)=>`<input type="number" min="0" max="999" step="1" inputmode="numeric" class="set-cell" id="set-${m.id}-${id}-${i}" aria-label="${esc(label)} ${matchtb&&i===2?'Match-Tie-Break':`Satz ${i+1}`}" placeholder="–">`).join('');
  return `<div class="set-result"><h3>Platz ${m.court} · ${esc(m.round)}</h3><div class="set-scroll"><div class="set-grid" style="--sets:${count}"><div></div>${head}${row('a',name(m.a))}${row('b',name(m.b))}</div></div><p class="set-help">${matchtb?'Bei 1:1 Sätzen im dritten Satz den Match-Tie-Break bis 10 eingeben.':'Nicht benötigte Sätze leer lassen.'} Tennis-Regelprüfung erfolgt beim Bestätigen.</p><div class="actions"><button class="btn" onclick="guarded(()=>finishSetScore('${m.id}'))">Ergebnis bestätigen</button></div></div>`;
 }
+function multiSetFields(m){
+ const sport=state.sport;
+ const isTennisStyle=sport==='Tennis'||sport==='Padel';
+ const count=isTennisStyle?(sport==='Tennis'?state.tennisSetsToWin*2-1:3):3;
+ const isMatchTB=isTennisStyle&&state.tennisDecider==='matchtb'&&(sport==='Padel'||state.tennisSetsToWin===2);
+ const h=Array.from({length:count},(_,i)=>`<div class="set-head">${i===2&&isMatchTB?'Match-TB':sport==='Pickleball'?`Game ${i+1}`:`${i+1}. Satz`}</div>`).join('');
+ const row=(side,txt)=>`<div class="set-teams">${esc(txt)}</div>`+Array.from({length:count},(_,i)=>`<input type="number" min="0" max="999" step="1" inputmode="numeric" class="set-cell" id="set-${m.id}-${side}-${i}" aria-label="${esc(txt)} ${i+1}" placeholder="–">`).join('');
+ return `<div class="set-result"><h3>Platz ${m.court} · ${esc(m.round)}</h3><div class="set-scroll"><div class="set-grid" style="--sets:${count}"><div></div>${h}${row('a',name(m.a))}${row('b',name(m.b))}</div></div><p class="set-help">${esc(sportDescriptions[sport])}. Nicht benötigte Satzfelder leer lassen. ${isMatchTB?'Der Match-Tie-Break ist nur bei Satzstand 1:1 zulässig.':''}</p><div class="actions"><button class="btn" onclick="guarded(()=>finishMultiSetScore('${m.id}'))">Ergebnis bestätigen</button></div></div>`;
+}
+function finishMultiSetScore(id){
+ const m=state.matches.find(x=>x.id===id);assert(m&&m.status==='playing','Spiel läuft nicht.');
+ const sport=state.sport, tennisStyle=sport==='Tennis'||sport==='Padel';
+ const count=tennisStyle?(sport==='Tennis'?state.tennisSetsToWin*2-1:3):3;
+ const matchTB=tennisStyle&&state.tennisDecider==='matchtb'&&(sport==='Padel'||state.tennisSetsToWin===2);
+ const tokens=[];let gap=false;
+ for(let i=0;i<count;i++){
+  const aa=document.getElementById(`set-${id}-a-${i}`).value.trim();
+  const bb=document.getElementById(`set-${id}-b-${i}`).value.trim();
+  assert((aa==='')===(bb===''),`Bitte Satz/Game ${i+1} für beide Teams ausfüllen.`);
+  if(!aa){gap=true;continue}
+  assert(!gap,'Keine Lücken zwischen Sätzen zulässig.');
+  assert(/^\d{1,3}$/.test(aa)&&/^\d{1,3}$/.test(bb),'Nur ganze, nicht negative Werte.');
+  const token=`${+aa}:${+bb}`;
+  tokens.push(matchTB&&i===2?`[${token}]`:token);
+ }
+ assert(tokens.length,'Bitte ein Ergebnis eingeben.');finishMatch(id,tokens.join(' '));
+}
 function resultsView(){
- const tennis=state.sport==='Tennis'&&state.scoreMode!=='legacy';
  const running=state.matches.filter(m=>m.status==='playing');
- return `<section class="panel"><h2>Ergebnisse erfassen</h2><p class="hint">${tennis?`Tennis · ${state.tennisSetsToWin} Gewinnsätze (Best of ${state.tennisSetsToWin*2-1}) · ${state.tennisSetsToWin===2&&state.tennisDecider==='matchtb'?'Match-Tie-Break als dritter Satz':'Normaler Entscheidungssatz'}. Jede Satzwertung wird separat erfasst.`:'Vereinfachtes Punktresultat A:B für diese Sportart; noch keine verbindliche Verbandsregel.'}</p>${running.map(m=>tennis?setScoreFields(m):`<div class="fixture"><div class="matchlabel">Platz ${m.court}</div><div><div class="teams">${esc(name(m.a))} – ${esc(name(m.b))}</div><div class="details">${esc(m.round)}</div></div><div class="formInline"><input class="legacy-score" id="score${m.id}" placeholder="11:7"><button class="btn small" onclick="guarded(()=>finishMatch('${m.id}',document.getElementById('score${m.id}').value))">Bestätigen</button></div></div>`).join('')||'<div class="empty">Keine laufenden Spiele. Bitte zuerst unter „Courts“ eine Begegnung starten.</div>'}</section>${state.format==='groups'&&state.matches.length?groupTables():''}<section class="panel"><h2>Abgeschlossene Begegnungen</h2>${matchList(state.matches.filter(finished))}</section>${complete()?'<div class="notice">Alle Begegnungen abgeschlossen. Ergebnisse können über „Daten exportieren“ gesichert werden.</div>':''}`;
+ return `<section class="panel"><h2>Ergebnisse erfassen · ${esc(state.sport)}</h2><p class="hint">${esc(sportDescriptions[state.sport]||'Vereinfachte Demo-Zählweise')}. Eingaben werden vor der Ergebnisspeicherung geprüft.</p>${running.map(m=>multiSetFields(m)).join('')||'<div class="empty">Keine laufenden Spiele. Bitte zuerst unter „Courts“ eine Begegnung starten.</div>'}</section>${state.format==='groups'&&state.matches.length?groupTables():''}<section class="panel"><h2>Abgeschlossene Begegnungen</h2>${matchList(state.matches.filter(finished))}</section>${complete()?'<div class="notice">Alle Begegnungen abgeschlossen. Turnierplan und Abschlussbericht können gedruckt werden.</div>':''}`;
+}
+
+// V2.4: display-only reporting. Uses the exact locally saved tournament, never demo fixture data.
+function phaseLabel(m){
+ if(m.stage==='group')return m.group?'Gruppe '+m.group:'Jeder gegen jeden';
+ if(m.stage==='bronze')return 'Spiel um Platz 3';
+ if(m.round==='Finale')return 'Finale';
+ if(m.stage==='final'&&m.round==='Runde 1'&&state.matches.filter(x=>x.stage==='final').length===3)return 'Halbfinale';
+ return m.round||'K.-o.-Runde';
+}
+function cleanMatchRow(m){return `<tr><td>${esc(phaseLabel(m))}</td><td class="plan-pair">${esc(name(m.a))} – ${esc(name(m.b))}</td><td>${m.court?'Platz '+m.court:'–'}</td><td>${esc(labels[m.status]||'Geplant')}</td><td class="plan-score">${esc(m.score||'–')}</td></tr>`}
+function planRows(ms){return `<table class="plan-table"><thead><tr><th>Runde</th><th>Begegnung</th><th>Court</th><th>Status</th><th>Ergebnis</th></tr></thead><tbody>${ms.map(cleanMatchRow).join('')}</tbody></table>`}
+function planSection(label,ms){return ms.length?`<div class="plan-group"><h3>${esc(label)} · ${ms.length} Begegnungen</h3>${planRows(ms)}</div>`:''}
+function planContent(){
+ if(!state.matches.length)return '<div class="empty">Noch kein Spielplan vorhanden. Bitte zuerst unter „Auslosung“ Begegnungen erzeugen.</div>';
+ const groups=[...new Set(state.matches.filter(m=>m.stage==='group'&&m.group).map(m=>m.group))].sort();
+ let html='';
+ if(groups.length)html+=groups.map(g=>planSection('Gruppe '+g,state.matches.filter(m=>m.stage==='group'&&m.group===g))).join('');
+ else html+=planSection(state.format==='round'?'Jeder gegen jeden':'Gruppen-/Ligaspiele',state.matches.filter(m=>m.stage==='group'));
+ const elimination=state.matches.filter(m=>m.stage==='ko'||m.stage==='final');
+ if(elimination.length){
+  const labels=[...new Set(elimination.map(phaseLabel))];
+  html+=labels.map(l=>planSection(l,elimination.filter(m=>phaseLabel(m)===l))).join('');
+ }
+ html+=planSection('Spiel um Platz 3',state.matches.filter(m=>m.stage==='bronze'));
+ return html;
+}
+function printCurrent(){window.print()}
+function planView(){return `<div class="print-header"><h1>BOOKANDPLAY · Turnierplan</h1><div>${esc(state.name)} · ${esc(state.sport)} · ${esc(types[state.format])}</div></div><section class="panel"><div class="no-print report-action"><button class="btn" onclick="printCurrent()">Turnierplan drucken / PDF</button><button class="btn alt" onclick="switchTab('closing')">Zum Turnierabschluss</button></div><h2>Turnierplan – ${esc(state.name)}</h2><p class="hint">Regelprofil: ${state.ruleProfile==='dtb'?'DTB 2026 – Testprofil':'Vereinsregeln'}. Die Uhrzeiten und Ruhezeiten sind ausschließlich Demo-Daten.</p><p class="hint">${state.matches.length} Begegnungen · ${state.matches.filter(finished).length} beendet · ${state.matches.filter(m=>m.status==='playing').length} laufen. Beim Drucken kannst du auf dem Mac „Als PDF sichern“ wählen.</p>${planContent()}</section>`}
+function mainFinal(){
+ const finals=state.matches.filter(m=>m.stage==='final'||m.stage==='ko');
+ return finals.find(m=>m.round==='Finale')||null;
+}
+function semiFinals(){
+ const f=mainFinal();
+ if(!f||!Array.isArray(f.sources)||f.sources.length!==2)return [];
+ return f.sources.map(id=>state.matches.find(m=>m.id===id)).filter(Boolean);
+}
+function bronzeMatch(){return state.matches.find(m=>m.stage==='bronze')||null}
+function canBronze(){const ss=semiFinals();return state.format==='groups'&&ss.length===2&&ss.every(m=>m.status==='finished'&&m.loser)&&!bronzeMatch()}
+function addBronze(){
+ assert(canBronze(),'Ein Spiel um Platz 3 ist erst nach beiden Halbfinals möglich und darf nur einmal angelegt werden.');
+ const ss=semiFinals();const bronze=createMatch(ss[0].loser,ss[1].loser,'Spiel um Platz 3','bronze');
+ state.matches.push(bronze);state.stage='running';save();notify('Spiel um Platz 3 angelegt. Es kann unter „Courts“ gestartet werden.');
+}
+function podiumInfo(){
+ const f=mainFinal();const ss=semiFinals(),bronze=bronzeMatch();
+ if(f&&f.status==='finished'){
+  const third=bronze&&bronze.status==='finished'?[bronze.winner]:ss.length===2&&ss.every(m=>m.status==='finished')?ss.map(m=>m.loser):[];
+  return {winner:f.winner,second:f.loser,third,bronze,semis:ss,decided:true};
+ }
+ if(state.format==='round'&&complete()){
+  const ids=state.players.map(p=>p.id);
+  const ranked=ids.map(id=>({id,w:state.matches.filter(m=>m.winner===id).length})).sort((a,b)=>b.w-a.w);
+  return {decided:false,message:'Rangfolge der Liga nach vollständigen Wertungskriterien noch nicht freigegeben.'};
+ }
+ return {decided:false,message:'Die Siegerplatzierungen stehen erst nach dem Finale fest.'};
+}
+function placementRows(info){
+ if(!info.decided)return `<p class="hint">${esc(info.message)}</p>`;
+ let list=[['1. Platz',name(info.winner)],['2. Platz',name(info.second)]];
+ if(info.third.length===2)list.push(['3. Platz (geteilt)',info.third.map(name).join(' / ')]);
+ else if(info.third.length===1){list.push(['3. Platz',name(info.third[0])]);if(info.bronze?.loser)list.push(['4. Platz',name(info.bronze.loser)])}
+ if(state.format==='groups'&&state.players.some(p=>p.group)){
+  const groups=[...new Set(state.players.map(p=>p.group).filter(Boolean))].sort();
+  if(groups.length===2&&state.qualify===2){
+   const r3=groups.map(g=>groupRanks(g)[2]).filter(Boolean).map(x=>name(x.id));
+   const r4=groups.map(g=>groupRanks(g)[3]).filter(Boolean).map(x=>name(x.id));
+   if(r3.length)list.push(['5.–6. Platz (gleiche Stufe)',r3.join(' / ')]);
+   if(r4.length)list.push(['7.–8. Platz (gleiche Stufe)',r4.join(' / ')]);
+  }
+ }
+ return `<ol class="place-list">${list.map(([position,teams])=>`<li><b>${esc(position)}</b> · ${esc(teams)}</li>`).join('')}</ol><p class="hint">Gleichrangige Teams sind nicht durch ein zusätzliches Platzierungsspiel getrennt. Turnierregelabhängige Platzierungen sind vor offizieller Veröffentlichung zu prüfen.</p>`;
+}
+function closingView(){
+ const info=podiumInfo();const allDone=complete();
+ const bronze=bronzeMatch();
+ return `<div class="print-header"><h1>BOOKANDPLAY · Turnierabschluss</h1><div>${esc(state.name)} · ${esc(state.sport)} · ${esc(types[state.format])}</div></div>
+ <section class="panel"><div class="report-action no-print"><button class="btn" onclick="printCurrent()">Abschlussbericht drucken / PDF</button><button class="btn alt" onclick="switchTab('plan')">Turnierplan ansehen</button><button class="btn alt" onclick="downloadData()">Daten sichern</button></div>
+ <h2>Turnierabschluss · ${esc(state.name)}</h2><p class="hint">Regelprofil: ${state.ruleProfile==='dtb'?'DTB 2026 – unvollständiger Regeltest':'Vereinsturnier'}. Keine amtliche DTB-Genehmigung oder Verbandsmeldung.</p><p class="report-meta">${esc(state.sport)} · ${state.players.length} Teams · ${state.matches.length} Begegnungen · ${state.matches.filter(finished).length} beendet</p>
+ ${info.decided?`<div class="podium"><div class="podium-item"><div class="place">1.</div><strong>${esc(name(info.winner))}</strong><p>Turniersieger</p></div><div class="podium-item"><div class="place">2.</div><strong>${esc(name(info.second))}</strong><p>Finalist</p></div><div class="podium-item"><div class="place">3.</div><strong>${info.third.map(id=>esc(name(id))).join('<br>')||'Noch offen'}</strong><p>${info.third.length===2?'Gemeinsamer 3. Platz':bronze&&bronze.status!=='finished'?'Platzierungsspiel läuft/steht aus':'3. Platz'}</p></div></div>`:`<p class="notice">${esc(info.message)}</p>`}
+ ${canBronze()?`<p class="hint no-print">Optional: Die beiden Halbfinalverlierer können noch Platz 3 ausspielen. Dadurch wird das bereits abgeschlossene Turnier für diese eine Begegnung wieder geöffnet.</p><div class="no-print"><button class="btn alt" onclick="guarded(()=>{if(confirm('Spiel um Platz 3 zusätzlich anlegen?'))addBronze()})">Spiel um Platz 3 anlegen</button></div>`:''}
+ ${bronze?`<p><b>Spiel um Platz 3:</b> ${esc(name(bronze.a))} – ${esc(name(bronze.b))} · ${esc(bronze.score||labels[bronze.status])}</p>`:''}
+ <h3>Platzierungen</h3>${placementRows(info)}
+ ${allDone?'<p class="notice">Alle angesetzten Spiele sind beendet.</p>':'<p class="warn">Der Turnierplan enthält noch offene Begegnungen. Dieser Bericht ist ein Zwischenstand.</p>'}
+ </section><section class="panel"><h2>Turnierbericht · Alle Begegnungen</h2>${planContent()}</section>`;
 }
 
 render();
