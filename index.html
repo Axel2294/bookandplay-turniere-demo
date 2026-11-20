@@ -27,7 +27,7 @@
 </style>
 </head>
 <body>
-<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V2.5 · MEHRERE TURNIERE</span></div></header>
+<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V2.6 · IMPORT & WIEDERHERSTELLUNG</span></div></header>
 <main>
 <div class="titlebar"><div><h1 id="heading">Turnierkonsole</h1><p class="sub" id="subtitle">Anmeldung, Auslosung, Courts und Ergebnisse in einer Oberfläche</p></div><div class="buttonrow"><button class="btn small" onclick="switchTab('tournaments')">Meine Turniere</button><button class="btn alt small" onclick="loadExample()">Beispieldaten laden</button><button class="btn alt small" onclick="downloadData()">Daten exportieren</button><button class="btn alt small danger" onclick="resetDemo()">Zurücksetzen</button></div></div>
 <div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
@@ -306,19 +306,70 @@ function render(){document.getElementById('heading').textContent=state.name||'Tu
 function stageText(t){return ({draft:'Entwurf',registration:'Anmeldung',running:'Läuft',finished:'Abgeschlossen'})[t.stage]||'Entwurf'}
 function tournamentsView(){
  const records=collection.tournaments;
- return `<section class="panel"><div class="titlebar" style="margin:0 0 15px"><div><h2>Meine Turniere</h2><p class="hint">Du kannst mehrere Turniere parallel verwalten. Jeder Wettbewerb besitzt eigene Teilnehmer, Auslosungen, Courts und Ergebnisse.</p></div><div class="buttonrow"><button class="btn" onclick="guarded(createTournament)">+ Neues Turnier</button><button class="btn alt" onclick="downloadAllTournaments()">Alle Turniere sichern</button></div></div>
+ return `<section class="panel"><div class="titlebar" style="margin:0 0 15px"><div><h2>Meine Turniere</h2><p class="hint">Du kannst mehrere Turniere parallel verwalten. Jeder Wettbewerb besitzt eigene Teilnehmer, Auslosungen, Courts und Ergebnisse.</p></div><div class="buttonrow"><button class="btn" onclick="guarded(createTournament)">+ Neues Turnier</button><button class="btn alt" onclick="downloadAllTournaments()">Alle Turniere sichern</button><button class="btn alt" onclick="document.getElementById('backupImportFile').click()">Turnier aus Sicherung importieren</button><input id="backupImportFile" type="file" accept=".json,application/json" style="display:none" onchange="guarded(()=>importBackupFile(this))"></div></div>
  <div class="grid">${records.map(rec=>{const t=rec.data,active=rec.id===collection.activeId,done=t.matches.filter(m=>m.status==='finished').length;return `<div class="court" style="border-color:${active?'#08754e':'var(--border)'}">
  <div class="formInline" style="justify-content:space-between"><span class="pill ${t.stage==='finished'?'finished':t.matches.length?'playing':''}">${esc(stageText(t))}</span>${active?'<span class="pill playing">Aktives Turnier</span>':''}</div>
  <h3 style="margin-top:12px">${esc(t.name||'Unbenanntes Turnier')}</h3>
  <p style="min-height:0">${esc(t.sport||'Tennis')} · ${esc(types[t.format]||'Turnier')}<br>${t.players.length} Teams · ${done}/${t.matches.length} Spiele beendet</p>
  <div class="actions"><button class="btn small" onclick="guarded(()=>openTournament('${rec.id}'))">${active?'Turnier öffnen':'Zu diesem Turnier wechseln'}</button><button class="btn alt small" onclick="guarded(()=>duplicateTournament('${rec.id}'))">Duplizieren</button><button class="btn alt small danger" onclick="guarded(()=>deleteTournament('${rec.id}'))">Löschen</button></div>
- </div>`}).join('')}</div><p class="hint">Die Daten werden nur in diesem Browser gespeichert. Vor dem Löschen eines Turniers bitte den Datenexport verwenden. Kein Abgleich zwischen Geräten.</p></section>`;
+ </div>`}).join('')}</div><p class="hint">Die Daten werden nur in diesem Browser gespeichert. Der Import fuegt Sicherungen als separate Turniere hinzu und ersetzt keine bestehenden Turniere. Vor dem Loeschen bitte einen Datenexport erstellen. Kein Abgleich zwischen Geraeten.</p></section>`;
 }
 function downloadAllTournaments(){
  const blob=new Blob([JSON.stringify(collection,null,2)],{type:'application/json'});
  const url=URL.createObjectURL(blob),a=document.createElement('a');
  a.href=url;a.download='bookandplay-alle-turniere-backup.json';a.click();
  setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+// Import of V2.1-V2.4 single-tournament JSON and V2.5+ collections.
+// Every import creates a NEW record; existing tournaments never get replaced.
+function validateImportTournament(t){
+ assert(validTournament(t),'Keine gueltige BOOKANDPLAY-Turniersicherung (players/matches fehlen).');
+ assert(typeof t.name==='string'&&t.name.trim().length>0&&t.name.length<200,'Turniername fehlt oder ist ungueltig.');
+ assert(sports.includes(t.sport),'Sportart in Sicherung nicht unterstuetzt.');
+ assert(['groups','ko','round'].includes(t.format),'Turnierformat in Sicherung nicht unterstuetzt.');
+ assert(t.players.length<=10000&&t.matches.length<=100000,'Sicherung zu gross.');
+ const ids=new Set();
+ for(const p of t.players){
+  assert(p&&typeof p.id==='string'&&p.id.length>0&&typeof p.name==='string','Ungueltiger Spieler in Sicherung.');
+  assert(!ids.has(p.id),'Doppelte Spielerkennung in Sicherung.'); ids.add(p.id);
+ }
+ const matchIds=new Set();
+ for(const m of t.matches){
+  assert(m&&typeof m.id==='string'&&!matchIds.has(m.id),'Ungueltige oder doppelte Spielkennung.');matchIds.add(m.id);
+  assert(['scheduled','playing','finished'].includes(m.status),'Ungueltiger Spielstatus.');
+  assert((!m.a||ids.has(m.a))&&(!m.b||ids.has(m.b)),'Ein Spiel verweist auf unbekannte Teams.');
+  assert(!m.winner||ids.has(m.winner),'Ungueltiger Sieger im Spiel.');
+  assert(!m.loser||ids.has(m.loser),'Ungueltiger Verlierer im Spiel.');
+ }
+ return t;
+}
+async function importBackupFile(input){
+ const file=input.files&&input.files[0];if(!file)return;
+ // Reset allows choosing the same file again after a canceled attempt.
+ input.value='';
+ try{
+  assert(file.size<=5*1024*1024,'Datei ist groesser als 5 MB.');
+  const raw=JSON.parse(await file.text());
+  const entries=Array.isArray(raw.tournaments)?raw.tournaments.map(x=>x.data):[raw];
+  assert(entries.length>0&&entries.length<=100,'Keine oder zu viele Turniere in der Sicherung.');
+  const imported=entries.map(t=>normalizeTournament(validateImportTournament(t)));
+  const description=imported.map(t=>`${t.name}: ${t.matches.length} Spiele, ${t.matches.filter(m=>m.status==='finished').length} beendet`).join('\n');
+  if(!confirm(`${imported.length} Turnier(e) als zusaetzliche Eintraege importieren?\n\n${description}\n\nBestehende Turniere bleiben erhalten.`))return;
+  // Do not modify imported objects or the saved collection until data can be serialized and persisted.
+  const next=JSON.parse(JSON.stringify(collection));
+  let firstId;
+  for(const t of imported){
+   const newId=uid();if(!firstId)firstId=newId;
+   const clone=JSON.parse(JSON.stringify(t));
+   if(next.tournaments.some(x=>x.data.name===clone.name))clone.name+=' (wiederhergestellt)';
+   next.tournaments.push({id:newId,data:clone});
+  }
+  next.activeId=firstId;
+  try{localStorage.setItem(COLLECTION_KEY,JSON.stringify(next))}
+  catch(_){throw Error('Nicht genug Browser-Speicherplatz. Bisherige Turniere wurden nicht veraendert.')}
+  collection=next;state=collection.tournaments.find(x=>x.id===firstId).data;tab='tournaments';
+  notify(`${imported.length} Turnier(e) importiert. ${imported.reduce((n,t)=>n+t.matches.filter(m=>m.status==='finished').length,0)} abgeschlossene Spiele uebernommen.`);
+ }catch(e){notify('Import fehlgeschlagen: '+(e instanceof SyntaxError?'Die Datei ist kein gueltiges JSON.':e.message),true)}
 }
 function createTournament(){
  const title=prompt('Name des neuen Turniers:', 'Neues Turnier');if(title===null)return;
