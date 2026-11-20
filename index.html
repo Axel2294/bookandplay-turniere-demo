@@ -6,10 +6,11 @@
 <style>
 :root{--green:#08754e;--dark:#122b2a;--bg:#f3f7f6;--muted:#60736f;--border:#dce7e3;--white:#fff;--accent:#dcf3e8;--orange:#ad6817}
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--dark)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}.header{max-width:1300px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:15px 22px}.brand{font-size:23px;letter-spacing:-.8px;font-weight:850;color:var(--green)}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1.5px;font-weight:700}.demo{background:var(--accent);padding:5px 10px;border-radius:30px;color:var(--green);font-size:12px;font-weight:800}main{max-width:1300px;margin:24px auto;padding:0 22px 50px}.titlebar{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:20px}.titlebar h1{font-size:clamp(25px,3vw,38px);margin:0}.sub{margin:5px 0;color:var(--muted)}.btn{border:none;border-radius:10px;background:var(--green);color:white;padding:10px 15px;font-weight:720}.btn.alt{background:white;color:var(--dark);border:1px solid var(--border)}.btn.danger{color:#9a2727;border-color:#f0caca}.btn.small{font-size:13px;padding:7px 10px}.buttonrow{display:flex;gap:9px;flex-wrap:wrap}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.stat,.panel{border:1px solid var(--border);border-radius:14px;background:white}.stat{padding:15px}.stat b{display:block;font-size:27px}.stat span{color:var(--muted);font-size:13px}.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--border);margin:20px 0}.tab{padding:12px 15px;border:0;background:none;color:var(--muted);font-weight:700;border-bottom:3px solid transparent}.tab.active{color:var(--green);border-color:var(--green)}.panel{padding:20px;margin:15px 0}.panel h2{font-size:19px;margin:0 0 12px}.panel h3{font-size:16px;margin:14px 0 8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}label{display:block;font-size:13px;font-weight:700;margin:0 0 5px}input,select{background:white;border:1px solid #c9d9d4;border-radius:9px;padding:10px;width:100%;color:var(--dark)}input[type=checkbox]{width:auto;accent-color:var(--green)}.field{margin-bottom:14px}.hint{font-size:13px;color:var(--muted);line-height:1.55}.notice{background:#eff8f3;border:1px solid #b9dfcb;color:#175b3d;border-radius:10px;padding:11px;margin:10px 0}.warn{background:#fff7ec;border:1px solid #f1d2a6;color:#874e16;border-radius:10px;padding:11px;margin:10px 0}.error{background:#fff1f1;border-color:#f1bebe;color:#a42525}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:11px 9px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle}th{color:var(--muted);font-size:12px;letter-spacing:.3px}td:last-child,th:last-child{text-align:right}.pill{display:inline-block;border-radius:25px;background:#eef3f0;color:#50655e;font-size:12px;padding:4px 8px;font-weight:700}.pill.playing{background:#dff2e6;color:#07613c}.pill.finished{background:#e1eafe;color:#2d559e}.court{padding:17px;border:1px solid var(--border);border-radius:12px;background:#fff}.court h3{margin:0 0 8px}.court p{min-height:45px;margin:9px 0;color:var(--muted);font-size:14px}.fixture{border:1px solid var(--border);border-radius:11px;padding:13px;margin:9px 0;display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:10px;align-items:center}.fixture .matchlabel{font-size:12px;color:var(--muted)}.fixture .teams{font-weight:730}.fixture .details{font-size:12px;color:var(--muted);margin-top:4px}.formInline{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.score{width:90px!important;padding:8px!important}.empty{padding:34px 10px;text-align:center;color:var(--muted)}.footer{color:var(--muted);font-size:12px;margin-top:30px;line-height:1.6}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.statusline{font-size:13px;color:var(--muted)}.kbd{font-family:ui-monospace,monospace;background:#f0f4f2;padding:2px 6px;border-radius:4px}.sep{height:1px;background:var(--border);margin:18px 0}@media(max-width:800px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.fixture{grid-template-columns:1fr}.header{padding:12px 14px}main{padding:0 13px}.panel{padding:15px}}@media(max-width:520px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.brand{font-size:19px}.titlebar h1{font-size:26px}.stat{padding:10px}.stat b{font-size:22px}}
+.set-result{padding:18px;border:1px solid var(--border);border-radius:12px;margin:12px 0}.set-result h3{margin:0 0 12px}.set-scroll{overflow-x:auto}.set-grid{display:grid;grid-template-columns:minmax(135px,2fr) repeat(var(--sets), minmax(64px,1fr));gap:8px;align-items:center;min-width:440px}.set-head{font-size:12px;color:var(--muted);font-weight:750;text-align:center}.set-grid .set-cell{max-width:85px;text-align:center;margin:0 auto;padding:8px}.set-teams{font-size:13px;font-weight:700}.set-help{font-size:12px;color:var(--muted);margin:10px 0}.set-result .actions{justify-content:flex-end}.legacy-score{width:110px!important}
 </style>
 </head>
 <body>
-<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V2.1</span></div></header>
+<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V2.2</span></div></header>
 <main>
 <div class="titlebar"><div><h1 id="heading">Turnierkonsole</h1><p class="sub" id="subtitle">Anmeldung, Auslosung, Courts und Ergebnisse in einer Oberfläche</p></div><div class="buttonrow"><button class="btn alt small" onclick="loadExample()">Beispieldaten laden</button><button class="btn alt small" onclick="downloadData()">Daten exportieren</button><button class="btn alt small danger" onclick="resetDemo()">Zurücksetzen</button></div></div>
 <div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
@@ -70,20 +71,50 @@ function draw(){assert(state.players.length>=2,'Mindestens zwei Teams anmelden.'
  state.stage='running';state.drawVersion++;save();notify(`Auslosung erstellt: ${state.matches.length} Begegnungen.`)}
 function resetDraw(){assert(state.matches.every(m=>m.status==='scheduled'),'Die Auslosung kann nur vor dem ersten Spiel zurückgesetzt werden.');if(!confirm('Auslosung und Court-Zuweisungen löschen?'))return;state.matches=[];state.players.forEach(p=>p.group=null);state.stage='registration';save()}
 function startMatch(id,court){const m=state.matches.find(x=>x.id===id);assert(m&&m.status==='scheduled','Spiel ist nicht startbereit.');assert(m.a&&m.b&&ready(m),'Vorherige Runden noch nicht abgeschlossen.');assert(!state.matches.some(x=>x.court===court&&x.status==='playing'),'Court bereits belegt.');assert(!state.matches.some(x=>x.status==='playing'&&[m.a,m.b].some(p=>p===x.a||p===x.b)),'Mindestens ein Spieler spielt bereits.');m.court=court;m.status='playing';state.stage='running';save()}
-function assignNextAvailable(){
- let count=0;const courtBusy=new Set(state.matches.filter(m=>m.status==='playing').map(m=>m.court));
- const playersBusy=busyPlayers();
- const usage=new Map(state.players.map(p=>[p.id,state.matches.filter(m=>finished(m)&&(m.a===p.id||m.b===p.id)).length]));
- for(let court=1;court<=state.courtCount;court++){
-  if(courtBusy.has(court))continue;
-  const candidates=state.matches.filter(m=>m.status==='scheduled'&&m.a&&m.b&&ready(m)&&!playersBusy.has(m.a)&&!playersBusy.has(m.b));
-  candidates.sort((a,b)=>Math.max(usage.get(a.a)||0,usage.get(a.b)||0)-Math.max(usage.get(b.a)||0,usage.get(b.b)||0));
-  if(!candidates.length)continue;
-  const m=candidates[0];m.court=court;m.status='playing';m.startedAt=new Date().toISOString();
-  playersBusy.add(m.a);playersBusy.add(m.b);courtBusy.add(court);count++;
+// Maximum-cardinality matching of currently available teams for small club tournaments.
+// For larger draws, use a deterministic greedy fallback to keep the browser responsive.
+function optimalAssignments(candidates, maxCourts){
+ if(!candidates.length||maxCourts<=0)return [];
+ const ids=[...new Set(candidates.flatMap(m=>[m.a,m.b]))].sort();
+ const byId=new Map(ids.map((id,i)=>[id,i]));
+ const usage=new Map(ids.map(id=>[id,state.matches.filter(m=>finished(m)&&(m.a===id||m.b===id)).length]));
+ const ranked=[...candidates].sort((a,b)=>Math.max(usage.get(a.a)||0,usage.get(a.b)||0)-Math.max(usage.get(b.a)||0,usage.get(b.b)||0)||a.id.localeCompare(b.id));
+ if(ids.length>20){
+  let best=[];
+  for(const order of [ranked,[...ranked].reverse(),[...ranked].sort((a,b)=>(usage.get(a.a)+usage.get(a.b))-(usage.get(b.a)+usage.get(b.b)))]){
+   const busy=new Set(),picked=[];
+   for(const m of order){if(busy.has(m.a)||busy.has(m.b))continue;picked.push(m);busy.add(m.a);busy.add(m.b);if(picked.length===maxCourts)break}
+   if(picked.length>best.length)best=picked;
+  }
+  return best;
  }
- if(count){state.stage='running';save()}
- return count;
+ const neighbours=ids.map(()=>[]);
+ for(const m of ranked){const i=byId.get(m.a),j=byId.get(m.b);neighbours[i].push({j,m});neighbours[j].push({j:i,m})}
+ const memo=new Map();
+ function solve(mask){
+  if(mask===0)return [];
+  if(memo.has(mask))return memo.get(mask);
+  const i=ids.findIndex((_,k)=>(mask&(1<<k))!==0);
+  const remaining=mask&~(1<<i);
+  let best=solve(remaining);
+  for(const {j,m} of neighbours[i]){
+   if((remaining&(1<<j))===0)continue;
+   const res=[m,...solve(remaining&~(1<<j))];
+   if(res.length>best.length){best=res;if(best.length>=maxCourts)break}
+  }
+  memo.set(mask,best);return best;
+ }
+ return solve((1<<ids.length)-1).slice(0,maxCourts);
+}
+function assignNextAvailable(){
+ const busyCourts=new Set(state.matches.filter(m=>m.status==='playing').map(m=>m.court));
+ const freeCourts=Array.from({length:state.courtCount},(_,i)=>i+1).filter(c=>!busyCourts.has(c));
+ if(!freeCourts.length)return 0;
+ const candidates=availableMatches();
+ const selections=optimalAssignments(candidates,freeCourts.length);
+ selections.forEach((m,i)=>{m.court=freeCourts[i];m.status='playing';m.startedAt=new Date().toISOString()});
+ if(selections.length){state.stage='running';save()}
+ return selections.length;
 }
 function autoAssign(){const count=assignNextAvailable();notify(count?`${count} Begegnung(en) automatisch zugewiesen. Keine Team-Doppelbelegung.`:'Keine weiteren spielfertigen Begegnungen für freie Courts.');}
 function toggleAuto(value){state.autoAssign=value;save();if(value&&state.matches.length)autoAssign();}
@@ -144,10 +175,37 @@ function drawView(){const has=state.matches.length>0;return `<section class="pan
 function matchList(ms){return ms.length?ms.map(m=>`<div class="fixture"><div class="matchlabel">${esc(m.round)}${m.group?' · '+m.group:''}</div><div><div class="teams">${esc(name(m.a))} <span style="color:#9caeaa">vs.</span> ${esc(name(m.b))}</div><div class="details">${m.court?'Platz '+m.court+' · ':''}${m.score?'Ergebnis '+esc(m.score)+' · ':''}${m.stage==='final'?'Finalrunde':m.stage==='group'?'Gruppenphase':'K.-o.'}</div></div><div><span class="pill ${m.status}">${labels[m.status]}</span></div></div>`).join(''):'<p class="empty">Keine Spiele vorhanden.</p>'}
 function groupTables(){const groups=[...new Set(state.players.map(x=>x.group))].filter(Boolean).sort();return `<div class="grid">${groups.map(g=>`<section class="panel"><h2>Gruppe ${g}</h2><div class="tablewrap"><table><thead><tr><th>Team</th><th>S</th><th>P</th><th>Spiel-Diff.</th></tr></thead><tbody>${groupRanks(g).map(row=>`<tr><td>${esc(name(row.id))}</td><td>${row.w}</td><td>${row.points}</td><td>${row.diff}</td></tr>`).join('')}</tbody></table></div></section>`).join('')}</div>`}
 function courtsView(){const running=state.matches.filter(m=>m.status==='playing'),free=availableMatches();return `<section class="panel"><h2>Courts und Spielaufruf</h2><p class="hint">Automatik berücksichtigt freie Courts, spielfertige Begegnungen und verhindert doppelte Teambelegung. Ruhepausen und echte BOOKANDPLAY-Reservierungen werden noch nicht geprüft.</p><div class="actions"><button class="btn" onclick="guarded(autoAssign)">Freie Plätze automatisch belegen</button><label style="display:flex;align-items:center;gap:8px"><input type="checkbox" ${state.autoAssign?'checked':''} onchange="guarded(()=>toggleAuto(this.checked))"> Nach jedem Ergebnis automatisch nachbelegen</label></div><div class="grid">${Array.from({length:state.courtCount},(_,i)=>{const court=i+1,m=running.find(m=>m.court===court);return `<div class="court"><h3>Platz ${court} <span class="pill ${m?'playing':''}">${m?'Belegt':'Frei'}</span></h3>${m?`<p>${esc(name(m.a))}<br>gegen<br>${esc(name(m.b))}</p><button class="btn alt small" onclick="switchTab('results')">Ergebnis erfassen</button>`:`<p>Freier Court – nächstes Spiel auswählen</p><select id="court${court}"><option value="">Spiel wählen</option>${free.map(x=>`<option value="${x.id}">${esc(name(x.a))} – ${esc(name(x.b))}</option>`).join('')}</select><div class="actions"><button class="btn small" ${!free.length?'disabled':''} onclick="guarded(()=>{const id=document.getElementById('court${court}').value;assert(id,'Bitte Spiel auswählen.');startMatch(id,${court})})">Spiel starten</button></div>`}</div>`}).join('')}</div></section><section class="panel"><h2>Noch offene Begegnungen</h2>${matchList(state.matches.filter(m=>m.status!=='finished'))}</section>`}
+function setScoreFields(m){
+ const count=state.tennisSetsToWin*2-1;
+ const matchtb=state.tennisSetsToWin===2&&state.tennisDecider==='matchtb';
+ const head=Array.from({length:count},(_,i)=>`<div class="set-head">${matchtb&&i===2?'Match-TB':`${i+1}. Satz`}</div>`).join('');
+ const row=(id,label)=>`<div class="set-teams">${esc(label)}</div>`+Array.from({length:count},(_,i)=>`<input type="number" min="0" max="999" step="1" inputmode="numeric" class="set-cell" id="set-${m.id}-${id}-${i}" aria-label="${esc(label)} ${matchtb&&i===2?'Match-Tie-Break':`Satz ${i+1}`}" placeholder="–">`).join('');
+ return `<div class="set-result"><h3>Platz ${m.court} · ${esc(m.round)}</h3><div class="set-scroll"><div class="set-grid" style="--sets:${count}"><div></div>${head}${row('a',name(m.a))}${row('b',name(m.b))}</div></div><p class="set-help">${matchtb?'Bei 1:1 Sätzen im dritten Satz den Match-Tie-Break bis 10 eingeben.':'Nicht benötigte Sätze leer lassen.'} Tennis-Regelprüfung erfolgt beim Bestätigen.</p><div class="actions"><button class="btn" onclick="guarded(()=>finishSetScore('${m.id}'))">Ergebnis bestätigen</button></div></div>`;
+}
+function finishSetScore(id){
+ const m=state.matches.find(x=>x.id===id);
+ assert(m&&m.status==='playing','Spiel läuft nicht.');
+ const count=state.tennisSetsToWin*2-1;
+ const tokens=[];let gap=false;
+ for(let i=0;i<count;i++){
+  const a=document.getElementById(`set-${id}-a-${i}`).value.trim();
+  const b=document.getElementById(`set-${id}-b-${i}`).value.trim();
+  assert((a==='')===(b===''),`Bitte für Satz ${i+1} beide Ergebnisse eintragen oder beide frei lassen.`);
+  if(a==='') {gap=true;continue}
+  assert(!gap,'Sätze müssen lückenlos eingetragen werden.');
+  assert(/^\d{1,3}$/.test(a)&&/^\d{1,3}$/.test(b),'Nur ganze, nicht negative Zahlen eingeben.');
+  const istb=state.tennisSetsToWin===2&&state.tennisDecider==='matchtb'&&i===2;
+  tokens.push(istb?`[${Number(a)}:${Number(b)}]`:`${Number(a)}:${Number(b)}`);
+ }
+ assert(tokens.length,'Mindestens ein Satz muss eingetragen sein.');
+ finishMatch(id,tokens.join(' '));
+}
 function resultsView(){
  const tennis=state.sport==='Tennis'&&state.scoreMode!=='legacy';
- return `<section class="panel"><h2>Ergebnisse erfassen</h2><p class="hint">${tennis?`Tennis: ${state.tennisSetsToWin} Gewinnsätze (${state.tennisSetsToWin===2?'Best of 3':'Best of 5'}). ${state.tennisSetsToWin===2&&state.tennisDecider==='matchtb'?'Entscheidungssatz als Match-Tie-Break, z. B. 6:4 3:6 [10:7].':state.tennisSetsToWin===3?'Beispiel: 6:4 3:6 6:3 4:6 6:2.':'Beispiel: 6:4 3:6 6:2.'} Reguläre Tie-Breaks werden nur als 7:6 gespeichert.`:'Vereinfachter Punktestand A:B, z. B. 11:7. Für diese Sportart sind noch keine vollständigen offiziellen Spielregeln hinterlegt.'}</p>${state.matches.filter(m=>m.status==='playing').map(m=>`<div class="fixture"><div class="matchlabel">Platz ${m.court}</div><div><div class="teams">${esc(name(m.a))} – ${esc(name(m.b))}</div><div class="details">${esc(m.round)}</div></div><div class="formInline"><input class="score" style="width:${tennis?210:90}px!important" id="score${m.id}" placeholder="${tennis?(state.tennisSetsToWin===3?'6:4 3:6 6:3 4:6 6:2':state.tennisDecider==='matchtb'?'6:4 3:6 [10:7]':'6:4 3:6 6:2'):'11:7'}" aria-label="Ergebnis"><button class="btn small" onclick="guarded(()=>finishMatch('${m.id}',document.getElementById('score${m.id}').value))">Bestätigen</button></div></div>`).join('')||'<div class="empty">Keine laufenden Spiele. Bitte zuerst unter „Courts“ eine Begegnung starten.</div>'}</section>${state.format==='groups'&&state.matches.length?groupTables():''}<section class="panel"><h2>Abgeschlossene Begegnungen</h2>${matchList(state.matches.filter(finished))}</section>${complete()?'<div class="notice">Alle Begegnungen abgeschlossen. Ergebnisse können über „Daten exportieren“ gesichert werden.</div>':''}`;
+ const running=state.matches.filter(m=>m.status==='playing');
+ return `<section class="panel"><h2>Ergebnisse erfassen</h2><p class="hint">${tennis?`Tennis · ${state.tennisSetsToWin} Gewinnsätze (Best of ${state.tennisSetsToWin*2-1}) · ${state.tennisSetsToWin===2&&state.tennisDecider==='matchtb'?'Match-Tie-Break als dritter Satz':'Normaler Entscheidungssatz'}. Jede Satzwertung wird separat erfasst.`:'Vereinfachtes Punktresultat A:B für diese Sportart; noch keine verbindliche Verbandsregel.'}</p>${running.map(m=>tennis?setScoreFields(m):`<div class="fixture"><div class="matchlabel">Platz ${m.court}</div><div><div class="teams">${esc(name(m.a))} – ${esc(name(m.b))}</div><div class="details">${esc(m.round)}</div></div><div class="formInline"><input class="legacy-score" id="score${m.id}" placeholder="11:7"><button class="btn small" onclick="guarded(()=>finishMatch('${m.id}',document.getElementById('score${m.id}').value))">Bestätigen</button></div></div>`).join('')||'<div class="empty">Keine laufenden Spiele. Bitte zuerst unter „Courts“ eine Begegnung starten.</div>'}</section>${state.format==='groups'&&state.matches.length?groupTables():''}<section class="panel"><h2>Abgeschlossene Begegnungen</h2>${matchList(state.matches.filter(finished))}</section>${complete()?'<div class="notice">Alle Begegnungen abgeschlossen. Ergebnisse können über „Daten exportieren“ gesichert werden.</div>':''}`;
 }
+
 render();
 </script>
 </body>
