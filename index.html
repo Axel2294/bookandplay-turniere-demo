@@ -10,7 +10,7 @@
 </style>
 </head>
 <body>
-<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V2.3</span></div></header>
+<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V2.3.1</span></div></header>
 <main>
 <div class="titlebar"><div><h1 id="heading">Turnierkonsole</h1><p class="sub" id="subtitle">Anmeldung, Auslosung, Courts und Ergebnisse in einer Oberfläche</p></div><div class="buttonrow"><button class="btn alt small" onclick="loadExample()">Beispieldaten laden</button><button class="btn alt small" onclick="downloadData()">Daten exportieren</button><button class="btn alt small danger" onclick="resetDemo()">Zurücksetzen</button></div></div>
 <div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
@@ -224,6 +224,14 @@ function finishSetScore(id){
  }
  assert(tokens.length,'Mindestens ein Satz muss eingetragen sein.');
  finishMatch(id,tokens.join(' '));
+}
+function courtsView(){const running=state.matches.filter(m=>m.status==='playing'),free=availableMatches();return `<section class="panel"><h2>Courts und Spielaufruf</h2><p class="hint">Automatik berücksichtigt freie Courts, spielfertige Begegnungen und verhindert doppelte Teambelegung. Ruhepausen und echte BOOKANDPLAY-Reservierungen werden noch nicht geprüft.</p><div class="actions"><button class="btn" onclick="guarded(autoAssign)">Freie Plätze automatisch belegen</button><label style="display:flex;align-items:center;gap:8px"><input type="checkbox" ${state.autoAssign?'checked':''} onchange="guarded(()=>toggleAuto(this.checked))"> Nach jedem Ergebnis automatisch nachbelegen</label></div><div class="grid">${Array.from({length:state.courtCount},(_,i)=>{const court=i+1,m=running.find(m=>m.court===court);return `<div class="court"><h3>Platz ${court} <span class="pill ${m?'playing':''}">${m?'Belegt':'Frei'}</span></h3>${m?`<p>${esc(name(m.a))}<br>gegen<br>${esc(name(m.b))}</p><button class="btn alt small" onclick="switchTab('results')">Ergebnis erfassen</button>`:`<p>Freier Court – nächstes Spiel auswählen</p><select id="court${court}"><option value="">Spiel wählen</option>${free.map(x=>`<option value="${x.id}">${esc(name(x.a))} – ${esc(name(x.b))}</option>`).join('')}</select><div class="actions"><button class="btn small" ${!free.length?'disabled':''} onclick="guarded(()=>{const id=document.getElementById('court${court}').value;assert(id,'Bitte Spiel auswählen.');startMatch(id,${court})})">Spiel starten</button></div>`}</div>`}).join('')}</div></section><section class="panel"><h2>Noch offene Begegnungen</h2>${matchList(state.matches.filter(m=>m.status!=='finished'))}</section>`}
+function setScoreFields(m){
+ const count=state.tennisSetsToWin*2-1;
+ const matchtb=state.tennisSetsToWin===2&&state.tennisDecider==='matchtb';
+ const head=Array.from({length:count},(_,i)=>`<div class="set-head">${matchtb&&i===2?'Match-TB':`${i+1}. Satz`}</div>`).join('');
+ const row=(id,label)=>`<div class="set-teams">${esc(label)}</div>`+Array.from({length:count},(_,i)=>`<input type="number" min="0" max="999" step="1" inputmode="numeric" class="set-cell" id="set-${m.id}-${id}-${i}" aria-label="${esc(label)} ${matchtb&&i===2?'Match-Tie-Break':`Satz ${i+1}`}" placeholder="–">`).join('');
+ return `<div class="set-result"><h3>Platz ${m.court} · ${esc(m.round)}</h3><div class="set-scroll"><div class="set-grid" style="--sets:${count}"><div></div>${head}${row('a',name(m.a))}${row('b',name(m.b))}</div></div><p class="set-help">${matchtb?'Bei 1:1 Sätzen im dritten Satz den Match-Tie-Break bis 10 eingeben.':'Nicht benötigte Sätze leer lassen.'} Tennis-Regelprüfung erfolgt beim Bestätigen.</p><div class="actions"><button class="btn" onclick="guarded(()=>finishSetScore('${m.id}'))">Ergebnis bestätigen</button></div></div>`;
 }
 function resultsView(){
  const tennis=state.sport==='Tennis'&&state.scoreMode!=='legacy';
