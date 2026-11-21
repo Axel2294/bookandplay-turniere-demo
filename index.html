@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BOOKANDPLAY | Turnierverwaltung Demo V3.6.10</title>
+<title>BOOKANDPLAY | Turnierverwaltung Demo V3.6.11</title>
 <style>
 :root{--green:#08754e;--dark:#122b2a;--bg:#f3f7f6;--muted:#60736f;--border:#dce7e3;--white:#fff;--accent:#dcf3e8;--orange:#ad6817}
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--dark)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}.header{max-width:1300px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:15px 22px}.brand{font-size:23px;letter-spacing:-.8px;font-weight:850;color:var(--green)}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1.5px;font-weight:700}.demo{background:var(--accent);padding:5px 10px;border-radius:30px;color:var(--green);font-size:12px;font-weight:800}main{max-width:1300px;margin:24px auto;padding:0 22px 50px}.titlebar{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:20px}.titlebar h1{font-size:clamp(25px,3vw,38px);margin:0}.sub{margin:5px 0;color:var(--muted)}.btn{border:none;border-radius:10px;background:var(--green);color:white;padding:10px 15px;font-weight:720}.btn.alt{background:white;color:var(--dark);border:1px solid var(--border)}.btn.danger{color:#9a2727;border-color:#f0caca}.btn.small{font-size:13px;padding:7px 10px}.buttonrow{display:flex;gap:9px;flex-wrap:wrap}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.stat,.panel{border:1px solid var(--border);border-radius:14px;background:white}.stat{padding:15px}.stat b{display:block;font-size:27px}.stat span{color:var(--muted);font-size:13px}.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--border);margin:20px 0}.tab{padding:12px 15px;border:0;background:none;color:var(--muted);font-weight:700;border-bottom:3px solid transparent}.tab.active{color:var(--green);border-color:var(--green)}.panel{padding:20px;margin:15px 0}.panel h2{font-size:19px;margin:0 0 12px}.panel h3{font-size:16px;margin:14px 0 8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}label{display:block;font-size:13px;font-weight:700;margin:0 0 5px}input,select{background:white;border:1px solid #c9d9d4;border-radius:9px;padding:10px;width:100%;color:var(--dark)}input[type=checkbox]{width:auto;accent-color:var(--green)}.field{margin-bottom:14px}.hint{font-size:13px;color:var(--muted);line-height:1.55}.notice{background:#eff8f3;border:1px solid #b9dfcb;color:#175b3d;border-radius:10px;padding:11px;margin:10px 0}.warn{background:#fff7ec;border:1px solid #f1d2a6;color:#874e16;border-radius:10px;padding:11px;margin:10px 0}.error{background:#fff1f1;border-color:#f1bebe;color:#a42525}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:11px 9px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle}th{color:var(--muted);font-size:12px;letter-spacing:.3px}td:last-child,th:last-child{text-align:right}.pill{display:inline-block;border-radius:25px;background:#eef3f0;color:#50655e;font-size:12px;padding:4px 8px;font-weight:700}.pill.playing{background:#dff2e6;color:#07613c}.pill.finished{background:#e1eafe;color:#2d559e}.court{padding:17px;border:1px solid var(--border);border-radius:12px;background:#fff}.court h3{margin:0 0 8px}.court p{min-height:45px;margin:9px 0;color:var(--muted);font-size:14px}.fixture{border:1px solid var(--border);border-radius:11px;padding:13px;margin:9px 0;display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:10px;align-items:center}.fixture .matchlabel{font-size:12px;color:var(--muted)}.fixture .teams{font-weight:730}.fixture .details{font-size:12px;color:var(--muted);margin-top:4px}.formInline{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.score{width:90px!important;padding:8px!important}.empty{padding:34px 10px;text-align:center;color:var(--muted)}.footer{color:var(--muted);font-size:12px;margin-top:30px;line-height:1.6}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.statusline{font-size:13px;color:var(--muted)}.kbd{font-family:ui-monospace,monospace;background:#f0f4f2;padding:2px 6px;border-radius:4px}.sep{height:1px;background:var(--border);margin:18px 0}@media(max-width:800px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.fixture{grid-template-columns:1fr}.header{padding:12px 14px}main{padding:0 13px}.panel{padding:15px}}@media(max-width:520px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.brand{font-size:19px}.titlebar h1{font-size:26px}.stat{padding:10px}.stat b{font-size:22px}}
@@ -73,13 +73,14 @@
 .guide-section{scroll-margin-top:90px}
 @media(max-width:600px){.tab-group>.tab{padding:10px 4px 10px 8px}.tab-group>.help-i{margin-right:6px}}
 .page-back:not(:empty){margin:12px 0}.club-criteria{display:flex;flex-wrap:wrap;gap:4px 16px;margin:8px 0;color:var(--muted);font-size:.91rem}.club-criteria div{overflow-wrap:anywhere;min-width:0}.club-criteria dt,.club-criteria dd{display:inline;margin:0}.club-criteria dt{font-weight:650}
+.player-inbox{list-style:none;padding:0;margin:0}.player-inbox li{border-top:1px solid var(--border);padding:10px 0;overflow-wrap:anywhere}.player-inbox li p{margin:5px 0}.player-inbox small{color:var(--muted)}.player-account-mode #actorPickerPanel{display:none}@media(max-width:520px){.player-account-mode .club-banner .grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V3.6.10 · TURNIERVERWALTUNG</span></div></header>
+<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V3.6.11 · TURNIERVERWALTUNG</span></div></header>
 <main>
 <div class="titlebar"><div><h1 id="heading">Turnierkonsole</h1><p class="sub" id="subtitle">Anmeldung, Auslosung, Courts und Ergebnisse in einer Oberfläche</p></div><div class="buttonrow"><button class="btn small" onclick="switchTab('tournaments')">Meine Turniere</button><button class="btn alt small" onclick="loadExample()">Beispieldaten laden</button><button class="btn alt small" onclick="downloadData()">Daten exportieren</button><button class="btn alt small danger" onclick="resetDemo()">Zurücksetzen</button></div></div>
-<div class="panel no-print" style="padding:10px 15px;margin:6px 0"><div class="formInline" style="justify-content:space-between"><div id="actorPicker"></div><span class="hint">Rollensimulation – keine echte Anmeldung oder Zugriffssicherung</span></div></div><div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
+<div id="actorPickerPanel" class="panel no-print" style="padding:10px 15px;margin:6px 0"><div class="formInline" style="justify-content:space-between"><div id="actorPicker"></div><span class="hint">Rollensimulation – keine echte Anmeldung oder Zugriffssicherung</span></div></div><div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
 <nav class="tabs" aria-label="Turnierfunktionen" id="tabs"></nav>
 <div id="backNavigation" class="page-back no-print"></div>
 <div id="view"></div>
@@ -732,7 +733,7 @@ function ladderAddPlayer(){requirePerm('participants');assert(state.format==='la
 function ladderPyramid(){const order=ladderOrder();let idx=0,level=1;const tiers=[];while(idx<order.length){tiers.push(order.slice(idx,idx+level));idx+=level;level++}const marked=new Set(ladderOpen().flatMap(c=>[c.from,c.to]));let position=0;return `<div class="ladder-pyramid">${tiers.map(row=>`<div class="ladder-tier">${row.map(p=>{const rank=++position;return `<div class="ladder-person ${rank===1?'leader':''} ${marked.has(p.id)?'challenged':''}"><b>${rank}. ${esc(p.name)}</b><span>${marked.has(p.id)?'Offene Forderung':'Bereit zur Forderung'}</span></div>`}).join('')}</div>`).join('')}</div>`}
 function ladderView(){if(state.format!=='ladder')return `<section class="panel"><h2>Forderungsbaum</h2><p>Wechsle bei einem neuen Turnier im Menü „Turnier anlegen“ auf das Format Forderungsbaum. Deine bestehenden Turniere bleiben dabei erhalten.</p><button class="btn" onclick="switchTab('tournaments')">Meine Turniere</button></section>`;const l=state.ladder,rank=l.ranks.length>0,order=ladderOrder();const open=ladderOpen();return `<div class="print-header"><h1>BOOKANDPLAY · Forderungsbaum</h1><div>${esc(state.name)} · ${esc(state.sport)}</div></div><section class="panel"><div class="ladder-head"><div><h2>Forderungspyramide · ${esc(state.name)}</h2><p class="hint">Laufende Rangliste · ${order.length} Teilnehmer · ${open.length} offene Forderung(en). Das Turnierformat ist unabhängig vom K.-o.-Baum.</p></div><div class="actions no-print"><button class="btn alt" onclick="window.print()">Rangliste drucken / PDF</button><button class="btn alt" onclick="switchTab('permissions')">Protokoll</button></div></div>${rank?ladderPyramid():`<p class="notice">Noch keine Rangliste. Erfasse zunächst Spieler oder Teams und initialisiere anschließend die Rangfolge.</p>`}<div class="ladder-details"><strong>Forderungsregeln:</strong> ${l.ruleMode==='classic'?'Klassische Pyramide: links in derselben Reihe oder rechts oben':'Freie Ranglistenforderung: maximal '+l.maxHigher+' Rangplaetze nach oben'} · Annahme binnen ${l.acceptDays} Tagen · Spiel binnen ${l.playDays} Tagen nach Annahme · pro Spieler höchstens eine offene Forderung. Gewinnt der Herausforderer, rückt er auf den Rang des Geforderten vor und die dazwischenliegenden Spieler rutschen um einen Rang zurück.</div>${allowed('manage')?`<div class="ladder-details no-print"><h3>Forderungsregeln verwalten · Vereinsmanager</h3><div class="ladder-form"><div class="field"><label>Regelmodell</label><select id="ladderRuleMode"><option value="classic" ${l.ruleMode==='classic'?'selected':''}>Klassische Pyramide: links oder rechts oben</option><option value="distance" ${l.ruleMode==='distance'?'selected':''}>Freie Ranglistenforderung</option></select></div><div class="field"><label>Maximaler Rangabstand (nur freie Variante)</label><input id="ladderMaxLive" type="number" min="1" max="30" value="${l.maxHigher}"></div></div><button class="btn alt" onclick="guarded(ladderSaveRules)">Forderungsregeln speichern</button><p class="hint">Aenderungen gelten fuer neue Forderungen; offene Forderungen bleiben erhalten und werden im Protokoll nachvollziehbar dokumentiert.</p></div>`:''}<div class="actions no-print">${!rank?`<button class="btn" onclick="guarded(ladderInit)">Rangliste initialisieren</button>`:''}<button class="btn alt" onclick="guarded(ladderAddPlayer)">+ Teilnehmer hinzufügen</button><button class="btn alt" onclick="switchTab('setup')">Forderungsregeln</button></div></section>${rank?`<section class="panel no-print"><h2>Neue Forderung</h2><p class="hint">In dieser Demo wird die Forderung stellvertretend erfasst. Später muss der angemeldete Spieler selbst als Forderer identifiziert werden.</p><div class="ladder-form"><div class="field"><label>Forderer</label><select id="ladderFrom" onchange="ladderUpdateTarget()">${order.map(p=>`<option value="${esc(p.id)}">${esc(p.name)} (Rang ${l.ranks.indexOf(p.id)+1})</option>`).join('')}</select></div><div class="field"><label>Geforderter Spieler</label><select id="ladderTo">${ladderTargetOptions(order[0]?.id)}</select><p class="hint" id="ladderTargetHint">Nur erlaubte Gegner stehen zur Auswahl.</p></div></div><button class="btn" id="ladderSubmit" ${ladderTargetOptions(order[0]?.id)?'':'disabled'} onclick="guarded(ladderChallenge)">Forderung aussprechen</button></section>`:''}<section class="panel"><h2>Forderungen und Spiele</h2>${l.challenges.length?`<div class="tablewrap"><table><thead><tr><th>Begegnung</th><th>Status / Frist</th><th>Ergebnis</th><th class="no-print">Aktion</th></tr></thead><tbody>${[...l.challenges].reverse().map(c=>`<tr><td><b>${esc(name(c.from))}</b> fordert <b>${esc(name(c.to))}</b><br><small>Erstellt ${ladderDays(c.createdAt)}</small></td><td><span class="pill ${c.status==='finished'?'finished':c.status==='accepted'?'playing':''}">${({requested:'Angefragt',accepted:'Angenommen',declined:'Abgelehnt',expired:'Verfallen',finished:'Beendet'})[c.status]||c.status}</span><br><small>${c.status==='requested'?'Annahme bis '+ladderDays(c.acceptBy):c.status==='accepted'?'Spiel bis '+ladderDays(c.playBy):''}</small></td><td>${esc(c.score||'–')}</td><td class="no-print">${c.status==='requested'?`<div class="actions"><button class="btn small" onclick="guarded(()=>ladderAnswer('${c.id}',true))">Annehmen</button><button class="btn alt small" onclick="guarded(()=>ladderAnswer('${c.id}',false))">Ablehnen</button></div>`:''}${c.status==='accepted'?`<div class="ladder-actions"><label>Sieger</label><select id="ladderWin${c.id}"><option value="${esc(c.from)}">${esc(name(c.from))}</option><option value="${esc(c.to)}">${esc(name(c.to))}</option></select><label>Ergebnis</label><input id="ladderScore${c.id}" maxlength="100" placeholder="z. B. ${state.sport==='Beachvolleyball'?'21:17 21:19':state.sport==='Pickleball'?'11:7 11:9':'6:4 6:3'}"><small>Forderer zuerst, z. B. bei Match-Tie-Break [10:7].</small><button class="btn small" onclick="guarded(()=>ladderComplete('${c.id}'))">Ergebnis bestätigen</button></div>`:''}${['requested','accepted'].includes(c.status)?`<button class="btn alt small" onclick="guarded(()=>ladderExpire('${c.id}'))">Frist prüfen</button>`:''}</td></tr>`).join('')}</tbody></table></div>`:'<p class="empty">Noch keine Forderungen vorhanden.</p>'}</section><section class="panel"><h2>Rangveränderungen & Historie</h2>${l.history.length?`<div class="tablewrap"><table class="ladder-history"><thead><tr><th>Datum</th><th>Benutzer</th><th>Ereignis</th></tr></thead><tbody>${[...l.history].reverse().map(h=>`<tr><td>${esc(new Date(h.at).toLocaleString('de-DE'))}</td><td>${esc(h.actor)}</td><td>${esc(h.text)}</td></tr>`).join('')}</tbody></table></div>`:'<p class="empty">Noch keine Einträge.</p>'}<p class="hint">Zusätzlich werden Änderungen im allgemeinen Vereinsprotokoll mit altem und neuem Datenstand gespeichert.</p></section>`}
 
-const tournamentTabs=[['tournaments','Meine Turniere'],['overview','Übersicht'],['setup','Turnier anlegen'],['participants','Teilnehmer'],['registration','Anmeldung & Warteliste'],['clubPage','Vereinsseite (Spieleransicht)'],['payments','Startgelder'],['draw','Auslosung'],['courts','Courts'],['results','Ergebnisse'],['plan','Turnierplan'],['notifications','Nachrichten'],['ladder','Forderungsbaum'],['closing','Abschluss'],['guide','Anleitung & Hilfe'],['permissions','Rechte & Protokoll']];
+const tournamentTabs=[['tournaments','Meine Turniere'],['overview','Übersicht'],['setup','Turnier anlegen'],['participants','Teilnehmer'],['registration','Anmeldung & Warteliste'],['clubPage','Vereinsseite (Spieleransicht)'],['playerAccount','Mein Turnier (Demo)'],['payments','Startgelder'],['draw','Auslosung'],['courts','Courts'],['results','Ergebnisse'],['plan','Turnierplan'],['notifications','Nachrichten'],['ladder','Forderungsbaum'],['closing','Abschluss'],['guide','Anleitung & Hilfe'],['permissions','Rechte & Protokoll']];
 function tabsHtml(){document.getElementById('tabs').innerHTML=tournamentTabs.map(([id,label])=>`<span class="tab-group"><button class="tab ${tab===id?'active':''}" ${tab===id?'aria-current="page"':''} onclick="switchTab('${id}')">${label}</button>${helpButton('menu:'+id)}</span>`).join('')}
 function openMatchResult(id,fromCourts=false){
  switchTab('results',fromCourts);
@@ -743,7 +744,7 @@ function canOpenTab(id){
  return id!=='permissions'||allowed('audit')||allowed('manage');
 }
 function backLabel(id){
- const names={tournaments:'zu „Meine Turniere“',overview:'zur Übersicht',setup:'zur Turnierkonfiguration',participants:'zu den Teilnehmern',registration:'zur Ausschreibung und Anmeldung',clubPage:'zur Vereinsseite',payments:'zu den Startgeldern',draw:'zur Auslosung',courts:'zu Courts',results:'zu den Ergebnissen',plan:'zum Turnierplan',notifications:'zu den Nachrichten',ladder:'zum Forderungsbaum',closing:'zum Abschluss',guide:'zur Anleitung',permissions:'zu „Rechte & Protokoll“'};
+ const names={tournaments:'zu „Meine Turniere“',overview:'zur Übersicht',setup:'zur Turnierkonfiguration',participants:'zu den Teilnehmern',registration:'zur Ausschreibung und Anmeldung',clubPage:'zur Vereinsseite',playerAccount:'zu „Mein Turnier“',payments:'zu den Startgeldern',draw:'zur Auslosung',courts:'zu Courts',results:'zu den Ergebnissen',plan:'zum Turnierplan',notifications:'zu den Nachrichten',ladder:'zum Forderungsbaum',closing:'zum Abschluss',guide:'zur Anleitung',permissions:'zu „Rechte & Protokoll“'};
  return names[id]?'Zurück '+names[id]:'Zurück';
 }
 function switchTab(id,fromCourts=false){
@@ -783,7 +784,7 @@ function backToCourts(){
 }
 function renderBackNavigation(){
  const target=backTarget()||(tab==='tournaments'?null:'tournaments');
- document.getElementById('backNavigation').innerHTML=target&&tab!=='clubPage'&&!(tab==='results'&&resultsFromCourts)
+ document.getElementById('backNavigation').innerHTML=target&&tab!=='clubPage'&&tab!=='playerAccount'&&!(tab==='results'&&resultsFromCourts)
   ?`<button class="btn alt small" onclick="goBack()">← ${esc(backLabel(target))}</button>`:'';
 }
 function resetNavigation(id){
@@ -791,7 +792,7 @@ function resetNavigation(id){
  resultsFromCourts=false;
  tab=id;
 }
-function render(){document.body.classList.toggle('public-mode',tab==='clubPage');document.getElementById('heading').textContent=tab==='clubPage'?'Vereinsseite · Turniere':state.name||'Turnierkonsole';document.getElementById('subtitle').textContent=tab==='clubPage'?'BOOKANDPLAY-Vereinsportal · Spieleransicht (lokaler Prototyp)':`${state.sport} · ${types[state.format]} · ${state.format==='ladder'?'laufender Wettbewerb':state.courtCount+(Number(state.courtCount)===1?' Court':' Courts')} · ${state.stage==='finished'?'Abgeschlossen':state.format==='ladder'&&state.ladder.ranks.length?'Läuft':state.matches.length?'Turnier läuft':'Vorbereitung'}`;document.getElementById('messages').innerHTML=flash;flash='';document.getElementById('stats').innerHTML=summaryStats().map(([n,t])=>`<div class="stat"><b>${n}</b><span>${t}</span></div>`).join('');tabsHtml();renderBackNavigation();document.getElementById('actorPicker').innerHTML=`<label style="margin:0">Demo-Benutzer <select aria-label="Demo-Benutzer wechseln" onchange="switchActor(this.value)" style="width:auto;max-width:235px;padding:6px">${personnel.users.map(u=>`<option value="${esc(u.id)}" ${u.id===actor().id?'selected':''}>${esc(u.name)} · ${esc(ROLE_NAMES[u.role])}</option>`).join('')}</select></label>`;document.getElementById('view').innerHTML={clubPage:clubPageView,tournaments:tournamentsView,overview:overview,setup:setup,participants:participants,registration:registrationView,payments:paymentsView,draw:drawView,courts:courtsView,results:resultsView,plan:planView,notifications:notificationsView,ladder:ladderView,closing:closingView,guide:guideView,permissions:permissionsView}[tab]();enhanceHelp()}
+function render(){document.body.classList.toggle('public-mode',tab==='clubPage'||tab==='playerAccount');document.body.classList.toggle('player-account-mode',tab==='playerAccount');document.getElementById('heading').textContent=tab==='playerAccount'?'BOOKANDPLAY-Konto · Demo':tab==='clubPage'?'Vereinsseite · Turniere':state.name||'Turnierkonsole';document.getElementById('subtitle').textContent=tab==='playerAccount'?'Persönliche Spieleransicht':tab==='clubPage'?'BOOKANDPLAY-Vereinsportal · Spieleransicht (lokaler Prototyp)':`${state.sport} · ${types[state.format]} · ${state.format==='ladder'?'laufender Wettbewerb':state.courtCount+(Number(state.courtCount)===1?' Court':' Courts')} · ${state.stage==='finished'?'Abgeschlossen':state.format==='ladder'&&state.ladder.ranks.length?'Läuft':state.matches.length?'Turnier läuft':'Vorbereitung'}`;document.getElementById('messages').innerHTML=flash;flash='';document.getElementById('stats').innerHTML=summaryStats().map(([n,t])=>`<div class="stat"><b>${n}</b><span>${t}</span></div>`).join('');tabsHtml();renderBackNavigation();document.getElementById('actorPicker').innerHTML=`<label style="margin:0">Demo-Benutzer <select aria-label="Demo-Benutzer wechseln" onchange="switchActor(this.value)" style="width:auto;max-width:235px;padding:6px">${personnel.users.map(u=>`<option value="${esc(u.id)}" ${u.id===actor().id?'selected':''}>${esc(u.name)} · ${esc(ROLE_NAMES[u.role])}</option>`).join('')}</select></label>`;document.getElementById('view').innerHTML={clubPage:clubPageView,playerAccount:playerAccountView,tournaments:tournamentsView,overview:overview,setup:setup,participants:participants,registration:registrationView,payments:paymentsView,draw:drawView,courts:courtsView,results:resultsView,plan:planView,notifications:notificationsView,ladder:ladderView,closing:closingView,guide:guideView,permissions:permissionsView}[tab]();enhanceHelp()}
 const tournamentStages={draft:'Entwurf',registration:'Anmeldung',running:'Läuft',finished:'Abgeschlossen'};
 function tournamentStage(t){return Object.hasOwn(tournamentStages,t.stage)?t.stage:'draft'}
 function stageText(t){return tournamentStages[tournamentStage(t)]}
@@ -1358,6 +1359,83 @@ function notificationsView(){
  <div class="actions"><button class="btn alt" onclick="switchTab('plan')">Zum Spielplan</button></div></section>`;
 }
 
+let playerAccountSelection={tournamentId:'',entryId:''};
+function selectPlayerTournament(id){
+ playerAccountSelection={tournamentId:id,entryId:''};
+ render();
+}
+function selectPlayerEntry(id){
+ playerAccountSelection.entryId=id;
+ render();
+}
+function playerEntries(tournament){
+ return [
+  ...tournament.players.map(entry=>({entry,status:'Startplatz bestätigt'})),
+  ...tournament.registration.waitlist.map((entry,index)=>({entry,status:'Warteliste · Platz '+(index+1)})),
+  ...tournament.registration.cancelled.map(entry=>({entry,status:'Abgemeldet'}))
+ ];
+}
+function playerAccountView(){
+ const records=collection.tournaments;
+ const record=records.find(r=>r.id===playerAccountSelection.tournamentId)||
+  records.find(r=>r.id===collection.activeId);
+ const t=record.data, entries=playerEntries(t);
+ const selected=entries.find(item=>item.entry.id===playerAccountSelection.entryId);
+ const back=backTarget();
+ return `<section class="panel club-banner"><h2>Mein Turnier</h2>
+ <p class="hint">Demo-Spieleransicht. Wähle ein Turnier und einen Testteilnehmer. Die Daten stammen aus diesem Browser.</p>
+ <div class="grid">
+ <div class="field"><label for="playerTournament">Turnier</label><select id="playerTournament" onchange="selectPlayerTournament(this.value)">${records.map(r=>`<option value="${esc(r.id)}" ${r.id===record.id?'selected':''}>${esc(r.data.name)}</option>`).join('')}</select></div>
+ <div class="field"><label for="playerEntry">Teilnehmer / Team</label><select id="playerEntry" ${entries.length?'':'disabled'} onchange="selectPlayerEntry(this.value)"><option value="">${entries.length?'Bitte auswählen':'Keine Testteilnehmer vorhanden'}</option>${entries.map(({entry,status})=>`<option value="${esc(entry.id)}" ${entry.id===selected?.entry.id?'selected':''}>${esc(entry.name)} · ${esc(status)}</option>`).join('')}</select></div>
+ </div>
+ <div class="actions"><button class="btn alt" onclick="goBack()">← ${esc(backLabel(back||'tournaments'))}</button></div></section>
+ ${selected?playerTournamentDetails(record,selected):''}`;
+}
+function playerTournamentDetails(record,selection){
+ const t=record.data,id=selection.entry.id;
+ const nameOf=playerId=>t.players.find(p=>p.id===playerId)?.name||'Noch offen';
+ const matches=t.matches.filter(m=>m.a===id||m.b===id);
+ const upcoming=matches.filter(m=>m.status==='playing'||m.status==='scheduled');
+ const timeOf=m=>{
+  const start=m.status==='playing'?Date.parse(m.startedAt):t.publishedMatchTimes[m.id]?.start;
+  return Number.isFinite(start)?start:Infinity;
+ };
+ upcoming.sort((a,b)=>Number(b.status==='playing')-Number(a.status==='playing')||
+  timeOf(a)-timeOf(b));
+ const messages=t.notifications.filter(m=>m.playerId===id).slice().reverse();
+ const eliminated=messages.some(m=>m.type==='Ausgeschieden')&&!upcoming.length;
+ const participation=selection.status==='Startplatz bestätigt'&&eliminated?'Ausgeschieden':selection.status;
+ const confirmed=selection.status==='Startplatz bestätigt';
+ const next=confirmed?upcoming[0]:null;
+ const results=matches.filter(finished).sort((a,b)=>(b.finishedAt||'').localeCompare(a.finishedAt||''));
+ const opponent=m=>nameOf(m.a===id?m.b:m.a);
+ const matchTime=m=>{
+  const running=m.status==='playing';
+  const published=t.publishedMatchTimes[m.id];
+  const start=running?Date.parse(m.startedAt):published?.start;
+  const court=running?m.court:published?.court;
+  if(Number.isFinite(start)&&court)return formatMatchTime(start,court);
+  if(running)return court?'Läuft · Platz '+court:'Spiel läuft';
+  return 'Uhrzeit und Court sind noch nicht freigegeben.';
+ };
+ return `<section class="panel"><h2>${esc(t.name)}</h2><p><strong>${esc(selection.entry.name)}</strong> · ${esc(t.sport)} · ${esc(participation)}</p>${publicationCriteria(t.publication)}</section>
+ ${t.format==='ladder'&&confirmed?playerLadderPanel(t,id,nameOf):`<section class="panel"><h2>${next?.status==='playing'?'Aktuelles Spiel':'Nächstes Spiel'}</h2>
+ ${next?`<p><strong>${esc(phaseLabel(next,t.matches))} · gegen ${esc(opponent(next))}</strong></p><p>${esc(matchTime(next))}</p>
+ ${upcoming.length>1?`<h3>Weitere Spiele</h3><ul>${upcoming.slice(1).map(m=>`<li>${esc(phaseLabel(m,t.matches))} · gegen ${esc(opponent(m))} · ${esc(matchTime(m))}</li>`).join('')}</ul>`:''}`:
+ `<p>${!confirmed?'Für diese Anmeldung ist kein Spiel angesetzt.':eliminated?'Für dich ist kein weiteres Spiel vorgesehen.':t.stage==='finished'?'Das Turnier ist abgeschlossen.':'Für dich ist noch kein weiteres Spiel angesetzt.'}</p>`}
+ </section>`}
+ ${results.length?`<section class="panel"><h2>Ergebnisse</h2><div class="tablewrap"><table><thead><tr><th>Runde</th><th>Gegner</th><th>Ergebnis</th><th>Platz</th></tr></thead><tbody>${results.map(m=>`<tr><td>${esc(phaseLabel(m,t.matches))}</td><td>${esc(opponent(m))}</td><td>${esc(m.score||'–')}${m.winner?' · '+(m.winner===id?'Gewonnen':'Verloren'):''}</td><td>${reportCourt(m,record)||'–'}</td></tr>`).join('')}</tbody></table></div><p class="hint">Der Satzstand ist in der Reihenfolge der ursprünglichen Paarung angegeben.</p></section>`:''}
+ <section class="panel"><h2>Meine Nachrichten</h2>
+ ${messages.length?`<ul class="player-inbox">${messages.map(m=>`<li><p><strong>${esc(m.type)}</strong> · <small>${esc(liveDateTime(Date.parse(m.at)))}</small>${m.scheduleStatus?` <span class="pill">${esc(m.scheduleStatus)}</span>`:''}</p><p>${esc(m.text)}</p></li>`).join('')}</ul>`:'<p>Noch keine Nachrichten vorhanden.</p>'}
+ </section>`;
+}
+function playerLadderPanel(t,id,nameOf){
+ const rank=t.ladder.ranks.indexOf(id)+1;
+ const open=t.ladder.challenges.filter(c=>[c.from,c.to].includes(id)&&['requested','accepted'].includes(c.status));
+ return `<section class="panel"><h2>Meine Forderungen</h2><p>${rank?'Aktueller Rang: '+rank:'Die Rangliste ist noch nicht initialisiert.'}</p>
+ ${open.length?`<ul>${open.map(c=>`<li>Gegen ${esc(nameOf(c.from===id?c.to:c.from))} · ${c.status==='accepted'?'Angenommen · Spiel bis '+esc(ladderDays(c.playBy)):'Angefragt · Annahme bis '+esc(ladderDays(c.acceptBy))}</li>`).join('')}</ul>`:'<p>Keine offene Forderung.</p>'}</section>`;
+}
+
 function printCurrent(){window.print()}
 function liveStartMs(){const n=Date.parse(state.eventStart||'');return Number.isFinite(n)?n:null}
 function liveDateTime(ms){return Number.isFinite(ms)?new Date(ms).toLocaleString('de-DE',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'–'}
@@ -1542,6 +1620,7 @@ const menuHelp={
  participants:['Teilnehmer','Hier verwaltest du bestätigte Spieler beziehungsweise Teams, deren optionale DTB-Angaben und den Check-in. Neue Online-Anmeldungen werden über „Anmeldung & Warteliste“ gesteuert.','registrationGuide'],
  registration:['Anmeldung & Warteliste','Hier legst du fest, ob Anmeldungen offen sind und wie viele Startplätze es gibt. Ist das Limit erreicht, landen weitere Anmeldungen auf der Warteliste. Bei einer Absage vor der Auslosung rückt die erste wartende Anmeldung automatisch nach. Im selben Bereich veröffentlichst du das Turnier auf der Vereinsseite.','registrationGuide'],
  clubPage:['Vereinsseite (Spieleransicht)','Diese Ansicht zeigt veröffentlichte Turniere eines Vereins mit Beschreibung, verfügbaren Plätzen, Startgeld und Anmeldung bzw. Warteliste. Es handelt sich um eine lokale Simulation: Andere Geräte sehen die Eingaben nicht.','publicationGuide'],
+ playerAccount:['Mein Turnier (Demo)','Persönliche Übersicht für eine ausgewählte Testanmeldung mit Teilnahmestatus, nächstem Spiel und Nachrichten.','registrationGuide'],
  payments:['Startgelder','Hier prüfst du die Teilnahmegebühr pro Spieler oder Team, offene Beträge, manuelle Zahlungseinträge und Erstattungsnotizen und exportierst eine CSV. Stripe wird noch nicht tatsächlich belastet.','paymentGuide'],
  draw:['Auslosung','Erstellt Begegnungen und je nach Format Gruppen und Finalrunde. Vor der Auslosung alle bestätigten Teilnehmer prüfen. Nach Beginn sind Anmeldungen in dieser Demo gesperrt.','playing'],
  courts:['Courts','Hier weist du Begegnungen Plätzen zu und startest Spiele. Automatische Platzvergabe verhindert, dass dasselbe Team gleichzeitig auf zwei Courts spielt. Keine echten BOOKANDPLAY-Reservierungen.','playing'],
