@@ -24,10 +24,28 @@
  .bracket-match,.podium-item{background:white}
  h2,h3{break-after:avoid}
 }
+
+/* V2.7 - scalable SVG bracket: readable in browser and fit-to-page in print. */
+.plan-switch{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.plan-switch .btn.selected{background:var(--green);color:white;border-color:var(--green)}
+.bracket-panel{border:1px solid var(--border);border-radius:12px;background:#f8fbf9;padding:12px;margin:14px 0}
+.tree-viewport{width:100%;overflow-x:auto;overflow-y:hidden;border-radius:8px;background:white}
+.tree-diagram{display:block;width:100%;height:auto;min-width:min(100%,650px);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tree-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:9px}
+.tree-legend span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#9fafaa;margin-right:6px}
+.tree-legend .running::before{background:#0a865b}.tree-legend .done::before{background:#4666ad}
+.tree-print-note{font-size:12px;color:var(--muted)}
+@media print{
+ .plan-switch,.tree-print-note{display:none!important}
+ .bracket-panel{border:0;padding:0;margin:8px 0;break-inside:avoid}
+ .tree-viewport{overflow:visible;width:100%;break-inside:avoid}
+ .tree-diagram{width:100%!important;min-width:0!important;max-height:170mm}
+ .tree-legend{margin-bottom:7mm}
+}
 </style>
 </head>
 <body>
-<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V2.6 · IMPORT & WIEDERHERSTELLUNG</span></div></header>
+<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V2.7 · GRAFISCHER TURNIERBAUM</span></div></header>
 <main>
 <div class="titlebar"><div><h1 id="heading">Turnierkonsole</h1><p class="sub" id="subtitle">Anmeldung, Auslosung, Courts und Ergebnisse in einer Oberfläche</p></div><div class="buttonrow"><button class="btn small" onclick="switchTab('tournaments')">Meine Turniere</button><button class="btn alt small" onclick="loadExample()">Beispieldaten laden</button><button class="btn alt small" onclick="downloadData()">Daten exportieren</button><button class="btn alt small danger" onclick="resetDemo()">Zurücksetzen</button></div></div>
 <div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
@@ -524,8 +542,104 @@ function planContent(){
  html+=planSection('Spiel um Platz 3',state.matches.filter(m=>m.stage==='bronze'));
  return html;
 }
+// V2.7: graphical knockout tree. Pure read-only rendering from existing match data.
+let tournamentPlanMode='graphic';
+function setPlanMode(mode){
+ if(!['graphic','list'].includes(mode))return;
+ tournamentPlanMode=mode;render();
+}
+function bracketRoundNumber(m){
+ if(m.round==='Finale')return 999;
+ const found=String(m.round||'').match(/^Runde\s+(\d+)$/i);
+ return found?Number(found[1]):1;
+}
+function bracketLabel(level,total){
+ const remaining=total-level;
+ if(remaining===1)return 'Finale';
+ if(remaining===2)return 'Halbfinale';
+ if(remaining===3)return 'Viertelfinale';
+ if(remaining===4)return 'Achtelfinale';
+ return 'Runde '+(level+1);
+}
+function bracketGraphic(){
+ const matches=state.matches.filter(m=>m.stage==='final'||m.stage==='ko');
+ if(!matches.length){
+  return `<div class="empty">${state.format==='groups'?'Die Finalrunde erscheint hier nach Abschluss der Gruppenphase und Erzeugung der Finalspiele.':'Noch keine K.-o.-Auslosung vorhanden.'}</div>`;
+ }
+ // Round labels are historical only; game dependency links are read from actual sources.
+ const roundValues=[...new Set(matches.map(bracketRoundNumber))].sort((a,b)=>a-b);
+ const columns=roundValues.map(v=>matches.filter(m=>bracketRoundNumber(m)===v));
+ const maxCount=Math.max(...columns.map(c=>c.length));
+ const cardW=218,cardH=80,xGap=73,top=63,slot=115;
+ const viewW=columns.length*(cardW+xGap)-xGap+32;
+ const viewH=top+Math.max(1,maxCount)*slot+34;
+ const positions=new Map();
+ columns.forEach((column,round)=>{
+  column.forEach((m,index)=>{
+   const y=top+((index+.5)*maxCount/column.length)*slot;
+   positions.set(m.id,{x:15+round*(cardW+xGap),y});
+  });
+ });
+ // Center downstream rounds between source matches, if the source structure provides it.
+ for(let r=1;r<columns.length;r++){
+  for(const m of columns[r]){
+   const parents=(m.sources||[]).map(id=>positions.get(id)).filter(Boolean);
+   if(parents.length===2)positions.get(m.id).y=(parents[0].y+parents[1].y)/2;
+  }
+ }
+ let paths='';
+ for(const m of matches){
+  const target=positions.get(m.id);
+  for(const id of m.sources||[]){
+   const source=positions.get(id);
+   if(!source||!target)continue;
+   const fromX=source.x+cardW, toX=target.x, mid=(fromX+toX)/2;
+   paths+=`<path d="M${fromX} ${source.y} H${mid} V${target.y} H${toX}" fill="none" stroke="#8aa89d" stroke-width="2" stroke-linecap="round"/>`;
+  }
+ }
+ const cards=matches.map(m=>{
+  const {x,y}=positions.get(m.id);
+  const status=m.status==='finished'?'Beendet':m.status==='playing'?'Läuft':'Geplant';
+  const stroke=m.status==='finished'?'#4666ad':m.status==='playing'?'#0a865b':'#d2ded9';
+  const fill=m.status==='finished'?'#f2f6ff':m.status==='playing'?'#ecf9f1':'#ffffff';
+  const display=(id)=>{
+   const t=name(id);return t.length>25?t.slice(0,22)+'…':t;
+  };
+  const aText=esc(display(m.a)),bText=esc(display(m.b));
+  const fullTitle=esc(`${name(m.a)} gegen ${name(m.b)}${m.score?' · '+m.score:''}`);
+  const awin=m.status==='finished'&&m.winner===m.a,bwin=m.status==='finished'&&m.winner===m.b;
+  return `<g transform="translate(${x},${y-cardH/2})">
+   <title>${fullTitle}</title>
+   <rect width="${cardW}" height="${cardH}" rx="9" fill="${fill}" stroke="${stroke}" stroke-width="1.6"/>
+   <text x="10" y="15" fill="#587169" font-size="10" font-weight="650">${esc(status)}${m.court?' · Platz '+m.court:''}</text>
+   <line x1="0" y1="44" x2="${cardW}" y2="44" stroke="#e0e9e5"/>
+   <text x="10" y="35" fill="${awin?'#00633e':'#18332b'}" font-weight="${awin?'800':'550'}" font-size="12">${aText}${awin?' ✓':''}</text>
+   <text x="10" y="61" fill="${bwin?'#00633e':'#18332b'}" font-weight="${bwin?'800':'550'}" font-size="12">${bText}${bwin?' ✓':''}</text>
+   <text x="${cardW-9}" y="75" text-anchor="end" font-size="9.5" fill="#587169">${esc(m.score||'')}</text>
+  </g>`;
+ }).join('');
+ const headers=columns.map((c,i)=>`<text x="${15+i*(cardW+xGap)}" y="27" font-size="16" font-weight="800" fill="#17553e">${esc(bracketLabel(i,columns.length))}</text><text x="${15+i*(cardW+xGap)}" y="43" font-size="10.5" fill="#5c7469">${c.length} Begegnung${c.length===1?'':'en'}</text>`).join('');
+ const graphic=`<svg class="tree-diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${viewW} ${viewH}" role="img" aria-label="Grafischer Turnierbaum für ${esc(state.name)} mit ${matches.length} Begegnungen"><rect width="${viewW}" height="${viewH}" fill="#ffffff"/>${headers}${paths}${cards}</svg>`;
+ return `<div class="bracket-panel"><div class="tree-viewport">${graphic}</div><div class="tree-legend"><span>Geplant</span><span class="running">Läuft</span><span class="done">Beendet</span></div><p class="tree-print-note">Die Sieger sind farbig hervorgehoben und rücken nach Ergebnisbestätigung automatisch weiter. Auf schmalen Bildschirmen kann der Baum seitlich verschoben werden.</p></div>`;
+}
+function planGraphicContent(){
+ const groupGames=state.matches.filter(m=>m.stage==='group');
+ const groupIntro=state.format==='groups'&&groupGames.length?`<p class="hint">Gruppenphase: ${groupGames.filter(finished).length} von ${groupGames.length} Begegnungen beendet. Die Gruppenspiele und Tabellen sind weiterhin in der Listenansicht bzw. unter „Auslosung“ zu sehen.</p>`:'';
+ if(state.format==='round')return `<p class="notice">Bei „Jeder gegen jeden“ gibt es keinen K.-o.-Baum. Die vollständige Spielübersicht findest du in der Listenansicht.</p>`;
+ const bronze=state.matches.filter(m=>m.stage==='bronze');
+ return `${groupIntro}${bracketGraphic()}${bronze.length?planSection('Spiel um Platz 3',bronze):''}`;
+}
+function printPlanMode(mode){tournamentPlanMode=mode;render();window.print()}
+
 function printCurrent(){window.print()}
-function planView(){return `<div class="print-header"><h1>BOOKANDPLAY · Turnierplan</h1><div>${esc(state.name)} · ${esc(state.sport)} · ${esc(types[state.format])}</div></div><section class="panel"><div class="no-print report-action"><button class="btn" onclick="printCurrent()">Turnierplan drucken / PDF</button><button class="btn alt" onclick="switchTab('closing')">Zum Turnierabschluss</button></div><h2>Turnierplan – ${esc(state.name)}</h2><p class="hint">Regelprofil: ${state.ruleProfile==='dtb'?'DTB 2026 – Testprofil':'Vereinsregeln'}. Die Uhrzeiten und Ruhezeiten sind ausschließlich Demo-Daten.</p><p class="hint">${state.matches.length} Begegnungen · ${state.matches.filter(finished).length} beendet · ${state.matches.filter(m=>m.status==='playing').length} laufen. Beim Drucken kannst du auf dem Mac „Als PDF sichern“ wählen.</p>${planContent()}</section>`}
+function planView(){
+ const graphic=tournamentPlanMode==='graphic';
+ return `<div class="print-header"><h1>BOOKANDPLAY · Turnierplan</h1><div>${esc(state.name)} · ${esc(state.sport)} · ${esc(types[state.format])}</div></div>
+ <section class="panel"><div class="no-print report-action"><button class="btn" onclick="printCurrent()">${graphic?'Turnierbaum':'Turnierliste'} drucken / PDF</button><button class="btn alt" onclick="switchTab('closing')">Zum Turnierabschluss</button></div>
+ <h2>Turnierplan – ${esc(state.name)}</h2><p class="hint">${state.matches.length} Begegnungen · ${state.matches.filter(finished).length} beendet · ${state.matches.filter(m=>m.status==='playing').length} laufen.</p>
+ <div class="plan-switch no-print"><button class="btn ${graphic?'selected':'alt'}" onclick="setPlanMode('graphic')" aria-pressed="${graphic}">Grafischer Turnierbaum</button><button class="btn ${graphic?'alt':'selected'}" onclick="setPlanMode('list')" aria-pressed="${!graphic}">Listenansicht</button></div>
+ ${graphic?planGraphicContent():planContent()}</section>`;
+}
 function mainFinal(){
  const finals=state.matches.filter(m=>m.stage==='final'||m.stage==='ko');
  return finals.find(m=>m.round==='Finale')||null;
