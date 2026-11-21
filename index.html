@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BOOKANDPLAY | Turnierverwaltung Demo V3.6.12</title>
+<title>BOOKANDPLAY | Turnierverwaltung Demo V3.6.13</title>
 <style>
 :root{--green:#08754e;--dark:#122b2a;--bg:#f3f7f6;--muted:#60736f;--border:#dce7e3;--white:#fff;--accent:#dcf3e8;--orange:#ad6817}
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--dark)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}.header{max-width:1300px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:15px 22px}.brand{font-size:23px;letter-spacing:-.8px;font-weight:850;color:var(--green)}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1.5px;font-weight:700}.demo{background:var(--accent);padding:5px 10px;border-radius:30px;color:var(--green);font-size:12px;font-weight:800}main{max-width:1300px;margin:24px auto;padding:0 22px 50px}.titlebar{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:20px}.titlebar h1{font-size:clamp(25px,3vw,38px);margin:0}.sub{margin:5px 0;color:var(--muted)}.btn{border:none;border-radius:10px;background:var(--green);color:white;padding:10px 15px;font-weight:720}.btn.alt{background:white;color:var(--dark);border:1px solid var(--border)}.btn.danger{color:#9a2727;border-color:#f0caca}.btn.small{font-size:13px;padding:7px 10px}.buttonrow{display:flex;gap:9px;flex-wrap:wrap}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.stat,.panel{border:1px solid var(--border);border-radius:14px;background:white}.stat{padding:15px}.stat b{display:block;font-size:27px}.stat span{color:var(--muted);font-size:13px}.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--border);margin:20px 0}.tab{padding:12px 15px;border:0;background:none;color:var(--muted);font-weight:700;border-bottom:3px solid transparent}.tab.active{color:var(--green);border-color:var(--green)}.panel{padding:20px;margin:15px 0}.panel h2{font-size:19px;margin:0 0 12px}.panel h3{font-size:16px;margin:14px 0 8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}label{display:block;font-size:13px;font-weight:700;margin:0 0 5px}input,select{background:white;border:1px solid #c9d9d4;border-radius:9px;padding:10px;width:100%;color:var(--dark)}input[type=checkbox]{width:auto;accent-color:var(--green)}.field{margin-bottom:14px}.hint{font-size:13px;color:var(--muted);line-height:1.55}.notice{background:#eff8f3;border:1px solid #b9dfcb;color:#175b3d;border-radius:10px;padding:11px;margin:10px 0}.warn{background:#fff7ec;border:1px solid #f1d2a6;color:#874e16;border-radius:10px;padding:11px;margin:10px 0}.error{background:#fff1f1;border-color:#f1bebe;color:#a42525}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:11px 9px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle}th{color:var(--muted);font-size:12px;letter-spacing:.3px}td:last-child,th:last-child{text-align:right}.pill{display:inline-block;border-radius:25px;background:#eef3f0;color:#50655e;font-size:12px;padding:4px 8px;font-weight:700}.pill.playing{background:#dff2e6;color:#07613c}.pill.finished{background:#e1eafe;color:#2d559e}.court{padding:17px;border:1px solid var(--border);border-radius:12px;background:#fff}.court h3{margin:0 0 8px}.court p{min-height:45px;margin:9px 0;color:var(--muted);font-size:14px}.fixture{border:1px solid var(--border);border-radius:11px;padding:13px;margin:9px 0;display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:10px;align-items:center}.fixture .matchlabel{font-size:12px;color:var(--muted)}.fixture .teams{font-weight:730}.fixture .details{font-size:12px;color:var(--muted);margin-top:4px}.formInline{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.score{width:90px!important;padding:8px!important}.empty{padding:34px 10px;text-align:center;color:var(--muted)}.footer{color:var(--muted);font-size:12px;margin-top:30px;line-height:1.6}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.statusline{font-size:13px;color:var(--muted)}.kbd{font-family:ui-monospace,monospace;background:#f0f4f2;padding:2px 6px;border-radius:4px}.sep{height:1px;background:var(--border);margin:18px 0}@media(max-width:800px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.fixture{grid-template-columns:1fr}.header{padding:12px 14px}main{padding:0 13px}.panel{padding:15px}}@media(max-width:520px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.brand{font-size:19px}.titlebar h1{font-size:26px}.stat{padding:10px}.stat b{font-size:22px}}
@@ -71,7 +71,11 @@
 .menu-sub{border-top:1px solid var(--border);background:#fff;padding:3px 8px}
 .menu-sub[hidden]{display:none}
 .menu-sub .tab{padding:9px 10px;font-size:.93rem}
-.menu-sub .help-i{margin:0 4px 0 -4px}
+.menu-item{display:inline-flex;align-items:center;flex-wrap:nowrap}
+.menu-item .help-i{margin:0 5px 0 0;padding:0}
+.result-saved{display:flex;align-items:center;justify-content:space-between;gap:10px 16px;flex-wrap:wrap}
+.result-saved p{margin:4px 0 0}
+#messages:has(#resultSavedCourts) ~ #view .results-courts-actions{display:none}
 .help-box p{line-height:1.65;white-space:pre-line}
 .help-box .help-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
 .guide-section{scroll-margin-top:90px}
@@ -87,7 +91,7 @@
 </style>
 </head>
 <body>
-<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V3.6.12 · TURNIERVERWALTUNG</span></div></header>
+<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V3.6.13 · TURNIERVERWALTUNG</span></div></header>
 <main>
 <div class="titlebar"><div><h1 id="heading" tabindex="-1">Turnierkonsole</h1><p class="sub" id="subtitle">Anmeldung, Auslosung, Courts und Ergebnisse in einer Oberfläche</p></div><div class="buttonrow"><button class="btn small" onclick="switchTab('tournaments')">Meine Turniere</button><button class="btn alt small" onclick="loadExample()">Beispieldaten laden</button><button class="btn alt small" onclick="downloadData()">Daten exportieren</button><button class="btn alt small danger" onclick="resetDemo()">Zurücksetzen</button></div></div>
 <div id="actorPickerPanel" class="panel no-print" style="padding:10px 15px;margin:6px 0"><div class="formInline" style="justify-content:space-between"><div id="actorPicker"></div><span class="hint">Rollensimulation – keine echte Anmeldung oder Zugriffssicherung</span></div></div><div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
@@ -249,13 +253,14 @@ const sports=['Tennis','Padel','Pickleball','Beachvolleyball'];
 const sportDescriptions={Tennis:'2 oder 3 Gewinnsätze, voller Entscheidungssatz oder Match-Tie-Break',Padel:'2 Gewinnsätze, voller Entscheidungssatz oder Match-Tie-Break',Pickleball:'2 gewonnene Games bis 11, mindestens 2 Punkte Vorsprung',Beachvolleyball:'2 Gewinnsätze; Sätze 1/2 bis 21, Entscheidungssatz bis 15, jeweils 2 Punkte Vorsprung'};
 function setSport(value){assert(!state.matches.length,'Sportart nach Auslosung gesperrt.');state.sport=value;if(value!=='Tennis')state.ruleProfile='club';if(value==='Padel')state.tennisSetsToWin=2;save()}
 
-function save(){
+function save(successFlash=''){
  const record=collection.tournaments.find(x=>x.id===collection.activeId);
  assert(record,'Aktives Turnier nicht gefunden.');
  record.data=state;
  saveWithAuditCheck(record);
  try{localStorage.setItem(COLLECTION_KEY,JSON.stringify(collection));snapshots.set(record.id,JSON.stringify(state))}
  catch(e){notify('Speicherplatz im Browser ist voll oder blockiert. Bitte Daten exportieren.',true);return}
+ if(successFlash)flash=successFlash;
  render();
  return true;
 }
@@ -528,7 +533,22 @@ function finishMatch(id,score){
  if(state.playBronze&&canBronze())scheduleBronze();
  if(state.autoAssign)assignNextAvailable(false);
  if(complete()&&state.format!=='groups')state.stage='finished';if(state.format==='groups'&&hasFinal()&&complete())state.stage='finished';
- if(save())scoreDrafts.delete(collection.activeId+':'+id);
+ const confirmation=tab==='results'?resultSavedNotice(m):'';
+ if(save(confirmation)){
+  scoreDrafts.delete(collection.activeId+':'+id);
+  if(confirmation){
+   window.scrollTo(0,0);
+   document.getElementById('resultSavedCourts')?.focus();
+  }
+ }
+}
+function resultSavedNotice(match){
+ const lastRunning=!state.matches.some(m=>m.status==='playing');
+ const canStart=lastRunning&&availableMatches().length>0;
+ return `<div class="notice result-saved"><div><strong>Ergebnis gespeichert</strong>
+ <p>${esc(name(match.a))} – ${esc(name(match.b))} · ${esc(match.score)}</p>
+ ${canStart?'<p>Die nächsten Begegnungen können aufgerufen werden.</p>':''}</div>
+ ${lastRunning?`<button id="resultSavedCourts" class="btn small no-print" onclick="backToCourts()">← Zurück zu Courts</button>`:''}</div>`;
 }
 
 function addPlayer(){requirePerm('participants');const el=document.getElementById('newPlayer'),value=el.value.trim();registerParticipant(value,false)}
@@ -864,13 +884,13 @@ function tabsHtml(){
  const activeGroup=menuForTab(tab);
  const group=tournamentMenu.find(item=>item.id===expandedMenu);
  const visibleItems=group?.items.filter(([id])=>canOpenTab(id))||[];
- const link=(id,label)=>`<button class="tab ${tab===id?'active':''}" ${tab===id?'aria-current="page"':''} onclick="navigateFromMenu('${id}')">${label}</button>`;
+ const link=(id,label)=>`<span class="menu-item"><button class="tab ${tab===id?'active':''}" ${tab===id?'aria-current="page"':''} onclick="navigateFromMenu('${id}')">${esc(label)}</button>${helpButton('menu:'+id,label)}</span>`;
  document.getElementById('tabs').innerHTML=`
   <div class="menu-main">${link('tournaments','Meine Turniere')}
   ${tournamentMenu.map(({id,label})=>`<button id="menu-${id}" class="tab ${activeGroup===id?'active':''}" aria-expanded="${expandedMenu===id}" aria-controls="menuItems" onclick="toggleTournamentMenu('${id}')">${label} <span aria-hidden="true">${expandedMenu===id?'▴':'▾'}</span></button>`).join('')}
   </div>
   <div id="menuItems" class="menu-sub" ${group?'':'hidden'}>
-   ${visibleItems.map(([id,label])=>link(id,label)+(tab===id?helpButton('menu:'+id):'')).join('')}
+   ${visibleItems.map(([id,label])=>link(id,label)).join('')}
   </div>`;
 }
 function openMatchResult(id,fromCourts=false){
@@ -937,6 +957,7 @@ function resetNavigation(id){
  navigationHistory.length=0;
  resultsFromCourts=false;
  tab=id;
+ expandedMenu=menuForTab(tab);
 }
 function render(){
  document.body.classList.toggle('public-live-mode',tab==='publicLive');
@@ -1218,7 +1239,7 @@ function finishMultiSetScore(id){
 }
 function resultsView(){
  const running=state.matches.filter(m=>m.status==='playing');
- return `<section class="panel"><h2>Ergebnisse erfassen · ${esc(state.sport)}</h2>${resultsFromCourts||!running.length?`<div class="actions no-print"><button class="btn alt" onclick="${resultsFromCourts?'backToCourts()':"switchTab('courts')"}">${resultsFromCourts?'← Zurück zu Courts':'Courts öffnen'}</button></div>`:''}<p class="hint">${esc(sportDescriptions[state.sport]||'Vereinfachte Demo-Zählweise')}. Eingaben werden vor der Ergebnisspeicherung geprüft.</p>${running.map(m=>multiSetFields(m)).join('')||'<div class="empty">Keine laufenden Spiele. Bitte zuerst unter „Courts“ eine Begegnung starten.</div>'}</section>${state.format==='groups'&&state.matches.length?groupTables():''}<section class="panel"><h2>Abgeschlossene Begegnungen</h2>${matchList(state.matches.filter(finished))}</section>${complete()?'<div class="notice">Alle Begegnungen abgeschlossen. Turnierplan und Abschlussbericht können gedruckt werden.</div>':''}`;
+ return `<section class="panel"><h2>Ergebnisse erfassen · ${esc(state.sport)}</h2>${resultsFromCourts||!running.length?`<div class="actions no-print results-courts-actions"><button class="btn alt" onclick="${resultsFromCourts?'backToCourts()':"switchTab('courts')"}">${resultsFromCourts?'← Zurück zu Courts':'Courts öffnen'}</button></div>`:''}<p class="hint">${esc(sportDescriptions[state.sport]||'Vereinfachte Demo-Zählweise')}. Eingaben werden vor der Ergebnisspeicherung geprüft.</p>${running.map(m=>multiSetFields(m)).join('')||'<div class="empty">Keine laufenden Spiele. Bitte zuerst unter „Courts“ eine Begegnung starten.</div>'}</section>${state.format==='groups'&&state.matches.length?groupTables():''}<section class="panel"><h2>Abgeschlossene Begegnungen</h2>${matchList(state.matches.filter(finished))}</section>${complete()?'<div class="notice">Alle Begegnungen abgeschlossen. Turnierplan und Abschlussbericht können gedruckt werden.</div>':''}`;
 }
 
 // V2.4: display-only reporting. Uses the exact locally saved tournament, never demo fixture data.
@@ -1887,7 +1908,7 @@ const guideSections=[
  ['Turnierplan und Bericht drucken','Im „Turnierplan“ den grafischen Baum oder Live-Plan auswählen und über „Drucken / PDF“ ausgeben.','plan'],
  ['Datensicherung exportieren','In „Meine Turniere“ „Alle Turniere sichern“ wählen. Der Browser speichert Daten lokal und synchronisiert sie nicht zwischen Geräten.','tournaments']]}
 ];
-function helpButton(key){return `<button type="button" class="help-i no-print" data-help="${esc(key)}" aria-label="Information zu ${esc(key)}" title="Erklärung anzeigen">i</button>`}
+function helpButton(key,label=key){return `<button type="button" class="help-i no-print" data-help="${esc(key)}" aria-label="Information zu ${esc(label)}" title="Erklärung anzeigen">i</button>`}
 function enhanceHelp(){
  const root=document.getElementById('view');if(!root)return;
  root.querySelectorAll('label').forEach(label=>{
@@ -1925,7 +1946,7 @@ function helpClose(restoreFocus=true){
 }
 document.addEventListener('click',e=>{const btn=e.target.closest('[data-help]');if(btn){e.preventDefault();helpOpen(btn.dataset.help,btn)}else if(e.target.id==='helpDialog')helpClose()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')helpClose()});
-function guideView(){return `<section class="panel"><h2>Anleitung: Von der Vereinsseite bis zum Turnierabschluss</h2><p>Diese Anleitung erklärt den gesamten Ablauf in BOOKANDPLAY. Über „Zum Bereich“ gelangst du direkt zur jeweiligen Funktion. Die <b>i</b>-Buttons neben dem gewählten Unterpunkt und an vielen Eingabefeldern öffnen eine passende Erklärung.</p><p class="notice">Hinweis: Dies ist ein lokaler Demonstrationsprototyp. Offizielle Verbandsgenehmigungen, echte Platzreservierungen und eine echte geräteübergreifende Online-Anmeldung sind noch nicht angebunden.</p><div class="actions guide-actions">${guideSections.map(sec=>`<button class="btn alt small" onclick="document.getElementById('${sec.id}').scrollIntoView({behavior:'smooth'})">${sec.name}</button>`).join('')}</div></section>${guideSections.map(sec=>`<section class="guide-section" id="${sec.id}"><h2>${sec.name}</h2><p class="hint">${sec.summary}</p><ol class="help-steps">${sec.items.map(([title,desc,target])=>`<li><b>${title}</b><p class="hint">${desc}</p><button class="btn alt small guide-actions" onclick="switchTab('${target}');window.scrollTo({top:0,behavior:'smooth'})">Zum Bereich</button></li>`).join('')}</ol></section>`).join('')}<section class="panel"><h2>Wichtige Hinweise</h2><p class="hint"><b>Datensicherung:</b> Regelmäßig „Alle Turniere sichern“ verwenden. <b>Ruhepausen:</b> Das DTB-Profil ist eine vereinfachte Testumsetzung, keine offizielle Freigabe. <b>Turnierplan:</b> Vorgeschlagene Zeitfenster sind Prognosen und keine echten Platzbuchungen. <b>Forderungsbaum:</b> Lege ein neues Turnier im Format Forderungsbaum an, erfasse Teilnehmer, initialisiere die Rangliste und bearbeite Forderungen im eigenen Menü. Nach bestätigtem Ergebnis rückt der erfolgreiche Forderer auf den Platz des Geforderten. Standard ist die klassische Pyramide: in derselben Reihe links, eine Reihe darüber rechts. Der Vereinsmanager kann alternativ eine freie Ranglistenforderung aktivieren. <b>PDF:</b> Im Druckdialog des Browsers „Als PDF sichern“ wählen.</p></section>`}
+function guideView(){return `<section class="panel"><h2>Anleitung: Von der Vereinsseite bis zum Turnierabschluss</h2><p>Diese Anleitung erklärt den gesamten Ablauf in BOOKANDPLAY. Über „Zum Bereich“ gelangst du direkt zur jeweiligen Funktion. Die <b>i</b>-Buttons neben den Unterpunkten im geöffneten Menü und an vielen Eingabefeldern öffnen eine passende Erklärung.</p><p class="notice">Hinweis: Dies ist ein lokaler Demonstrationsprototyp. Offizielle Verbandsgenehmigungen, echte Platzreservierungen und eine echte geräteübergreifende Online-Anmeldung sind noch nicht angebunden.</p><div class="actions guide-actions">${guideSections.map(sec=>`<button class="btn alt small" onclick="document.getElementById('${sec.id}').scrollIntoView({behavior:'smooth'})">${sec.name}</button>`).join('')}</div></section>${guideSections.map(sec=>`<section class="guide-section" id="${sec.id}"><h2>${sec.name}</h2><p class="hint">${sec.summary}</p><ol class="help-steps">${sec.items.map(([title,desc,target])=>`<li><b>${title}</b><p class="hint">${desc}</p><button class="btn alt small guide-actions" onclick="switchTab('${target}');window.scrollTo({top:0,behavior:'smooth'})">Zum Bereich</button></li>`).join('')}</ol></section>`).join('')}<section class="panel"><h2>Wichtige Hinweise</h2><p class="hint"><b>Datensicherung:</b> Regelmäßig „Alle Turniere sichern“ verwenden. <b>Ruhepausen:</b> Das DTB-Profil ist eine vereinfachte Testumsetzung, keine offizielle Freigabe. <b>Turnierplan:</b> Vorgeschlagene Zeitfenster sind Prognosen und keine echten Platzbuchungen. <b>Forderungsbaum:</b> Lege ein neues Turnier im Format Forderungsbaum an, erfasse Teilnehmer, initialisiere die Rangliste und bearbeite Forderungen im eigenen Menü. Nach bestätigtem Ergebnis rückt der erfolgreiche Forderer auf den Platz des Geforderten. Standard ist die klassische Pyramide: in derselben Reihe links, eine Reihe darüber rechts. Der Vereinsmanager kann alternativ eine freie Ranglistenforderung aktivieren. <b>PDF:</b> Im Druckdialog des Browsers „Als PDF sichern“ wählen.</p></section>`}
 
 
 function permissionsView(){
