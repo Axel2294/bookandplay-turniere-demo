@@ -42,26 +42,55 @@
  .tree-diagram{width:100%!important;min-width:0!important;max-height:170mm}
  .tree-legend{margin-bottom:7mm}
 }
+
+/* V2.8 live schedule from tournament opening to final */
+.live-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:13px 0}.live-controls .field{min-width:190px;margin:0}.live-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0}.live-summary div{background:#f3f8f5;border-radius:9px;padding:11px}.live-summary b{display:block;font-size:20px}.live-summary span{font-size:12px;color:var(--muted)}.timeline{overflow:auto;border:1px solid var(--border);border-radius:11px}.timeline table{min-width:740px}.timeline tr.live-playing{background:#eff9f2}.timeline tr.live-finished{background:#f6f8fc}.timeline td small{display:block;color:#647871;font-size:11px;margin-top:3px}.live-pending{background:#fff7e9;border-radius:8px;padding:10px;margin:12px 0}.live-clock{font-variant-numeric:tabular-nums;white-space:nowrap}.live-legend{font-size:12px;color:var(--muted)}
+@media(max-width:560px){.live-summary{grid-template-columns:1fr 1fr}}
+@media print{.live-controls,.live-refresh{display:none!important}.timeline{overflow:visible;border:0}.timeline table{min-width:0;font-size:9pt}.live-summary{grid-template-columns:repeat(3,1fr)}}
+
+/* V2.9: contextual help and tutorial */
+.help-i{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border:1px solid #91baaa;border-radius:50%;margin-left:7px;background:#e9f7f0;color:#075e40;font-weight:800;font-size:12px;vertical-align:middle;cursor:pointer;flex:none}
+.help-i:hover,.help-i:focus-visible{background:#d0eddf;outline:2px solid #08754e;outline-offset:2px}
+.help-dialog{position:fixed;inset:0;z-index:100;background:rgba(13,35,29,.55);display:flex;align-items:center;justify-content:center;padding:15px}
+.help-dialog[hidden]{display:none}.help-box{background:#fff;border-radius:16px;padding:24px;max-width:590px;max-height:85vh;overflow:auto;width:100%;box-shadow:0 14px 45px #0b291d50}.help-box h2{margin:0 0 10px;font-size:22px}.help-box p{line-height:1.65}.help-box .actions{justify-content:end}
+.help-steps{counter-reset:step;list-style:none;margin:16px 0;padding:0}.help-steps li{counter-increment:step;padding:13px 12px 13px 48px;margin:9px 0;border:1px solid var(--border);border-radius:10px;position:relative;line-height:1.5}.help-steps li::before{content:counter(step);position:absolute;left:12px;top:12px;width:25px;height:25px;border-radius:50%;background:#08754e;color:#fff;text-align:center;font-size:13px;font-weight:700;line-height:25px}
+.guide-section{margin:12px 0;padding:16px;border:1px solid var(--border);border-radius:12px;background:#fff}.guide-section h3{margin-top:0}.guide-note{font-size:13px;color:#60736f}
+@media print{.help-i,#helpDialog,.guide-actions{display:none!important}}
 </style>
 </head>
 <body>
-<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V2.7 · GRAFISCHER TURNIERBAUM</span></div></header>
+<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V3.0 · RECHTE & PROTOKOLL</span></div></header>
 <main>
 <div class="titlebar"><div><h1 id="heading">Turnierkonsole</h1><p class="sub" id="subtitle">Anmeldung, Auslosung, Courts und Ergebnisse in einer Oberfläche</p></div><div class="buttonrow"><button class="btn small" onclick="switchTab('tournaments')">Meine Turniere</button><button class="btn alt small" onclick="loadExample()">Beispieldaten laden</button><button class="btn alt small" onclick="downloadData()">Daten exportieren</button><button class="btn alt small danger" onclick="resetDemo()">Zurücksetzen</button></div></div>
-<div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
+<div class="panel no-print" style="padding:10px 15px;margin:6px 0"><div class="formInline" style="justify-content:space-between"><div id="actorPicker"></div><span class="hint">Rollensimulation – keine echte Anmeldung oder Zugriffssicherung</span></div></div><div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
 <nav class="tabs" aria-label="Turnierfunktionen" id="tabs"></nav>
 <div id="view"></div>
-<p class="footer">BOOKANDPLAY Demo: Jedes Turnier wird separat in diesem Browser mittels localStorage gespeichert. Vor dem Update und regelmäßig über „Daten exportieren“ sichern. Kein Server, keine echten Zahlungsvorgänge und keine Verbindung zur produktiven BOOKANDPLAY-Platzverwaltung. Bitte ausschließlich Testdaten verwenden. Tennis, Padel, Pickleball und Beachvolleyball haben eigene Demo-Zählweisen; die vollständige Einhaltung offizieller Verbandsregeln wird nicht zugesichert. Im DTB-Testprofil werden Ruhepausen nach § 40 anhand der gespeicherten Spielzeiten geprüft; echte BOOKANDPLAY-Buchungen und vollständige Verbandsvorgaben werden noch nicht geprüft.</p>
-</main>
+<p class="footer">Berechtigungen und Änderungsprotokolle sind ausschließlich eine DEMO ohne Identitätsprüfung oder serverseitige Unveränderbarkeit. BOOKANDPLAY Demo: Jedes Turnier wird separat in diesem Browser mittels localStorage gespeichert. Vor dem Update und regelmäßig über „Daten exportieren“ sichern. Kein Server, keine echten Zahlungsvorgänge und keine Verbindung zur produktiven BOOKANDPLAY-Platzverwaltung. Bitte ausschließlich Testdaten verwenden. Tennis, Padel, Pickleball und Beachvolleyball haben eigene Demo-Zählweisen; die vollständige Einhaltung offizieller Verbandsregeln wird nicht zugesichert. Im DTB-Testprofil werden Ruhepausen nach § 40 anhand der gespeicherten Spielzeiten geprüft; echte BOOKANDPLAY-Buchungen und vollständige Verbandsvorgaben werden noch nicht geprüft.</p>
+</main><div id="helpDialog" class="help-dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle" hidden><div class="help-box"><h2 id="helpTitle">Hilfe</h2><p id="helpBody"></p><div class="actions"><button class="btn help-close" onclick="helpClose()">Schließen</button></div></div></div>
 <script>
 'use strict';
 const KEY='bap-tournament-demo-v1';
 const types={round:'Jeder gegen jeden',ko:'K.-o.-System',groups:'Gruppen + K.-o.'};
 const labels={scheduled:'Geplant',playing:'Läuft',finished:'Beendet'};
 const exampleNames=['Müller / Schmidt','Weber / Fischer','Becker / Kruse','Lange / Roth','Meier / Schulz','Braun / Wolf','Hansen / Koch','Peters / Neumann'];
-const empty=()=>({name:'Sommer-Doppelcup 2027',sport:'Tennis',format:'groups',courtCount:4,groupSize:4,qualify:2,players:[],matches:[],stage:'draft',drawVersion:0,autoAssign:false,scoreMode:'tennis',tennisSetsToWin:2,tennisDecider:'matchtb',ruleProfile:'club',demoOffsetMin:0,officialTournament:false,associationRef:''});
+const empty=()=>({name:'Sommer-Doppelcup 2027',sport:'Tennis',format:'groups',courtCount:4,groupSize:4,qualify:2,players:[],matches:[],stage:'draft',drawVersion:0,autoAssign:false,scoreMode:'tennis',tennisSetsToWin:2,tennisDecider:'matchtb',ruleProfile:'club',demoOffsetMin:0,officialTournament:false,associationRef:'',eventStart:'',estimatedMatchMinutes:60,turnoverMinutes:10});
 // V2.5: independent tournaments; import the previous single-tournament data once.
 const COLLECTION_KEY='bap-tournament-demo-v25-collection';
+const PERSONNEL_KEY='bap-tournament-demo-v30-personnel';
+const PERMS={create:'Turniere anlegen / kopieren / löschen',settings:'Turnier konfigurieren',participants:'Teilnehmer und Check-in',draw:'Auslosung und Finalrunden',courts:'Court-Zuteilung und Zeitplan',results:'Ergebnisse erfassen',audit:'Änderungsprotokoll lesen',manage:'Rechte vergeben'};
+const ROLE_DEFAULTS={manager:Object.keys(PERMS),director:['create','settings','participants','draw','courts','results','audit'],trainer:['create','settings','participants','courts','results'],assistant:['participants','courts','results'],viewer:[]};
+const ROLE_NAMES={manager:'Vereinsmanager',director:'Turnierleiter',trainer:'Trainer',assistant:'Turnierhelfer',viewer:'Zuschauer'};
+const personnelDefault=()=>({active:'manager',users:[{id:'manager',name:'Vereinsmanager (Demo)',role:'manager',permissions:[...ROLE_DEFAULTS.manager]},{id:'trainer',name:'Trainer (Demo)',role:'trainer',permissions:[...ROLE_DEFAULTS.trainer]},{id:'director',name:'Turnierleiter (Demo)',role:'director',permissions:[...ROLE_DEFAULTS.director]},{id:'assistant',name:'Helfer (Demo)',role:'assistant',permissions:[...ROLE_DEFAULTS.assistant]},{id:'viewer',name:'Zuschauer (Demo)',role:'viewer',permissions:[]} ]});
+let personnel;
+try{personnel=JSON.parse(localStorage.getItem(PERSONNEL_KEY))}catch(_){personnel=null}
+if(!personnel||!Array.isArray(personnel.users)||!personnel.users.some(u=>u.id==='manager'))personnel=personnelDefault();
+if(!personnel.users.some(u=>u.id===personnel.active))personnel.active='manager';
+function actor(){return personnel.users.find(u=>u.id===personnel.active)||personnel.users[0]}
+function allowed(perm){return actor().role==='manager'||(actor().permissions||[]).includes(perm)}
+function requirePerm(perm){assert(allowed(perm),'Keine Berechtigung: '+(PERMS[perm]||perm)+'. Bitte den Vereinsmanager kontaktieren.')}
+function persistPersonnel(){localStorage.setItem(PERSONNEL_KEY,JSON.stringify(personnel))}
+function switchActor(id){assert(personnel.users.some(u=>u.id===id),'Unbekannter Benutzer');personnel.active=id;persistPersonnel();render()}
+
 function uid(){return 't'+Date.now().toString(36)+Math.random().toString(36).slice(2,9)}
 function validTournament(t){return t&&typeof t==='object'&&!Array.isArray(t)&&Array.isArray(t.players)&&Array.isArray(t.matches)}
 function normalizeTournament(t){
@@ -71,6 +100,7 @@ function normalizeTournament(t){
  if(!['club','dtb'].includes(t.ruleProfile))t.ruleProfile='club';
  if(!Number.isFinite(Number(t.demoOffsetMin)))t.demoOffsetMin=0;
  t.officialTournament??=false;t.associationRef||='';
+ t.eventStart??='';t.estimatedMatchMinutes=Number(t.estimatedMatchMinutes)||60;t.turnoverMinutes=Number.isFinite(Number(t.turnoverMinutes))?Number(t.turnoverMinutes):10;
  return t;
 }
 let collection;
@@ -86,8 +116,65 @@ if(!collection){
  try{localStorage.setItem(COLLECTION_KEY,JSON.stringify(collection))}catch(_){ /* visible on save */ }
 }
 if(!collection.tournaments.some(x=>x.id===collection.activeId))collection.activeId=collection.tournaments[0].id;
-collection.tournaments.forEach(x=>normalizeTournament(x.data));
+collection.systemAudit??=[];collection.tournaments.forEach(x=>{normalizeTournament(x.data);x.audit??=[]});
 let state=collection.tournaments.find(x=>x.id===collection.activeId).data;
+const snapshots=new Map(collection.tournaments.map(x=>[x.id,JSON.stringify(x.data)]));
+let actionLabel=null;
+function logChange(rec,action,before,after){
+ rec.audit??=[];
+ const differences=[];
+ const skip=new Set(['demoOffsetMin']);
+ for(const key of new Set([...Object.keys(before||{}),...Object.keys(after||{})])){
+  if(skip.has(key))continue;
+  if(JSON.stringify(before?.[key])===JSON.stringify(after?.[key]))continue;
+  if(key==='matches'||key==='players'){
+   const a=new Map((before?.[key]||[]).map(x=>[x.id,x]));const b=new Map((after?.[key]||[]).map(x=>[x.id,x]));
+   for(const id of new Set([...a.keys(),...b.keys()])){
+    const left=a.get(id),right=b.get(id);if(JSON.stringify(left)===JSON.stringify(right))continue;
+    const fields=new Set([...Object.keys(left||{}),...Object.keys(right||{})]);
+    for(const f of fields){if(f==='id'||JSON.stringify(left?.[f])===JSON.stringify(right?.[f]))continue;
+     differences.push({field:key+'/'+id+'/'+f,old:left?.[f]??null,new:right?.[f]??null});
+    }
+    if(!left||!right)differences.push({field:key+'/'+id,old:left?'Vorhanden':null,new:right?'Vorhanden':null});
+   }
+  }else differences.push({field:key,old:before?.[key]??null,new:after?.[key]??null});
+ }
+ if(!differences.length)return;
+ const event={id:uid(),at:new Date().toISOString(),actorId:actor().id,actorName:actor().name,action:action||'Änderung gespeichert',changes:differences};
+ rec.audit.push(event);
+}
+function changedPermission(before,after){
+ const changed=k=>JSON.stringify(before?.[k])!==JSON.stringify(after?.[k]);
+ if(changed('matches')){
+  const old=new Map((before.matches||[]).map(x=>[x.id,x]));
+  const changes=(after.matches||[]).filter(m=>JSON.stringify(old.get(m.id))!==JSON.stringify(m));
+  if(changes.some(m=>m.status==='finished'||m.score))return 'results';
+  if(changes.some(m=>m.court||m.status==='playing'||m.startedAt))return 'courts';
+  return 'draw';
+ }
+ if(changed('players')){
+  const was=new Map((before.players||[]).map(x=>[x.id,x]));
+  const groupingOnly=before.players.length===after.players.length&&after.players.every(p=>{
+   const a=was.get(p.id);return a&&Object.keys({...a,...p}).every(k=>k==='group'||JSON.stringify(a[k])===JSON.stringify(p[k]))});
+  return groupingOnly?'draw':'participants';
+ }
+ if(changed('eventStart')||changed('estimatedMatchMinutes')||changed('turnoverMinutes')||changed('autoAssign')||changed('demoOffsetMin'))return 'courts';
+ return 'settings';
+}
+function saveWithAuditCheck(record){
+ const priorText=snapshots.get(record.id)||JSON.stringify(empty());
+ const previous=JSON.parse(priorText);
+ const current=record.data;
+ if(priorText!==JSON.stringify(current)){
+  const needed=changedPermission(previous,current);
+  if(!allowed(needed)){
+   record.data=previous;state=record.data;
+   throw Error('Keine Berechtigung für diese Änderung ('+PERMS[needed]+').');
+  }
+  logChange(record,actionLabel||PERMS[needed],previous,current);
+ }
+}
+
 let tab='tournaments',flash='';
 const sports=['Tennis','Padel','Pickleball','Beachvolleyball'];
 const sportDescriptions={Tennis:'2 oder 3 Gewinnsätze, voller Entscheidungssatz oder Match-Tie-Break',Padel:'2 Gewinnsätze, voller Entscheidungssatz oder Match-Tie-Break',Pickleball:'2 gewonnene Games bis 11, mindestens 2 Punkte Vorsprung',Beachvolleyball:'2 Gewinnsätze; Sätze 1/2 bis 21, Entscheidungssatz bis 15, jeweils 2 Punkte Vorsprung'};
@@ -97,7 +184,8 @@ function save(){
  const record=collection.tournaments.find(x=>x.id===collection.activeId);
  assert(record,'Aktives Turnier nicht gefunden.');
  record.data=state;
- try{localStorage.setItem(COLLECTION_KEY,JSON.stringify(collection))}
+ saveWithAuditCheck(record);
+ try{localStorage.setItem(COLLECTION_KEY,JSON.stringify(collection));snapshots.set(record.id,JSON.stringify(state))}
  catch(e){notify('Speicherplatz im Browser ist voll oder blockiert. Bitte Daten exportieren.',true);return}
  render();
 }
@@ -314,13 +402,13 @@ function finishMatch(id,score){
 
 function addPlayer(){const el=document.getElementById('newPlayer'),value=el.value.trim();assert(value.length>=2,'Bitte einen Teamnamen eingeben.');assert(!state.players.some(p=>p.name.toLowerCase()===value.toLowerCase()),'Name ist bereits vorhanden.');assert(!state.matches.length,'Nach der Auslosung ist das Hinzufügen gesperrt.');state.players.push({id:randId(),name:value,checked:false,group:null});state.stage='registration';save()}
 function removePlayer(id){assert(!state.matches.length,'Nach der Auslosung nicht möglich.');state.players=state.players.filter(p=>p.id!==id);save()}
-function loadExample(){if((state.matches.length||state.players.length)&&!confirm('Nur das AKTIVE Turnier durch Beispieldaten ersetzen? Andere Turniere bleiben erhalten.'))return;const sport=state.sport;state=empty();state.sport=sport;state.name='Beispielturnier '+sport;state.ruleProfile='club';state.players=exampleNames.map(name=>({id:randId(),name,checked:true,group:null}));state.stage='registration';tab='overview';save();notify('Acht Doppelteams geladen. Du kannst jetzt unter „Auslosung“ starten.')}
-function resetDemo(){if(!confirm('Nur das AKTIVE Turnier zurücksetzen? Andere Turniere bleiben erhalten.'))return;const sport=state.sport;state=empty();state.sport=sport;tab='overview';save()}
+function loadExample(){requirePerm('participants');if((state.matches.length||state.players.length)&&!confirm('Nur das AKTIVE Turnier durch Beispieldaten ersetzen? Andere Turniere bleiben erhalten.'))return;const sport=state.sport;state=empty();state.sport=sport;state.name='Beispielturnier '+sport;state.ruleProfile='club';state.players=exampleNames.map(name=>({id:randId(),name,checked:true,group:null}));state.stage='registration';tab='overview';save();notify('Acht Doppelteams geladen. Du kannst jetzt unter „Auslosung“ starten.')}
+function resetDemo(){requirePerm('manage');if(!confirm('Nur das AKTIVE Turnier zurücksetzen? Andere Turniere bleiben erhalten.'))return;const sport=state.sport;state=empty();state.sport=sport;tab='overview';save()}
 function downloadData(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='bookandplay-'+(state.sport||'turnier').toLowerCase()+'-'+(state.name||'turnier').replace(/[^a-z0-9-]/gi,'-').slice(0,35)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function updateSetting(key,val){assert(!state.matches.length,'Einstellungen nach Auslosung gesperrt.');state[key]=val;save()}
-function tabsHtml(){const t=[['tournaments','Meine Turniere'],['overview','Übersicht'],['setup','Turnier anlegen'],['participants','Teilnehmer'],['draw','Auslosung'],['courts','Courts'],['results','Ergebnisse'],['plan','Turnierplan'],['closing','Abschluss']];document.getElementById('tabs').innerHTML=t.map(([id,label])=>`<button class="tab ${tab===id?'active':''}" onclick="switchTab('${id}')">${label}</button>`).join('')}
-function switchTab(id){tab=id;render()}
-function render(){document.getElementById('heading').textContent=state.name||'Turnierkonsole';document.getElementById('subtitle').textContent=`${state.sport} · ${types[state.format]} · ${state.courtCount} Courts · ${state.stage==='finished'?'Abgeschlossen':state.matches.length?'Turnier läuft':'Vorbereitung'}`;document.getElementById('messages').innerHTML=flash;flash='';const playing=state.matches.filter(m=>m.status==='playing').length,done=state.matches.filter(finished).length;document.getElementById('stats').innerHTML=[[state.players.length,'Teams'],[state.matches.length,'Begegnungen'],[playing,'Laufen gerade'],[done,'Beendet']].map(([n,t])=>`<div class="stat"><b>${n}</b><span>${t}</span></div>`).join('');tabsHtml();document.getElementById('view').innerHTML={tournaments:tournamentsView,overview:overview,setup:setup,participants:participants,draw:drawView,courts:courtsView,results:resultsView,plan:planView,closing:closingView}[tab]()}
+function tabsHtml(){const t=[['tournaments','Meine Turniere'],['overview','Übersicht'],['setup','Turnier anlegen'],['participants','Teilnehmer'],['draw','Auslosung'],['courts','Courts'],['results','Ergebnisse'],['plan','Turnierplan'],['closing','Abschluss'],['guide','Anleitung & Hilfe'],['permissions','Rechte & Protokoll']];document.getElementById('tabs').innerHTML=t.map(([id,label])=>`<button class="tab ${tab===id?'active':''}" onclick="switchTab('${id}')">${label}</button>`).join('')}
+function switchTab(id){if(id==='permissions'&&!allowed('audit')&&!allowed('manage')){notify('Keine Berechtigung für das Änderungsprotokoll.',true);return;}tab=id;render()}
+function render(){document.getElementById('heading').textContent=state.name||'Turnierkonsole';document.getElementById('subtitle').textContent=`${state.sport} · ${types[state.format]} · ${state.courtCount} Courts · ${state.stage==='finished'?'Abgeschlossen':state.matches.length?'Turnier läuft':'Vorbereitung'}`;document.getElementById('messages').innerHTML=flash;flash='';const playing=state.matches.filter(m=>m.status==='playing').length,done=state.matches.filter(finished).length;document.getElementById('stats').innerHTML=[[state.players.length,'Teams'],[state.matches.length,'Begegnungen'],[playing,'Laufen gerade'],[done,'Beendet']].map(([n,t])=>`<div class="stat"><b>${n}</b><span>${t}</span></div>`).join('');tabsHtml();document.getElementById('actorPicker').innerHTML=`<label style="margin:0">Demo-Benutzer <select aria-label="Demo-Benutzer wechseln" onchange="switchActor(this.value)" style="width:auto;max-width:235px;padding:6px">${personnel.users.map(u=>`<option value="${esc(u.id)}" ${u.id===actor().id?'selected':''}>${esc(u.name)} · ${esc(ROLE_NAMES[u.role])}</option>`).join('')}</select></label>`;document.getElementById('view').innerHTML={tournaments:tournamentsView,overview:overview,setup:setup,participants:participants,draw:drawView,courts:courtsView,results:resultsView,plan:planView,closing:closingView,guide:guideView,permissions:permissionsView}[tab]();enhanceHelp()}
 function stageText(t){return ({draft:'Entwurf',registration:'Anmeldung',running:'Läuft',finished:'Abgeschlossen'})[t.stage]||'Entwurf'}
 function tournamentsView(){
  const records=collection.tournaments;
@@ -361,7 +449,7 @@ function validateImportTournament(t){
  }
  return t;
 }
-async function importBackupFile(input){
+async function importBackupFile(input){requirePerm('create');
  const file=input.files&&input.files[0];if(!file)return;
  // Reset allows choosing the same file again after a canceled attempt.
  input.value='';
@@ -380,33 +468,33 @@ async function importBackupFile(input){
    const newId=uid();if(!firstId)firstId=newId;
    const clone=JSON.parse(JSON.stringify(t));
    if(next.tournaments.some(x=>x.data.name===clone.name))clone.name+=' (wiederhergestellt)';
-   next.tournaments.push({id:newId,data:clone});
+   next.tournaments.push({id:newId,data:clone,audit:[{id:uid(),at:new Date().toISOString(),actorId:actor().id,actorName:actor().name,action:'Turnier aus Sicherung importiert (historische Änderungen nicht verfügbar)',changes:[{field:'Import',old:null,new:clone.name}]}]});
   }
   next.activeId=firstId;
   try{localStorage.setItem(COLLECTION_KEY,JSON.stringify(next))}
   catch(_){throw Error('Nicht genug Browser-Speicherplatz. Bisherige Turniere wurden nicht veraendert.')}
-  collection=next;state=collection.tournaments.find(x=>x.id===firstId).data;tab='tournaments';
+  collection=next;systemAudit('Sicherung importiert',imported.map(x=>x.name).join(', '));collection.tournaments.forEach(x=>snapshots.set(x.id,JSON.stringify(x.data)));state=collection.tournaments.find(x=>x.id===firstId).data;tab='tournaments';
   notify(`${imported.length} Turnier(e) importiert. ${imported.reduce((n,t)=>n+t.matches.filter(m=>m.status==='finished').length,0)} abgeschlossene Spiele uebernommen.`);
  }catch(e){notify('Import fehlgeschlagen: '+(e instanceof SyntaxError?'Die Datei ist kein gueltiges JSON.':e.message),true)}
 }
-function createTournament(){
+function createTournament(){requirePerm('create');
  const title=prompt('Name des neuen Turniers:', 'Neues Turnier');if(title===null)return;
  const name=title.trim();assert(name.length>0,'Bitte einen Turniernamen eingeben.');
- const t=empty();t.name=name;const id=uid();collection.tournaments.push({id,data:t});collection.activeId=id;state=t;tab='setup';save();
+ const t=empty();t.name=name;const id=uid();collection.tournaments.push({id,data:t,audit:[]});collection.activeId=id;state=t;snapshots.set(id,JSON.stringify(empty()));systemAudit('Turnier erstellt',name);tab='setup';save();
 }
-function openTournament(id){const rec=collection.tournaments.find(x=>x.id===id);assert(rec,'Turnier nicht gefunden.');collection.activeId=id;state=rec.data;tab='overview';save()}
-function duplicateTournament(id){
+function openTournament(id){const rec=collection.tournaments.find(x=>x.id===id);assert(rec,'Turnier nicht gefunden.');collection.activeId=id;state=rec.data;snapshots.set(id,JSON.stringify(state));tab='overview';save()}
+function duplicateTournament(id){requirePerm('create');
  const source=collection.tournaments.find(x=>x.id===id);assert(source,'Turnier nicht gefunden.');
  const title=prompt('Name für die Kopie:',(source.data.name||'Turnier')+' – Kopie');if(title===null)return;
  const name=title.trim();assert(name,'Bitte einen Turniernamen eingeben.');
  // A duplicate is a new event template: keep settings, but NOT old games or results.
  const t={...empty(),sport:source.data.sport,format:source.data.format,courtCount:source.data.courtCount,groupSize:source.data.groupSize,qualify:source.data.qualify,scoreMode:source.data.scoreMode,tennisSetsToWin:source.data.tennisSetsToWin,tennisDecider:source.data.tennisDecider,ruleProfile:source.data.ruleProfile,name};
- const newId=uid();collection.tournaments.push({id:newId,data:t});collection.activeId=newId;state=t;tab='setup';save();
+ const newId=uid();collection.tournaments.push({id:newId,data:t,audit:[]});collection.activeId=newId;state=t;snapshots.set(newId,JSON.stringify(empty()));systemAudit('Turnier dupliziert',name);tab='setup';save();
 }
-function deleteTournament(id){
+function deleteTournament(id){requirePerm('manage');
  const rec=collection.tournaments.find(x=>x.id===id);assert(rec,'Turnier nicht gefunden.');
  if(!confirm('Turnier „'+rec.data.name+'“ mit allen Ergebnissen endgültig aus DIESEM Browser löschen? Bitte vorher exportieren.'))return;
- collection.tournaments=collection.tournaments.filter(x=>x.id!==id);
+ systemAudit('Turnier gelöscht',rec.data.name);collection.tournaments=collection.tournaments.filter(x=>x.id!==id);
  if(!collection.tournaments.length){const newId=uid();collection.tournaments=[{id:newId,data:empty()}]}
  if(!collection.tournaments.some(x=>x.id===collection.activeId))collection.activeId=collection.tournaments[0].id;
  state=collection.tournaments.find(x=>x.id===collection.activeId).data;tab='tournaments';save();
@@ -424,6 +512,9 @@ function setup(){
  <div class="field"><label>Verbands-/Turnierreferenz (optional)</label><input ${locked} id="sAssociation" value="${esc(state.associationRef||'')}" placeholder="z. B. Verbands-Turniernummer"></div>
  <div class="field"><label>Turnierformat</label><select ${locked} id="sFormat">${Object.entries(types).map(([id,label])=>`<option value="${id}" ${id===state.format?'selected':''}>${label}</option>`).join('')}</select></div>
  <div class="field"><label>Courts / Spielfelder</label><select ${locked} id="sCourts">${[1,2,3,4,5,6,8,10].map(n=>`<option ${n===state.courtCount?'selected':''}>${n}</option>`).join('')}</select></div>
+ <div class="field"><label>Turnierbeginn (Datum und Uhrzeit)</label><input type="datetime-local" id="sEventStart" value="${esc(state.eventStart||'')}"><p class="hint">Auch nach der Auslosung unter „Turnierplan“ einstellbar.</p></div>
+ <div class="field"><label>Geplante Dauer pro Match (Min.)</label><input type="number" min="10" max="360" step="5" id="sMatchDuration" value="${state.estimatedMatchMinutes||60}"></div>
+ <div class="field"><label>Court-Wechselpuffer (Min.)</label><input type="number" min="0" max="90" step="5" id="sCourtBuffer" value="${state.turnoverMinutes??10}"></div>
  <div class="field"><label>Teams pro Gruppe</label><select ${locked} id="sGroup">${[2,3,4,5,6,8].map(n=>`<option ${n===state.groupSize?'selected':''}>${n}</option>`).join('')}</select></div>
  <div class="field"><label>Qualifikanten pro Gruppe</label><select ${locked} id="sQualify">${[1,2].map(n=>`<option ${n===state.qualify?'selected':''}>${n}</option>`).join('')}</select></div>
  </div><button class="btn" ${locked} onclick="guarded(saveSetup)">Einstellungen speichern</button><p class="hint">${locked?'Nach der Auslosung sind Spielregeln gesperrt, um vorhandene Ergebnisse zu schützen.':'Sportartwechsel setzt das sichtbare Sportprofil sofort. Bitte danach alle Einstellungen speichern.'}</p></section>`;
@@ -438,6 +529,7 @@ function saveSetup(){
  state.ruleProfile=state.sport==='Tennis'?document.getElementById('sRuleProfile').value:'club';
  state.officialTournament=document.getElementById('sOfficial').checked;
  state.associationRef=document.getElementById('sAssociation').value.trim();
+ state.eventStart=document.getElementById('sEventStart').value;state.estimatedMatchMinutes=Number(document.getElementById('sMatchDuration').value)||60;state.turnoverMinutes=Math.max(0,Number(document.getElementById('sCourtBuffer').value)||0);
  if(state.sport==='Tennis'||state.sport==='Padel'){
   state.tennisSetsToWin=state.sport==='Padel'?2:+document.getElementById('sTennisSets').value;
   state.tennisDecider=state.tennisSetsToWin===3?'full':document.getElementById('sDecider').value;
@@ -543,9 +635,9 @@ function planContent(){
  return html;
 }
 // V2.7: graphical knockout tree. Pure read-only rendering from existing match data.
-let tournamentPlanMode='graphic';
+let tournamentPlanMode='live';
 function setPlanMode(mode){
- if(!['graphic','list'].includes(mode))return;
+ if(!['graphic','list','live'].includes(mode))return;
  tournamentPlanMode=mode;render();
 }
 function bracketRoundNumber(m){
@@ -632,13 +724,97 @@ function planGraphicContent(){
 function printPlanMode(mode){tournamentPlanMode=mode;render();window.print()}
 
 function printCurrent(){window.print()}
+function liveStartMs(){const n=Date.parse(state.eventStart||'');return Number.isFinite(n)?n:null}
+function liveDateTime(ms){return Number.isFinite(ms)?new Date(ms).toLocaleString('de-DE',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'–'}
+function liveClock(ms){return Number.isFinite(ms)?new Date(ms).toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'}):'–'}
+function schedulePreview(){
+ const duration=Math.max(10,Number(state.estimatedMatchMinutes)||60)*60000;
+ const gap=Math.max(0,Number(state.turnoverMinutes)||0)*60000;
+ const first=liveStartMs();const now=demoNow();
+ const courtFree=Array.from({length:state.courtCount},()=>first??now);
+ const teamFree=new Map();const finishAt=new Map();const output=new Map();
+ const all=state.matches;
+ // Existing matches have priority. Preserve actual timestamps, never overwrite data.
+ for(const m of all.filter(m=>m.status!=='scheduled')){
+  const started=Date.parse(m.startedAt||'');const ended=Date.parse(m.finishedAt||'');
+  const validStart=Number.isFinite(started)?started:null;
+  const validEnd=Number.isFinite(ended)?ended:(validStart!==null?Math.max(now,validStart+duration):null);
+  output.set(m.id,{start:validStart,end:validEnd,court:m.court,actual:true,estimatedEnd:!Number.isFinite(ended)});
+  if(validEnd!==null){finishAt.set(m.id,validEnd);for(const id of [m.a,m.b])if(id)teamFree.set(id,Math.max(teamFree.get(id)||0,validEnd+gap));}
+  if(m.status==='playing'&&m.court&&m.court<=state.courtCount&&validEnd!==null)courtFree[m.court-1]=Math.max(courtFree[m.court-1],validEnd+gap);
+ }
+ // Proposed schedule is a forecast, not a court booking.
+ const unscheduled=all.filter(m=>m.status==='scheduled');let remaining=[...unscheduled];
+ while(remaining.length){
+  let best=null;
+  for(const m of remaining){
+   if(!m.a||!m.b)continue;
+   const deps=(m.dependencies||[]).filter(Boolean);
+   if(deps.some(id=>!finishAt.has(id)))continue;
+   const depsEnd=Math.max(0,...deps.map(id=>finishAt.get(id)+gap));
+   for(let i=0;i<courtFree.length;i++){
+    const start=Math.max(courtFree[i],teamFree.get(m.a)||0,teamFree.get(m.b)||0,depsEnd,first??now);
+    if(!best||start<best.start||(start===best.start&&m.id<best.m.id))best={m,court:i+1,start};
+   }
+  }
+  if(!best)break;
+  const end=best.start+duration;
+  output.set(best.m.id,{start:best.start,end,court:best.court,actual:false,estimatedEnd:true});
+  finishAt.set(best.m.id,end);courtFree[best.court-1]=end+gap;
+  teamFree.set(best.m.a,end+gap);teamFree.set(best.m.b,end+gap);
+  remaining=remaining.filter(m=>m.id!==best.m.id);
+ }
+ return {items:output,pending:remaining};
+}
+function saveLivePlanning(){
+ const start=document.getElementById('liveStart').value;
+ const d=Number(document.getElementById('liveDuration').value);
+ const b=Number(document.getElementById('liveBuffer').value);
+ assert(!start||Number.isFinite(Date.parse(start)),'Ungültiger Turnierbeginn.');
+ assert(Number.isFinite(d)&&d>=10&&d<=360,'Spieldauer muss zwischen 10 und 360 Minuten liegen.');
+ assert(Number.isFinite(b)&&b>=0&&b<=90,'Court-Puffer muss zwischen 0 und 90 Minuten liegen.');
+ state.eventStart=start;state.estimatedMatchMinutes=d;state.turnoverMinutes=b;save();notify('Live-Turnierplan aktualisiert. Bestehende Ergebnisse und tatsächliche Spielzeiten bleiben unverändert.');
+}
+function liveCourtGraphic(forecast){
+ const entries=state.matches.map(m=>({m,s:forecast.items.get(m.id)})).filter(x=>x.s&&Number.isFinite(x.s.start)&&Number.isFinite(x.s.end)&&x.s.court);
+ if(!entries.length)return '';
+ const min=Math.min(...entries.map(x=>x.s.start)),max=Math.max(...entries.map(x=>x.s.end));
+ const span=Math.max(60*60000,max-min);const W=1050,labelW=96,plotW=W-labelW-18,top=56,rowH=56,H=top+state.courtCount*rowH+12;
+ const scale=t=>labelW+(t-min)/span*plotW;
+ let ticks='';const tickCount=6;
+ for(let i=0;i<=tickCount;i++){const x=labelW+plotW*i/tickCount;const ms=min+span*i/tickCount;ticks+=`<line x1="${x}" y1="${top-10}" x2="${x}" y2="${H-10}" stroke="#e1eae6" stroke-width="1"/><text x="${x}" y="25" text-anchor="middle" font-size="12" fill="#5e756c">${liveClock(ms)}</text>`}
+ let rows='';for(let i=1;i<=state.courtCount;i++){const y=top+(i-1)*rowH;rows+=`<text x="8" y="${y+29}" font-size="13" font-weight="700" fill="#22523f">Platz ${i}</text><line x1="0" y1="${y+rowH-2}" x2="${W}" y2="${y+rowH-2}" stroke="#e5ede8"/>`}
+ let bars='';for(const {m,s:slot} of entries){const x=scale(slot.start),end=scale(slot.end),width=Math.max(4,end-x-2),y=top+(slot.court-1)*rowH+7;const text=name(m.a)+' – '+name(m.b);const caption=text.length>27?text.slice(0,25)+'…':text;const color=m.status==='finished'?'#5874b0':m.status==='playing'?'#08754e':'#b1c9bd';bars+=`<g><title>${esc(text+' · '+phaseLabel(m)+' · '+liveClock(slot.start)+'-'+liveClock(slot.end)+(m.score?' · '+m.score:''))}</title><rect x="${x}" y="${y}" width="${width}" height="37" rx="5" fill="${color}" opacity="${m.status==='scheduled'?.75:1}"/><text x="${x+6}" y="${y+15}" fill="${m.status==='scheduled'?'#173d2e':'white'}" font-size="10.5" font-weight="700">${width>85?esc(caption.slice(0,Math.max(4,Math.floor(width/6.5)))):''}</text><text x="${x+6}" y="${y+29}" fill="${m.status==='scheduled'?'#173d2e':'white'}" font-size="10">${width>75?esc(liveClock(slot.start))+' – '+esc(liveClock(slot.end)):''}</text></g>`}
+ return `<div class="bracket-panel"><h3>Grafische Tagesbelegung · Courts und Uhrzeiten</h3><div class="tree-viewport"><svg class="tree-diagram" style="min-width:780px" viewBox="0 0 ${W} ${H}" role="img" aria-label="Grafische Court-Zeitplanung von Turnierbeginn bis zum letzten geplanten Spiel"><rect width="${W}" height="${H}" fill="white"/>${ticks}${rows}${bars}</svg></div><p class="hint">Blau = beendet · Grün = läuft · Hellgrün = Prognose. Die Darstellung passt sich nach jedem gemeldeten Ergebnis an.</p></div>`;
+}
+function liveScheduleContent(){
+ if(!state.matches.length)return '<div class="empty">Nach der Auslosung zeigt der Live-Spielplan die Begegnungen ab Turnierbeginn.</div>';
+ const forecast=schedulePreview(),now=demoNow();
+ const order=[...state.matches].sort((a,b)=>{
+  const x=forecast.items.get(a.id),y=forecast.items.get(b.id);
+  return (x?.start??Infinity)-(y?.start??Infinity)||a.id.localeCompare(b.id);
+ });
+ const groupCount=state.matches.filter(m=>m.stage==='group').length;
+ const phaseOpen=state.format==='groups'&&!state.matches.some(m=>m.stage==='final');
+ const first=liveStartMs();const running=state.matches.filter(m=>m.status==='playing').length;
+ const done=state.matches.filter(finished).length;
+ return `<div class="live-summary"><div><b>${first!==null?liveDateTime(first):'Nicht festgelegt'}</b><span>Turnierbeginn</span></div><div><b>${done}/${state.matches.length}</b><span>Spiele beendet</span></div><div><b>${running}</b><span>Spiele laufen</span></div></div>
+ <p class="hint">Live-Stand ${liveDateTime(now)} · <b>Ist</b> = bereits erfasster Spielbeginn/-abschluss · <b>Prognose</b> = unverbindliche Planung anhand von Court-Zahl, Teamkonflikten, ${state.estimatedMatchMinutes} Min. Spieldauer und ${state.turnoverMinutes} Min. Puffer. Die Prognose wird bei jedem Aufruf und nach jeder Ergebnismeldung neu berechnet.</p>
+ ${liveCourtGraphic(forecast)}
+ <div class="timeline"><table><thead><tr><th>Start</th><th>Ende</th><th>Runde</th><th>Begegnung</th><th>Platz</th><th>Status</th></tr></thead><tbody>
+ ${order.map(m=>{const s=forecast.items.get(m.id);const cls=m.status==='playing'?'live-playing':m.status==='finished'?'live-finished':'';return `<tr class="${cls}"><td class="live-clock">${s?.start!==null&&s?.start!==undefined?liveDateTime(s.start):'Noch offen'}<small>${s?.actual?'Ist':'Prognose'}</small></td><td class="live-clock">${s?.end!==null&&s?.end!==undefined?liveClock(s.end):'–'}<small>${m.status==='finished'?'Ist':s?'geschätzt':''}</small></td><td>${esc(phaseLabel(m))}</td><td><strong>${esc(name(m.a))} – ${esc(name(m.b))}</strong><small>${esc(m.score||'')}</small></td><td>${s?.court?'Platz '+s.court:'–'}<small>${m.status==='scheduled'?'Vorschlag':''}</small></td><td><span class="pill ${m.status}">${esc(labels[m.status])}</span></td></tr>`}).join('')}</tbody></table></div>
+ ${forecast.pending.length?`<div class="live-pending">${forecast.pending.length} Begegnung(en) noch nicht zeitlich prognostizierbar, weil Gegner oder Vorrundenergebnisse fehlen.</div>`:''}
+ ${phaseOpen?`<div class="live-pending">${groupCount} Gruppenspiele sind eingeplant. Die Finalrunde erscheint automatisch im Live-Plan, sobald sie nach Abschluss der Gruppenphase erzeugt wurde.</div>`:''}
+ <p class="live-legend">Wichtig: Zeitvorschläge blockieren keine realen BOOKANDPLAY-Courts. Vor produktivem Einsatz sind vorhandene Reservierungen, individuelle Ruhepausen, Spielverzögerungen und offizielle Regeln in die Planung einzubeziehen.</p>`;
+}
 function planView(){
  const graphic=tournamentPlanMode==='graphic';
  return `<div class="print-header"><h1>BOOKANDPLAY · Turnierplan</h1><div>${esc(state.name)} · ${esc(state.sport)} · ${esc(types[state.format])}</div></div>
- <section class="panel"><div class="no-print report-action"><button class="btn" onclick="printCurrent()">${graphic?'Turnierbaum':'Turnierliste'} drucken / PDF</button><button class="btn alt" onclick="switchTab('closing')">Zum Turnierabschluss</button></div>
+ <section class="panel"><div class="no-print report-action"><button class="btn" onclick="printCurrent()">${tournamentPlanMode==='live'?'Live-Spielplan':graphic?'Turnierbaum':'Turnierliste'} drucken / PDF</button><button class="btn alt" onclick="switchTab('closing')">Zum Turnierabschluss</button></div>
  <h2>Turnierplan – ${esc(state.name)}</h2><p class="hint">${state.matches.length} Begegnungen · ${state.matches.filter(finished).length} beendet · ${state.matches.filter(m=>m.status==='playing').length} laufen.</p>
- <div class="plan-switch no-print"><button class="btn ${graphic?'selected':'alt'}" onclick="setPlanMode('graphic')" aria-pressed="${graphic}">Grafischer Turnierbaum</button><button class="btn ${graphic?'alt':'selected'}" onclick="setPlanMode('list')" aria-pressed="${!graphic}">Listenansicht</button></div>
- ${graphic?planGraphicContent():planContent()}</section>`;
+ <div class="plan-switch no-print"><button class="btn ${tournamentPlanMode==='live'?'selected':'alt'}" onclick="setPlanMode('live')">Live-Spielplan ab Turnierbeginn</button><button class="btn ${graphic?'selected':'alt'}" onclick="setPlanMode('graphic')">Grafischer Turnierbaum</button><button class="btn ${tournamentPlanMode==='list'?'selected':'alt'}" onclick="setPlanMode('list')">Begegnungsliste</button></div>
+ <div class="live-controls no-print"><div class="field"><label>Turnierbeginn</label><input type="datetime-local" id="liveStart" value="${esc(state.eventStart||'')}"></div><div class="field"><label>Spielzeit (Min.)</label><input id="liveDuration" type="number" min="10" max="360" value="${state.estimatedMatchMinutes||60}"></div><div class="field"><label>Court-Puffer (Min.)</label><input id="liveBuffer" type="number" min="0" max="90" value="${state.turnoverMinutes??10}"></div><button class="btn alt" onclick="guarded(saveLivePlanning)">Planung übernehmen</button><button class="btn alt live-refresh" onclick="render()">Live-Plan aktualisieren</button></div>
+ ${tournamentPlanMode==='live'?liveScheduleContent():graphic?planGraphicContent():planContent()}</section>`;
 }
 function mainFinal(){
  const finals=state.matches.filter(m=>m.stage==='final'||m.stage==='ko');
@@ -699,7 +875,119 @@ function closingView(){
  </section><section class="panel"><h2>Turnierbericht · Alle Begegnungen</h2>${planContent()}</section>`;
 }
 
+
+// Context-sensitive information – reusable for all sport profiles.
+const helpTopics={
+ 'Turniername':['Turniername','Eindeutiger Name, der in Turnierlisten, Spielplänen, Druckansichten und Abschlussberichten erscheint. Beispiel: Padel-Sommercup 2027.'],
+ 'Sportart':['Sportart','Wähle Tennis, Padel, Pickleball oder Beachvolleyball. Damit legt BOOKANDPLAY die passende Ergebniseingabe fest. Nach der Auslosung ist diese Einstellung aus Datenschutz- und Ergebnisgründen gesperrt.'],
+ 'Gewinnsätze':['Gewinnsätze','Anzahl der Sätze, die ein Team für einen Matchsieg gewinnen muss. Zwei Gewinnsätze erlauben bis zu drei Sätze; drei Gewinnsätze bis zu fünf.'],
+ 'Entscheidungssatz':['Entscheidungssatz','Falls es nach zwei Sätzen 1:1 steht, wird entweder ein vollständiger dritter Satz oder ein Match-Tie-Break gespielt. Die Einstellung wird vor der Auslosung festgelegt.'],
+ 'Turnierformat':['Turnierformat','Gruppen mit K.-o.-Runde, einfaches K.-o. oder Jeder gegen jeden. Das Format bestimmt Auslosung, Anzahl Spiele und Qualifikation.'],
+ 'Courts / Spielfelder':['Courts / Spielfelder','Anzahl gleichzeitig verwendbarer Plätze für dieses Turnier. In der Demo sind das virtuelle Plätze; noch keine echten BOOKANDPLAY-Reservierungen.'],
+ 'Teams pro Gruppe':['Gruppengröße','Anzahl der Teams je Gruppe. Bei vier Teams entstehen sechs Begegnungen pro Gruppe. Die Teilnehmerzahl muss zur Gruppengröße passen.'],
+ 'Qualifikanten pro Gruppe':['Qualifikanten','Wie viele Teams jeder Gruppe in die Finalrunde kommen. Typisch sind die besten zwei Teams; Platzierung anhand der Gruppentabelle.'],
+ 'Turnierbeginn (Datum und Uhrzeit)':['Turnierbeginn','Hier legst du den offiziellen Start des Turniertages fest. Der Live-Turnierplan beginnt zu diesem Zeitpunkt. Tatsächliche Spielstarts werden gesondert dokumentiert.'],
+ 'Turnierbeginn':['Turnierbeginn','Datum und Uhrzeit des Turnierstarts für die Live-Timeline. Bereits beendete Spiele behalten ihre tatsächlichen Zeiten.'],
+ 'Geplante Dauer pro Match (Min.)':['Spieldauer','Geschätzte Dauer einer Begegnung, mit der der Live-Plan künftige Zeiten vorschlägt. Keine verbindliche Reservierung.'],
+ 'Spielzeit (Min.)':['Spieldauer','Geschätzte Matchdauer. BOOKANDPLAY passt die Prognose anhand realer Ergebnisse und freier Plätze laufend an.'],
+ 'Court-Wechselpuffer (Min.)':['Court-Puffer','Zusätzliche Minuten nach einer Begegnung zum Verlassen des Platzes und Einspielen der nächsten Teams. Das ist keine persönliche Ruhepause.'],
+ 'Court-Puffer (Min.)':['Court-Puffer','Zeit für Court-Wechsel zwischen zwei Begegnungen. Individuelle Erholungspausen sind davon getrennt.'],
+ 'Regelprofil':['Regelprofil','Vereinsregeln sind für Freizeitturniere vorgesehen. Das DTB-Testprofil zeigt zusätzliche Regelprüfungen; es ersetzt keine offizielle Turniergenehmigung.'],
+ 'Offizielles Turnier':['Offizielles Turnier','Kennzeichnung für ein Verbandsturnier. Es besteht derzeit keine aktive Meldeschnittstelle zum DTB oder zu anderen Verbänden.'],
+ 'Verbandsreferenz':['Verbandsreferenz','Optionale Nummer oder Referenz aus dem offiziellen Turniersystem. Die Demo sendet diese Daten nicht an den Verband.'],
+ 'DTB-Spielerkennung':['DTB-Spielerkennung','Optionale offizielle Spielerkennung zur späteren Verbandsintegration. Die Demo ruft keinen DTB-Datensatz ab.'],
+ 'LK (Anzeige)':['Leistungsklasse','Optionale Anzeige einer bekannten LK. Sie wird in BOOKANDPLAY nicht berechnet; maßgeblich bleiben die offiziellen Verbandsdaten.'],
+ 'Anwesend':['Check-in','Markiert, ob das Team erschienen und spielbereit ist. In der Demo müssen alle Teams eingecheckt sein, bevor die Auslosung startet.'],
+ 'Demo-Uhrzeit vorspulen:':['Zeit-Simulation','Nur zum Testen der Erholungspausen. Das Vorspulen ersetzt keine echte Uhrzeit im produktiven Turnierbetrieb.'],
+ '1. Satz':['Satz 1','Spiele oder Punkte beider Teams für den ersten Satz eingeben. Die Prüfung richtet sich nach der Sportart.'],
+ '2. Satz':['Satz 2','Ergebnis des zweiten Satzes. Steht danach noch kein Sieger fest, muss ein Entscheidungssatz eingegeben werden.'],
+ '3. Satz':['Satz 3','Regulärer Entscheidungssatz. Bei zwei Gewinnsätzen nur notwendig, wenn jedes Team zuvor einen Satz gewann.'],
+ 'Match-TB':['Match-Tie-Break','Bei entsprechendem Regelprofil entscheidet der Match-Tie-Break anstelle eines vollständigen dritten Satzes. Er zählt für die Satz-, nicht für die normale Spieldifferenz.'],
+ 'Name':['Name','Bezeichnung der Spieler oder des Doppelteams. Bei Doppel sollte das Paar eindeutig bezeichnet sein.'],
+ 'Check-in':['Check-in','Bestätigung der Anwesenheit und Spielbereitschaft vor Beginn des Turniers.'],
+ 'Gruppe':['Gruppe','Die Gruppenzugehörigkeit wird durch die Auslosung bestimmt.'],
+ 'S':['Siege','Anzahl der gewonnenen Begegnungen.'],
+ 'P':['Tabellenpunkte','Im Vereinsprofil erhält ein Team zwei Punkte pro Sieg. Verbandsprofile können davon abweichende Wertungen verlangen.'],
+ 'Sätze':['Satzverhältnis','Gewonnene zu verlorenen Sätzen, einschließlich eines gewonnenen Match-Tie-Breaks als Satz.'],
+ 'Satz-Diff.':['Satzdifferenz','Gewonnene minus verlorene Sätze.'],
+ 'Spiel-Diff.':['Spieldifferenz','Gewonnene minus verlorene Spiele. Die einzelnen Match-Tie-Break-Punkte zählen nicht als reguläre Spiele.'],
+ 'Punkt-Diff.':['Punktdifferenz','Gewonnene minus verlorene Punkte in den jeweiligen Sportregeln.']
+};
+const guideSections=[
+ {id:'planning',name:'1. Turnier planen',summary:'Von der Idee bis zur veröffentlichten Auslosung',items:[
+ ['Turnier auswählen oder neu anlegen','In „Meine Turniere“ ein neues Turnier erzeugen. Du kannst mehrere Sportarten parallel organisieren.','tournaments'],
+ ['Sportart und Regeln festlegen','Unter „Turnier anlegen“ Namen, Sportart, Format, Entscheidungssatz, Regelprofil, Courts und Gruppen einstellen.','setup'],
+ ['Zeitplanung vorbereiten','Turnierbeginn, geschätzte Dauer und Court-Wechselpuffer festlegen. Der Live-Plan zeigt daraus erste Prognosen.','plan'],
+ ['Teams anmelden und einchecken','Unter „Teilnehmer“ Spieler oder Doppelteams hinzufügen. Am Turniertag die Anwesenheit markieren.','participants'],
+ ['Auslosung erstellen','Unter „Auslosung“ die Begegnungen generieren. Nach dem ersten Spiel können die Grundregeln nicht mehr frei geändert werden.','draw']]},
+ {id:'playing',name:'2. Turnier durchführen',summary:'Spiele starten, Ergebnisse erfassen und den Tagesplan laufend steuern',items:[
+ ['Plätze zuweisen','Unter „Courts“ Begegnungen manuell starten oder freie Courts automatisch belegen. Keine doppelte Teambelegung innerhalb dieses Turniers.','courts'],
+ ['Live-Turnierplan beobachten','Unter „Turnierplan“ die grafische Tagesübersicht ansehen. Tatsächliche Zeiten und Prognosen unterscheiden sich.','plan'],
+ ['Ergebnisse eingeben','Unter „Ergebnisse“ nach Matchende die einzelnen Sätze/Punkte beider Teams eintragen und bestätigen.','results'],
+ ['Gruppentabellen prüfen','Unter „Auslosung“ werden bestätigte Ergebnisse in Siege, Punkte und Differenzen übernommen.','draw'],
+ ['Finalrunde erzeugen','Sobald alle Gruppenspiele beendet sind, „Finalrunde erzeugen“ anklicken. Gewinner der Halbfinals rücken ins Finale auf.','draw']]},
+ {id:'closing',name:'3. Turnier abschließen',summary:'Sieger feststellen, drucken und Ergebnisse sichern',items:[
+ ['Letzte Begegnungen bestätigen','Prüfen, ob alle vorgesehenen Spiele – insbesondere das Finale – beendet sind.','results'],
+ ['Sieger und Platzierungen prüfen','Unter „Abschluss“ das Podest und mögliche gemeinsame dritte Plätze überprüfen. Optional ein Spiel um Platz 3 anlegen.','closing'],
+ ['Turnierplan und Bericht drucken','Im „Turnierplan“ den grafischen Baum oder Live-Plan auswählen und über „Drucken / PDF“ ausgeben.','plan'],
+ ['Datensicherung exportieren','In „Meine Turniere“ „Alle Turniere sichern“ wählen. Der Browser speichert Daten lokal und synchronisiert sie nicht zwischen Geräten.','tournaments']]}
+];
+function helpButton(key){return `<button type="button" class="help-i no-print" data-help="${esc(key)}" aria-label="Information zu ${esc(key)}" title="Erklärung anzeigen">i</button>`}
+function enhanceHelp(){
+ const root=document.getElementById('view');if(!root)return;
+ root.querySelectorAll('label').forEach(label=>{
+  if(label.querySelector('.help-i'))return;
+  const text=(label.textContent||'').trim().replace(/\s+/g,' ');
+  const key=Object.keys(helpTopics).find(k=>text===k||text.startsWith(k+' '));
+  if(key)label.insertAdjacentHTML('beforeend',helpButton(key));
+ });
+ root.querySelectorAll('.set-head').forEach(head=>{
+  const key=head.textContent.trim();const k=helpTopics[key]?key:key.endsWith('. Satz')?'3. Satz':null;
+  if(k&&!head.querySelector('.help-i'))head.insertAdjacentHTML('beforeend',helpButton(k));
+ });
+ root.querySelectorAll('th[title]').forEach(head=>{
+  const key=head.textContent.trim();if(helpTopics[key])head.insertAdjacentHTML('beforeend',helpButton(key));
+ });
+}
+function helpOpen(key){
+ const [heading,desc]=helpTopics[key]||['Hilfe',key];
+ const dlg=document.getElementById('helpDialog');
+ document.getElementById('helpTitle').textContent=heading;
+ document.getElementById('helpBody').textContent=desc;
+ dlg.hidden=false;dlg.querySelector('.help-close').focus();
+}
+function helpClose(){document.getElementById('helpDialog').hidden=true}
+document.addEventListener('click',e=>{const btn=e.target.closest('[data-help]');if(btn){e.preventDefault();helpOpen(btn.dataset.help)}else if(e.target.id==='helpDialog')helpClose()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')helpClose()});
+function guideView(){return `<section class="panel"><h2>Anleitung: Von der Planung bis zum Turnierabschluss</h2><p>Diese Anleitung erklärt den gesamten Ablauf in BOOKANDPLAY. Über „Zum Bereich“ gelangst du direkt zur jeweiligen Funktion. Mit dem kleinen <b>i</b> an einem Feld erhältst du eine passende Einzelerklärung.</p><p class="notice">Hinweis: Dies ist ein lokaler Demonstrationsprototyp. Offizielle Verbandsgenehmigungen, echte Platzreservierungen und die Online-Anmeldung sind noch nicht angebunden.</p><div class="actions guide-actions">${guideSections.map(sec=>`<button class="btn alt small" onclick="document.getElementById('${sec.id}').scrollIntoView({behavior:'smooth'})">${sec.name}</button>`).join('')}</div></section>${guideSections.map(sec=>`<section class="guide-section" id="${sec.id}"><h2>${sec.name}</h2><p class="hint">${sec.summary}</p><ol class="help-steps">${sec.items.map(([title,desc,target])=>`<li><b>${title}</b><p class="hint">${desc}</p><button class="btn alt small guide-actions" onclick="switchTab('${target}');window.scrollTo({top:0,behavior:'smooth'})">Zum Bereich</button></li>`).join('')}</ol></section>`).join('')}<section class="panel"><h2>Wichtige Hinweise</h2><p class="hint"><b>Datensicherung:</b> Regelmäßig „Alle Turniere sichern“ verwenden. <b>Ruhepausen:</b> Das DTB-Profil ist eine vereinfachte Testumsetzung, keine offizielle Freigabe. <b>Turnierplan:</b> Vorgeschlagene Zeitfenster sind Prognosen und keine echten Platzbuchungen. <b>PDF:</b> Im Druckdialog des Browsers „Als PDF sichern“ wählen.</p></section>`}
+
+
+function permissionsView(){
+ const canManage=allowed('manage');const auditAllowed=allowed('audit');
+ const rec=collection.tournaments.find(x=>x.id===collection.activeId);
+ const staff=personnel.users;
+ return `<section class="panel"><h2>Benutzer und Berechtigungen</h2><p class="warn">Dies ist eine lokale Rollensimulation im Browser, kein sicheres Login. Jeder mit Zugriff auf den Browser kann die Demo-Daten und die gespeicherten Rollen technisch manipulieren. Für den Produktivbetrieb sind serverseitige Autorisierung und ein unveränderbares Audit-Log erforderlich.</p>
+ <p class="hint">Der Vereinsmanager legt fest, wer Turniere planen, verwalten und auswerten darf. Die Rollen gelten in dieser Demo für alle angelegten Turniere.</p>
+ ${canManage?`<div class="actions no-print"><button class="btn" onclick="guarded(addStaff)">+ Benutzer hinzufügen</button></div>`:''}
+ <div class="tablewrap"><table><thead><tr><th>Benutzer</th><th>Rolle</th><th>Einzelrechte</th></tr></thead><tbody>
+ ${staff.map(u=>`<tr><td><b>${esc(u.name)}</b>${u.id===personnel.active?' <span class="pill playing">Aktiv</span>':''}</td><td>${canManage&&u.id!=='manager'?`<select aria-label="Rolle für ${esc(u.name)}" onchange="guarded(()=>changeStaffRole('${esc(u.id)}',this.value))" style="min-width:145px">${Object.entries(ROLE_NAMES).filter(([v])=>v!=='manager').map(([v,label])=>`<option value="${v}" ${u.role===v?'selected':''}>${label}</option>`).join('')}</select>`:esc(ROLE_NAMES[u.role])}</td><td>${Object.entries(PERMS).map(([key,label])=>`<label style="display:inline-flex;align-items:center;gap:4px;margin:3px 10px 3px 0;font-weight:400"><input type="checkbox" ${u.role==='manager'||u.permissions.includes(key)?'checked':''} ${!canManage||u.role==='manager'?'disabled':''} onchange="guarded(()=>changePermission('${esc(u.id)}','${key}',this.checked))"> ${esc(label)}</label>`).join('')}${canManage&&u.id!=='manager'?`<div class="actions"><button class="btn alt small danger" onclick="guarded(()=>removeStaff('${esc(u.id)}'))">Benutzer entfernen</button></div>`:''}</td></tr>`).join('')}</tbody></table></div></section>
+ ${auditAllowed?`<section class="panel"><div class="titlebar" style="margin:0 0 12px"><div><h2>Änderungsprotokoll · ${esc(state.name)}</h2><p class="hint">Wer hat wann welche Daten geändert? Zeiten werden in deiner lokalen Zeitzone angezeigt. Neue Einträge entstehen ab Version 3.0; ältere Änderungen können nicht nachträglich rekonstruiert werden.</p></div><button class="btn alt no-print" onclick="downloadAudit()">Protokoll als JSON exportieren</button></div>
+ <div class="tablewrap"><table><thead><tr><th>Zeitpunkt</th><th>Benutzer</th><th>Aktion</th><th>Alt → Neu</th></tr></thead><tbody>${[...(rec.audit||[])].reverse().map(e=>`<tr><td style="white-space:nowrap">${esc(new Date(e.at).toLocaleString('de-DE'))}</td><td>${esc(e.actorName)}</td><td>${esc(e.action)}</td><td>${e.changes.map(c=>`<details><summary>${esc(c.field)}</summary><small><b>Alt:</b> ${esc(shortValue(c.old))}<br><b>Neu:</b> ${esc(shortValue(c.new))}</small></details>`).join('')}</td></tr>`).join('')||'<tr><td colspan="4">Noch keine protokollierten Änderungen in Version 3.0.</td></tr>'}</tbody></table></div></section><section class="panel"><h2>Vereinsweites Verwaltungsprotokoll</h2><div class="tablewrap"><table><thead><tr><th>Zeitpunkt</th><th>Benutzer</th><th>Aktion</th><th>Objekt</th></tr></thead><tbody>${[...(collection.systemAudit||[])].reverse().map(e=>`<tr><td>${esc(new Date(e.at).toLocaleString('de-DE'))}</td><td>${esc(e.actorName)}</td><td>${esc(e.action)}</td><td>${esc(e.subject)}</td></tr>`).join('')||'<tr><td colspan="4">Noch keine zentralen Verwaltungsaktionen.</td></tr>'}</tbody></table></div></section>`:''}`;
+}
+function shortValue(v){const s=typeof v==='string'?v:JSON.stringify(v);return (s||'—').slice(0,500)}
+function systemAudit(action,subject){collection.systemAudit??=[];collection.systemAudit.push({id:uid(),at:new Date().toISOString(),actorName:actor().name,action,subject})}
+function auditSecurityChange(action,changes){
+ const rec=collection.tournaments.find(x=>x.id===collection.activeId);rec.audit??=[];
+ rec.audit.push({id:uid(),at:new Date().toISOString(),actorId:actor().id,actorName:actor().name,action,changes});systemAudit(action,changes.map(c=>c.field).join(', '));
+}
+function addStaff(){requirePerm('manage');const name=prompt('Name des neuen Benutzers:');if(name===null)return;assert(name.trim().length>=2,'Bitte einen Namen eingeben.');const user={id:uid(),name:name.trim(),role:'viewer',permissions:[]};personnel.users.push(user);auditSecurityChange('Benutzer hinzugefügt',[{field:'Benutzer',old:null,new:user.name}]);persistPersonnel();save()}
+function changeStaffRole(id,role){requirePerm('manage');assert(id!=='manager'&&ROLE_DEFAULTS[role],'Ungültige Rolle.');const u=personnel.users.find(u=>u.id===id);assert(u,'Benutzer fehlt.');const old=u.role;u.role=role;u.permissions=[...ROLE_DEFAULTS[role]];auditSecurityChange('Rolle vergeben',[{field:'Benutzer '+u.name,old:ROLE_NAMES[old],new:ROLE_NAMES[role]}]);persistPersonnel();save()}
+function changePermission(id,key,enabled){requirePerm('manage');assert(key in PERMS&&id!=='manager','Nicht veränderbar.');const u=personnel.users.find(u=>u.id===id);assert(u,'Benutzer fehlt.');const old=u.permissions.includes(key);u.permissions=Object.keys(PERMS).filter(k=>k===key?enabled:u.permissions.includes(k));auditSecurityChange('Einzelrecht geändert',[{field:u.name+' / '+PERMS[key],old,new:enabled}]);persistPersonnel();save()}
+function removeStaff(id){requirePerm('manage');assert(id!=='manager','Vereinsmanager darf nicht gelöscht werden.');const u=personnel.users.find(u=>u.id===id);assert(u,'Benutzer fehlt.');if(!confirm('Demo-Benutzer '+u.name+' entfernen? Historische Protokolle bleiben erhalten.'))return;personnel.users=personnel.users.filter(u=>u.id!==id);if(personnel.active===id)personnel.active='manager';auditSecurityChange('Benutzer entfernt',[{field:'Benutzer',old:u.name,new:null}]);persistPersonnel();save()}
+function downloadAudit(){requirePerm('audit');const rec=collection.tournaments.find(x=>x.id===collection.activeId);const blob=new Blob([JSON.stringify({tournament:state.name,exportedAt:new Date().toISOString(),events:rec.audit||[],systemEvents:collection.systemAudit||[]},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='bookandplay-audit-'+rec.id+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+
 render();
+setInterval(()=>{if(tab==='plan'&&tournamentPlanMode==='live')render()},60000);
 </script>
 </body>
 </html>
