@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BOOKANDPLAY | Turnierverwaltung Demo V3.6.1</title>
+<title>BOOKANDPLAY | Turnierverwaltung Demo V3.6.2</title>
 <style>
 :root{--green:#08754e;--dark:#122b2a;--bg:#f3f7f6;--muted:#60736f;--border:#dce7e3;--white:#fff;--accent:#dcf3e8;--orange:#ad6817}
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--dark)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}.header{max-width:1300px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:15px 22px}.brand{font-size:23px;letter-spacing:-.8px;font-weight:850;color:var(--green)}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1.5px;font-weight:700}.demo{background:var(--accent);padding:5px 10px;border-radius:30px;color:var(--green);font-size:12px;font-weight:800}main{max-width:1300px;margin:24px auto;padding:0 22px 50px}.titlebar{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:20px}.titlebar h1{font-size:clamp(25px,3vw,38px);margin:0}.sub{margin:5px 0;color:var(--muted)}.btn{border:none;border-radius:10px;background:var(--green);color:white;padding:10px 15px;font-weight:720}.btn.alt{background:white;color:var(--dark);border:1px solid var(--border)}.btn.danger{color:#9a2727;border-color:#f0caca}.btn.small{font-size:13px;padding:7px 10px}.buttonrow{display:flex;gap:9px;flex-wrap:wrap}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.stat,.panel{border:1px solid var(--border);border-radius:14px;background:white}.stat{padding:15px}.stat b{display:block;font-size:27px}.stat span{color:var(--muted);font-size:13px}.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--border);margin:20px 0}.tab{padding:12px 15px;border:0;background:none;color:var(--muted);font-weight:700;border-bottom:3px solid transparent}.tab.active{color:var(--green);border-color:var(--green)}.panel{padding:20px;margin:15px 0}.panel h2{font-size:19px;margin:0 0 12px}.panel h3{font-size:16px;margin:14px 0 8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}label{display:block;font-size:13px;font-weight:700;margin:0 0 5px}input,select{background:white;border:1px solid #c9d9d4;border-radius:9px;padding:10px;width:100%;color:var(--dark)}input[type=checkbox]{width:auto;accent-color:var(--green)}.field{margin-bottom:14px}.hint{font-size:13px;color:var(--muted);line-height:1.55}.notice{background:#eff8f3;border:1px solid #b9dfcb;color:#175b3d;border-radius:10px;padding:11px;margin:10px 0}.warn{background:#fff7ec;border:1px solid #f1d2a6;color:#874e16;border-radius:10px;padding:11px;margin:10px 0}.error{background:#fff1f1;border-color:#f1bebe;color:#a42525}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:11px 9px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle}th{color:var(--muted);font-size:12px;letter-spacing:.3px}td:last-child,th:last-child{text-align:right}.pill{display:inline-block;border-radius:25px;background:#eef3f0;color:#50655e;font-size:12px;padding:4px 8px;font-weight:700}.pill.playing{background:#dff2e6;color:#07613c}.pill.finished{background:#e1eafe;color:#2d559e}.court{padding:17px;border:1px solid var(--border);border-radius:12px;background:#fff}.court h3{margin:0 0 8px}.court p{min-height:45px;margin:9px 0;color:var(--muted);font-size:14px}.fixture{border:1px solid var(--border);border-radius:11px;padding:13px;margin:9px 0;display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:10px;align-items:center}.fixture .matchlabel{font-size:12px;color:var(--muted)}.fixture .teams{font-weight:730}.fixture .details{font-size:12px;color:var(--muted);margin-top:4px}.formInline{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.score{width:90px!important;padding:8px!important}.empty{padding:34px 10px;text-align:center;color:var(--muted)}.footer{color:var(--muted);font-size:12px;margin-top:30px;line-height:1.6}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.statusline{font-size:13px;color:var(--muted)}.kbd{font-family:ui-monospace,monospace;background:#f0f4f2;padding:2px 6px;border-radius:4px}.sep{height:1px;background:var(--border);margin:18px 0}@media(max-width:800px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.fixture{grid-template-columns:1fr}.header{padding:12px 14px}main{padding:0 13px}.panel{padding:15px}}@media(max-width:520px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.brand{font-size:19px}.titlebar h1{font-size:26px}.stat{padding:10px}.stat b{font-size:22px}}
@@ -75,7 +75,7 @@
 </style>
 </head>
 <body>
-<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V3.6.1 · ERWEITERTE HILFE & INFO-BUTTONS</span></div></header>
+<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V3.6.2 · ABSCHLUSSBERICHT & COURTS</span></div></header>
 <main>
 <div class="titlebar"><div><h1 id="heading">Turnierkonsole</h1><p class="sub" id="subtitle">Anmeldung, Auslosung, Courts und Ergebnisse in einer Oberfläche</p></div><div class="buttonrow"><button class="btn small" onclick="switchTab('tournaments')">Meine Turniere</button><button class="btn alt small" onclick="loadExample()">Beispieldaten laden</button><button class="btn alt small" onclick="downloadData()">Daten exportieren</button><button class="btn alt small danger" onclick="resetDemo()">Zurücksetzen</button></div></div>
 <div class="panel no-print" style="padding:10px 15px;margin:6px 0"><div class="formInline" style="justify-content:space-between"><div id="actorPicker"></div><span class="hint">Rollensimulation – keine echte Anmeldung oder Zugriffssicherung</span></div></div><div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
@@ -230,7 +230,7 @@ function save(){
 }
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function assert(ok,msg){if(!ok)throw Error(msg)}
-function notify(t,bad=false){flash=`<div class="${bad?'warn error':'notice'}">${esc(t)}</div>`;render();window.scrollTo({top:0,behavior:'smooth'})}
+function notify(t,bad=false){flash=`<div class="${bad?'warn error':'notice'}">${esc(t)}</div>`;render();window.scrollTo(0,0)}
 function guarded(fn){try{fn()}catch(e){notify(e.message,true)}}
 function team(id){return state.players.find(p=>p.id===id)}
 function name(id){return id?team(id)?.name||'Unbekannt':'Noch offen'}
@@ -433,7 +433,7 @@ function finishMatch(id,score){
   const parsed=score.trim().match(/^(\d{1,3})\s*:\s*(\d{1,3})$/);assert(parsed,'Ergebnis als A:B eingeben, z. B. 11:7.');
   a=+parsed[1];b=+parsed[2];assert(a!==b,'Unentschieden sind nicht erlaubt.');formatted=`${a}:${b}`;winnerIndex=a>b?0:1;
  }
- m.pointsA=a;m.pointsB=b;m.score=formatted;m.sets=sets;m.winner=winnerIndex===0?m.a:m.b;m.loser=winnerIndex===0?m.b:m.a;m.status='finished';m.finishedAt=new Date(demoNow()).toISOString();m.court=null;
+ m.pointsA=a;m.pointsB=b;m.score=formatted;m.sets=sets;m.winner=winnerIndex===0?m.a:m.b;m.loser=winnerIndex===0?m.b:m.a;m.status='finished';m.finishedAt=new Date(demoNow()).toISOString();/* Court behalten: belegte Courts werden nur anhand status==='playing' ermittelt. */
  resolveDependencies();
  if(state.autoAssign)assignNextAvailable();
  if(complete()&&state.format!=='groups')state.stage='finished';if(state.format==='groups'&&hasFinal()&&complete())state.stage='finished';save();
@@ -809,7 +809,23 @@ function phaseLabel(m){
  if(m.stage==='final'&&m.round==='Runde 1'&&state.matches.filter(x=>x.stage==='final').length===3)return 'Halbfinale';
  return m.round||'K.-o.-Runde';
 }
-function cleanMatchRow(m){return `<tr><td>${esc(phaseLabel(m))}</td><td class="plan-pair">${esc(name(m.a))} – ${esc(name(m.b))}</td><td>${m.court?'Platz '+m.court:'–'}</td><td>${esc(labels[m.status]||'Geplant')}</td><td class="plan-score">${esc(m.score||'–')}</td></tr>`}
+// Historische abgeschlossene Matches: Platznummer ggf. aus dem unveraenderten Aenderungsprotokoll ermitteln.
+// Niemals eine Court-Zuweisung erraten oder vorhandene Turnierdaten mutieren.
+function reportCourt(m){
+ if(Number.isInteger(Number(m.court))&&Number(m.court)>0)return Number(m.court);
+ if(m.status!=='finished')return null;
+ const rec=collection.tournaments.find(x=>x.id===collection.activeId);
+ for(const event of [...(rec?.audit||[])].reverse()){
+  for(const change of [...(event.changes||[])].reverse()){
+   if(change.field!=='matches/'+m.id+'/court')continue;
+   for(const candidate of [change.new,change.old]){
+    if(candidate!==null&&candidate!==''&&Number.isInteger(Number(candidate))&&Number(candidate)>0)return Number(candidate);
+   }
+  }
+ }
+ return null;
+}
+function cleanMatchRow(m){const court=reportCourt(m);return `<tr><td>${esc(phaseLabel(m))}</td><td class="plan-pair">${esc(name(m.a))} – ${esc(name(m.b))}</td><td>${court?'Platz '+court:'–'}</td><td>${esc(labels[m.status]||'Geplant')}</td><td class="plan-score">${esc(m.score||'–')}</td></tr>`}
 function planRows(ms){return `<table class="plan-table"><thead><tr><th>Runde</th><th>Begegnung</th><th>Court</th><th>Status</th><th>Ergebnis</th></tr></thead><tbody>${ms.map(cleanMatchRow).join('')}</tbody></table>`}
 function planSection(label,ms){return ms.length?`<div class="plan-group"><h3>${esc(label)} · ${ms.length} Begegnungen</h3>${planRows(ms)}</div>`:''}
 function planContent(){
@@ -994,7 +1010,7 @@ function liveScheduleContent(){
  <p class="hint">Live-Stand ${liveDateTime(now)} · <b>Ist</b> = bereits erfasster Spielbeginn/-abschluss · <b>Prognose</b> = unverbindliche Planung anhand von Court-Zahl, Teamkonflikten, ${state.estimatedMatchMinutes} Min. Spieldauer und ${state.turnoverMinutes} Min. Puffer. Die Prognose wird bei jedem Aufruf und nach jeder Ergebnismeldung neu berechnet.</p>
  ${liveCourtGraphic(forecast)}
  <div class="timeline"><table><thead><tr><th>Start</th><th>Ende</th><th>Runde</th><th>Begegnung</th><th>Platz</th><th>Status</th></tr></thead><tbody>
- ${order.map(m=>{const s=forecast.items.get(m.id);const cls=m.status==='playing'?'live-playing':m.status==='finished'?'live-finished':'';return `<tr class="${cls}"><td class="live-clock">${s?.start!==null&&s?.start!==undefined?liveDateTime(s.start):'Noch offen'}<small>${s?.actual?'Ist':'Prognose'}</small></td><td class="live-clock">${s?.end!==null&&s?.end!==undefined?liveClock(s.end):'–'}<small>${m.status==='finished'?'Ist':s?'geschätzt':''}</small></td><td>${esc(phaseLabel(m))}</td><td><strong>${esc(name(m.a))} – ${esc(name(m.b))}</strong><small>${esc(m.score||'')}</small></td><td>${s?.court?'Platz '+s.court:'–'}<small>${m.status==='scheduled'?'Vorschlag':''}</small></td><td><span class="pill ${m.status}">${esc(labels[m.status])}</span></td></tr>`}).join('')}</tbody></table></div>
+ ${order.map(m=>{const s=forecast.items.get(m.id);const cls=m.status==='playing'?'live-playing':m.status==='finished'?'live-finished':'';return `<tr class="${cls}"><td class="live-clock">${s?.start!==null&&s?.start!==undefined?liveDateTime(s.start):'Noch offen'}<small>${s?.actual?'Ist':'Prognose'}</small></td><td class="live-clock">${s?.end!==null&&s?.end!==undefined?liveClock(s.end):'–'}<small>${m.status==='finished'?'Ist':s?'geschätzt':''}</small></td><td>${esc(phaseLabel(m))}</td><td><strong>${esc(name(m.a))} – ${esc(name(m.b))}</strong><small>${esc(m.score||'')}</small></td><td>${s?.court?'Platz '+s.court:reportCourt(m)?'Platz '+reportCourt(m):'–'}<small>${m.status==='scheduled'?'Vorschlag':''}</small></td><td><span class="pill ${m.status}">${esc(labels[m.status])}</span></td></tr>`}).join('')}</tbody></table></div>
  ${forecast.pending.length?`<div class="live-pending">${forecast.pending.length} Begegnung(en) noch nicht zeitlich prognostizierbar, weil Gegner oder Vorrundenergebnisse fehlen.</div>`:''}
  ${phaseOpen?`<div class="live-pending">${groupCount} Gruppenspiele sind eingeplant. Die Finalrunde erscheint automatisch im Live-Plan, sobald sie nach Abschluss der Gruppenphase erzeugt wurde.</div>`:''}
  <p class="live-legend">Wichtig: Zeitvorschläge blockieren keine realen BOOKANDPLAY-Courts. Vor produktivem Einsatz sind vorhandene Reservierungen, individuelle Ruhepausen, Spielverzögerungen und offizielle Regeln in die Planung einzubeziehen.</p>`;
@@ -1062,7 +1078,7 @@ function closingView(){
  <h2>Turnierabschluss · ${esc(state.name)}</h2><p class="hint">Regelprofil: ${state.ruleProfile==='dtb'?'DTB 2026 – unvollständiger Regeltest':'Vereinsturnier'}. Keine amtliche DTB-Genehmigung oder Verbandsmeldung.</p><p class="report-meta">${esc(state.sport)} · ${state.players.length} Teams · ${state.matches.length} Begegnungen · ${state.matches.filter(finished).length} beendet</p>
  ${info.decided?`<div class="podium"><div class="podium-item"><div class="place">1.</div><strong>${esc(name(info.winner))}</strong><p>Turniersieger</p></div><div class="podium-item"><div class="place">2.</div><strong>${esc(name(info.second))}</strong><p>Finalist</p></div><div class="podium-item"><div class="place">3.</div><strong>${info.third.map(id=>esc(name(id))).join('<br>')||'Noch offen'}</strong><p>${info.third.length===2?'Gemeinsamer 3. Platz':bronze&&bronze.status!=='finished'?'Platzierungsspiel läuft/steht aus':'3. Platz'}</p></div></div>`:`<p class="notice">${esc(info.message)}</p>`}
  ${canBronze()?`<p class="hint no-print">Optional: Die beiden Halbfinalverlierer können noch Platz 3 ausspielen. Dadurch wird das bereits abgeschlossene Turnier für diese eine Begegnung wieder geöffnet.</p><div class="no-print"><button class="btn alt" onclick="guarded(()=>{if(confirm('Spiel um Platz 3 zusätzlich anlegen?'))addBronze()})">Spiel um Platz 3 anlegen</button></div>`:''}
- ${bronze?`<p><b>Spiel um Platz 3:</b> ${esc(name(bronze.a))} – ${esc(name(bronze.b))} · ${esc(bronze.score||labels[bronze.status])}</p>`:''}
+ ${bronze?`<p><b>Spiel um Platz 3:</b> ${esc(name(bronze.a))} – ${esc(name(bronze.b))} · ${esc(bronze.score||labels[bronze.status])}</p>${bronze.status!=='finished'?`<div class="warn no-print"><b>Platzierungsspiel noch offen.</b> Bitte die Begegnung unter „Courts“ starten und danach unter „Ergebnisse“ das Resultat erfassen. Erst dann wird der dritte Platz eindeutig vergeben. <button class="btn alt small" onclick="switchTab('${bronze.status==='playing'?'results':'courts'}')">${bronze.status==='playing'?'Ergebnis eintragen':'Zum Platzierungsspiel'}</button></div>`:''}`:''}
  <h3>Platzierungen</h3>${placementRows(info)}
  ${allDone?'<p class="notice">Alle angesetzten Spiele sind beendet.</p>':'<p class="warn">Der Turnierplan enthält noch offene Begegnungen. Dieser Bericht ist ein Zwischenstand.</p>'}
  </section><section class="panel"><h2>Turnierbericht · Alle Begegnungen</h2>${planContent()}</section>`;
