@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BOOKANDPLAY | Turnierverwaltung Demo V3.6.18</title>
+<title>BOOKANDPLAY | Turnierverwaltung Demo V3.6.19</title>
 <style>
 :root{--green:#08754e;--dark:#122b2a;--bg:#f3f7f6;--muted:#60736f;--border:#dce7e3;--white:#fff;--accent:#dcf3e8;--orange:#ad6817}
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--dark)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}.header{max-width:1300px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:15px 22px}.brand{font-size:23px;letter-spacing:-.8px;font-weight:850;color:var(--green)}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1.5px;font-weight:700}.demo{background:var(--accent);padding:5px 10px;border-radius:30px;color:var(--green);font-size:12px;font-weight:800}main{max-width:1300px;margin:24px auto;padding:0 22px 50px}.titlebar{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:20px}.titlebar h1{font-size:clamp(25px,3vw,38px);margin:0}.sub{margin:5px 0;color:var(--muted)}.btn{border:none;border-radius:10px;background:var(--green);color:white;padding:10px 15px;font-weight:720}.btn.alt{background:white;color:var(--dark);border:1px solid var(--border)}.btn.danger{color:#9a2727;border-color:#f0caca}.btn.small{font-size:13px;padding:7px 10px}.buttonrow{display:flex;gap:9px;flex-wrap:wrap}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.stat,.panel{border:1px solid var(--border);border-radius:14px;background:white}.stat{padding:15px}.stat b{display:block;font-size:27px}.stat span{color:var(--muted);font-size:13px}.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--border);margin:20px 0}.tab{padding:12px 15px;border:0;background:none;color:var(--muted);font-weight:700;border-bottom:3px solid transparent}.tab.active{color:var(--green);border-color:var(--green)}.panel{padding:20px;margin:15px 0}.panel h2{font-size:19px;margin:0 0 12px}.panel h3{font-size:16px;margin:14px 0 8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}label{display:block;font-size:13px;font-weight:700;margin:0 0 5px}input,select{background:white;border:1px solid #c9d9d4;border-radius:9px;padding:10px;width:100%;color:var(--dark)}input[type=checkbox]{width:auto;accent-color:var(--green)}.field{margin-bottom:14px}.hint{font-size:13px;color:var(--muted);line-height:1.55}.notice{background:#eff8f3;border:1px solid #b9dfcb;color:#175b3d;border-radius:10px;padding:11px;margin:10px 0}.warn{background:#fff7ec;border:1px solid #f1d2a6;color:#874e16;border-radius:10px;padding:11px;margin:10px 0}.error{background:#fff1f1;border-color:#f1bebe;color:#a42525}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:11px 9px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle}th{color:var(--muted);font-size:12px;letter-spacing:.3px}td:last-child,th:last-child{text-align:right}.pill{display:inline-block;border-radius:25px;background:#eef3f0;color:#50655e;font-size:12px;padding:4px 8px;font-weight:700}.pill.playing{background:#dff2e6;color:#07613c}.pill.finished{background:#e1eafe;color:#2d559e}.court{padding:17px;border:1px solid var(--border);border-radius:12px;background:#fff}.court h3{margin:0 0 8px}.court p{min-height:45px;margin:9px 0;color:var(--muted);font-size:14px}.fixture{border:1px solid var(--border);border-radius:11px;padding:13px;margin:9px 0;display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:10px;align-items:center}.fixture .matchlabel{font-size:12px;color:var(--muted)}.fixture .teams{font-weight:730}.fixture .details{font-size:12px;color:var(--muted);margin-top:4px}.formInline{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.score{width:90px!important;padding:8px!important}.empty{padding:34px 10px;text-align:center;color:var(--muted)}.footer{color:var(--muted);font-size:12px;margin-top:30px;line-height:1.6}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.statusline{font-size:13px;color:var(--muted)}.kbd{font-family:ui-monospace,monospace;background:#f0f4f2;padding:2px 6px;border-radius:4px}.sep{height:1px;background:var(--border);margin:18px 0}@media(max-width:800px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.fixture{grid-template-columns:1fr}.header{padding:12px 14px}main{padding:0 13px}.panel{padding:15px}}@media(max-width:520px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.brand{font-size:19px}.titlebar h1{font-size:26px}.stat{padding:10px}.stat b{font-size:22px}}
@@ -12,7 +12,7 @@
 .tournament-toolbar{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin:18px 0}.tournament-toolbar .field{margin:0;min-width:220px;flex:1}.tournament-toolbar .field:last-child{max-width:260px}.tournament-section{margin:22px 0}.tournament-section-head{display:flex;align-items:center;gap:8px;margin:0 0 10px}.tournament-section-head h3{margin:0}.tournament-featured{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:17px;border:1px solid #8bc7ae;border-left:5px solid var(--green);border-radius:12px;background:#eff8f3}.tournament-featured h3{margin:8px 0 3px}.tournament-featured p{margin:0;color:var(--muted)}.tournament-card h3{margin:10px 0 5px}.tournament-card p{min-height:0;margin:0;color:var(--muted)}.tournament-archive-toggle{width:100%;margin-top:8px}.tournament-empty{padding:22px;border:1px dashed var(--border);border-radius:11px;text-align:center;color:var(--muted)}
 @media(max-width:650px){.tournament-featured{align-items:stretch;flex-direction:column}.tournament-toolbar .field,.tournament-toolbar .field:last-child{min-width:100%;max-width:none}}
 
-/* V3.6.18: first-visit onboarding for club managers */
+/* V3.6.18: first-visit onboarding for club managers; V3.6.19: editable court planning draft */
 .onboarding-overlay{position:fixed;inset:0;z-index:120;background:rgba(13,35,29,.58);display:flex;align-items:center;justify-content:center;padding:18px}.onboarding-overlay[hidden],.onboarding-tour[hidden]{display:none}.onboarding-welcome{width:min(620px,100%);background:white;border-radius:18px;padding:28px;box-shadow:0 18px 55px #0b291d70}.onboarding-welcome h2{font-size:27px;margin:0 0 10px}.onboarding-welcome p{line-height:1.6}.onboarding-welcome .actions{justify-content:flex-end}.onboarding-tour{position:fixed;z-index:140;right:20px;bottom:20px;width:min(430px,calc(100vw - 28px));background:white;border:2px solid var(--green);border-radius:16px;padding:20px;box-shadow:0 16px 48px #0b291d55}.onboarding-tour h2{font-size:20px;margin:8px 0}.onboarding-tour p{line-height:1.55}.onboarding-progress{height:7px;border-radius:20px;background:#e5eeea;overflow:hidden}.onboarding-progress span{display:block;height:100%;background:var(--green);transition:width .2s}.onboarding-step-label{font-size:12px;color:var(--muted);font-weight:750;margin-top:10px}.onboarding-focus{position:relative;z-index:130;outline:4px solid #f0a333!important;outline-offset:5px;border-radius:10px;box-shadow:0 0 0 9999px rgba(13,35,29,.42)}
 @media(max-width:650px){.onboarding-welcome{padding:21px}.onboarding-tour{right:14px;bottom:14px}.onboarding-focus{box-shadow:none}}
 @media print{#onboardingPrompt,#onboardingTour{display:none!important}}
@@ -56,6 +56,11 @@
 .live-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:13px 0}.live-controls .field{min-width:190px;margin:0}.live-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0}.live-summary div{background:#f3f8f5;border-radius:9px;padding:11px}.live-summary b{display:block;font-size:20px}.live-summary span{font-size:12px;color:var(--muted)}.timeline{overflow:auto;border:1px solid var(--border);border-radius:11px}.timeline table{min-width:740px}.timeline tr.live-playing{background:#eff9f2}.timeline tr.live-finished{background:#f6f8fc}.timeline td small{display:block;color:#647871;font-size:11px;margin-top:3px}.live-pending{background:#fff7e9;border-radius:8px;padding:10px;margin:12px 0}.live-clock{font-variant-numeric:tabular-nums;white-space:nowrap}.live-legend{font-size:12px;color:var(--muted)}
 @media(max-width:560px){.live-summary{grid-template-columns:1fr 1fr}}
 @media print{.live-controls,.live-refresh{display:none!important}.timeline{overflow:visible;border:0}.timeline table{min-width:0;font-size:9pt}.live-summary{grid-template-columns:repeat(3,1fr)}}
+
+/* V3.6.19: editable court and time planning draft */
+.planner-note{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.planner-board-wrap{overflow:auto;border:1px solid var(--border);border-radius:12px;background:#fff;margin:14px 0}.planner-board{display:grid;min-width:850px}.planner-head,.planner-time,.planner-cell{padding:8px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}.planner-head{position:sticky;top:0;z-index:2;background:#eaf5ef;text-align:center;font-weight:750}.planner-time{position:sticky;left:0;z-index:1;background:#f7faf8;font-size:12px;font-weight:750;white-space:nowrap}.planner-cell{min-height:76px;background:#fbfdfc}.planner-cell:hover,.planner-cell.dragover{background:#edf8f2}.planner-card{border:1px solid #9bcab5;border-left:5px solid var(--green);border-radius:9px;background:white;padding:8px;box-shadow:0 2px 8px #143c2b12;cursor:grab;font-size:12px}.planner-card:active{cursor:grabbing}.planner-card strong,.planner-card span{display:block;overflow-wrap:anywhere}.planner-card span{margin-top:4px;color:var(--muted)}.planner-card.draft{background:#fff8e9;border-color:#dda84c}.planner-card.released{background:#edf7ff;border-color:#7baaca}.planner-editor-list{display:grid;gap:9px;margin-top:14px}.planner-editor-list details{border:1px solid var(--border);border-radius:10px;padding:10px 13px}.planner-editor-list summary{cursor:pointer;font-weight:700}.planner-editor-list form{margin-top:12px}.planner-editor-list .field{margin:0;min-width:180px}.planner-status{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.planner-status .pill.draft{background:#fff0cc;color:#855211}.planner-status .pill.ok{background:#e2f4e9;color:#12603d}
+@media(max-width:650px){.planner-note{align-items:stretch}.planner-editor-list .field{min-width:100%}}
+@media print{.planner-board-wrap,.planner-editor-list,.planner-note{display:none!important}}
 
 /* V2.9: contextual help and tutorial */
 .help-i{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border:1px solid #91baaa;border-radius:50%;margin-left:7px;background:#e9f7f0;color:#075e40;font-weight:800;font-size:12px;vertical-align:middle;cursor:pointer;flex:none}
@@ -104,7 +109,7 @@
 </style>
 </head>
 <body>
-<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V3.6.18 · TURNIERVERWALTUNG</span></div></header>
+<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V3.6.19 · TURNIERVERWALTUNG</span></div></header>
 <main>
 <div class="titlebar"><div><h1 id="heading" tabindex="-1">Turnierkonsole</h1><p class="sub" id="subtitle">Anmeldung, Auslosung, Courts und Ergebnisse in einer Oberfläche</p></div><div class="buttonrow"><button class="btn small" onclick="switchTab('tournaments')">Meine Turniere</button><button class="btn alt small" onclick="loadExample()">Beispieldaten laden</button><button class="btn alt small" onclick="downloadData()">Daten exportieren</button><button class="btn alt small danger" onclick="resetDemo()">Zurücksetzen</button></div></div>
 <div id="actorPickerPanel" class="panel no-print" style="padding:10px 15px;margin:6px 0"><div class="formInline" style="justify-content:space-between"><div id="actorPicker"></div><span class="hint">Rollensimulation – keine echte Anmeldung oder Zugriffssicherung</span></div></div><div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
@@ -123,7 +128,7 @@ const types={round:'Jeder gegen jeden',ko:'K.-o.-System',groups:'Gruppen + K.-o.
 const labels={scheduled:'Geplant',playing:'Läuft',finished:'Beendet'};
 const competitions={women:'Damen',men:'Herren',mixed:'Mixed',open:'Offen'};
 const exampleNames=['Müller / Schmidt','Weber / Fischer','Becker / Kruse','Lange / Roth','Meier / Schulz','Braun / Wolf','Hansen / Koch','Peters / Neumann'];
-const empty=()=>({name:'Sommer-Doppelcup 2027',sport:'Tennis',format:'groups',courtCount:4,groupSize:4,qualify:2,players:[],matches:[],notifications:[],publishedMatchTimes:{},stage:'draft',drawVersion:0,autoAssign:false,playBronze:false,scoreMode:'tennis',tennisSetsToWin:2,tennisDecider:'matchtb',ruleProfile:'club',demoOffsetMin:0,officialTournament:false,associationRef:'',eventStart:'',estimatedMatchMinutes:60,turnoverMinutes:10,ladder:{ruleMode:'classic',maxHigher:3,acceptDays:3,playDays:14,ranks:[],challenges:[],history:[]},fee:{enabled:false,cents:0,unit:"entry",membersPerEntry:2,method:"stripe"},paymentRecords:{},registration:{open:true,maxEntries:16,waitlist:[],cancelled:[]},publication:{club:'TC Musterstadt',visible:false,description:'',audience:'all',deadline:'',competition:'',ageClass:'',skillLevel:''}});
+const empty=()=>({name:'Sommer-Doppelcup 2027',sport:'Tennis',format:'groups',courtCount:4,groupSize:4,qualify:2,players:[],matches:[],notifications:[],publishedMatchTimes:{},planningOverrides:{},stage:'draft',drawVersion:0,autoAssign:false,playBronze:false,scoreMode:'tennis',tennisSetsToWin:2,tennisDecider:'matchtb',ruleProfile:'club',demoOffsetMin:0,officialTournament:false,associationRef:'',eventStart:'',estimatedMatchMinutes:60,turnoverMinutes:10,ladder:{ruleMode:'classic',maxHigher:3,acceptDays:3,playDays:14,ranks:[],challenges:[],history:[]},fee:{enabled:false,cents:0,unit:"entry",membersPerEntry:2,method:"stripe"},paymentRecords:{},registration:{open:true,maxEntries:16,waitlist:[],cancelled:[]},publication:{club:'TC Musterstadt',visible:false,description:'',audience:'all',deadline:'',competition:'',ageClass:'',skillLevel:''}});
 // V2.5: independent tournaments; import the previous single-tournament data once.
 const COLLECTION_KEY='bap-tournament-demo-v25-collection';
 const PERSONNEL_KEY='bap-tournament-demo-v30-personnel';
@@ -146,6 +151,7 @@ function validTournament(t){return t&&typeof t==='object'&&!Array.isArray(t)&&Ar
 function normalizeTournament(t){
  if(!Array.isArray(t.notifications))t.notifications=[];
  if(!t.publishedMatchTimes||typeof t.publishedMatchTimes!=='object'||Array.isArray(t.publishedMatchTimes))t.publishedMatchTimes={};
+ if(!t.planningOverrides||typeof t.planningOverrides!=='object'||Array.isArray(t.planningOverrides))t.planningOverrides={};
  t.autoAssign??=false;t.playBronze??=false;t.scoreMode||='tennis';
  if(!t.fee||typeof t.fee!=='object')t.fee={enabled:false,cents:0,unit:'entry',membersPerEntry:2,method:'stripe'};
  t.fee.enabled=!!t.fee.enabled;t.fee.cents=Math.max(0,Math.round(Number(t.fee.cents)||0));if(!['entry','person'].includes(t.fee.unit))t.fee.unit='entry';t.fee.membersPerEntry=Math.max(1,Math.min(8,Number(t.fee.membersPerEntry)||2));if(!['stripe','transfer','cash'].includes(t.fee.method))t.fee.method='stripe';
@@ -251,7 +257,7 @@ function changedPermission(before,after){
    const a=was.get(p.id);return a&&Object.keys({...a,...p}).every(k=>k==='group'||JSON.stringify(a[k])===JSON.stringify(p[k]))});
   return groupingOnly?'draw':'participants';
  }
- if(changed('eventStart')||changed('estimatedMatchMinutes')||changed('turnoverMinutes')||changed('autoAssign')||changed('demoOffsetMin')||changed('publishedMatchTimes'))return 'courts';
+ if(changed('eventStart')||changed('estimatedMatchMinutes')||changed('turnoverMinutes')||changed('autoAssign')||changed('demoOffsetMin')||changed('publishedMatchTimes')||changed('planningOverrides'))return 'courts';
  return 'settings';
 }
 function saveWithAuditCheck(record){
@@ -468,6 +474,7 @@ function isDifferentCall(published,now,court){
  return Math.floor(now/60000)!==Math.floor(published.start/60000)||court!==published.court;
 }
 function setMatchPlaying(match,court,now){
+ delete state.planningOverrides[match.id];
  match.court=court;
  match.status='playing';
  match.startedAt=new Date(now).toISOString();
@@ -1571,6 +1578,7 @@ function recordParticipantMessages(before){
     addParticipantMessage([old.a,old.b],'Ansetzung aufgehoben',phase+': Die bisherige Ansetzung '+pair+' wurde aufgehoben.');
    }
    delete state.publishedMatchTimes[id];
+   delete state.planningOverrides[id];
   }
  }
  for(const match of state.matches){
@@ -1635,6 +1643,10 @@ function scheduledSlot(match){
  const slot=state.publishedMatchTimes[match.id];
  return Number.isFinite(slot?.start)&&Number.isInteger(slot.court)&&slot.court>0?slot:null;
 }
+function planningSlot(match){
+ const slot=state.planningOverrides[match.id];
+ return Number.isFinite(slot?.start)&&Number.isInteger(slot.court)&&slot.court>0?slot:null;
+}
 function matchOccupancy(match,now,duration,gap){
  if(match.status==='scheduled'){
   const slot=scheduledSlot(match);
@@ -1693,7 +1705,7 @@ function setPublishedMatchTime(match,{start,court,manual=false}){
  const phase=phaseLabel(match),pair=name(match.a)+' – '+name(match.b);
  markPreviousMatchTime(match,old,phase,pair,'Ersetzt durch neue Spielzeit');
  state.publishedMatchTimes[match.id]={start,court,...(manual?{manual:true}:{})};
- const previous=manual?'Bisher: '+formatMatchTime(old.start,old.court)+'. Neu: ':'';
+ const previous=manual&&old?'Bisher: '+formatMatchTime(old.start,old.court)+'. Neu: ':'';
  addParticipantMessage([match.a,match.b],old?'Spielzeit aktualisiert':'Spielzeit freigegeben',
   phase+': '+pair+' · '+previous+formatMatchTime(start,court)+'. Bitte beachte den Spielaufruf vor Ort.',
   {matchId:match.id,matchStart:start,matchCourt:court});
@@ -1701,16 +1713,28 @@ function setPublishedMatchTime(match,{start,court,manual=false}){
 function publishMatchTimes(){
  requirePerm('courts');
  assert(Number.isFinite(liveStartMs()),'Zuerst den Turnierbeginn unter „Planung übernehmen“ speichern.');
- const preview=schedulePreview().items;
+ const forecast=schedulePreview();
+ const conflicts=plannerConflicts(forecast);
+ assert(!conflicts.length,'Der Plan enthält noch Konflikte. Öffne „Courtplan bearbeiten“ und korrigiere zuerst die markierten Stellen.');
+ const preview=forecast.items;
  const now=demoNow();
  const candidates=state.matches.filter(m=>m.status==='scheduled'&&preview.get(m.id)?.start>=now);
  assert(candidates.length,'Für die geplanten Begegnungen sind noch keine zukünftigen Zeiten verfügbar.');
  const changes=candidates.filter(m=>{
   const slot=preview.get(m.id), old=state.publishedMatchTimes[m.id];
-  return !old?.manual&&(!old||old.start!==slot.start||old.court!==slot.court);
+  return !old||old.start!==slot.start||old.court!==slot.court;
  });
- if(!changes.length){notify('Die Spielzeiten wurden bereits freigegeben.');return;}
- for(const m of changes)setPublishedMatchTime(m,preview.get(m.id));
+ const drafted=candidates.filter(m=>planningSlot(m));
+ if(!changes.length){
+  if(drafted.length){for(const m of drafted)delete state.planningOverrides[m.id];if(save())notify('Die bereits freigegebenen Zeiten wurden bestätigt; die Entwurfsmarkierungen sind entfernt.');}
+  else notify('Die Spielzeiten wurden bereits freigegeben.');
+  return;
+ }
+ for(const m of changes){
+  const slot=preview.get(m.id);
+  setPublishedMatchTime(m,{...slot,manual:Boolean(planningSlot(m)||slot.manual)});
+ }
+ for(const m of drafted)delete state.planningOverrides[m.id];
  if(save())notify('Spielzeiten freigegeben. Die Nachrichten stehen in der lokalen Vorschau.');
 }
 let notificationPlayer='', notificationChannel='account';
@@ -1837,10 +1861,11 @@ function schedulePreview(){
  const fixed=[];
  for(const match of all){
   if(match.status!=='scheduled')continue;
-  const slot=scheduledSlot(match);
-  if(!slot?.manual)continue;
+  const draft=planningSlot(match),published=scheduledSlot(match);
+  const slot=draft||(published?.manual?published:null);
+  if(!slot)continue;
   const end=slot.start+duration;
-  output.set(match.id,{...slot,end,actual:false,estimatedEnd:true});
+  output.set(match.id,{...slot,end,actual:false,estimatedEnd:true,manual:true,draft:Boolean(draft)});
   finishAt.set(match.id,end);
   fixed.push({match,start:slot.start,end:end+gap,court:slot.court});
  }
@@ -1892,6 +1917,109 @@ function liveCourtGraphic(forecast){
  let bars='';for(const {m,s:slot} of entries){const x=scale(slot.start),end=scale(slot.end),width=Math.max(4,end-x-2),y=top+(slot.court-1)*rowH+7;const text=name(m.a)+' – '+name(m.b);const caption=text.length>27?text.slice(0,25)+'…':text;const color=m.status==='finished'?'#5874b0':m.status==='playing'?'#08754e':'#b1c9bd';bars+=`<g><title>${esc(text+' · '+phaseLabel(m)+' · '+liveClock(slot.start)+'-'+liveClock(slot.end)+(m.score?' · '+m.score:''))}</title><rect x="${x}" y="${y}" width="${width}" height="37" rx="5" fill="${color}" opacity="${m.status==='scheduled'?.75:1}"/><text x="${x+6}" y="${y+15}" fill="${m.status==='scheduled'?'#173d2e':'white'}" font-size="10.5" font-weight="700">${width>85?esc(caption.slice(0,Math.max(4,Math.floor(width/6.5)))):''}</text><text x="${x+6}" y="${y+29}" fill="${m.status==='scheduled'?'#173d2e':'white'}" font-size="10">${width>75?esc(liveClock(slot.start))+' – '+esc(liveClock(slot.end)):''}</text></g>`}
  return `<div class="bracket-panel"><h3>Grafische Tagesbelegung · Courts und Uhrzeiten</h3><div class="tree-viewport"><svg class="tree-diagram" style="min-width:780px" viewBox="0 0 ${W} ${H}" role="img" aria-label="Grafische Court-Zeitplanung von Turnierbeginn bis zum letzten geplanten Spiel"><rect width="${W}" height="${H}" fill="white"/>${ticks}${rows}${bars}</svg></div><p class="hint">Blau = beendet · Grün = läuft · Hellgrün = geplant. Die Darstellung passt sich nach jedem gemeldeten Ergebnis an.</p></div>`;
 }
+let plannerDraggedMatch='';
+function plannerDragStart(event,id){
+ plannerDraggedMatch=id;
+ event.dataTransfer?.setData('text/plain',id);
+ if(event.dataTransfer)event.dataTransfer.effectAllowed='move';
+}
+function plannerDrop(event,court,start){
+ event.preventDefault();
+ const id=event.dataTransfer?.getData('text/plain')||plannerDraggedMatch;
+ plannerDraggedMatch='';
+ if(id)planMatchDraft(id,start,court);
+}
+function submitPlanningDraft(event,form){
+ event.preventDefault();
+ const error=form.querySelector('.match-time-error');
+ try{
+  planMatchDraft(form.dataset.matchId,Date.parse(form.elements.start.value),Number(form.elements.court.value));
+  error.textContent='';
+ }catch(problem){error.textContent=problem.message}
+}
+function planMatchDraft(id,start,court){
+ requirePerm('courts');
+ assert(readCollectionVersion()===collectionVersion,'Der Turnierstand wurde in einem anderen Tab geändert. Lade diese Seite neu und prüfe den Plan erneut.');
+ const match=state.matches.find(m=>m.id===id);
+ assert(match?.status==='scheduled'&&match.a&&match.b&&ready(match),'Nur eine spielbereite, noch nicht gestartete Begegnung kann verschoben werden.');
+ const now=demoNow();
+ assert(Number.isFinite(start)&&start>=Math.floor(now/60000)*60000,'Wähle eine gültige Uhrzeit ab jetzt.');
+ assert(Number.isInteger(court)&&court>=1&&court<=state.courtCount,'Wähle einen gültigen Platz.');
+ const restProblem=matchRestProblem(match,start);
+ assert(!restProblem,restProblem);
+ const duration=plannedDuration(),gap=plannedGap(),end=start+duration+gap;
+ const preview=schedulePreview().items;
+ for(const dependency of match.dependencies||[]){
+  const slot=preview.get(dependency);
+  assert(!slot?.end||start>=slot.end+gap,'Diese Begegnung darf erst nach der vorherigen Runde und dem Court-Puffer beginnen.');
+ }
+ for(const other of state.matches){
+  if(other===match)continue;
+  const slot=preview.get(other.id);
+  const fixed=other.status!=='scheduled'||planningSlot(other)||scheduledSlot(other)?.manual;
+  if(!fixed||!slot||!Number.isFinite(slot.start)||!Number.isFinite(slot.end)||!overlaps(start,end,slot.start,slot.end+gap))continue;
+  const pair=name(other.a)+' – '+name(other.b);
+  assert(slot.court!==court,'Platz '+court+' ist in diesem Zeitraum durch '+pair+' belegt oder im Wechselpuffer.');
+  assert(!sharesTeam(match,other),'Teamkonflikt mit '+pair+' in diesem Zeitraum.');
+ }
+ state.planningOverrides[id]={start,court,manual:true};
+ actionLabel='Planungsentwurf geändert';
+ let saved=false;try{saved=save()}finally{actionLabel=null}
+ if(saved)notify('Änderung als Entwurf gespeichert. Teilnehmer wurden noch nicht benachrichtigt.');
+}
+function removePlanningDraft(id){
+ requirePerm('courts');
+ assert(state.planningOverrides[id],'Für diese Begegnung gibt es keinen Planungsentwurf.');
+ delete state.planningOverrides[id];
+ actionLabel='Planungsentwurf entfernt';
+ let saved=false;try{saved=save()}finally{actionLabel=null}
+ if(saved)notify('Planungsentwurf entfernt. Eine bereits freigegebene Zeit bleibt unverändert.');
+}
+function plannerConflicts(forecast){
+ const problems=[];const duration=plannedDuration(),gap=plannedGap();
+ const entries=state.matches.map(m=>({m,slot:forecast.items.get(m.id)})).filter(x=>x.slot&&Number.isFinite(x.slot.start)&&Number.isFinite(x.slot.end));
+ for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++){
+  const a=entries[i],b=entries[j];
+  if(!overlaps(a.slot.start,a.slot.end+gap,b.slot.start,b.slot.end+gap))continue;
+  if(a.slot.court===b.slot.court)problems.push('Doppelbelegung auf Platz '+a.slot.court+': '+phaseLabel(a.m)+' / '+phaseLabel(b.m));
+  if(sharesTeam(a.m,b.m))problems.push('Teamüberschneidung: '+name(a.m.a)+' – '+name(a.m.b)+' / '+name(b.m.a)+' – '+name(b.m.b));
+ }
+ for(const {m,slot} of entries){
+  for(const dependency of m.dependencies||[]){const source=forecast.items.get(dependency);if(source?.end&&slot.start<source.end+gap)problems.push(phaseLabel(m)+' beginnt vor Ende der vorherigen Runde.');}
+  const rest=matchRestProblem(m,slot.start);if(rest)problems.push(rest);
+ }
+ return [...new Set(problems)];
+}
+function plannerCard(match,slot){
+ const draft=planningSlot(match),released=scheduledSlot(match);
+ const cls=draft?'draft':released&&released.start===slot.start&&released.court===slot.court?'released':'';
+ const draggable=match.status==='scheduled'&&match.a&&match.b&&ready(match);
+ return `<div class="planner-card ${cls}" ${draggable?`draggable="true" ondragstart="plannerDragStart(event,'${esc(match.id)}')"`:''}><strong>${esc(name(match.a))} – ${esc(name(match.b))}</strong><span>${esc(phaseLabel(match))} · ${esc(liveClock(slot.start))}–${esc(liveClock(slot.end))}${draft?' · Entwurf':released?' · Freigegeben':''}</span></div>`;
+}
+function planningBoardContent(){
+ if(!state.matches.length)return '<div class="empty">Nach der Auslosung steht hier der bearbeitbare Courtplan bereit.</div>';
+ if(!Number.isFinite(liveStartMs()))return '<div class="warn">Lege zuerst oben den Turnierbeginn fest und wähle „Planung übernehmen“.</div>';
+ const forecast=schedulePreview(),problems=plannerConflicts(forecast),step=plannedDuration()+plannedGap();
+ const scheduled=state.matches.filter(m=>forecast.items.has(m.id));
+ const starts=scheduled.map(m=>forecast.items.get(m.id).start).filter(Number.isFinite);
+ const first=liveStartMs(),last=Math.max(first,...starts)+step;
+ const rows=new Set(starts);
+ for(let time=first;time<=last&&rows.size<60;time+=step)rows.add(time);
+ const times=[...rows].sort((a,b)=>a-b);
+ const columns=`95px repeat(${state.courtCount},minmax(180px,1fr))`;
+ const head=`<div class="planner-head">Zeit</div>${Array.from({length:state.courtCount},(_,i)=>`<div class="planner-head">Platz ${i+1}</div>`).join('')}`;
+ const cells=times.map(time=>`<div class="planner-time">${esc(liveDateTime(time))}</div>${Array.from({length:state.courtCount},(_,index)=>{
+  const court=index+1;
+  const cards=state.matches.filter(m=>{const slot=forecast.items.get(m.id);return slot?.court===court&&slot.start===time}).map(m=>plannerCard(m,forecast.items.get(m.id))).join('');
+  return `<div class="planner-cell" ondragover="event.preventDefault()" ondrop="guarded(()=>plannerDrop(event,${court},${time}))">${cards}</div>`;
+ }).join('')}`).join('');
+ const editable=state.matches.filter(m=>m.status==='scheduled'&&m.a&&m.b&&ready(m)&&forecast.items.get(m.id));
+ return `<div class="planner-note"><div><h3>Courtplan bearbeiten</h3><p class="hint">Ziehe eine Begegnung auf einen anderen Platz oder Zeitpunkt. Orange = Entwurf, Blau = bereits freigegeben.</p></div><span class="pill ${problems.length?'':'ok'}">${problems.length?problems.length+' Konflikt(e)':'Keine Konflikte erkannt'}</span></div>
+ ${problems.length?`<div class="warn"><strong>Plan bitte prüfen:</strong><ul>${problems.map(problem=>`<li>${esc(problem)}</li>`).join('')}</ul></div>`:''}
+ <div class="planner-board-wrap"><div class="planner-board" style="grid-template-columns:${columns}">${head}${cells}</div></div>
+ <p class="hint">Alternativ kannst du Uhrzeit und Platz exakt eingeben:</p><div class="planner-editor-list">${editable.map(m=>{const slot=forecast.items.get(m.id),draft=planningSlot(m);return `<details><summary>${esc(phaseLabel(m))} · ${esc(name(m.a))} – ${esc(name(m.b))}${draft?' · Entwurf':''}</summary><form data-match-id="${esc(m.id)}" onsubmit="submitPlanningDraft(event,this)"><div class="formInline"><div class="field"><label>Beginn</label><input name="start" type="datetime-local" required value="${esc(localStartValue(slot.start))}"></div><div class="field"><label>Platz</label><select name="court">${Array.from({length:state.courtCount},(_,i)=>`<option value="${i+1}" ${slot.court===i+1?'selected':''}>Platz ${i+1}</option>`).join('')}</select></div><button class="btn small" type="submit">Als Entwurf planen</button>${draft?`<button class="btn alt small" type="button" onclick="guarded(()=>removePlanningDraft('${esc(m.id)}'))">Entwurf entfernen</button>`:''}</div><p class="match-time-error warn" aria-live="polite"></p></form></details>`}).join('')}</div>
+ <p class="live-legend">Die Prüfung berücksichtigt diesen Turnierplan, Court-Puffer, Teamüberschneidungen, Rundenabhängigkeiten und hinterlegte DTB-Ruhezeiten. Reale BOOKANDPLAY-Reservierungen sind in diesem Prototyp noch nicht angebunden.</p>`;
+}
 function liveScheduleContent(){
  if(!state.matches.length)return '<div class="empty">Nach der Auslosung zeigt die Zeitplanung die voraussichtlichen Spielzeiten.</div>';
  const forecast=schedulePreview(),now=demoNow();
@@ -1910,10 +2038,11 @@ function liveScheduleContent(){
  ${order.map(m=>{
   const slot=forecast.items.get(m.id);
   const released=m.status==='scheduled'?scheduledSlot(m):null;
+  const draft=m.status==='scheduled'?planningSlot(m):null;
   const confirmed=Boolean(released&&slot?.start===released.start&&slot.court===released.court);
   const court=slot?.court||reportCourt(m);
-  const startLabel=slot?.actual?'Ist':confirmed?(released.manual?'Manuell freigegeben':'Freigegeben'):slot?'Prognose':'';
-  const courtLabel=m.status==='scheduled'&&slot?.court?(confirmed?'Freigegeben':'Vorschlag'):'';
+  const startLabel=slot?.actual?'Ist':draft?'Entwurf':confirmed?(released.manual?'Manuell freigegeben':'Freigegeben'):slot?'Prognose':'';
+  const courtLabel=m.status==='scheduled'&&slot?.court?(draft?'Entwurf':confirmed?'Freigegeben':'Vorschlag'):'';
   const cls=m.status==='playing'?'live-playing':m.status==='finished'?'live-finished':'';
   return `<tr class="${cls}">
    <td class="live-clock">${Number.isFinite(slot?.start)?liveDateTime(slot.start):'Noch offen'}<small>${startLabel}</small></td>
@@ -1931,13 +2060,14 @@ function liveScheduleContent(){
 function planView(){
  if(state.format==='ladder')return ladderView();
  const graphic=tournamentPlanMode==='graphic';
+ const board=tournamentPlanMode==='board';
  return `<div class="print-header"><h1>BOOKANDPLAY · Turnierplan</h1><div>${esc(state.name)} · ${esc(state.sport)} · ${esc(types[state.format])}</div></div>
- <section class="panel"><div class="no-print report-action"><button class="btn" onclick="printCurrent()">${tournamentPlanMode==='live'?'Zeitplanung':graphic?'Turnierbaum':'Turnierliste'} drucken / PDF</button><button class="btn alt" onclick="switchTab('closing')">Zum Turnierabschluss</button></div>
+ <section class="panel"><div class="no-print report-action"><button class="btn" onclick="printCurrent()">${tournamentPlanMode==='live'||board?'Zeitplanung':graphic?'Turnierbaum':'Turnierliste'} drucken / PDF</button><button class="btn alt" onclick="switchTab('closing')">Zum Turnierabschluss</button></div>
  <h2>Turnierplan – ${esc(state.name)}</h2>
  ${allowed('courts')&&state.matches.some(m=>m.status==='scheduled'&&m.a&&m.b)?`<div class="actions no-print"><button class="btn alt" onclick="guarded(publishMatchTimes)">Spielzeiten freigeben</button></div><p class="hint no-print">Prüfe die Zeitplanung vor der Freigabe. Freigegebene Zeiten erscheinen in den Teilnehmernachrichten und bei veröffentlichten Turnieren auch im Live-Spielplan. Gib geänderte Zeiten erneut frei.</p>`:''}<p class="hint">${state.matches.length} ${encounterLabel(state.matches.length)} · ${state.matches.filter(finished).length} beendet · ${state.matches.filter(m=>m.status==='playing').length} laufen.</p>
- <div class="plan-switch no-print"><button class="btn ${tournamentPlanMode==='live'?'selected':'alt'}" onclick="setPlanMode('live')">Zeitplanung</button><button class="btn ${graphic?'selected':'alt'}" onclick="setPlanMode('graphic')">Grafischer Turnierbaum</button><button class="btn ${tournamentPlanMode==='list'?'selected':'alt'}" onclick="setPlanMode('list')">Begegnungsliste</button></div>
+ <div class="plan-switch no-print"><button class="btn ${tournamentPlanMode==='live'?'selected':'alt'}" onclick="setPlanMode('live')">Zeitplanung</button>${allowed('courts')?`<button class="btn ${board?'selected':'alt'}" onclick="setPlanMode('board')">Courtplan bearbeiten</button>`:''}<button class="btn ${graphic?'selected':'alt'}" onclick="setPlanMode('graphic')">Grafischer Turnierbaum</button><button class="btn ${tournamentPlanMode==='list'?'selected':'alt'}" onclick="setPlanMode('list')">Begegnungsliste</button></div>
  <div class="live-controls no-print"><div class="field"><label>Turnierbeginn</label><input type="datetime-local" id="liveStart" value="${esc(state.eventStart||'')}"></div><div class="field"><label>Spielzeit (Min.)</label><input id="liveDuration" type="number" min="10" max="360" value="${state.estimatedMatchMinutes||60}"></div><div class="field"><label>Court-Puffer (Min.)</label><input id="liveBuffer" type="number" min="0" max="90" value="${state.turnoverMinutes??10}"></div><button class="btn alt" onclick="guarded(saveLivePlanning)">Planung übernehmen</button><button class="btn alt live-refresh" onclick="render()">Live-Plan aktualisieren</button></div>
- ${tournamentPlanMode==='live'?liveScheduleContent():graphic?planGraphicContent():planContent()}</section>`;
+ ${tournamentPlanMode==='live'?liveScheduleContent():board?planningBoardContent():graphic?planGraphicContent():planContent()}</section>`;
 }
 function mainFinal(matches=state.matches){
  const finals=matches.filter(m=>m.stage==='final'||m.stage==='ko');
