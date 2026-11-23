@@ -1434,7 +1434,7 @@ function planContent(){
 // V2.7: graphical knockout tree. Pure read-only rendering from existing match data.
 let tournamentPlanMode='live';
 function setPlanMode(mode){
- if(!['graphic','list','live'].includes(mode))return;
+ if(!['graphic','list','live','board'].includes(mode))return;
  tournamentPlanMode=mode;render();
 }
 function bracketRoundNumber(m){
