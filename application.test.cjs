@@ -188,8 +188,11 @@ resetTournament(); setPlayers(2);
 run("personnel.active='viewer'");
 assert.throws(() => run('draw()'), /Keine Berechtigung/);
 run("personnel.active='manager'");
-for (const view of ['tournamentsView','overview','setup','participants','registrationView','paymentsView','financeView','drawView','courtsView','resultsView','planView','notificationsView','ladderView','closingView','guideView','permissionsView','playerAccountView']) {
+for (const view of ['tournamentsView','overview','setup','participants','registrationView','paymentsView','financeView','drawView','courtsView','resultsView','planView','notificationsView','ladderView','closingView','featureOverviewView','guideView','permissionsView','playerAccountView']) {
   assert.equal(typeof run(`${view}()`), 'string', `${view} renders`);
 }
+assert.match(run('featureOverviewView()'), /Alles für den Turniertag/);
+assert.match(run('featureOverviewView()'), /Datenbankanbindung/);
+assert.equal(run("menuForTab('features')"), 'finish');
 
-console.log('PASS: migration/import validation, registration/waitlist, round-robin/groups/KO, bronze match, four sport score profiles, courts/navigation, three incident types, DTB rest periods, planning conflicts, ladder workflow, permissions, and 18 views.');
+console.log('PASS: migration/import validation, registration/waitlist, round-robin/groups/KO, bronze match, four sport score profiles, courts/navigation, three incident types, DTB rest periods, planning conflicts, ladder workflow, permissions, feature overview, and 19 views.');

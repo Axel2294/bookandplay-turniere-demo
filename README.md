@@ -1,4 +1,4 @@
-# BOOKANDPLAY Turnierverwaltung · V3.7.0
+# BOOKANDPLAY Turnierverwaltung · V3.7.1
 
 Browserbasierter Demonstrationsprototyp. V3.7 ergänzt V3.6.20 um Budgetplanung, vorhandene Startgelder, weitere Einnahmen und Ausgaben, Beschaffung, Finanzabschluss und CSV-Export. Keine Zahlungsabwicklung oder steuerliche Buchhaltung.
 
