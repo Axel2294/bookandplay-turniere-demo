@@ -25,7 +25,8 @@ Die integrierte Anleitung enthält dieselben Abläufe mit direkten Links. Änder
 Ohne zusätzliche Pakete mit Node.js:
 
 ```sh
+node application.test.cjs
 node finance.test.cjs
 ```
 
-Die Prüfung verwendet separate Testdaten und testet die echte Anwendungslogik: Bestandsdaten bleiben bis auf neue Finanzfelder identisch; andere Turniere bleiben unverändert. Außerdem Cent-Rechnung, Budget, Beschaffung, doppelte Zahlungssperre, Gegenbuchungen, Abschluss/Wiederöffnung, Rechte, Speicherfehler, konkurrierende Fenster, CSV und das Rendern bestehender Ansichten.
+Die Prüfungen verwenden separate Testdaten und testen die echte Anwendungslogik. Der Gesamttest deckt Sicherungsdaten, Anmeldung und Warteliste, Turnierformate, Sport-Zählweisen, Courts, Navigation, Störfälle, Ruhezeiten, Zeitplanung, Forderungspyramide, Rechte und alle Ansichten ab. Der Finanztest prüft zusätzlich, dass Bestandsdaten bis auf neue Finanzfelder identisch und andere Turniere unverändert bleiben, sowie Cent-Rechnung, Budget, Beschaffung, doppelte Zahlungssperre, Gegenbuchungen, Abschluss/Wiederöffnung, Speicherfehler, konkurrierende Fenster und CSV.
