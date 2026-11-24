@@ -161,6 +161,16 @@ function switchActor(id){assert(personnel.users.some(u=>u.id===id),'Unbekannter 
 function uid(){return 't'+Date.now().toString(36)+Math.random().toString(36).slice(2,9)}
 function validTournament(t){return t&&typeof t==='object'&&!Array.isArray(t)&&Array.isArray(t.players)&&Array.isArray(t.matches)}
 function normalizeTournament(t){
+ t.name=String(t.name||'Unbenanntes Turnier').slice(0,199);
+ t.sport=String(t.sport||'Tennis');
+ if(!Object.hasOwn(types,t.format))t.format='groups';
+ t.courtCount=Math.max(1,Math.min(64,Number.isInteger(Number(t.courtCount))?Number(t.courtCount):4));
+ t.groupSize=Math.max(2,Math.min(32,Number.isInteger(Number(t.groupSize))?Number(t.groupSize):4));
+ t.qualify=Math.max(1,Math.min(t.groupSize,Number.isInteger(Number(t.qualify))?Number(t.qualify):2));
+ if(!['draft','registration','running','finished'].includes(t.stage)){
+  t.stage=t.matches.length&&t.matches.every(m=>m.status==='finished')?'finished':t.matches.length?'running':t.players.length?'registration':'draft';
+ }
+ t.drawVersion=Math.max(0,Number.isInteger(Number(t.drawVersion))?Number(t.drawVersion):0);
  if(!Array.isArray(t.notifications))t.notifications=[];
  if(!t.publishedMatchTimes||typeof t.publishedMatchTimes!=='object'||Array.isArray(t.publishedMatchTimes))t.publishedMatchTimes={};
  if(!t.planningOverrides||typeof t.planningOverrides!=='object'||Array.isArray(t.planningOverrides))t.planningOverrides={};
