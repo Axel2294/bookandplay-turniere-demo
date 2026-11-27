@@ -1,12 +1,14 @@
-# BOOKANDPLAY Turnierverwaltung · V3.7.1
+# BOOKANDPLAY Turnierverwaltung · V3.8.0
 
-Browserbasierter Demonstrationsprototyp. V3.7 ergänzt V3.6.20 um Budgetplanung, vorhandene Startgelder, weitere Einnahmen und Ausgaben, Beschaffung, Finanzabschluss und CSV-Export. Keine Zahlungsabwicklung oder steuerliche Buchhaltung.
+Browserbasierter Demonstrationsprototyp. V3.8.0 ergänzt den geführten Einrichtungsassistenten, Turnierabsage und Wiederaufnahme, die simulierte Stripe-Online-Anmeldung mit Warteliste und den Spieler-Stornoprozess. Nur Root kann zwischen „Stand-alone“ und „In BOOKANDPLAY integriert“ umschalten. Zahlungen und Nachrichten werden im Browser simuliert.
+
+Unter **Einrichtung mit Assistent** führt die Demo von der Turnieranlage über Veranstalter, Sportart, Courts und Termin zur Abschlussübersicht. In einem leeren Turnierbereich startet die Führung automatisch. Bestehende Entwürfe können bewusst ausgewählt werden. **Später fortsetzen** pausiert die Führung. Der Fortschritt bleibt je Demo-Benutzer im selben Browser gespeichert.
 
 ## Start und Datenerhalt
 
 `index.html` auf der bisherigen Website aktualisieren. Vorhandene Turniere liegen ausschließlich im lokalen Speicher des jeweiligen Browsers, **nicht im GitHub-Repository**. Gleiche Adresse (einschließlich Port), Browser und Profil beibehalten. Ein Wechsel der Adresse zeigt einen anderen lokalen Datenbestand.
 
-Vor Updates unter **Meine Turniere → Alle Turniere sichern** eine JSON-Sicherung herunterladen. V3.7 verwendet unverändert `bap-tournament-demo-v25-collection`; der ältere Schlüssel `bap-tournament-demo-v1` bleibt erhalten. Finanzdaten entstehen erst bei der ersten Finanzänderung als zusätzliches Feld `finance` im aktiven Turnier. Es gibt weder einen Reset noch eine automatische Änderung von Teilnehmern, Begegnungen, Ergebnissen, bisherigen Gebühren oder Zahlungsereignissen. Die vorhandene vollständige JSON-Sicherung umfasst auch das Finanzmodul. Import fügt Turniere hinzu, statt vorhandene zu ersetzen.
+Vor Updates unter **Meine Turniere → Alle Turniere sichern** eine JSON-Sicherung herunterladen. V3.8.0 verwendet weiterhin `bap-tournament-demo-v25-collection`. Der ältere Schlüssel `bap-tournament-demo-v1` bleibt als Altbestand bestehen. Die vollständige JSON-Sicherung umfasst auch das Finanzmodul. Beim Import werden Turniere zusätzlich angelegt.
 
 ## Finanzmodul
 

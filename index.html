@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BOOKANDPLAY | Turnierverwaltung Demo V3.7.1</title>
+<title>BOOKANDPLAY | Turnierverwaltung Demo V3.8.0</title>
 <style>
 :root{--green:#08754e;--dark:#122b2a;--bg:#f3f7f6;--muted:#60736f;--border:#dce7e3;--white:#fff;--accent:#dcf3e8;--orange:#ad6817}
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--dark)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}.header{max-width:1300px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:15px 22px}.brand{font-size:23px;letter-spacing:-.8px;font-weight:850;color:var(--green)}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1.5px;font-weight:700}.demo{background:var(--accent);padding:5px 10px;border-radius:30px;color:var(--green);font-size:12px;font-weight:800}main{max-width:1300px;margin:24px auto;padding:0 22px 50px}.titlebar{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:20px}.titlebar h1{font-size:clamp(25px,3vw,38px);margin:0}.sub{margin:5px 0;color:var(--muted)}.btn{border:none;border-radius:10px;background:var(--green);color:white;padding:10px 15px;font-weight:720}.btn.alt{background:white;color:var(--dark);border:1px solid var(--border)}.btn.danger{color:#9a2727;border-color:#f0caca}.btn.small{font-size:13px;padding:7px 10px}.buttonrow{display:flex;gap:9px;flex-wrap:wrap}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.stat,.panel{border:1px solid var(--border);border-radius:14px;background:white}.stat{padding:15px}.stat b{display:block;font-size:27px}.stat span{color:var(--muted);font-size:13px}.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--border);margin:20px 0}.tab{padding:12px 15px;border:0;background:none;color:var(--muted);font-weight:700;border-bottom:3px solid transparent}.tab.active{color:var(--green);border-color:var(--green)}.panel{padding:20px;margin:15px 0}.panel h2{font-size:19px;margin:0 0 12px}.panel h3{font-size:16px;margin:14px 0 8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}label{display:block;font-size:13px;font-weight:700;margin:0 0 5px}input,select{background:white;border:1px solid #c9d9d4;border-radius:9px;padding:10px;width:100%;color:var(--dark)}input[type=checkbox]{width:auto;accent-color:var(--green)}.field{margin-bottom:14px}.hint{font-size:13px;color:var(--muted);line-height:1.55}.notice{background:#eff8f3;border:1px solid #b9dfcb;color:#175b3d;border-radius:10px;padding:11px;margin:10px 0}.warn{background:#fff7ec;border:1px solid #f1d2a6;color:#874e16;border-radius:10px;padding:11px;margin:10px 0}.error{background:#fff1f1;border-color:#f1bebe;color:#a42525}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:11px 9px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle}th{color:var(--muted);font-size:12px;letter-spacing:.3px}td:last-child,th:last-child{text-align:right}.pill{display:inline-block;border-radius:25px;background:#eef3f0;color:#50655e;font-size:12px;padding:4px 8px;font-weight:700}.pill.playing{background:#dff2e6;color:#07613c}.pill.finished{background:#e1eafe;color:#2d559e}.court{padding:17px;border:1px solid var(--border);border-radius:12px;background:#fff}.court h3{margin:0 0 8px}.court p{min-height:45px;margin:9px 0;color:var(--muted);font-size:14px}.fixture{border:1px solid var(--border);border-radius:11px;padding:13px;margin:9px 0;display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:10px;align-items:center}.fixture .matchlabel{font-size:12px;color:var(--muted)}.fixture .teams{font-weight:730}.fixture .details{font-size:12px;color:var(--muted);margin-top:4px}.formInline{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.score{width:90px!important;padding:8px!important}.empty{padding:34px 10px;text-align:center;color:var(--muted)}.footer{color:var(--muted);font-size:12px;margin-top:30px;line-height:1.6}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.statusline{font-size:13px;color:var(--muted)}.kbd{font-family:ui-monospace,monospace;background:#f0f4f2;padding:2px 6px;border-radius:4px}.sep{height:1px;background:var(--border);margin:18px 0}@media(max-width:800px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.fixture{grid-template-columns:1fr}.header{padding:12px 14px}main{padding:0 13px}.panel{padding:15px}}@media(max-width:520px){.grid,.grid3,.stats{grid-template-columns:1fr 1fr}.brand{font-size:19px}.titlebar h1{font-size:26px}.stat{padding:10px}.stat b{font-size:22px}}
@@ -12,10 +12,17 @@
 .tournament-toolbar{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin:18px 0}.tournament-toolbar .field{margin:0;min-width:220px;flex:1}.tournament-toolbar .field:last-child{max-width:260px}.tournament-section{margin:22px 0}.tournament-section-head{display:flex;align-items:center;gap:8px;margin:0 0 10px}.tournament-section-head h3{margin:0}.tournament-featured{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:17px;border:1px solid #8bc7ae;border-left:5px solid var(--green);border-radius:12px;background:#eff8f3}.tournament-featured h3{margin:8px 0 3px}.tournament-featured p{margin:0;color:var(--muted)}.tournament-card h3{margin:10px 0 5px}.tournament-card p{min-height:0;margin:0;color:var(--muted)}.tournament-archive-toggle{width:100%;margin-top:8px}.tournament-empty{padding:22px;border:1px dashed var(--border);border-radius:11px;text-align:center;color:var(--muted)}
 @media(max-width:650px){.tournament-featured{align-items:stretch;flex-direction:column}.tournament-toolbar .field,.tournament-toolbar .field:last-child{min-width:100%;max-width:none}}
 
-/* V3.6.18: first-visit onboarding for club managers; V3.6.19: editable court planning draft */
-.onboarding-overlay{position:fixed;inset:0;z-index:120;background:rgba(13,35,29,.58);display:flex;align-items:center;justify-content:center;padding:18px}.onboarding-overlay[hidden],.onboarding-tour[hidden]{display:none}.onboarding-welcome{width:min(620px,100%);background:white;border-radius:18px;padding:28px;box-shadow:0 18px 55px #0b291d70}.onboarding-welcome h2{font-size:27px;margin:0 0 10px}.onboarding-welcome p{line-height:1.6}.onboarding-welcome .actions{justify-content:flex-end}.onboarding-tour{position:fixed;z-index:140;right:20px;bottom:20px;width:min(430px,calc(100vw - 28px));background:white;border:2px solid var(--green);border-radius:16px;padding:20px;box-shadow:0 16px 48px #0b291d55}.onboarding-tour h2{font-size:20px;margin:8px 0}.onboarding-tour p{line-height:1.55}.onboarding-progress{height:7px;border-radius:20px;background:#e5eeea;overflow:hidden}.onboarding-progress span{display:block;height:100%;background:var(--green);transition:width .2s}.onboarding-step-label{font-size:12px;color:var(--muted);font-weight:750;margin-top:10px}.onboarding-focus{position:relative;z-index:130;outline:4px solid #f0a333!important;outline-offset:5px;border-radius:10px;box-shadow:0 0 0 9999px rgba(13,35,29,.42)}
-@media(max-width:650px){.onboarding-welcome{padding:21px}.onboarding-tour{right:14px;bottom:14px}.onboarding-focus{box-shadow:none}}
-@media print{#onboardingPrompt,#onboardingTour{display:none!important}}
+.setup-layout{display:grid;grid-template-columns:minmax(180px,1fr) minmax(0,3fr);gap:16px}
+.setup-timeline ol{padding-left:24px;margin:0}
+.setup-timeline li{padding:8px;border-radius:8px}
+.setup-timeline li[aria-current]{background:#e4f4eb;color:var(--green);font-weight:700}
+.setup-timeline small{display:block;color:var(--muted)}
+.setup-progress{width:100%;accent-color:var(--green)}
+.setup-resume{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.setup-resume p{margin:4px 0}
+.setup-task dd{margin:0 0 10px;overflow-wrap:anywhere}
+@media(max-width:650px){.setup-layout{grid-template-columns:1fr}.setup-timeline ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));column-gap:19px}}
+@media print{#setupResume,.setup-layout{display:none!important}}
 
 /* BOOKANDPLAY V2.4 - plan and tournament report */
 .plan-group{margin:18px 0 25px;break-inside:avoid}.plan-group h3{padding:9px 12px;background:#e7f4ee;border-radius:7px;color:#075c40}.plan-table{width:100%;border-collapse:collapse;font-size:13px}.plan-table th,.plan-table td{padding:9px 8px;border-bottom:1px solid #dce7e3;vertical-align:top}.plan-table th:last-child,.plan-table td:last-child{text-align:left}.plan-table .plan-score{font-weight:700;white-space:nowrap}.plan-pair{font-weight:650}.bracket{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.bracket-match{border:1px solid var(--border);background:#f8fbf9;border-radius:10px;padding:12px;break-inside:avoid}.bracket-match strong{display:block;margin:5px 0}.podium{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.podium-item{padding:18px 12px;border:1px solid var(--border);border-radius:12px;background:#f8fbf9;text-align:center}.podium-item .place{font-size:25px;font-weight:800;color:#08754e}.report-meta{color:var(--muted);margin-bottom:18px}.printonly{display:none}.report-action{display:flex;gap:10px;flex-wrap:wrap}.print-header{display:none}.place-list{margin:8px 0;padding:0;list-style:none}.place-list li{padding:10px 0;border-bottom:1px solid var(--border)}
@@ -66,7 +73,20 @@
 .help-i{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border:1px solid #91baaa;border-radius:50%;margin-left:7px;background:#e9f7f0;color:#075e40;font-weight:800;font-size:12px;vertical-align:middle;cursor:pointer;flex:none}
 .help-i:hover,.help-i:focus-visible{background:#d0eddf;outline:2px solid #08754e;outline-offset:2px}
 .help-dialog{position:fixed;inset:0;z-index:100;background:rgba(13,35,29,.55);display:flex;align-items:center;justify-content:center;padding:15px}
+.assistant-card{background:#f4faf6;border-color:#b9d9c8}
+.assistant-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.assistant-heading h2{margin:4px 0}
+.assistant-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,185px),1fr));gap:10px;padding:0;list-style-position:inside}
+.assistant-steps li,.assistant-answer{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px}
+#tournamentAssistantDialog{width:min(620px,calc(100% - 24px));max-height:85vh;border:1px solid var(--border);border-radius:16px;padding:clamp(16px,4vw,26px);color:var(--dark);overflow:auto}
+#tournamentAssistantDialog::backdrop{background:rgba(13,35,29,.55)}
+#tournamentAssistantDialog .field{margin-top:16px}
+#tournamentAssistantDialog .field input{width:100%}
+.assistant-answer{margin-top:12px}
+.assistant-answer p{margin-top:0}
+@media print{#tournamentAssistant,#tournamentAssistantDialog{display:none!important}}
 .help-dialog[hidden]{display:none}.help-box{background:#fff;border-radius:16px;padding:24px;max-width:590px;max-height:85vh;overflow:auto;width:100%;box-shadow:0 14px 45px #0b291d50}.help-box h2{margin:0 0 10px;font-size:22px}.help-box p{line-height:1.65}.help-box .actions{justify-content:end}
+.pill.cancelled{background:#fbe3e3;color:#9c2929}.cancellation-note{border-left:5px solid #b43b3b;background:#fff2f2}.cancellation-note p{margin-bottom:8px}
 .help-steps{counter-reset:step;list-style:none;margin:16px 0;padding:0}.help-steps li{counter-increment:step;padding:13px 12px 13px 48px;margin:9px 0;border:1px solid var(--border);border-radius:10px;position:relative;line-height:1.5}.help-steps li::before{content:counter(step);position:absolute;left:12px;top:12px;width:25px;height:25px;border-radius:50%;background:#08754e;color:#fff;text-align:center;font-size:13px;font-weight:700;line-height:25px}
 .guide-section{margin:12px 0;padding:16px;border:1px solid var(--border);border-radius:12px;background:#fff}.guide-section h3{margin-top:0}.guide-note{font-size:13px;color:#60736f}
 .feature-hero{background:linear-gradient(130deg,#e8f6ee,#fff);border-color:#a8d5bf}.feature-hero h2{font-size:clamp(24px,3vw,34px);margin-bottom:8px}.feature-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0}.feature-summary div{border:1px solid var(--border);border-radius:11px;background:#fff;padding:13px}.feature-summary b{display:block;font-size:22px;color:var(--green)}.feature-summary span{font-size:12px;color:var(--muted)}.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.feature-card{display:flex;flex-direction:column;gap:9px;border:1px solid var(--border);border-radius:14px;background:#fff;padding:18px}.feature-card h3{font-size:18px;margin:0}.feature-card p{color:var(--muted);line-height:1.55;margin:0}.feature-card .actions{margin-top:auto}.feature-status{align-self:flex-start}.feature-status.available{background:#dff2e6;color:#07613c}.feature-status.prototype{background:#e1eafe;color:#2d559e}.feature-status.backend{background:#fff0d8;color:#875414}.feature-boundary{border-left:5px solid #d28a2c}
@@ -123,42 +143,50 @@
 </style>
 </head>
 <body>
-<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V3.7.1 · TURNIERVERWALTUNG</span></div></header>
+<header><div class="header"><div class="brand">BOOKANDPLAY<small>TURNIERVERWALTUNG</small></div><span class="demo">INTERAKTIVER PROTOTYP · V3.8.0 · TURNIERVERWALTUNG</span></div></header>
 <main>
 <div class="titlebar"><div><h1 id="heading" tabindex="-1">Turnierkonsole</h1><p class="sub" id="subtitle">Anmeldung, Auslosung, Courts und Ergebnisse in einer Oberfläche</p></div><div class="buttonrow"><button class="btn small" onclick="switchTab('tournaments')">Meine Turniere</button><button class="btn alt small" onclick="switchTab('features')">Funktionsübersicht</button><button class="btn alt small" onclick="loadExample()">Beispieldaten laden</button><button class="btn alt small" onclick="downloadData()">Daten exportieren</button><button class="btn alt small danger" onclick="resetDemo()">Zurücksetzen</button></div></div>
-<div id="actorPickerPanel" class="panel no-print" style="padding:10px 15px;margin:6px 0"><div class="formInline" style="justify-content:space-between"><div id="actorPicker"></div><span class="hint">Rollensimulation – keine echte Anmeldung oder Zugriffssicherung</span></div></div><div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
+<div id="actorPickerPanel" class="panel no-print" style="padding:10px 15px;margin:6px 0"><div class="formInline" style="justify-content:space-between"><div id="actorPicker"></div><div id="deploymentModePicker"></div><span class="hint">Rollensimulation – keine echte Anmeldung oder Zugriffssicherung</span></div></div><div id="messages" aria-live="polite"></div><div class="stats" id="stats"></div>
 <nav class="tabs" aria-label="Turnierfunktionen" id="tabs"></nav>
 <div id="backNavigation" class="page-back no-print"></div>
+<div id="setupResume"></div>
+<div id="tournamentAssistant"></div>
 <div id="view"></div>
+<dialog id="tournamentAssistantDialog" aria-labelledby="tournamentAssistantTitle"></dialog>
 <p class="footer">Berechtigungen und Änderungsprotokolle sind ausschließlich eine DEMO ohne Identitätsprüfung oder serverseitige Unveränderbarkeit. BOOKANDPLAY Demo: Jedes Turnier wird separat in diesem Browser mittels localStorage gespeichert. Vor dem Update und regelmäßig über „Daten exportieren“ sichern. Kein Server, nur manuelle Testbuchungen für Startgelder, keine echten Zahlungsvorgänge und keine Verbindung zur produktiven BOOKANDPLAY-Platzverwaltung. Bitte ausschließlich Testdaten verwenden. Tennis, Padel, Pickleball und Beachvolleyball haben eigene Demo-Zählweisen; die vollständige Einhaltung offizieller Verbandsregeln wird nicht zugesichert. Im DTB-Testprofil werden Ruhepausen nach § 40 anhand der gespeicherten Spielzeiten geprüft; echte BOOKANDPLAY-Buchungen und vollständige Verbandsvorgaben werden noch nicht geprüft.</p>
 </main><div id="helpDialog" class="help-dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle" hidden><div class="help-box"><h2 id="helpTitle">Hilfe</h2><p id="helpBody"></p><div id="helpLinks" class="help-links"></div><div class="actions"><button class="btn help-close" onclick="helpClose()">← Zurück</button></div></div></div>
-<div id="onboardingPrompt" class="onboarding-overlay" role="dialog" aria-modal="true" aria-labelledby="onboardingWelcomeTitle" hidden><div class="onboarding-welcome"><span class="pill playing">Neu in der Turnierverwaltung?</span><h2 id="onboardingWelcomeTitle">Du bist neu hier – so geht’s</h2><p>Der kurze Leitfaden führt dich Schritt für Schritt durch die wichtigsten Bereiche: vom Anlegen eines Turniers bis zum Abschluss. Dabei werden keine Turnierdaten verändert.</p><p class="hint">Dieser Hinweis wird bei deinen ersten zehn Besuchen angezeigt. Du kannst die Einführung jederzeit unter „Abschluss & Hilfe → Anleitung & Hilfe“ erneut starten.</p><div class="actions"><button class="btn alt" onclick="onboardingLater()">Später</button><button class="btn alt" onclick="onboardingDismiss()">Nicht mehr anzeigen</button><button class="btn" onclick="onboardingStart()">Einführung starten</button></div></div></div>
-<aside id="onboardingTour" class="onboarding-tour" aria-live="polite" hidden><div class="onboarding-progress"><span id="onboardingProgress"></span></div><div id="onboardingStepLabel" class="onboarding-step-label"></div><h2 id="onboardingStepTitle"></h2><p id="onboardingStepBody"></p><div class="actions"><button id="onboardingPrevious" class="btn alt small" onclick="onboardingPrevious()">← Zurück</button><button class="btn alt small" onclick="onboardingCloseTour(false)">Schließen</button><button id="onboardingNext" class="btn small" onclick="onboardingNext()">Weiter →</button></div></aside>
+<div id="tournamentCancellationDialog" class="help-dialog" role="dialog" aria-modal="true" aria-labelledby="tournamentCancellationTitle" hidden><div class="help-box"><h2 id="tournamentCancellationTitle">Turnier absagen</h2><p>Das Turnier wird als abgesagt gekennzeichnet. Teilnehmer, Spielplan, Ergebnisse und Finanzdaten bleiben vollständig erhalten.</p><form onsubmit="submitTournamentCancellation(event)"><div class="field"><label for="tournamentCancellationReason">Absagegrund</label><select id="tournamentCancellationReason" required><option value="">Bitte auswählen</option><option>Krankheit</option><option>Zu geringe Beteiligung</option><option>Wetterbedingt</option><option>Platzanlage nicht verfügbar</option><option>Organisatorischer Grund</option><option>Sonstiger Grund</option></select></div><div class="field"><label for="tournamentCancellationNote">Zusätzlicher Hinweis (optional)</label><textarea id="tournamentCancellationNote" maxlength="500" rows="4" placeholder="Information für Teilnehmer und Organisation"></textarea></div><div class="actions"><button type="button" class="btn alt" onclick="closeTournamentCancellation()">Abbrechen</button><button type="submit" class="btn danger">Turnier verbindlich absagen</button></div></form></div></div>
+<div id="stripeCheckoutDialog" class="help-dialog" role="dialog" aria-modal="true" aria-labelledby="stripeCheckoutTitle" hidden><div class="help-box"><span class="pill playing">Stripe Checkout · Simulation</span><h2 id="stripeCheckoutTitle">Startgebühr online bezahlen</h2><p id="stripeCheckoutSummary"></p><p class="notice"><b>Verbindlicher Ablauf:</b> Bei einer kostenpflichtigen Online-Anmeldung ist ausschließlich Stripe zulässig. Der Startplatz wird erst nach bestätigter Zahlung vergeben.</p><p class="warn"><b>Prototyp:</b> Es wird kein Geld abgebucht. Der Knopf simuliert nur die spätere Bestätigung durch Stripe. Produktiv muss die Bestätigung über einen serverseitig geprüften Stripe-Webhook erfolgen.</p><div class="actions"><button type="button" class="btn alt" onclick="closeStripeCheckout()">Abbrechen</button><button type="button" class="btn" onclick="guarded(completeStripeDemoCheckout)">Stripe-Testzahlung erfolgreich simulieren</button></div></div></div>
 <script>
 'use strict';
 const KEY='bap-tournament-demo-v1';
-const ONBOARDING_KEY='bap-tournament-demo-v3618-onboarding';
+const ONBOARDING_KEY='bap-tournament-setup-v1:';
+const DEPLOYMENT_MODE_KEY='bap-tournament-demo-v38-deployment-mode';
+const DEPLOYMENT_MODES={integrated:'In BOOKANDPLAY integriert',standalone:'Stand-alone'};
+let deploymentMode=localStorage.getItem(DEPLOYMENT_MODE_KEY)==='standalone'?'standalone':'integrated';
+function setDeploymentMode(mode){assert(actor().role==='root','Nur Root darf die Betriebsart der Turnierverwaltung ändern.');assert(Object.hasOwn(DEPLOYMENT_MODES,mode),'Unbekannte Betriebsart.');deploymentMode=mode;localStorage.setItem(DEPLOYMENT_MODE_KEY,mode);render();notify('Betriebsart gewechselt: '+DEPLOYMENT_MODES[mode]+'. Vorhandene Turnierdaten bleiben unverändert.')}
 const types={round:'Jeder gegen jeden',ko:'K.-o.-System',groups:'Gruppen + K.-o.',ladder:'Forderungsbaum'};
 const labels={scheduled:'Geplant',playing:'Läuft',finished:'Beendet'};
 const competitions={women:'Damen',men:'Herren',mixed:'Mixed',open:'Offen'};
 const exampleNames=['Müller / Schmidt','Weber / Fischer','Becker / Kruse','Lange / Roth','Meier / Schulz','Braun / Wolf','Hansen / Koch','Peters / Neumann'];
-const empty=()=>({name:'Sommer-Doppelcup 2027',sport:'Tennis',format:'groups',courtCount:4,groupSize:4,qualify:2,players:[],matches:[],notifications:[],publishedMatchTimes:{},planningOverrides:{},stage:'draft',drawVersion:0,autoAssign:false,playBronze:false,scoreMode:'tennis',tennisSetsToWin:2,tennisDecider:'matchtb',ruleProfile:'club',demoOffsetMin:0,officialTournament:false,associationRef:'',eventStart:'',estimatedMatchMinutes:60,turnoverMinutes:10,ladder:{ruleMode:'classic',maxHigher:3,acceptDays:3,playDays:14,ranks:[],challenges:[],history:[]},fee:{enabled:false,cents:0,unit:"entry",membersPerEntry:2,method:"stripe"},paymentRecords:{},registration:{open:true,maxEntries:16,waitlist:[],cancelled:[]},publication:{club:'TC Musterstadt',visible:false,description:'',audience:'all',deadline:'',competition:'',ageClass:'',skillLevel:''}});
+const empty=()=>({name:'Sommer-Doppelcup 2027',sport:'Tennis',format:'groups',courtCount:4,groupSize:4,qualify:2,players:[],matches:[],notifications:[],publishedMatchTimes:{},planningOverrides:{},stage:'draft',cancellation:null,drawVersion:0,autoAssign:false,playBronze:false,scoreMode:'tennis',tennisSetsToWin:2,tennisDecider:'matchtb',ruleProfile:'club',demoOffsetMin:0,officialTournament:false,associationRef:'',eventStart:'',estimatedMatchMinutes:60,turnoverMinutes:10,ladder:{ruleMode:'classic',maxHigher:3,acceptDays:3,playDays:14,ranks:[],challenges:[],history:[]},fee:{enabled:false,cents:0,unit:"entry",membersPerEntry:2,method:"stripe"},paymentRecords:{},registration:{open:true,maxEntries:16,waitlist:[],cancelled:[]},publication:{club:'TC Musterstadt',visible:false,description:'',audience:'all',deadline:'',competition:'',ageClass:'',skillLevel:''}});
 // V2.5: independent tournaments; import the previous single-tournament data once.
 const COLLECTION_KEY='bap-tournament-demo-v25-collection';
 const PERSONNEL_KEY='bap-tournament-demo-v30-personnel';
 const PERMS={create:'Turniere anlegen / kopieren / löschen',settings:'Turnier konfigurieren',payments:'Startgelder & Finanzen verwalten',participants:'Teilnehmer und Check-in',draw:'Auslosung und Finalrunden',courts:'Court-Zuteilung und Zeitplan',results:'Ergebnisse erfassen',audit:'Änderungsprotokoll lesen',manage:'Rechte vergeben'};
-const ROLE_DEFAULTS={manager:Object.keys(PERMS),director:['create','settings','payments','participants','draw','courts','results','audit'],trainer:['create','settings','participants','courts','results'],assistant:['participants','courts','results'],viewer:[]};
-const ROLE_NAMES={manager:'Vereinsmanager',director:'Turnierleiter',trainer:'Trainer',assistant:'Turnierhelfer',viewer:'Zuschauer'};
-const personnelDefault=()=>({active:'manager',users:[{id:'manager',name:'Vereinsmanager (Demo)',role:'manager',permissions:[...ROLE_DEFAULTS.manager]},{id:'trainer',name:'Trainer (Demo)',role:'trainer',permissions:[...ROLE_DEFAULTS.trainer]},{id:'director',name:'Turnierleiter (Demo)',role:'director',permissions:[...ROLE_DEFAULTS.director]},{id:'assistant',name:'Helfer (Demo)',role:'assistant',permissions:[...ROLE_DEFAULTS.assistant]},{id:'viewer',name:'Zuschauer (Demo)',role:'viewer',permissions:[]} ]});
+const ROLE_DEFAULTS={root:Object.keys(PERMS),manager:Object.keys(PERMS),director:['create','settings','payments','participants','draw','courts','results','audit'],trainer:['create','settings','participants','courts','results'],assistant:['participants','courts','results'],viewer:[]};
+const ROLE_NAMES={root:'Root',manager:'Vereinsmanager',director:'Turnierleiter',trainer:'Trainer',assistant:'Turnierhelfer',viewer:'Zuschauer'};
+const personnelDefault=()=>({active:'manager',users:[{id:'root',name:'Root-Administrator (Demo)',role:'root',permissions:[...ROLE_DEFAULTS.root]},{id:'manager',name:'Vereinsmanager (Demo)',role:'manager',permissions:[...ROLE_DEFAULTS.manager]},{id:'trainer',name:'Trainer (Demo)',role:'trainer',permissions:[...ROLE_DEFAULTS.trainer]},{id:'director',name:'Turnierleiter (Demo)',role:'director',permissions:[...ROLE_DEFAULTS.director]},{id:'assistant',name:'Helfer (Demo)',role:'assistant',permissions:[...ROLE_DEFAULTS.assistant]},{id:'viewer',name:'Zuschauer (Demo)',role:'viewer',permissions:[]} ]});
 let personnel;
 try{personnel=JSON.parse(localStorage.getItem(PERSONNEL_KEY))}catch(_){personnel=null}
 if(!personnel||!Array.isArray(personnel.users)||!personnel.users.some(u=>u.id==='manager'))personnel=personnelDefault();
+if(!personnel.users.some(u=>u.id==='root'))personnel.users.unshift({id:'root',name:'Root-Administrator (Demo)',role:'root',permissions:[...ROLE_DEFAULTS.root]});
 if(!personnel.users.some(u=>u.id===personnel.active))personnel.active='manager';
 function actor(){return personnel.users.find(u=>u.id===personnel.active)||personnel.users[0]}
-function allowed(perm){return actor().role==='manager'||(actor().permissions||[]).includes(perm)}
+function allowed(perm){return actor().role==='root'||actor().role==='manager'||(actor().permissions||[]).includes(perm)}
 function requirePerm(perm){assert(allowed(perm),'Keine Berechtigung: '+(PERMS[perm]||perm)+'. Bitte den Vereinsmanager kontaktieren.')}
 function persistPersonnel(){localStorage.setItem(PERSONNEL_KEY,JSON.stringify(personnel))}
-function switchActor(id){assert(personnel.users.some(u=>u.id===id),'Unbekannter Benutzer');personnel.active=id;persistPersonnel();render()}
+function switchActor(id){assert(personnel.users.some(u=>u.id===id),'Unbekannter Benutzer');if(!guidedSetupLeave('actor'))return;personnel.active=id;persistPersonnel();if(tab==='guidedSetup')resetNavigation('tournaments');render();onboardingRegisterVisit()}
 
 function uid(){return 't'+Date.now().toString(36)+Math.random().toString(36).slice(2,9)}
 function validTournament(t){return t&&typeof t==='object'&&!Array.isArray(t)&&Array.isArray(t.players)&&Array.isArray(t.matches)}
@@ -169,9 +197,15 @@ function normalizeTournament(t){
  t.courtCount=Math.max(1,Math.min(64,Number.isInteger(Number(t.courtCount))?Number(t.courtCount):4));
  t.groupSize=Math.max(2,Math.min(32,Number.isInteger(Number(t.groupSize))?Number(t.groupSize):4));
  t.qualify=Math.max(1,Math.min(t.groupSize,Number.isInteger(Number(t.qualify))?Number(t.qualify):2));
- if(!['draft','registration','running','finished'].includes(t.stage)){
+ if(!['draft','registration','running','finished','cancelled'].includes(t.stage)){
   t.stage=t.matches.length&&t.matches.every(m=>m.status==='finished')?'finished':t.matches.length?'running':t.players.length?'registration':'draft';
  }
+ if(t.stage==='cancelled'&&(!t.cancellation||typeof t.cancellation!=='object'))t.cancellation={reason:'Nicht angegeben',note:'',at:'',byName:'',previousStage:'draft'};
+ if(t.cancellation&&typeof t.cancellation==='object'){
+  t.cancellation.reason=String(t.cancellation.reason||'Nicht angegeben').slice(0,100);t.cancellation.note=String(t.cancellation.note||'').slice(0,500);t.cancellation.at=String(t.cancellation.at||'');t.cancellation.byId=String(t.cancellation.byId||'');t.cancellation.byName=String(t.cancellation.byName||'');
+  if(!['draft','registration','running','finished'].includes(t.cancellation.previousStage))t.cancellation.previousStage='draft';
+  t.stage='cancelled';
+ }else t.cancellation=null;
  t.drawVersion=Math.max(0,Number.isInteger(Number(t.drawVersion))?Number(t.drawVersion):0);
  if(!Array.isArray(t.notifications))t.notifications=[];
  if(!t.publishedMatchTimes||typeof t.publishedMatchTimes!=='object'||Array.isArray(t.publishedMatchTimes))t.publishedMatchTimes={};
@@ -289,6 +323,7 @@ function saveWithAuditCheck(record){
  const previous=JSON.parse(priorText);
  const current=record.data;
  if(priorText!==JSON.stringify(current)){
+  if(previous.cancellation&&current.cancellation){record.data=previous;state=record.data;throw Error('Das Turnier ist abgesagt. Bitte zuerst die Absage zurücknehmen.');}
   const needed=changedPermission(previous,current);
   if(!allowed(needed)){
    record.data=previous;state=record.data;
@@ -305,47 +340,213 @@ let clubFilter='';let publicSelected='';
 let resultsFromCourts=false;
 const navigationHistory=[];
 const scoreDrafts=new Map();
-let onboardingState={visits:0,dismissed:false,completed:false};
-try{onboardingState={...onboardingState,...JSON.parse(localStorage.getItem(ONBOARDING_KEY)||'{}')}}catch(_){/* start with defaults */}
-let onboardingStep=-1,onboardingFocus=null;
-const onboardingSteps=[
- {tab:'tournaments',selector:'#createTournamentButton',title:'Ein neues Turnier anlegen',body:'Beginne unter „Meine Turniere“ mit „+ Neues Turnier“. Das neue Turnier wird zusätzlich angelegt; vorhandene Turniere bleiben erhalten.'},
- {tab:'setup',selector:'#view .panel',title:'Grunddaten und Turnierart festlegen',body:'Vergib einen eindeutigen Namen und wähle Sportart, Turnierformat, Courts sowie die passenden Regeln. Speichere anschließend die Konfiguration.'},
- {tab:'registration',selector:'#view .panel',title:'Anmeldung und Warteliste vorbereiten',body:'Lege Startplätze, Anmeldeschluss und Sichtbarkeit fest. Ist das Feld voll, werden weitere Anmeldungen automatisch auf die Warteliste gesetzt.'},
- {tab:'participants',selector:'#view .panel',title:'Teilnehmer verwalten',body:'Hier erfasst und kontrollierst du Spieler oder Teams. Vor der Auslosung kannst du außerdem den Check-in prüfen.'},
- {tab:'draw',selector:'#view .panel',title:'Auslosung erstellen',body:'Sobald die Teilnehmer vollständig sind, erzeugst du hier Gruppen, Begegnungen oder den K.-o.-Baum.'},
- {tab:'courts',selector:'#view .panel',title:'Courts und Zeiten zuordnen',body:'Starte Begegnungen auf freien Courts und passe bei Bedarf veröffentlichte Spielzeiten oder Platzzuordnungen an.'},
- {tab:'results',selector:'#view .panel',title:'Ergebnisse erfassen',body:'Nach Spielende trägst du die Sätze oder Punkte ein. Tabellen und folgende K.-o.-Begegnungen werden daraus aktualisiert.'},
- {tab:'closing',selector:'#view .panel',title:'Turnier prüfen und abschließen',body:'Zum Schluss kontrollierst du Platzierungen, das Spiel um Platz 3 und den Abschlussbericht. Danach kannst du die Daten sichern oder drucken.'}
+const guidedSetupSteps=[
+ {id:'welcome',name:'Willkommen',text:'Richte dein erstes Turnier ein. Halte Vereinsname, Termin, Turnierformat und verfügbare Courts bereit. Dein Einrichtungsfortschritt wird je Demo-Benutzer in diesem Browser gespeichert.'},
+ {id:'tournament',name:'Erstes Turnier',text:'Lege ein neues Turnier an oder wähle einen vorhandenen Entwurf für die Einrichtung.'},
+ {id:'organizer',name:'Veranstalter',text:'Trage den veranstaltenden Verein unter „Turnierausschreibung“ ein und speichere die Ausschreibung. Prüfe dabei die Sichtbarkeit.',tab:'registration',anchor:'pubClub',action:'Ausschreibung öffnen'},
+ {id:'configuration',name:'Sportart, Courts und Termin',text:'Wähle Sportart, Format und Anzahl der Courts. Trage den Turnierbeginn ein und wähle „Einstellungen speichern“.',tab:'setup',anchor:'sName',action:'Turnierkonfiguration öffnen'},
+ {id:'registration',name:'Anmeldung und Startgeld',text:'Lege das Teilnehmerlimit und die Anmeldephase fest. Speichere danach separat die Teilnahmegebühr, auch wenn das Turnier kostenlos ist.',tab:'setup',anchor:'regCapacity',action:'Anmeldebedingungen öffnen',optional:true},
+ {id:'finish',name:'Startklar',text:'Prüfe die gespeicherten Angaben für dein Turnier. Anschließend kannst du unter „Meine Turniere“ weiterarbeiten.'}
 ];
-function persistOnboarding(){try{localStorage.setItem(ONBOARDING_KEY,JSON.stringify(onboardingState))}catch(_){/* onboarding still works for this visit */}}
-function onboardingRegisterVisit(){
- if(actor().role!=='manager'||isLiveBoardRoute()||location.hash==='#vereinsseite')return;
- onboardingState.visits=Math.max(0,Number(onboardingState.visits)||0)+1;persistOnboarding();
- if(onboardingState.visits<=10&&!onboardingState.dismissed&&!onboardingState.completed){
-  const prompt=document.getElementById('onboardingPrompt');prompt.hidden=false;prompt.querySelector('.btn')?.focus();
+const guidedSetupMemory=new Map();
+let guidedSetupStorageAvailable=true;
+let guidedSetupTask=null;
+
+function canUseGuidedSetup(){return allowed('create')&&allowed('settings')}
+function guidedSetupKey(){return ONBOARDING_KEY+actor().id}
+function guidedSetupRead(){
+ const key=guidedSetupKey();
+ if(guidedSetupMemory.has(key))return guidedSetupMemory.get(key);
+ try{
+  const value=JSON.parse(localStorage.getItem(key)||'null');
+  if(!value||!Number.isInteger(value.step)||!guidedSetupSteps[value.step])return null;
+  const {step,tournamentId,paused,finished,skipped}=value;
+  return {step,tournamentId:typeof tournamentId==='string'?tournamentId:'',paused:paused===true,finished:finished===true,skipped:skipped===true,
+   saved:['organizer','configuration','registration','fee'].filter(id=>Array.isArray(value.saved)&&value.saved.includes(id))};
+ }catch(_){return null}
+}
+function guidedSetupWrite(progress){
+ const key=guidedSetupKey();
+ guidedSetupMemory.set(key,progress);
+ try{localStorage.setItem(key,JSON.stringify(progress));guidedSetupStorageAvailable=true}
+ catch(_){guidedSetupStorageAvailable=false}
+ return progress;
+}
+function guidedSetupRecord(progress){return collection.tournaments.find(record=>record.id===progress?.tournamentId)}
+function isSetupPlaceholder(record){
+ return !record.audit?.length&&JSON.stringify(record.data)===JSON.stringify(normalizeTournament(empty()));
+}
+function guidedSetupDraft(record){
+ return record&&!isSetupPlaceholder(record)&&!registrationLocked(record.data)&&!record.data.cancellation&&tournamentStage(record.data)!=='finished';
+}
+function guidedSetupReady(step,progress){
+ const record=guidedSetupRecord(progress);
+ const data=record&&JSON.parse(snapshots.get(record.id)||'null');
+ switch(step){
+  case 'welcome':return true;
+  case 'tournament':return Boolean(data?.name?.trim()&&guidedSetupDraft(record));
+  case 'organizer':return progress.saved.includes('organizer')&&data?.publication?.club?.trim().length>=2;
+  case 'configuration':return progress.saved.includes('configuration')&&sports.includes(data?.sport)&&Object.hasOwn(types,data?.format)&&data?.courtCount>0&&Number.isFinite(Date.parse(data?.eventStart));
+  case 'registration':return progress.saved.includes('registration')&&progress.saved.includes('fee')&&data?.registration?.maxEntries>0&&(!data.fee.enabled||data.fee.cents>0);
+  case 'finish':return guidedSetupSteps.slice(1,-1).every(task=>task.optional?progress.skipped||guidedSetupReady(task.id,progress):guidedSetupReady(task.id,progress));
+  default:return false;
  }
 }
-function onboardingLater(){document.getElementById('onboardingPrompt').hidden=true}
-function onboardingDismiss(){onboardingState.dismissed=true;persistOnboarding();onboardingLater()}
-function clearOnboardingFocus(){if(onboardingFocus){onboardingFocus.classList.remove('onboarding-focus');onboardingFocus=null}}
-function onboardingStart(){document.getElementById('onboardingPrompt').hidden=true;document.getElementById('onboardingTour').hidden=false;onboardingStep=0;onboardingShowStep()}
-function onboardingShowStep(){
- clearOnboardingFocus();
- const step=onboardingSteps[onboardingStep];if(!step)return;
- if(tab!==step.tab)showTab(step.tab);
- const total=onboardingSteps.length;
- document.getElementById('onboardingProgress').style.width=((onboardingStep+1)/total*100)+'%';
- document.getElementById('onboardingStepLabel').textContent=`Schritt ${onboardingStep+1} von ${total}`;
- document.getElementById('onboardingStepTitle').textContent=step.title;
- document.getElementById('onboardingStepBody').textContent=step.body;
- document.getElementById('onboardingPrevious').disabled=onboardingStep===0;
- document.getElementById('onboardingNext').textContent=onboardingStep===total-1?'Einführung abschließen':'Weiter →';
- requestAnimationFrame(()=>{onboardingFocus=document.querySelector(step.selector)||document.getElementById('view');onboardingFocus?.classList.add('onboarding-focus');onboardingFocus?.scrollIntoView({behavior:'smooth',block:'center'})});
+function guidedSetupPosition(progress){
+ if(progress.finished)return progress;
+ const earlier=guidedSetupSteps.slice(0,progress.step).findIndex(step=>!(step.optional&&progress.skipped)&&!guidedSetupReady(step.id,progress));
+ return earlier<0?progress:guidedSetupWrite({...progress,step:earlier});
 }
-function onboardingPrevious(){if(onboardingStep>0){onboardingStep--;onboardingShowStep()}}
-function onboardingNext(){if(onboardingStep>=onboardingSteps.length-1){onboardingCloseTour(true);return}onboardingStep++;onboardingShowStep()}
-function onboardingCloseTour(completed){clearOnboardingFocus();document.getElementById('onboardingTour').hidden=true;onboardingStep=-1;if(completed){onboardingState.completed=true;persistOnboarding();showTab('tournaments');notify('Einführung abgeschlossen. Du kannst sie unter „Anleitung & Hilfe“ jederzeit erneut starten.')}}
+function onboardingRegisterVisit(){
+ if(tab!=='tournaments'||!canUseGuidedSetup())return;
+ const progress=guidedSetupRead();
+ if(!progress&&collection.tournaments.length===1&&isSetupPlaceholder(collection.tournaments[0]))onboardingStart();
+ else if(progress&&!progress.finished&&!progress.paused)onboardingStart();
+}
+function onboardingStart(){
+ if(!canUseGuidedSetup())return;
+ const progress=guidedSetupRead()||{step:0,tournamentId:'',saved:[],paused:false,finished:false,skipped:false};
+ if(!guidedSetupLeave('guidedSetup'))return;
+ guidedSetupWrite({...progress,paused:false});
+ if(tab!=='guidedSetup')switchTab('guidedSetup');
+ document.getElementById('guidedSetupTitle')?.focus();
+}
+function guidedSetupFocus(){
+ render();
+ document.getElementById('guidedSetupTitle')?.focus();
+}
+function guidedSetupMove(action){
+ assert(canUseGuidedSetup()&&tab==='guidedSetup','Einrichtung ist hier nicht verfügbar.');
+ const progress=guidedSetupPosition(guidedSetupRead());
+ const step=guidedSetupSteps[progress.step];
+ if(action==='pause'){
+  guidedSetupWrite({...progress,paused:true});
+  showTab('tournaments');
+  document.getElementById('resumeGuidedSetup')?.focus();
+  return;
+ }
+ if(action==='back'){guidedSetupWrite({...progress,step:Math.max(0,progress.step-1)});guidedSetupFocus();return}
+ const skipping=action==='skip'&&step.optional;
+ assert(skipping||guidedSetupReady(step.id,progress),'Speichere zuerst die Angaben für diesen Schritt.');
+ if(step.id==='finish'){
+  guidedSetupWrite({...progress,finished:true});
+  showTab('tournaments');
+  notify('Die Grundeinrichtung ist abgeschlossen.');
+  return;
+ }
+ const skipped=step.optional?Boolean(skipping):progress.skipped;
+ guidedSetupWrite({...progress,step:progress.step+1,skipped});
+ guidedSetupFocus();
+}
+function guidedSetupChoose(id){
+ const progress=guidedSetupRead();
+ assert(canUseGuidedSetup()&&tab==='guidedSetup'&&progress?.step===1,'Öffne zuerst „Erstes Turnier“ im Einrichtungsassistenten.');
+ assert(guidedSetupDraft(collection.tournaments.find(record=>record.id===id)),'Bitte wähle einen bearbeitbaren Turnierentwurf.');
+ if(progress.tournamentId!==id)guidedSetupWrite({...progress,tournamentId:id,saved:[],skipped:false});
+ guidedSetupFocus();
+}
+function guidedSetupCreate(){
+ assert(canUseGuidedSetup()&&tab==='guidedSetup'&&guidedSetupRead()?.step===1,'Öffne zuerst „Erstes Turnier“ im Einrichtungsassistenten.');
+ const id=createTournament();
+ if(!id)return;
+ const progress=guidedSetupRead();
+ guidedSetupWrite({...progress,tournamentId:id,saved:[],skipped:false});
+ showTab('guidedSetup');
+ guidedSetupFocus();
+}
+function guidedSetupFields(){
+ return Array.from(document.querySelectorAll('#view input[id]:not([disabled]),#view select[id]:not([disabled]),#view textarea[id]:not([disabled])'),
+  field=>[field.id,field.type==='checkbox'?field.checked:field.value]);
+}
+function guidedSetupDirty(){
+ return guidedSetupTask!==null&&JSON.stringify(guidedSetupFields())!==guidedSetupTask.baseline;
+}
+function guidedSetupLeave(next){
+ if(next===tab||!guidedSetupTask)return true;
+ if(guidedSetupDirty()){
+  if(!confirm('Es gibt ungespeicherte Eingaben. Möchtest du den Bereich verlassen?'))return false;
+ }
+ guidedSetupTask=null;
+ return true;
+}
+window.addEventListener('beforeunload',event=>{
+ if(!guidedSetupDirty())return;
+ event.preventDefault();
+ event.returnValue='';
+});
+function guidedSetupOpenTask(){
+ const progress=guidedSetupPosition(guidedSetupRead());
+ const task=guidedSetupSteps[progress.step];
+ const record=guidedSetupRecord(progress);
+ assert(canUseGuidedSetup()&&tab==='guidedSetup'&&task.tab&&guidedSetupDraft(record),'Bitte wähle zuerst einen bearbeitbaren Turnierentwurf.');
+ collection.activeId=record.id;
+ state=record.data;
+ switchTab(task.tab);
+ guidedSetupTask={tab:task.tab,baseline:JSON.stringify(guidedSetupFields())};
+ document.getElementById(task.anchor)?.focus();
+}
+function guidedSetupSaved(id){
+ const progress=guidedSetupRead();
+ if(!progress||progress.finished||progress.tournamentId!==collection.activeId||!canUseGuidedSetup())return;
+ guidedSetupWrite({...progress,saved:[...new Set([...progress.saved,id])]});
+}
+function guidedSetupResume(){
+ const progress=guidedSetupRead();
+ const active=canUseGuidedSetup()&&tab!=='guidedSetup'&&!['clubPage','playerAccount','publicLive'].includes(tab)&&progress&&!progress.finished;
+ document.getElementById('setupResume').innerHTML=active
+  ?'<section class="panel setup-resume"><div><strong>Deine Einrichtung läuft weiter</strong><p class="hint">Hier kommst du zum aktuellen Einrichtungsschritt zurück.</p></div><button class="btn alt" id="resumeGuidedSetup" onclick="onboardingStart()">Einrichtung fortsetzen</button></section>':'';
+}
+function guidedSetupSummary(progress){
+ const data=guidedSetupRecord(progress)?.data;
+ if(!data)return '<p>Das zugehörige Turnier ist in diesem Browser nicht mehr vorhanden.</p>';
+ const rows=[
+  ['Turnier',data.name],
+  ['Veranstalter',data.publication.club],
+  ['Sportart und Format',data.sport+' · '+types[data.format]],
+  ['Courts',String(data.courtCount)],
+  ['Turnierbeginn',new Date(data.eventStart).toLocaleString('de-DE',{dateStyle:'medium',timeStyle:'short'})],
+  ['Anmeldung und Startgeld',progress.skipped?'Bewusst auf später verschoben':data.registration.maxEntries+' Startplätze · '+(data.registration.open?'Anmeldung geöffnet':'Anmeldung geschlossen')+' · '+(data.fee.enabled?eur(data.fee.cents)+(data.fee.unit==='person'?' pro Spieler':' pro Anmeldung / Team'):'Kostenlos')],
+  ['Teilnehmer',String(data.players.length)],
+  ['Ausschreibung',data.publication.visible?'Auf der lokalen Vereinsseite sichtbar':'Entwurf, auf der Vereinsseite ausgeblendet']
+ ];
+ return '<dl>'+rows.map(([label,value])=>'<dt><b>'+esc(label)+'</b></dt><dd>'+esc(value)+'</dd>').join('')+'</dl>';
+}
+function guidedSetupView(){
+ const progress=guidedSetupPosition(guidedSetupRead());
+ const {step}=progress;
+ const task=guidedSetupSteps[step];
+ const record=guidedSetupRecord(progress);
+ const ready=guidedSetupReady(task.id,progress);
+ let body='';
+ if(task.id==='tournament'){
+  const drafts=collection.tournaments.filter(guidedSetupDraft);
+  body=`<div class="actions"><button class="btn alt" onclick="guarded(guidedSetupCreate)">+ Neues Turnier</button></div>
+   ${drafts.length?`<div class="field"><label for="guidedSetupTournament">Vorhandener Turnierentwurf</label><select id="guidedSetupTournament" onchange="if(this.value)guarded(()=>guidedSetupChoose(this.value))"><option value="">Bitte auswählen</option>${drafts.map(item=>`<option value="${esc(item.id)}" ${item.id===record?.id?'selected':''}>${esc(item.data.name)}</option>`).join('')}</select></div>`:''}`;
+ }
+ if(task.tab)body=`<div class="actions"><button class="btn alt" onclick="guarded(guidedSetupOpenTask)">${esc(task.action)}</button></div>`;
+ if(task.id==='finish')body=guidedSetupSummary(progress);
+ const count=guidedSetupSteps.length;
+ return `<h2>Dein Turnier Schritt für Schritt einrichten</h2><p class="hint">Eine Aufgabe nach der anderen. Du bestimmst das Tempo.</p>
+  <div class="setup-layout"><nav class="panel setup-timeline" aria-label="Einrichtungsschritte">
+   <progress class="setup-progress" aria-label="Einrichtungsfortschritt" value="${progress.finished?count:step}" max="${count}"></progress>
+   <ol>${guidedSetupSteps.map((item,index)=>`<li ${index===step?'aria-current="step"':''}>${esc(item.name)}
+    ${item.optional?'<small>Bei Bedarf</small>':''}${item.optional&&progress.skipped?'<small>Später</small>':index<step||progress.finished?'<small>Erledigt</small>':''}</li>`).join('')}</ol>
+  </nav><section class="panel setup-task" aria-labelledby="guidedSetupTitle">
+   <span class="hint">Schritt ${step+1} von ${count}${task.optional?' · Bei Bedarf':''}</span>
+   <h2 id="guidedSetupTitle" tabindex="-1">${esc(task.name)}</h2><p>${esc(task.text)}</p>
+   ${task.tab?`<p role="status">${ready?'✓ Gespeichert':'Dieser Schritt ist noch offen.'}</p>`:''}
+   ${body}
+   ${!guidedSetupStorageAvailable?'<p class="notice">Der Browser hält den Fortschritt für diese Sitzung im Arbeitsspeicher.</p>':''}
+   ${progress.finished?'<p class="notice">Die Grundeinrichtung ist abgeschlossen.</p><button class="btn" onclick="switchTab(\'tournaments\')">Meine Turniere</button>':
+    `<div class="actions">
+     ${step>0?'<button class="btn alt" onclick="guidedSetupMove(\'back\')">Zurück</button>':''}
+     <button class="btn alt" onclick="guidedSetupMove('pause')">Später fortsetzen</button>
+     ${task.optional?'<button class="btn alt" onclick="guidedSetupMove(\'skip\')">Später erledigen</button>':''}
+     <button class="btn" onclick="guarded(()=>guidedSetupMove('next'))" ${ready?'':'disabled'}>${step===0?'Los geht’s':task.id==='finish'?'Einrichtung abschließen':'Weiter'}</button>
+    </div>
+    ${ready?'':`<p class="hint">${task.optional?'Speichere die Angaben oder wähle „Später erledigen“.':'Erledige zuerst die aktuelle Aufgabe. Danach wird „Weiter“ verfügbar.'}</p>`}`}
+  </section></div>`;
+}
 const sports=['Tennis','Padel','Pickleball','Beachvolleyball'];
 const sportDescriptions={Tennis:'2 oder 3 Gewinnsätze, voller Entscheidungssatz oder Match-Tie-Break',Padel:'2 Gewinnsätze, voller Entscheidungssatz oder Match-Tie-Break',Pickleball:'2 gewonnene Games bis 11, mindestens 2 Punkte Vorsprung',Beachvolleyball:'2 Gewinnsätze; Sätze 1/2 bis 21, Entscheidungssatz bis 15, jeweils 2 Punkte Vorsprung'};
 function setSport(value){assert(!state.matches.length,'Sportart nach Auslosung gesperrt.');state.sport=value;if(value!=='Tennis')state.ruleProfile='club';if(value==='Padel')state.tennisSetsToWin=2;save()}
@@ -479,7 +680,7 @@ function resolveDependencies(){
   if(right)m.b=state.matches.find(x=>x.id===right)?.winner||null;
  }
 }
-function draw(){requirePerm('draw');assert(state.format!=='ladder','Ein Forderungsbaum wird unter Forderungsbaum gestartet, nicht ausgelost.');assert(state.players.length>=2,'Mindestens zwei Teams anmelden.');assert(state.players.every(p=>p.checked),'Für die Demo müssen alle Teams eingecheckt sein.');assert(!state.matches.length,'Die vorhandene Auslosung zuerst zurücksetzen.');let ids=shuffle(state.players.map(p=>p.id));if(state.format==='round')state.matches=roundRobin(ids,null);else if(state.format==='ko')state.matches=buildKO(ids);else{const count=state.groupSize;assert(ids.length%count===0,'Teilnehmerzahl muss durch die Gruppengröße teilbar sein.');const groups=ids.length/count;assert(groups>=2,'Mindestens zwei Gruppen erforderlich.');assert(groups*state.qualify>=2,'Mindestens zwei Qualifikanten erforderlich.');state.players.forEach(p=>p.group=null);for(let i=0;i<groups;i++){const letter=String.fromCharCode(65+i);const subset=ids.slice(i*count,(i+1)*count);subset.forEach(id=>team(id).group=letter);state.matches.push(...roundRobin(subset,letter))}}
+function draw(){requirePerm('draw');assert(state.format!=='ladder','Ein Forderungsbaum wird unter Forderungsbaum gestartet, nicht ausgelost.');assert(state.players.length>=2,'Mindestens zwei Teams anmelden.');assert(state.players.every(p=>p.onlinePayment!=='stripe_pending'),'Vor der Auslosung müssen alle nachgerückten Teilnehmer ihre Stripe-Zahlung abschließen.');assert(state.players.every(p=>p.checked),'Für die Demo müssen alle Teams eingecheckt sein.');assert(!state.matches.length,'Die vorhandene Auslosung zuerst zurücksetzen.');let ids=shuffle(state.players.map(p=>p.id));if(state.format==='round')state.matches=roundRobin(ids,null);else if(state.format==='ko')state.matches=buildKO(ids);else{const count=state.groupSize;assert(ids.length%count===0,'Teilnehmerzahl muss durch die Gruppengröße teilbar sein.');const groups=ids.length/count;assert(groups>=2,'Mindestens zwei Gruppen erforderlich.');assert(groups*state.qualify>=2,'Mindestens zwei Qualifikanten erforderlich.');state.players.forEach(p=>p.group=null);for(let i=0;i<groups;i++){const letter=String.fromCharCode(65+i);const subset=ids.slice(i*count,(i+1)*count);subset.forEach(id=>team(id).group=letter);state.matches.push(...roundRobin(subset,letter))}}
  state.stage='running';state.drawVersion++;save();notify(`Auslosung erstellt: ${state.matches.length} ${encounterLabel(state.matches.length)}.`)}
 function resetDraw(){requirePerm('draw');assert(state.matches.every(m=>m.status==='scheduled'),'Die Auslosung kann nur vor dem ersten Spiel zurückgesetzt werden.');if(!confirm('Auslosung und Court-Zuweisungen löschen?'))return;state.matches=[];state.players.forEach(p=>p.group=null);state.stage='registration';save()}
 function startMatch(id,court){
@@ -722,20 +923,24 @@ function canSelfRegister(t){
  return t.registration.open&&!registrationLocked(t)&&!registrationDeadlinePassed(t);
 }
 function registrationNameTaken(n){const key=n.toLocaleLowerCase('de');return state.players.some(p=>p.name.toLocaleLowerCase('de')===key)||state.registration.waitlist.some(p=>p.name.toLocaleLowerCase('de')===key)}
-function registerParticipant(raw,selfService=true,managementId=collection.activeId){
+function registerParticipant(raw,selfService=true,managementId=collection.activeId,paymentConfirmation=null){
  const value=String(raw||'').trim();assert(value.length>=2&&value.length<=100,'Bitte einen Namen bzw. Teamnamen mit 2 bis 100 Zeichen eingeben.');
  assert(!registrationLocked(),'Nach der Auslosung bzw. nach dem Turnierstart ist die Anmeldung geschlossen.');
  if(selfService)assert(canSelfRegister(state),registrationDeadlinePassed(state)?'Der Anmeldeschluss ist abgelaufen.':'Die Online-Anmeldung ist derzeit geschlossen.');
  assert(!registrationNameTaken(value),'Dieser Name ist bereits angemeldet oder steht auf der Warteliste.');
- const entry={id:randId(),name:value,checked:false,group:null,registeredAt:new Date().toISOString(),registrationSource:selfService?'self-demo':'manager'};
  const waiting=state.registration.waitlist.length>0||state.players.length>=state.registration.maxEntries;
+ if(selfService&&state.fee.enabled&&!waiting)assert(paymentConfirmation?.provider==='stripe'&&paymentConfirmation?.status==='paid','Die kostenpflichtige Online-Anmeldung muss zuerst vollständig über Stripe bezahlt werden.');
+ const entry={id:randId(),name:value,checked:false,group:null,registeredAt:new Date().toISOString(),registrationSource:selfService?'self-demo':'manager'};
+ if(selfService&&state.fee.enabled)entry.onlinePayment=waiting?'stripe_required_on_promotion':'stripe_paid_demo';
  if(waiting){state.registration.waitlist.push(entry)}else{state.players.push(entry)}
+ if(selfService&&state.fee.enabled&&!waiting){state.paymentRecords[entry.id]={events:[{id:uid(),type:'paid',cents:feeDue(),at:new Date().toISOString(),actor:'Stripe Checkout (Demo)',note:'Online-Anmeldung · Testbestätigung',method:'stripe',source:'stripe-demo',stripeSessionRef:paymentConfirmation.sessionRef||''}]}}
  state.stage='registration';
  // This simulated public entry point is deliberately saved without staff permissions;
  // it can only modify registration data and has no authentic user identity.
  if(selfService)saveSimulatedPublicEntry('Demo-Selbstanmeldung: '+value,managementId);
  else save();
- notify(waiting?'Auf Warteliste eingetragen: '+value+' (Platz '+state.registration.waitlist.length+').':'Startplatz reserviert: '+value+'. '+(state.fee.enabled?'Startgeld offen · Zahlungsart: '+feeMethodLabel(state.fee.method)+'.':'Die Teilnahme ist kostenlos.'));
+ notify(waiting?'Auf Warteliste eingetragen: '+value+' (Platz '+state.registration.waitlist.length+'). Eine Gebühr wird erst beim Nachrücken ausschließlich über Stripe fällig.':'Startplatz bestätigt: '+value+'. '+(state.fee.enabled?'Stripe-Testzahlung wurde bestätigt.':'Die Teilnahme ist kostenlos.'));
+ return entry;
 }
 function saveSimulatedPublicEntry(action,managementId){
  const rec=collection.tournaments.find(x=>x.id===collection.activeId);
@@ -745,29 +950,38 @@ function saveSimulatedPublicEntry(action,managementId){
  writeTournamentCollection({...collection,activeId:managementId});
  snapshots.set(rec.id,JSON.stringify(state));
 }
-function registerFromForm(){const input=document.getElementById('selfRegisterName');assert(input,'Anmeldeformular nicht vorhanden.');registerParticipant(input.value,true)}
+let stripeCheckoutDraft=null;
+function beginOnlineRegistration(tournamentId,inputId,managementId=collection.activeId){const rec=collection.tournaments.find(x=>x.id===tournamentId);assert(rec,'Turnier nicht gefunden.');const input=document.getElementById(inputId);assert(input,'Anmeldeformular nicht vorhanden.');const value=input.value.trim();assert(value.length>=2&&value.length<=100,'Bitte einen Namen bzw. Teamnamen mit 2 bis 100 Zeichen eingeben.');const previous=collection.activeId,previousState=state;collection.activeId=tournamentId;state=rec.data;try{assert(canSelfRegister(state),registrationDeadlinePassed(state)?'Der Anmeldeschluss ist abgelaufen.':'Die Online-Anmeldung ist derzeit geschlossen.');assert(!registrationNameTaken(value),'Dieser Name ist bereits angemeldet oder steht auf der Warteliste.');const waiting=state.registration.waitlist.length>0||state.players.length>=state.registration.maxEntries;if(!state.fee.enabled||waiting){registerParticipant(value,true,managementId);return}stripeCheckoutDraft={tournamentId,name:value,managementId};document.getElementById('stripeCheckoutSummary').innerHTML=`<b>${esc(state.name)}</b><br>${esc(value)} · zu zahlen: <b>${esc(eur(feeDue()))}</b>`;document.getElementById('stripeCheckoutDialog').hidden=false;}finally{collection.activeId=previous;state=previousState}}
+function registerFromForm(){beginOnlineRegistration(collection.activeId,'selfRegisterName',collection.activeId)}
+function closeStripeCheckout(){document.getElementById('stripeCheckoutDialog').hidden=true;stripeCheckoutDraft=null}
+function beginPromotedStripeCheckout(tournamentId,id){const rec=collection.tournaments.find(x=>x.id===tournamentId);assert(rec,'Turnier nicht gefunden.');const entry=rec.data.players.find(p=>p.id===id);assert(entry?.onlinePayment==='stripe_pending','Für diese Anmeldung ist keine Stripe-Zahlung ausstehend.');stripeCheckoutDraft={kind:'promotion',tournamentId,id,name:entry.name,managementId:collection.activeId};const previousState=state;state=rec.data;try{document.getElementById('stripeCheckoutSummary').innerHTML=`<b>${esc(state.name)}</b><br>${esc(entry.name)} · Nachrückerzahlung: <b>${esc(eur(feeDue()))}</b>`;document.getElementById('stripeCheckoutDialog').hidden=false;}finally{state=previousState}}
+function completeStripeDemoCheckout(){assert(stripeCheckoutDraft,'Keine Stripe-Anmeldung vorbereitet.');const draft={...stripeCheckoutDraft},rec=collection.tournaments.find(x=>x.id===draft.tournamentId);assert(rec,'Turnier nicht gefunden.');const previous=collection.activeId,previousState=state;collection.activeId=rec.id;state=rec.data;try{if(draft.kind==='promotion'){const entry=state.players.find(p=>p.id===draft.id);assert(entry?.onlinePayment==='stripe_pending','Die Nachrückerzahlung ist nicht mehr offen.');state.paymentRecords[entry.id]={events:[{id:uid(),type:'paid',cents:feeDue(),at:new Date().toISOString(),actor:'Stripe Checkout (Demo)',note:'Nachrückerzahlung · Testbestätigung',method:'stripe',source:'stripe-demo',stripeSessionRef:'demo_'+uid()}]};entry.onlinePayment='stripe_paid_demo';entry.stripePaidAt=new Date().toISOString();delete entry.stripePaymentRequiredAt;addParticipantMessage([entry.id],'Stripe-Zahlung bestätigt','Deine Startgebühr wurde über Stripe bestätigt. Dein Startplatz ist jetzt verbindlich.');saveSimulatedPublicEntry('Stripe-Zahlung Nachrücker: '+entry.name,draft.managementId)}else registerParticipant(draft.name,true,draft.managementId,{provider:'stripe',status:'paid',sessionRef:'demo_'+uid()});}finally{collection.activeId=previous;state=previousState;closeStripeCheckout();render()}}
 function fillVacancies(){const promoted=[];
  while(state.players.length<state.registration.maxEntries&&state.registration.waitlist.length){
-  const next=state.registration.waitlist.shift();next.promotedAt=new Date().toISOString();next.checked=false;state.players.push(next);promoted.push(next.name);
+  const next=state.registration.waitlist.shift();next.promotedAt=new Date().toISOString();next.checked=false;if(state.fee.enabled){next.onlinePayment='stripe_pending';next.stripePaymentRequiredAt=next.promotedAt}state.players.push(next);promoted.push(next.name);
  }
  return promoted;
 }
-function cancelRegistration(id){
- requirePerm('participants');assert(!registrationLocked(),'Absage nach Auslosung bitte manuell durch die Turnierleitung klären.');
+function processRegistrationCancellation(id,selfService=false,managementId=collection.activeId){assert(!registrationLocked(),'Absage nach Auslosung bitte manuell durch die Turnierleitung klären.');
  const active=state.players.find(p=>p.id===id);const waiting=state.registration.waitlist.find(p=>p.id===id);
  const entry=active||waiting;assert(entry,'Anmeldung nicht gefunden.');
- if(!confirm('Anmeldung von „'+entry.name+'“ stornieren? '+(active?'Der erste Wartelistenteilnehmer rückt automatisch nach.':'')))return;
+ const payment=totals(id),events=state.paymentRecords[id]?.events||[],stripePaid=events.some(e=>e.type==='paid'&&(e.method==='stripe'||e.source==='stripe-demo'));
+ const refundAmount=Math.max(0,payment.balance),refundStatus=!refundAmount?'not_required':stripePaid?'stripe_refund_pending':'manual_review';
  if(active)state.players=state.players.filter(p=>p.id!==id);
  else state.registration.waitlist=state.registration.waitlist.filter(p=>p.id!==id);
- state.registration.cancelled.push({...entry,cancelledAt:new Date().toISOString(),wasActive:!!active});
+ state.registration.cancelled.push({...entry,cancelledAt:new Date().toISOString(),wasActive:!!active,cancellationProcess:{initiatedBy:selfService?'player':'management',status:refundStatus,refundCents:refundAmount,provider:stripePaid?'stripe':'manual',startedAt:new Date().toISOString()}});
  const promoted=active?fillVacancies():[];
- save();notify('Abmeldung erfasst.'+(promoted.length?' Automatisch nachgerückt: '+promoted.join(', ')+'.':'')+(state.paymentRecords[id]?.events?.length?' Zahlungsbuchungen bleiben zur Prüfung erhalten; Erstattung nicht automatisch ausgeführt.':''));
+ if(selfService)saveSimulatedPublicEntry('Spielerabsage: '+entry.name,managementId);else save();
+ notify('Abmeldung erfasst.'+(refundStatus==='stripe_refund_pending'?' Stripe-Rückerstattung über '+eur(refundAmount)+' wurde zur serverseitigen Bearbeitung vorgemerkt.':refundStatus==='manual_review'?' Rückerstattung muss manuell geprüft werden.':' Keine Rückerstattung erforderlich.')+(promoted.length?' Automatisch nachgerückt: '+promoted.join(', ')+'.':''));
+ return {entry,promoted,refundStatus,refundAmount};
 }
+function cancelRegistration(id){requirePerm('participants');const entry=state.players.find(p=>p.id===id)||state.registration.waitlist.find(p=>p.id===id);assert(entry,'Anmeldung nicht gefunden.');if(!confirm('Anmeldung von „'+entry.name+'“ stornieren? '+(state.players.some(p=>p.id===id)?'Der erste Wartelistenteilnehmer rückt automatisch nach.':'')))return;processRegistrationCancellation(id,false)}
+function playerCancelRegistration(tournamentId,id){const rec=collection.tournaments.find(x=>x.id===tournamentId);assert(rec,'Turnier nicht gefunden.');const previous=collection.activeId,previousState=state;collection.activeId=rec.id;state=rec.data;try{const entry=state.players.find(p=>p.id===id)||state.registration.waitlist.find(p=>p.id===id);assert(entry,'Anmeldung nicht gefunden.');assert(!registrationLocked(),'Nach der Auslosung muss die Absage direkt mit der Turnierleitung geklärt werden.');if(!confirm('Teilnahme an „'+state.name+'“ wirklich absagen? Ein bezahltes Startgeld wird anschließend nach der Stornoregel geprüft.'))return;processRegistrationCancellation(id,true,previous)}finally{collection.activeId=previous;state=previousState;render()}}
 function saveRegistrationSettings(){requirePerm('settings');assert(!registrationLocked(),'Kapazität und Anmeldung nach Turnierstart gesperrt.');
  const cap=Number(document.getElementById('regCapacity').value);assert(Number.isInteger(cap)&&cap>=1&&cap<=1024,'Teilnehmerlimit muss zwischen 1 und 1024 liegen.');
  assert(cap>=state.players.length,'Limit kann nicht unter die bereits zugelassenen Teilnehmer fallen.');
  state.registration.maxEntries=cap;state.registration.open=document.getElementById('regOpen').value==='1';
- const promoted=fillVacancies();save();notify('Anmeldebedingungen gespeichert.'+(promoted.length?' Nachgerückt: '+promoted.join(', ')+'.':''));
+ const promoted=fillVacancies();if(save()){guidedSetupSaved('registration');notify('Anmeldebedingungen gespeichert.'+(promoted.length?' Nachgerückt: '+promoted.join(', ')+'.':''));}
 }
 function savePublication(){
  requirePerm('settings');
@@ -787,7 +1001,7 @@ function savePublication(){
   ageClass:value('pubAgeClass').slice(0,80),
   skillLevel:value('pubSkillLevel').slice(0,100)
  };
- if(save())notify('Turnierausschreibung gespeichert. '+(state.publication.visible?'Sie ist auf der lokalen Vereinsseite sichtbar.':'Sie ist auf der Vereinsseite ausgeblendet.'));
+ if(save()){guidedSetupSaved('organizer');notify('Turnierausschreibung gespeichert. '+(state.publication.visible?'Sie ist auf der lokalen Vereinsseite sichtbar.':'Sie ist auf der Vereinsseite ausgeblendet.'));}
 }
 function publicationSettingsView(){
  const p=state.publication;
@@ -924,17 +1138,7 @@ function backToClubList(){
  document.getElementById('clubListTitle')?.focus();
 }
 function publicRegister(id){
- const rec=publishedTournaments().find(r=>r.id===id);assert(rec,'Turnier nicht öffentlich sichtbar.');
- assert(canSelfRegister(rec.data),'Die Anmeldung ist nicht mehr geöffnet.');
- assert(rec.data.publication.audience==='all','Die Mitgliedschaft kann in dieser Demo nicht sicher geprüft werden. Anmeldung nur nach BOOKANDPLAY-Login in der echten Vereinsseite möglich.');
- const input=document.getElementById('publicName');assert(input,'Bitte das Anmeldeformular öffnen.');
- const nameValue=input.value.trim();
- const previous=collection.activeId;collection.activeId=id;state=rec.data;
- try{registerParticipant(nameValue,true,previous)}finally{
-  // Self-service registration must not silently switch the management tournament.
-  collection.activeId=previous;
-  state=collection.tournaments.find(r=>r.id===previous).data;
- }
+ const rec=publishedTournaments().find(r=>r.id===id);assert(rec,'Turnier nicht öffentlich sichtbar.');assert(rec.data.publication.audience==='all','Die Mitgliedschaft kann in dieser Demo nicht sicher geprüft werden. Anmeldung nur nach BOOKANDPLAY-Login in der echten Vereinsseite möglich.');beginOnlineRegistration(id,'publicName',collection.activeId);
 }
 function clubPageView(){
  const published=publishedTournaments();const clubs=[...new Set(published.map(r=>r.data.publication.club))].sort((a,b)=>a.localeCompare(b,'de'));
@@ -943,7 +1147,7 @@ function clubPageView(){
  const chosen=visible.find(r=>r.id===publicSelected);
  const cards=visible.map(r=>{const t=r.data,reg=t.registration,free=Math.max(0,reg.maxEntries-t.players.length),enabled=canSelfRegister(t),wait=reg.waitlist.length>0||free===0;const price=t.fee?.enabled?eur(t.fee.cents*(t.fee.unit==='person'?t.fee.membersPerEntry:1))+' / Anmeldung':'Kostenlos';return `<article class="club-event"><div class="club-event-top"><span class="pill ${enabled?'playing':''}">${enabled?(wait?'Warteliste offen':'Anmeldung offen'):'Anmeldung geschlossen'}</span><span class="hint">${esc(t.sport)} · ${esc(types[t.format]||t.format)}</span></div><h3>${esc(t.name)}</h3><p class="hint">${esc(t.publication.club)}${t.eventStart?' · '+esc(new Date(t.eventStart).toLocaleDateString('de-DE')):''}</p><p>${esc(t.publication.description||'Turnier des Vereins – Details und Anmeldung direkt hier.')}</p>${publicationCriteria(t.publication)}<div class="club-event-meta"><span><strong>${t.players.length} / ${reg.maxEntries}</strong> Startplätze</span><span><strong>${reg.waitlist.length}</strong> Wartende</span><span><strong>${price}</strong></span></div><div class="club-progress"><span style="width:${Math.min(100,100*t.players.length/reg.maxEntries)}%"></span></div><div class="actions"><button class="btn ${chosen?.id===r.id?'alt':''}" onclick="guarded(()=>publicSelect('${r.id}'))">${enabled?(wait?'Zur Warteliste':'Zum Turnier anmelden'):'Turnier ansehen'}</button>${t.format!=='ladder'?liveBoardLink(r.id):''}</div></article>`}).join('');
  const selected=chosen?.data;let form='';
- if(selected){const t=selected,r=t.registration,free=Math.max(0,r.maxEntries-t.players.length),enabled=canSelfRegister(t),wait=free===0||r.waitlist.length>0,price=t.fee?.enabled?eur(t.fee.cents*(t.fee.unit==='person'?t.fee.membersPerEntry:1)):'Kostenlos';form=`<section class="panel" id="publicSignup"><div class="actions"><button class="btn alt" onclick="backToClubList()">← Zurück zur Turnierliste</button>${t.format!=='ladder'?liveBoardLink(chosen.id):''}</div><h2 id="publicSignupTitle" tabindex="-1">${esc(t.name)} · Anmeldung</h2><p class="hint">${esc(t.publication.club)} · ${esc(t.sport)} · ${esc(types[t.format])}</p>${publicationCriteria(t.publication)}${t.publication.description?`<p>${esc(t.publication.description)}</p>`:''}<p><b>${free} freie Startplätze</b> · ${r.waitlist.length} auf Warteliste · Startgeld: <b>${price}</b></p>${t.publication.deadline?`<p class="hint">Anmeldeschluss: ${esc(new Date(t.publication.deadline+'T12:00:00').toLocaleDateString('de-DE'))}</p>`:''}<p class="notice">Die Anmeldung ist eine lokale Simulation. Du benötigst in der produktiven BOOKANDPLAY-Version ein Benutzerkonto. Hier bitte nur Testnamen eingeben.</p>${t.publication.audience==='members'?'<p class="warn">Nur Vereinsmitglieder: Diese Demo kann die Vereinszugehörigkeit nicht verifizieren. Anmeldung deaktiviert.</p>':enabled?`<div class="formInline"><input id="publicName" aria-label="Spielername oder Doppelteam" maxlength="100" placeholder="Name oder Doppelteam (Testdaten)" onkeydown="if(event.key==='Enter')guarded(()=>publicRegister('${chosen.id}'))"><button class="btn" onclick="guarded(()=>publicRegister('${chosen.id}'))">${wait?'Auf Warteliste setzen':'Startplatz reservieren (Demo)'}</button></div><p class="hint">${wait?'Du wirst nach Eingangsreihenfolge auf die Warteliste gesetzt.':'Ein freier Startplatz wird reserviert. Ein gegebenenfalls fälliges Startgeld bleibt offen.'} Keine Zahlung und keine automatische E-Mail.</p>`:'<p class="warn">Die Anmeldung ist geschlossen.</p>'}</section>`}
+ if(selected){const t=selected,r=t.registration,free=Math.max(0,r.maxEntries-t.players.length),enabled=canSelfRegister(t),wait=free===0||r.waitlist.length>0,price=t.fee?.enabled?eur(t.fee.cents*(t.fee.unit==='person'?t.fee.membersPerEntry:1)):'Kostenlos';form=`<section class="panel" id="publicSignup"><div class="actions"><button class="btn alt" onclick="backToClubList()">← Zurück zur Turnierliste</button>${t.format!=='ladder'?liveBoardLink(chosen.id):''}</div><h2 id="publicSignupTitle" tabindex="-1">${esc(t.name)} · Anmeldung</h2><p class="hint">${esc(t.publication.club)} · ${esc(t.sport)} · ${esc(types[t.format])}</p>${publicationCriteria(t.publication)}${t.publication.description?`<p>${esc(t.publication.description)}</p>`:''}<p><b>${free} freie Startplätze</b> · ${r.waitlist.length} auf Warteliste · Startgeld: <b>${price}</b></p>${t.fee?.enabled?'<p class="notice"><b>Online-Zahlung:</b> Die Melde- oder Startgebühr kann ausschließlich über Stripe bezahlt werden. Ein Startplatz wird erst nach erfolgreicher Zahlungsbestätigung verbindlich.</p>':''}${t.publication.deadline?`<p class="hint">Anmeldeschluss: ${esc(new Date(t.publication.deadline+'T12:00:00').toLocaleDateString('de-DE'))}</p>`:''}<p class="notice">Die Anmeldung ist eine lokale Simulation. Du benötigst in der produktiven BOOKANDPLAY-Version ein Benutzerkonto. Hier bitte nur Testnamen eingeben.</p>${t.publication.audience==='members'?'<p class="warn">Nur Vereinsmitglieder: Diese Demo kann die Vereinszugehörigkeit nicht verifizieren. Anmeldung deaktiviert.</p>':enabled?`<div class="formInline"><input id="publicName" aria-label="Spielername oder Doppelteam" maxlength="100" placeholder="Name oder Doppelteam (Testdaten)" onkeydown="if(event.key==='Enter')guarded(()=>publicRegister('${chosen.id}'))"><button class="btn" onclick="guarded(()=>publicRegister('${chosen.id}'))">${wait?'Auf Warteliste setzen':t.fee?.enabled?'Weiter zur Stripe-Zahlung':'Startplatz reservieren'}</button></div><p class="hint">${wait?'Du wirst ohne Abbuchung nach Eingangsreihenfolge auf die Warteliste gesetzt. Beim Nachrücken ist die Gebühr ausschließlich über Stripe zu bezahlen.':t.fee?.enabled?'Nach der bestätigten Stripe-Zahlung wird der Startplatz verbindlich vergeben. In dieser Demo wird keine echte Zahlung ausgelöst.':'Ein freier Startplatz wird direkt reserviert.'}</p>`:'<p class="warn">Die Anmeldung ist geschlossen.</p>'}</section>`}
  if(form)return form;
  const previous=backTarget();
  const returnToManagement=previous?'goBack()':"switchTab('tournaments')";
@@ -981,9 +1185,9 @@ function replacementView(){
 }
 function registrationView(){const r=state.registration,can=allowed('participants'),locked=registrationLocked(),open=canSelfRegister(state);
  const available=Math.max(0,r.maxEntries-state.players.length);
- return publicationSettingsView()+`<section class="panel"><h2>Selbstanmeldung · Demonstration</h2><p class="warn"><b>Wichtig:</b> Dies ist eine lokale Simulation im aktuellen Browser. Andere Geräte sehen diese Einträge nicht. Keine echte BOOKANDPLAY-Registrierung, keine Benachrichtigungen und keine Online-Zahlung.</p><div class="grid3"><div class="stat"><b>${state.players.length} / ${r.maxEntries}</b><span>Reservierte Startplätze</span></div><div class="stat"><b>${available}</b><span>Freie Plätze</span></div><div class="stat"><b>${r.waitlist.length}</b><span>Auf der Warteliste</span></div></div><p class="hint">${open?(available?'Anmeldung geöffnet: freie Startplätze vorhanden.':'Turnier ausgebucht: weitere Anmeldungen landen auf der Warteliste.'):registrationDeadlinePassed(state)?'Anmeldung geschlossen: Der Anmeldeschluss ist abgelaufen.':'Anmeldung geschlossen.'} ${state.fee.enabled?'Startgeld je Anmeldung: '+eur(feeDue())+' · Zahlungsart: '+esc(feeMethodLabel(state.fee.method))+'.':'Die Teilnahme ist kostenlos.'}</p><div class="formInline"><input id="selfRegisterName" aria-label="Name für Selbstanmeldung" maxlength="100" placeholder="Spielername oder Doppelteam" onkeydown="if(event.key==='Enter')guarded(registerFromForm)" ${open?'':'disabled'}><button class="btn" ${open?'':'disabled'} onclick="guarded(registerFromForm)">${available&&r.waitlist.length===0?'Jetzt anmelden':'Auf Warteliste setzen'}</button></div><p class="hint">Ein freier Startplatz wird bei der Anmeldung reserviert. Die Turnierleitung erfasst den Zahlungsstatus separat unter „Startgelder“. Wartende haben bis zum Nachrücken keinen Startplatz. Bei Doppelturnieren wird ein Team als eine Anmeldung gezählt.</p></section>
+ return publicationSettingsView()+`<section class="panel"><h2>Selbstanmeldung · Demonstration</h2><p class="warn"><b>Wichtig:</b> Dies ist eine lokale Simulation im aktuellen Browser. Andere Geräte sehen diese Einträge nicht. Die Stripe-Zahlung wird lediglich simuliert; produktiv bestätigt ausschließlich der Server den Zahlungseingang.</p><div class="grid3"><div class="stat"><b>${state.players.length} / ${r.maxEntries}</b><span>Reservierte Startplätze</span></div><div class="stat"><b>${available}</b><span>Freie Plätze</span></div><div class="stat"><b>${r.waitlist.length}</b><span>Auf der Warteliste</span></div></div><p class="hint">${open?(available?'Anmeldung geöffnet: freie Startplätze vorhanden.':'Turnier ausgebucht: weitere Anmeldungen landen auf der Warteliste.'):registrationDeadlinePassed(state)?'Anmeldung geschlossen: Der Anmeldeschluss ist abgelaufen.':'Anmeldung geschlossen.'} ${state.fee.enabled?'Startgeld je Anmeldung: '+eur(feeDue())+' · ausschließlich online über Stripe.':'Die Teilnahme ist kostenlos.'}</p><div class="formInline"><input id="selfRegisterName" aria-label="Name für Selbstanmeldung" maxlength="100" placeholder="Spielername oder Doppelteam" onkeydown="if(event.key==='Enter')guarded(registerFromForm)" ${open?'':'disabled'}><button class="btn" ${open?'':'disabled'} onclick="guarded(registerFromForm)">${available&&r.waitlist.length===0?(state.fee.enabled?'Weiter zur Stripe-Zahlung':'Jetzt anmelden'):'Auf Warteliste setzen'}</button></div><p class="hint">${state.fee.enabled?'Ein freier Startplatz wird erst nach bestätigter Stripe-Zahlung verbindlich. Wartende zahlen erst beim Nachrücken über Stripe.':'Ein freier Startplatz wird bei der kostenlosen Anmeldung direkt reserviert.'} Bei Doppelturnieren wird ein Team als eine Anmeldung gezählt.</p></section>
  <section class="panel"><h2>Warteliste · automatische Nachrücker</h2><p class="hint">Reihenfolge nach Eingang (FIFO). Sobald vor der Auslosung ein Startplatz frei wird, rückt der erste Wartende automatisch nach. </p>${replacementView()}<div class="tablewrap"><table><thead><tr><th>Position</th><th>Spieler / Team</th><th>Anmeldung</th><th>Aktion</th></tr></thead><tbody>${r.waitlist.map((p,i)=>`<tr><td>${i+1}</td><td>${esc(p.name)}</td><td>${esc(new Date(p.registeredAt||Date.now()).toLocaleString('de-DE'))}</td><td>${can&&!locked?`<button class="btn alt small danger" onclick="guarded(()=>cancelRegistration('${p.id}'))">Abmelden</button>`:'–'}</td></tr>`).join('')||'<tr><td colspan="4">Keine Wartenden.</td></tr>'}</tbody></table></div></section>
- <section class="panel"><h2>Abmeldungen &amp; Nachrückhistorie</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Abgemeldet am</th><th>Vorheriger Status</th><th>Zahlung</th></tr></thead><tbody>${[...r.cancelled].reverse().map(p=>`<tr><td>${esc(p.name)}</td><td>${esc(new Date(p.cancelledAt).toLocaleString('de-DE'))}</td><td>${p.wasActive?'Startplatz':'Warteliste'}</td><td>${state.paymentRecords[p.id]?.events?.length?'Buchungen prüfen; keine automatische Erstattung':'Keine Buchung'}</td></tr>`).join('')||'<tr><td colspan="4">Noch keine Abmeldungen.</td></tr>'}</tbody></table></div></section>`;
+ <section class="panel"><h2>Abmeldungen &amp; Nachrückhistorie</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Abgemeldet am</th><th>Vorheriger Status</th><th>Stornoprozess</th></tr></thead><tbody>${[...r.cancelled].reverse().map(p=>{const c=p.cancellationProcess;return `<tr><td>${esc(p.name)}</td><td>${esc(new Date(p.cancelledAt).toLocaleString('de-DE'))}</td><td>${p.wasActive?'Startplatz':'Warteliste'}</td><td>${c?.status==='stripe_refund_pending'?`Stripe-Rückerstattung ${eur(c.refundCents)} ausstehend`:c?.status==='manual_review'?`Manuelle Prüfung ${eur(c.refundCents)}`:c?'Keine Rückerstattung erforderlich':state.paymentRecords[p.id]?.events?.length?'Altdaten: Buchungen prüfen':'Keine Buchung'}</td></tr>`}).join('')||'<tr><td colspan="4">Noch keine Abmeldungen.</td></tr>'}</tbody></table></div></section>`;
 }
 function loadExample(){requirePerm('participants');if((state.matches.length||state.players.length)&&!confirm('Nur das AKTIVE Turnier durch Beispieldaten ersetzen? Andere Turniere bleiben erhalten.'))return;const sport=state.sport;state=empty();state.sport=sport;state.name='Beispielturnier '+sport;state.ruleProfile='club';state.players=exampleNames.map(name=>({id:randId(),name,checked:true,group:null}));state.registration.maxEntries=Math.max(state.registration.maxEntries,8);state.stage='registration';resetNavigation('overview');save();notify('Acht Doppelteams geladen. Du kannst jetzt unter „Auslosung“ starten.')}
 function resetDemo(){requirePerm('manage');if(!confirm('Nur das AKTIVE Turnier zurücksetzen? Andere Turniere bleiben erhalten.'))return;const sport=state.sport;state=empty();state.sport=sport;resetNavigation('overview');save()}
@@ -1011,7 +1215,7 @@ function ladderSaveRules(){requirePerm('manage');assert(state.format==='ladder',
 function ladderOpen(){return state.ladder.challenges.filter(c=>['requested','accepted'].includes(c.status))}
 function ladderBusy(id){return ladderOpen().some(c=>c.from===id||c.to===id)}
 function ladderDays(date){const ms=Date.parse(date);return Number.isFinite(ms)?new Date(ms).toLocaleDateString('de-DE'):'–'}
-function ladderInit(){requirePerm('draw');assert(state.format==='ladder','Bitte Forderungsbaum als Turnierformat wählen.');assert(!state.ladder.ranks.length,'Rangliste wurde bereits angelegt.');assert(state.players.length>=2,'Mindestens zwei Teilnehmer eintragen.');state.ladder.ranks=state.players.map(p=>p.id);state.stage='running';state.ladder.history.push({at:new Date().toISOString(),actor:actor().name,text:'Rangliste initialisiert (Teilnehmerreihenfolge)'});save();notify('Forderungsbaum wurde mit der aktuellen Teilnehmerreihenfolge erstellt.');}
+function ladderInit(){requirePerm('draw');assert(state.format==='ladder','Bitte Forderungsbaum als Turnierformat wählen.');assert(!state.ladder.ranks.length,'Rangliste wurde bereits angelegt.');assert(state.players.length>=2,'Mindestens zwei Teilnehmer eintragen.');assert(state.players.every(p=>p.onlinePayment!=='stripe_pending'),'Vor dem Start müssen alle nachgerückten Teilnehmer ihre Stripe-Zahlung abschließen.');state.ladder.ranks=state.players.map(p=>p.id);state.stage='running';state.ladder.history.push({at:new Date().toISOString(),actor:actor().name,text:'Rangliste initialisiert (Teilnehmerreihenfolge)'});save();notify('Forderungsbaum wurde mit der aktuellen Teilnehmerreihenfolge erstellt.');}
 function ladderChallenge(){requirePerm('participants');assert(state.format==='ladder','Kein Forderungsbaum.');const from=document.getElementById('ladderFrom').value,to=document.getElementById('ladderTo').value;const r=state.ladder.ranks,fi=r.indexOf(from),ti=r.indexOf(to);assert(fi>=0&&ti>=0,'Beide Spieler müssen in der Rangliste stehen.');assert(ti<fi,'Nur höher platzierte Spieler dürfen gefordert werden.');assert(ladderTargets(from).includes(to),'Dieser Gegner darf nach der eingestellten Forderungsregel nicht gefordert werden.');assert(!ladderBusy(from)&&!ladderBusy(to),'Mindestens einer der Spieler ist bereits an einer offenen Forderung beteiligt.');const now=Date.now(),due=new Date(now+state.ladder.acceptDays*86400000).toISOString();const item={id:uid(),from,to,status:'requested',createdAt:new Date(now).toISOString(),acceptBy:due,playBy:null,score:'',winner:null,completedAt:null};state.ladder.challenges.push(item);state.ladder.history.push({at:item.createdAt,actor:actor().name,text:`Forderung: ${name(from)} fordert ${name(to)} (Annahme bis ${ladderDays(due)})`});save();}
 function ladderAnswer(id,accepted){requirePerm('participants');const c=state.ladder.challenges.find(x=>x.id===id);assert(c&&c.status==='requested','Forderung nicht mehr offen.');assert(Date.now()<=Date.parse(c.acceptBy),'Annahmefrist ist abgelaufen. Forderung zuerst verfallen lassen.');c.status=accepted?'accepted':'declined';c.respondedAt=new Date().toISOString();if(accepted)c.playBy=new Date(Date.now()+state.ladder.playDays*86400000).toISOString();state.ladder.history.push({at:c.respondedAt,actor:actor().name,text:`${accepted?'Angenommen':'Abgelehnt'}: ${name(c.from)} gegen ${name(c.to)}`});save();}
 function ladderExpire(id){requirePerm('participants');const c=state.ladder.challenges.find(x=>x.id===id);assert(c&&['requested','accepted'].includes(c.status),'Forderung nicht offen.');const deadline=c.status==='requested'?c.acceptBy:c.playBy;assert(Date.now()>Date.parse(deadline),'Frist ist noch nicht abgelaufen.');c.status='expired';state.ladder.history.push({at:new Date().toISOString(),actor:actor().name,text:`Frist abgelaufen: ${name(c.from)} gegen ${name(c.to)}`});save();}
@@ -1021,7 +1225,7 @@ function ladderPyramid(){const order=ladderOrder();let idx=0,level=1;const tiers
 function ladderView(){if(state.format!=='ladder')return `<section class="panel"><h2>Forderungsbaum</h2><p>Wechsle bei einem neuen Turnier im Menü „Turnier anlegen“ auf das Format Forderungsbaum. Deine bestehenden Turniere bleiben dabei erhalten.</p><button class="btn" onclick="switchTab('tournaments')">Meine Turniere</button></section>`;const l=state.ladder,rank=l.ranks.length>0,order=ladderOrder();const open=ladderOpen();return `<div class="print-header"><h1>BOOKANDPLAY · Forderungsbaum</h1><div>${esc(state.name)} · ${esc(state.sport)}</div></div><section class="panel"><div class="ladder-head"><div><h2>Forderungspyramide · ${esc(state.name)}</h2><p class="hint">Laufende Rangliste · ${order.length} Teilnehmer · ${open.length} offene Forderung(en). Das Turnierformat ist unabhängig vom K.-o.-Baum.</p></div><div class="actions no-print"><button class="btn alt" onclick="window.print()">Rangliste drucken / PDF</button><button class="btn alt" onclick="switchTab('permissions')">Protokoll</button></div></div>${rank?ladderPyramid():`<p class="notice">Noch keine Rangliste. Erfasse zunächst Spieler oder Teams und initialisiere anschließend die Rangfolge.</p>`}<div class="ladder-details"><strong>Forderungsregeln:</strong> ${l.ruleMode==='classic'?'Klassische Pyramide: links in derselben Reihe oder rechts oben':'Freie Ranglistenforderung: maximal '+l.maxHigher+' Rangplaetze nach oben'} · Annahme binnen ${l.acceptDays} Tagen · Spiel binnen ${l.playDays} Tagen nach Annahme · pro Spieler höchstens eine offene Forderung. Gewinnt der Herausforderer, rückt er auf den Rang des Geforderten vor und die dazwischenliegenden Spieler rutschen um einen Rang zurück.</div>${allowed('manage')?`<div class="ladder-details no-print"><h3>Forderungsregeln verwalten · Vereinsmanager</h3><div class="ladder-form"><div class="field"><label>Regelmodell</label><select id="ladderRuleMode"><option value="classic" ${l.ruleMode==='classic'?'selected':''}>Klassische Pyramide: links oder rechts oben</option><option value="distance" ${l.ruleMode==='distance'?'selected':''}>Freie Ranglistenforderung</option></select></div><div class="field"><label>Maximaler Rangabstand (nur freie Variante)</label><input id="ladderMaxLive" type="number" min="1" max="30" value="${l.maxHigher}"></div></div><button class="btn alt" onclick="guarded(ladderSaveRules)">Forderungsregeln speichern</button><p class="hint">Aenderungen gelten fuer neue Forderungen; offene Forderungen bleiben erhalten und werden im Protokoll nachvollziehbar dokumentiert.</p></div>`:''}<div class="actions no-print">${!rank?`<button class="btn" onclick="guarded(ladderInit)">Rangliste initialisieren</button>`:''}<button class="btn alt" onclick="guarded(ladderAddPlayer)">+ Teilnehmer hinzufügen</button><button class="btn alt" onclick="switchTab('setup')">Forderungsregeln</button></div></section>${rank?`<section class="panel no-print"><h2>Neue Forderung</h2><p class="hint">In dieser Demo wird die Forderung stellvertretend erfasst. Später muss der angemeldete Spieler selbst als Forderer identifiziert werden.</p><div class="ladder-form"><div class="field"><label>Forderer</label><select id="ladderFrom" onchange="ladderUpdateTarget()">${order.map(p=>`<option value="${esc(p.id)}">${esc(p.name)} (Rang ${l.ranks.indexOf(p.id)+1})</option>`).join('')}</select></div><div class="field"><label>Geforderter Spieler</label><select id="ladderTo">${ladderTargetOptions(order[0]?.id)}</select><p class="hint" id="ladderTargetHint">Nur erlaubte Gegner stehen zur Auswahl.</p></div></div><button class="btn" id="ladderSubmit" ${ladderTargetOptions(order[0]?.id)?'':'disabled'} onclick="guarded(ladderChallenge)">Forderung aussprechen</button></section>`:''}<section class="panel"><h2>Forderungen und Spiele</h2>${l.challenges.length?`<div class="tablewrap"><table><thead><tr><th>Begegnung</th><th>Status / Frist</th><th>Ergebnis</th><th class="no-print">Aktion</th></tr></thead><tbody>${[...l.challenges].reverse().map(c=>`<tr><td><b>${esc(name(c.from))}</b> fordert <b>${esc(name(c.to))}</b><br><small>Erstellt ${ladderDays(c.createdAt)}</small></td><td><span class="pill ${c.status==='finished'?'finished':c.status==='accepted'?'playing':''}">${({requested:'Angefragt',accepted:'Angenommen',declined:'Abgelehnt',expired:'Verfallen',finished:'Beendet'})[c.status]||c.status}</span><br><small>${c.status==='requested'?'Annahme bis '+ladderDays(c.acceptBy):c.status==='accepted'?'Spiel bis '+ladderDays(c.playBy):''}</small></td><td>${esc(c.score||'–')}</td><td class="no-print">${c.status==='requested'?`<div class="actions"><button class="btn small" onclick="guarded(()=>ladderAnswer('${c.id}',true))">Annehmen</button><button class="btn alt small" onclick="guarded(()=>ladderAnswer('${c.id}',false))">Ablehnen</button></div>`:''}${c.status==='accepted'?`<div class="ladder-actions"><label>Sieger</label><select id="ladderWin${c.id}"><option value="${esc(c.from)}">${esc(name(c.from))}</option><option value="${esc(c.to)}">${esc(name(c.to))}</option></select><label>Ergebnis</label><input id="ladderScore${c.id}" maxlength="100" placeholder="z. B. ${state.sport==='Beachvolleyball'?'21:17 21:19':state.sport==='Pickleball'?'11:7 11:9':'6:4 6:3'}"><small>Forderer zuerst, z. B. bei Match-Tie-Break [10:7].</small><button class="btn small" onclick="guarded(()=>ladderComplete('${c.id}'))">Ergebnis bestätigen</button></div>`:''}${['requested','accepted'].includes(c.status)?`<button class="btn alt small" onclick="guarded(()=>ladderExpire('${c.id}'))">Frist prüfen</button>`:''}</td></tr>`).join('')}</tbody></table></div>`:'<p class="empty">Noch keine Forderungen vorhanden.</p>'}</section><section class="panel"><h2>Rangveränderungen & Historie</h2>${l.history.length?`<div class="tablewrap"><table class="ladder-history"><thead><tr><th>Datum</th><th>Benutzer</th><th>Ereignis</th></tr></thead><tbody>${[...l.history].reverse().map(h=>`<tr><td>${esc(new Date(h.at).toLocaleString('de-DE'))}</td><td>${esc(h.actor)}</td><td>${esc(h.text)}</td></tr>`).join('')}</tbody></table></div>`:'<p class="empty">Noch keine Einträge.</p>'}<p class="hint">Zusätzlich werden Änderungen im allgemeinen Vereinsprotokoll mit altem und neuem Datenstand gespeichert.</p></section>`}
 
 const tournamentMenu=[
- {id:'prepare',label:'Vorbereitung',items:[['overview','Übersicht'],['setup','Turnier anlegen'],['participants','Teilnehmer'],['registration','Anmeldung & Warteliste'],['payments','Startgelder']]},
+ {id:'prepare',label:'Vorbereitung',items:[['setup','Turnier anlegen'],['participants','Teilnehmer'],['registration','Anmeldung & Warteliste'],['payments','Startgelder']]},
  {id:'financeMenu',label:'Finanzen',items:[['finance','Budget & Abrechnung'],['payments','Startgelder']]},
  {id:'play',label:'Spielbetrieb',items:[['draw','Auslosung'],['courts','Courts'],['results','Ergebnisse'],['plan','Turnierplan'],['notifications','Nachrichten'],['ladder','Forderungsbaum']]},
  {id:'players',label:'Spieleransicht',items:[['clubPage','Vereinsseite'],['playerAccount','Mein Turnier (Demo)'],['publicLive','Live-Spielplan']]},
@@ -1046,7 +1250,9 @@ function tabsHtml(){
  const visibleItems=group?.items.filter(([id])=>canOpenTab(id))||[];
  const link=(id,label)=>`<span class="menu-item"><button class="tab ${tab===id?'active':''}" ${tab===id?'aria-current="page"':''} onclick="navigateFromMenu('${id}')">${esc(label)}</button>${helpButton('menu:'+id,label)}</span>`;
  document.getElementById('tabs').innerHTML=`
-  <div class="menu-main">${link('tournaments','Meine Turniere')}
+  <div class="menu-main">${link('overview','Übersicht')}
+  ${canUseGuidedSetup()?`<button class="tab ${tab==='guidedSetup'?'active':''}" ${tab==='guidedSetup'?'aria-current="page"':''} onclick="onboardingStart()">Einrichtung mit Assistent</button>`:''}
+  ${link('tournaments','Meine Turniere')}
   ${tournamentMenu.map(({id,label})=>`<button id="menu-${id}" class="tab ${activeGroup===id?'active':''}" aria-expanded="${expandedMenu===id}" aria-controls="menuItems" onclick="toggleTournamentMenu('${id}')">${label} <span aria-hidden="true">${expandedMenu===id?'▴':'▾'}</span></button>`).join('')}
   </div>
   <div id="menuItems" class="menu-sub" ${group?'':'hidden'}>
@@ -1059,14 +1265,16 @@ function openMatchResult(id,fromCourts=false){
  field?.focus();
 }
 function canOpenTab(id){
+ if(id==='guidedSetup')return canUseGuidedSetup();
  if(id==='finance')return allowed('payments');
  return id!=='permissions'||allowed('audit')||allowed('manage');
 }
 function backLabel(id){
- const names={tournaments:'zu „Meine Turniere“',overview:'zur Übersicht',setup:'zur Turnierkonfiguration',participants:'zu den Teilnehmern',registration:'zur Ausschreibung und Anmeldung',clubPage:'zur Vereinsseite',playerAccount:'zu „Mein Turnier“',publicLive:'zum Live-Spielplan',payments:'zu den Startgeldern',draw:'zur Auslosung',courts:'zu Courts',results:'zu den Ergebnissen',plan:'zum Turnierplan',notifications:'zu den Nachrichten',ladder:'zum Forderungsbaum',closing:'zum Abschluss',features:'zur Funktionsübersicht',guide:'zur Anleitung',permissions:'zu „Rechte & Protokoll“'};
+ const names={guidedSetup:'zur Einrichtung',tournaments:'zu „Meine Turniere“',overview:'zur Übersicht',setup:'zur Turnierkonfiguration',participants:'zu den Teilnehmern',registration:'zur Ausschreibung und Anmeldung',clubPage:'zur Vereinsseite',playerAccount:'zu „Mein Turnier“',publicLive:'zum Live-Spielplan',payments:'zu den Startgeldern',draw:'zur Auslosung',courts:'zu Courts',results:'zu den Ergebnissen',plan:'zum Turnierplan',notifications:'zu den Nachrichten',ladder:'zum Forderungsbaum',closing:'zum Abschluss',features:'zur Funktionsübersicht',guide:'zur Anleitung',permissions:'zu „Rechte & Protokoll“'};
  return names[id]?'Zurück '+names[id]:'Zurück';
 }
 function switchTab(id,fromCourts=false){
+ if(!guidedSetupLeave(id))return false;
  if(!canOpenTab(id)){notify('Keine Berechtigung für das Änderungsprotokoll.',true);return;}
  if(id!==tab){
   navigationHistory.push({id:tab,fromCourts:resultsFromCourts});
@@ -1098,6 +1306,7 @@ function backTarget(){
  return [...navigationHistory].reverse().find(entry=>entry.id!==tab&&canOpenTab(entry.id))?.id;
 }
 function goBack(){
+ if(!guidedSetupLeave(backTarget()||'tournaments'))return;
  const target=backTarget()||'tournaments';
  while(navigationHistory.length){
   const previous=navigationHistory.pop();
@@ -1121,6 +1330,8 @@ function resetNavigation(id){
  expandedMenu=menuForTab(tab);
 }
 function render(){
+ guidedSetupResume();
+ renderTournamentAssistant();
  document.body.classList.toggle('public-live-mode',tab==='publicLive');
  document.body.classList.toggle('public-monitor-mode',tab==='publicLive'&&liveBoardRoute().monitor);
  if(tab==='publicLive'){
@@ -1134,8 +1345,10 @@ function render(){
   flash='';
   return;
  }
- document.body.classList.toggle('public-mode',tab==='clubPage'||tab==='playerAccount');document.body.classList.toggle('player-account-mode',tab==='playerAccount');document.getElementById('heading').textContent=tab==='playerAccount'?'BOOKANDPLAY-Konto · Demo':tab==='clubPage'?'Vereinsseite · Turniere':state.name||'Turnierkonsole';document.getElementById('subtitle').textContent=tab==='playerAccount'?'Persönliche Spieleransicht':tab==='clubPage'?'BOOKANDPLAY-Vereinsportal · Spieleransicht (lokaler Prototyp)':`${state.sport} · ${types[state.format]} · ${state.format==='ladder'?'laufender Wettbewerb':state.courtCount+(Number(state.courtCount)===1?' Court':' Courts')} · ${state.stage==='finished'?'Abgeschlossen':state.format==='ladder'&&state.ladder.ranks.length?'Läuft':state.matches.length?'Turnier läuft':'Vorbereitung'}`;document.getElementById('messages').innerHTML=flash;flash='';document.getElementById('stats').innerHTML=summaryStats().map(([n,t])=>`<div class="stat"><b>${n}</b><span>${t}</span></div>`).join('');tabsHtml();renderBackNavigation();document.getElementById('actorPicker').innerHTML=`<label>Demo-Benutzer <select aria-label="Demo-Benutzer wechseln" onchange="switchActor(this.value)">${personnel.users.map(u=>`<option value="${esc(u.id)}" ${u.id===actor().id?'selected':''}>${esc(u.name)} · ${esc(ROLE_NAMES[u.role])}</option>`).join('')}</select></label>`;document.getElementById('view').innerHTML={clubPage:clubPageView,playerAccount:playerAccountView,tournaments:tournamentsView,overview:overview,setup:setup,participants:participants,registration:registrationView,payments:paymentsView,finance:financeView,draw:drawView,courts:courtsView,results:resultsView,plan:planView,notifications:notificationsView,ladder:ladderView,closing:closingView,features:featureOverviewView,guide:guideView,permissions:permissionsView}[tab]();enhanceHelp()}
-const tournamentStages={draft:'Entwurf',registration:'Anmeldung',running:'Läuft',finished:'Abgeschlossen'};
+ document.body.classList.toggle('public-mode',tab==='clubPage'||tab==='playerAccount');document.body.classList.toggle('player-account-mode',tab==='playerAccount');document.getElementById('heading').textContent=tab==='playerAccount'?'BOOKANDPLAY-Konto · Demo':tab==='clubPage'?'Vereinsseite · Turniere':state.name||'Turnierkonsole';document.getElementById('subtitle').textContent=tab==='playerAccount'?'Persönliche Spieleransicht':tab==='clubPage'?'BOOKANDPLAY-Vereinsportal · Spieleransicht (lokaler Prototyp)':`${state.sport} · ${types[state.format]} · ${state.format==='ladder'?'laufender Wettbewerb':state.courtCount+(Number(state.courtCount)===1?' Court':' Courts')} · ${state.stage==='cancelled'?'Abgesagt':state.stage==='finished'?'Abgeschlossen':state.format==='ladder'&&state.ladder.ranks.length?'Läuft':state.matches.length?'Turnier läuft':'Vorbereitung'}`;document.getElementById('messages').innerHTML=flash;flash='';document.getElementById('stats').innerHTML=summaryStats().map(([n,t])=>`<div class="stat"><b>${n}</b><span>${t}</span></div>`).join('');tabsHtml();renderBackNavigation();document.getElementById('actorPicker').innerHTML=`<label>Demo-Benutzer <select aria-label="Demo-Benutzer wechseln" onchange="switchActor(this.value)">${personnel.users.map(u=>`<option value="${esc(u.id)}" ${u.id===actor().id?'selected':''}>${esc(u.name)} · ${esc(ROLE_NAMES[u.role])}</option>`).join('')}</select></label>`;document.getElementById('deploymentModePicker').innerHTML=`<label>Betriebsart <select aria-label="Betriebsart der Turnierverwaltung" ${actor().role==='root'?'':'disabled'} onchange="guarded(()=>setDeploymentMode(this.value))">${Object.entries(DEPLOYMENT_MODES).map(([id,label])=>`<option value="${id}" ${id===deploymentMode?'selected':''}>${label}</option>`).join('')}</select></label><span class="hint">${actor().role==='root'?'Root-Einstellung':'Nur durch Root änderbar'}</span>`;document.getElementById('view').innerHTML={guidedSetup:guidedSetupView,clubPage:clubPageView,playerAccount:playerAccountView,tournaments:tournamentsView,overview:overview,setup:setup,participants:participants,registration:registrationView,payments:paymentsView,finance:financeView,draw:drawView,courts:courtsView,results:resultsView,plan:planView,notifications:notificationsView,ladder:ladderView,closing:closingView,features:featureOverviewView,guide:guideView,permissions:permissionsView}[tab]();enhanceHelp();
+ if(guidedSetupTask?.tab===tab)guidedSetupTask.baseline=JSON.stringify(guidedSetupFields());
+}
+const tournamentStages={draft:'Entwurf',registration:'Anmeldung',running:'Läuft',finished:'Abgeschlossen',cancelled:'Abgesagt'};
 function tournamentStage(t){return Object.hasOwn(tournamentStages,t.stage)?t.stage:'draft'}
 function stageText(t){return tournamentStages[tournamentStage(t)]}
 function encounterLabel(count,singular='Begegnung',plural='Begegnungen'){
@@ -1143,9 +1356,9 @@ function encounterLabel(count,singular='Begegnung',plural='Begegnungen'){
 }
 function summaryStats(){
  if(tab==='tournaments'){
-  const counts={draft:0,registration:0,running:0,finished:0};
+  const counts={draft:0,registration:0,running:0,finished:0,cancelled:0};
   for(const {data} of collection.tournaments)counts[tournamentStage(data)]++;
-  return [[collection.tournaments.length,'Turniere gesamt'],[counts.draft+counts.registration,'In Vorbereitung'],[counts.running,'Laufende Turniere'],[counts.finished,'Abgeschlossene Turniere']];
+  return [[collection.tournaments.length,'Turniere gesamt'],[counts.draft+counts.registration,'In Vorbereitung'],[counts.running,'Laufende Turniere'],[counts.finished+counts.cancelled,'Beendete / abgesagte']];
  }
  if(state.format==='ladder')return [[state.players.length,'Teilnehmer'],[state.ladder.challenges.length,'Forderungen'],[ladderOpen().length,'Offene Forderungen'],[state.ladder.challenges.filter(c=>c.status==='finished').length,'Beendete Forderungen']];
  const total=state.matches.length;
@@ -1177,11 +1390,15 @@ function tournamentProgress(t){
  const done=t.matches.filter(m=>m.status==='finished').length;
  return t.format==='ladder'?(t.ladder?.challenges||[]).filter(x=>x.status==='finished').length+' Forderungen abgeschlossen':done+'/'+t.matches.length+' Spiele beendet';
 }
+function canCancelTournament(){return actor().role==='manager'||actor().role==='trainer'}
+function cancellationDetails(t){if(!t.cancellation)return '';const when=t.cancellation.at?new Date(t.cancellation.at).toLocaleString('de-DE'):'';return `<p class="hint"><b>Absagegrund:</b> ${esc(t.cancellation.reason)}${t.cancellation.note?`<br>${esc(t.cancellation.note)}`:''}${when?`<br>${esc(when)}${t.cancellation.byName?' · '+esc(t.cancellation.byName):''}`:''}</p>`}
+function tournamentCancellationAction(rec){const t=rec.data;if(!canCancelTournament())return '';if(tournamentStage(t)==='cancelled')return `<button class="btn alt small" onclick="guarded(()=>restoreTournament('${rec.id}'))">Absage zurücknehmen</button>`;if(tournamentStage(t)==='finished')return '';return `<button class="btn alt small danger" onclick="guarded(()=>openTournamentCancellation('${rec.id}'))">Turnier absagen</button>`}
 function tournamentCard(rec){
  const t=rec.data,active=rec.id===collection.activeId;
- return `<div class="court tournament-card" style="border-color:${active?'#08754e':'var(--border)'}"><div class="formInline" style="justify-content:space-between"><span class="pill ${tournamentStage(t)==='finished'?'finished':tournamentStage(t)==='running'?'playing':''}">${esc(stageText(t))}</span>${active?'<span class="pill playing">Aktives Turnier</span>':''}</div><h3>${esc(t.name||'Unbenanntes Turnier')}</h3><p>${esc(t.sport||'Tennis')} · ${esc(types[t.format]||'Turnier')}<br>${t.players.length} Teams · ${esc(tournamentProgress(t))}</p><div class="actions"><button class="btn small" onclick="guarded(()=>openTournament('${rec.id}'))">${active?'Turnier öffnen':'Zu diesem Turnier wechseln'}</button><button class="btn alt small" onclick="guarded(()=>duplicateTournament('${rec.id}'))">Duplizieren</button><button class="btn alt small danger" onclick="guarded(()=>deleteTournament('${rec.id}'))">Löschen</button></div></div>`;
+ return `<div class="court tournament-card" style="border-color:${active?'#08754e':'var(--border)'}"><div class="formInline" style="justify-content:space-between"><span class="pill ${tournamentStage(t)==='cancelled'?'cancelled':tournamentStage(t)==='finished'?'finished':tournamentStage(t)==='running'?'playing':''}">${esc(stageText(t))}</span>${active?'<span class="pill playing">Aktives Turnier</span>':''}</div><h3>${esc(t.name||'Unbenanntes Turnier')}</h3><p>${esc(t.sport||'Tennis')} · ${esc(types[t.format]||'Turnier')}<br>${t.players.length} Teams · ${esc(tournamentProgress(t))}</p>${cancellationDetails(t)}<div class="actions"><button class="btn small" onclick="guarded(()=>openTournament('${rec.id}'))">${active?'Turnier öffnen':'Zu diesem Turnier wechseln'}</button><button class="btn alt small" onclick="guarded(()=>duplicateTournament('${rec.id}'))">Duplizieren</button>${tournamentCancellationAction(rec)}<button class="btn alt small danger" onclick="guarded(()=>deleteTournament('${rec.id}'))">Löschen</button></div></div>`;
 }
 function tournamentSection(title,records){return records.length?`<section class="tournament-section"><div class="tournament-section-head"><h3>${esc(title)}</h3><span class="pill">${records.length}</span></div><div class="grid">${records.map(tournamentCard).join('')}</div></section>`:''}
+function deploymentModeOverview(){const integrated=deploymentMode==='integrated';return `<section class="panel ${integrated?'feature-hero':'feature-boundary'}"><div class="titlebar" style="margin:0"><div><span class="pill ${integrated?'playing':''}">${esc(DEPLOYMENT_MODES[deploymentMode])}</span><h2>${integrated?'Turnierverwaltung als BOOKANDPLAY-Modul':'Eigenständige Turnierverwaltung'}</h2><p class="hint">${integrated?'Für den integrierten Betrieb werden bestehende BOOKANDPLAY-Konten, Vereinsdaten, Courts, Reservierungen, Stripe und Nachrichten über zentrale Schnittstellen angebunden.':'Für den Stand-alone-Betrieb werden eine eigene Benutzerverwaltung, eigene Vereins- und Courtdaten, ein eigener Stripe-Zugang, ein eigener Nachrichtenversand und eine eigene Datenbank benötigt.'}</p><p class="hint"><b>Wichtig:</b> Die Umschaltung verändert keine Turniere. Sie legt ausschließlich fest, welche technische Anbindung die Entwickler bereitstellen müssen.</p></div>${actor().role==='root'?'<button class="btn alt" onclick="document.querySelector(\'#deploymentModePicker select\').focus()">Betriebsart ändern</button>':'<span class="pill">Nur Root kann ändern</span>'}</div></section>`}
 function tournamentsView(){
  const query=tournamentSearch.trim().toLocaleLowerCase('de');
  const visible=collection.tournaments.filter(rec=>!query||[rec.data.name,rec.data.sport,types[rec.data.format],stageText(rec.data)].some(value=>String(value||'').toLocaleLowerCase('de').includes(query)));
@@ -1190,11 +1407,13 @@ function tournamentsView(){
  const preparation=sortedTournamentRecords(others.filter(rec=>['draft','registration'].includes(tournamentStage(rec.data))));
  const running=sortedTournamentRecords(others.filter(rec=>tournamentStage(rec.data)==='running'));
  const finished=sortedTournamentRecords(others.filter(rec=>tournamentStage(rec.data)==='finished'));
+ const cancelled=sortedTournamentRecords(others.filter(rec=>tournamentStage(rec.data)==='cancelled'));
  const archiveVisible=tournamentArchiveOpen||!!query;
- return `<section class="panel"><div class="titlebar" style="margin:0 0 15px"><div><h2>Meine Turniere</h2><p class="hint">Du kannst mehrere Turniere parallel verwalten. Der aktive Wettbewerb steht oben; weitere Turniere sind nach Status gruppiert.</p></div><div class="buttonrow"><button id="createTournamentButton" class="btn" onclick="guarded(createTournament)">+ Neues Turnier</button><button class="btn alt" onclick="downloadAllTournaments()">Alle Turniere sichern</button><button class="btn alt" onclick="document.getElementById('backupImportFile').click()">Turnier aus Sicherung importieren</button><input id="backupImportFile" type="file" accept=".json,application/json" style="display:none" onchange="guarded(()=>importBackupFile(this))"></div></div>
+ return deploymentModeOverview()+`<section class="panel"><div class="titlebar" style="margin:0 0 15px"><div><h2>Meine Turniere</h2><p class="hint">Du kannst mehrere Turniere parallel verwalten. Der aktive Wettbewerb steht oben; weitere Turniere sind nach Status gruppiert.</p></div><div class="buttonrow"><button id="createTournamentButton" class="btn" onclick="guarded(createTournament)">+ Neues Turnier</button><button class="btn alt" onclick="downloadAllTournaments()">Alle Turniere sichern</button><button class="btn alt" onclick="document.getElementById('backupImportFile').click()">Turnier aus Sicherung importieren</button><input id="backupImportFile" type="file" accept=".json,application/json" style="display:none" onchange="guarded(()=>importBackupFile(this))"></div></div>
  <div class="tournament-toolbar"><div class="field"><label for="tournamentSearch">Turnier suchen</label><input id="tournamentSearch" type="search" value="${esc(tournamentSearch)}" placeholder="Name, Sportart oder Status" oninput="setTournamentSearch(this.value)"></div><div class="field"><label for="tournamentSort">Sortierung innerhalb der Gruppen</label><select id="tournamentSort" onchange="setTournamentSort(this.value)"><option value="updated" ${tournamentSort==='updated'?'selected':''}>Zuletzt bearbeitet</option><option value="name" ${tournamentSort==='name'?'selected':''}>Name A–Z</option><option value="start" ${tournamentSort==='start'?'selected':''}>Turnierbeginn</option></select></div></div>
- ${active?`<section class="tournament-section"><div class="tournament-section-head"><h3>Aktives Turnier</h3><span class="pill">1</span></div><div class="tournament-featured"><div><span class="pill playing">${esc(stageText(active.data))}</span><h3>${esc(active.data.name||'Unbenanntes Turnier')}</h3><p>${esc(active.data.sport||'Tennis')} · ${esc(types[active.data.format]||'Turnier')} · ${active.data.players.length} Teams · ${esc(tournamentProgress(active.data))}</p></div><div class="actions"><button class="btn" onclick="guarded(()=>openTournament('${active.id}'))">Turnier öffnen</button><button class="btn alt small" onclick="guarded(()=>duplicateTournament('${active.id}'))">Duplizieren</button><button class="btn alt small danger" onclick="guarded(()=>deleteTournament('${active.id}'))">Löschen</button></div></div></section>`:''}
+ ${active?`<section class="tournament-section"><div class="tournament-section-head"><h3>Aktives Turnier</h3><span class="pill">1</span></div><div class="tournament-featured"><div><span class="pill ${tournamentStage(active.data)==='cancelled'?'cancelled':'playing'}">${esc(stageText(active.data))}</span><h3>${esc(active.data.name||'Unbenanntes Turnier')}</h3><p>${esc(active.data.sport||'Tennis')} · ${esc(types[active.data.format]||'Turnier')} · ${active.data.players.length} Teams · ${esc(tournamentProgress(active.data))}</p>${cancellationDetails(active.data)}</div><div class="actions"><button class="btn" onclick="guarded(()=>openTournament('${active.id}'))">Turnier öffnen</button><button class="btn alt small" onclick="guarded(()=>duplicateTournament('${active.id}'))">Duplizieren</button>${tournamentCancellationAction(active)}<button class="btn alt small danger" onclick="guarded(()=>deleteTournament('${active.id}'))">Löschen</button></div></div></section>`:''}
  ${tournamentSection('In Vorbereitung',preparation)}${tournamentSection('Laufende Turniere',running)}
+ ${tournamentSection('Abgesagte Turniere',cancelled)}
  ${finished.length?`<button class="btn alt tournament-archive-toggle" onclick="toggleTournamentArchive()" aria-expanded="${archiveVisible}">${archiveVisible?'Abgeschlossene Turniere ausblenden':'Abgeschlossene Turniere anzeigen'} (${finished.length})</button>${archiveVisible?tournamentSection('Abgeschlossene Turniere',finished):''}`:''}
  ${!visible.length?'<div class="tournament-empty">Keine Turniere entsprechen der Suche.</div>':''}<p class="hint">Die Daten werden nur in diesem Browser gespeichert. Der Import fuegt Sicherungen als separate Turniere hinzu und ersetzt keine bestehenden Turniere. Vor dem Loeschen bitte einen Datenexport erstellen. Kein Abgleich zwischen Geraeten.</p></section>`;
 }
@@ -1263,7 +1482,17 @@ async function importBackupFile(input){requirePerm('create');
 function createTournament(){requirePerm('create');
  const title=prompt('Name des neuen Turniers:', 'Neues Turnier');if(title===null)return;
  const name=title.trim();assert(name.length>0,'Bitte einen Turniernamen eingeben.');
- const t=empty();t.name=name;const id=uid();collection.tournaments.push({id,data:t,audit:[]});collection.activeId=id;state=t;snapshots.set(id,JSON.stringify(empty()));systemAudit('Turnier erstellt',name);resetNavigation('setup');save();
+ const previousId=collection.activeId,previousState=state,previousTab=tab;
+ const previousAudit=collection.systemAudit.length;
+ const t=empty();t.name=name;const id=uid();collection.tournaments.push({id,data:t,audit:[]});collection.activeId=id;state=t;snapshots.set(id,JSON.stringify(empty()));systemAudit('Turnier erstellt',name);resetNavigation('setup');
+ return save('',()=>{
+  collection.tournaments=collection.tournaments.filter(record=>record.id!==id);
+  collection.systemAudit.length=previousAudit;
+  collection.activeId=previousId;
+  state=previousState;
+  snapshots.delete(id);
+  resetNavigation(previousTab);
+ })?id:null;
 }
 function openTournament(id){const rec=collection.tournaments.find(x=>x.id===id);assert(rec,'Turnier nicht gefunden.');collection.activeId=id;state=rec.data;snapshots.set(id,JSON.stringify(state));resetNavigation('overview');save()}
 function duplicateTournament(id){requirePerm('create');
@@ -1274,6 +1503,13 @@ function duplicateTournament(id){requirePerm('create');
  const t={...empty(),sport:source.data.sport,format:source.data.format,playBronze:source.data.playBronze===true,courtCount:source.data.courtCount,groupSize:source.data.groupSize,qualify:source.data.qualify,scoreMode:source.data.scoreMode,tennisSetsToWin:source.data.tennisSetsToWin,tennisDecider:source.data.tennisDecider,ruleProfile:source.data.ruleProfile,ladder:{...empty().ladder,ruleMode:source.data.ladder?.ruleMode||'distance',maxHigher:source.data.ladder?.maxHigher||3,acceptDays:source.data.ladder?.acceptDays||3,playDays:source.data.ladder?.playDays||14},fee:{...source.data.fee},registration:{...empty().registration,open:source.data.registration?.open!==false,maxEntries:source.data.registration?.maxEntries||16},publication:{...empty().publication,...source.data.publication,visible:false},name};
  const newId=uid();collection.tournaments.push({id:newId,data:t,audit:[]});collection.activeId=newId;state=t;snapshots.set(newId,JSON.stringify(empty()));systemAudit('Turnier dupliziert',name);resetNavigation('setup');save();
 }
+let tournamentCancellationId='';
+function openTournamentCancellation(id){assert(canCancelTournament(),'Nur Vereinsmanager und Trainer dürfen ein Turnier absagen.');const rec=collection.tournaments.find(x=>x.id===id);assert(rec,'Turnier nicht gefunden.');assert(tournamentStage(rec.data)!=='finished','Ein bereits abgeschlossenes Turnier kann nicht abgesagt werden.');assert(tournamentStage(rec.data)!=='cancelled','Das Turnier ist bereits abgesagt.');tournamentCancellationId=id;document.getElementById('tournamentCancellationReason').value='';document.getElementById('tournamentCancellationNote').value='';document.getElementById('tournamentCancellationDialog').hidden=false;document.getElementById('tournamentCancellationReason').focus()}
+function closeTournamentCancellation(){document.getElementById('tournamentCancellationDialog').hidden=true;tournamentCancellationId=''}
+function addTournamentStatusMessages(t,type,text){const people=new Map([...(t.players||[]),...(t.registration?.waitlist||[])].map(p=>[p.id,p]));t.notifications??=[];for(const p of people.values())t.notifications.push({id:uid(),playerId:p.id,playerName:p.name,type,text,at:new Date().toISOString(),source:'tournament-status'})}
+function cancelTournament(id,reason,note=''){assert(canCancelTournament(),'Nur Vereinsmanager und Trainer dürfen ein Turnier absagen.');const rec=collection.tournaments.find(x=>x.id===id);assert(rec,'Turnier nicht gefunden.');assert(tournamentStage(rec.data)!=='finished','Ein bereits abgeschlossenes Turnier kann nicht abgesagt werden.');assert(tournamentStage(rec.data)!=='cancelled','Das Turnier ist bereits abgesagt.');reason=String(reason||'').trim();note=String(note||'').trim().slice(0,500);assert(reason,'Bitte einen Absagegrund auswählen.');const before=JSON.parse(JSON.stringify(rec.data));rec.data.cancellation={reason:reason.slice(0,100),note,at:new Date().toISOString(),byId:actor().id,byName:actor().name,previousStage:tournamentStage(rec.data)};rec.data.stage='cancelled';addTournamentStatusMessages(rec.data,'Turnier abgesagt',`Das Turnier „${rec.data.name}“ wurde abgesagt. Grund: ${reason}.${note?' Hinweis: '+note:''}`);logChange(rec,'Turnier abgesagt',before,rec.data);systemAudit('Turnier abgesagt',rec.data.name+' · '+reason);if(rec.id===collection.activeId)state=rec.data;writeTournamentCollection(collection);snapshots.set(rec.id,JSON.stringify(rec.data))}
+function submitTournamentCancellation(event){event.preventDefault();const rec=collection.tournaments.find(x=>x.id===tournamentCancellationId);assert(rec,'Turnier nicht gefunden.');cancelTournament(rec.id,document.getElementById('tournamentCancellationReason').value,document.getElementById('tournamentCancellationNote').value);closeTournamentCancellation();flash=`<div class="notice">Turnier „${esc(rec.data.name)}“ wurde abgesagt. Die Teilnehmerbenachrichtigungen wurden vorbereitet.</div>`;render()}
+function restoreTournament(id){assert(canCancelTournament(),'Nur Vereinsmanager und Trainer dürfen eine Turnierabsage zurücknehmen.');const rec=collection.tournaments.find(x=>x.id===id);assert(rec?.data.cancellation,'Für dieses Turnier liegt keine Absage vor.');if(!confirm('Absage für „'+rec.data.name+'“ zurücknehmen?'))return;const before=JSON.parse(JSON.stringify(rec.data)),previous=rec.data.cancellation.previousStage;rec.data.cancellation=null;rec.data.stage=['draft','registration','running','finished'].includes(previous)?previous:'draft';addTournamentStatusMessages(rec.data,'Turnierabsage zurückgenommen',`Die Absage für „${rec.data.name}“ wurde zurückgenommen. Das Turnier findet wieder statt. Bitte prüfe aktuelle Termine und Courts in deinem BOOKANDPLAY-Konto.`);logChange(rec,'Turnierabsage zurückgenommen',before,rec.data);systemAudit('Turnierabsage zurückgenommen',rec.data.name);if(rec.id===collection.activeId)state=rec.data;writeTournamentCollection(collection);snapshots.set(rec.id,JSON.stringify(rec.data));flash=`<div class="notice">Die Absage für „${esc(rec.data.name)}“ wurde zurückgenommen. Die Teilnehmerbenachrichtigungen wurden vorbereitet.</div>`;render()}
 function deleteTournament(id){requirePerm('manage');
  const rec=collection.tournaments.find(x=>x.id===id);assert(rec,'Turnier nicht gefunden.');
  if(!confirm('Turnier „'+rec.data.name+'“ mit allen Ergebnissen endgültig aus DIESEM Browser löschen? Bitte vorher exportieren.'))return;
@@ -1282,7 +1518,7 @@ function deleteTournament(id){requirePerm('manage');
  if(!collection.tournaments.some(x=>x.id===collection.activeId))collection.activeId=collection.tournaments[0].id;
  state=collection.tournaments.find(x=>x.id===collection.activeId).data;resetNavigation('tournaments');save();
 }
-function overview(){if(state.format==='ladder')return `<section class="panel"><h2>Forderungswettbewerb</h2><p>Verwalte die Rangliste, Forderungen und Ergebnisse in der grafischen Pyramide. Die Rangfolge wird nach bestätigten Ergebnissen automatisch angepasst.</p><button class="btn" onclick="switchTab('ladder')">Forderungsbaum öffnen</button></section>`;return `<div class="grid"><section class="panel"><h2>Nächste Schritte</h2><p class="hint">1. Turnier konfigurieren. 2. Teilnehmer hinzufügen und einchecken. 3. Auslosung durchführen. 4. Spiele starten und Ergebnisse melden.</p><div class="actions"><button class="btn" onclick="switchTab('${state.players.length?'draw':'participants'}')">${state.players.length?'Zur Auslosung':'Teilnehmer erfassen'}</button><button class="btn alt" onclick="switchTab('setup')">Einstellungen</button></div></section><section class="panel"><h2>Turnierstatus</h2><p><span class="pill ${state.stage==='finished'?'finished':state.matches.length?'playing':''}">${({draft:'Entwurf',registration:'Anmeldung',running:'Läuft',finished:'Abgeschlossen'})[state.stage]}</span></p><p class="hint">${state.matches.length?'Auslosung Version '+state.drawVersion+' · '+openMatches().length+' Begegnungen offen':'Noch keine Auslosung erstellt.'}</p>${allowed('draw')&&state.format==='groups'&&groupsComplete()&&!hasFinal()?'<button class="btn" onclick="guarded(buildFinals)">Finalrunde erstellen</button>':''}</section></div><section class="panel"><h2>Umfang dieser Demo</h2><p class="hint">Gruppen mit Finalrunde, K.-o.-Turniere und Jeder-gegen-jeden. sportartspezifische Ergebnisregeln für Tennis, Padel, Pickleball und Beachvolleyball, automatische Court-Zuteilung, Live-Courtstatus, Satz- und Spieldifferenz in Gruppentabellen und Datenexport. Anmeldung und Warteliste nur lokal im Browser simuliert; keine echte geräteübergreifende Registrierung, Stripe-Zahlung, Benachrichtigung oder Buchungsintegration. Startgelder können manuell als Testbuchungen erfasst werden.</p></section>`}
+function overview(){const cancelled=state.cancellation?`<section class="panel cancellation-note"><h2>Dieses Turnier wurde abgesagt</h2>${cancellationDetails(state)}${canCancelTournament()?`<div class="actions"><button class="btn alt" onclick="guarded(()=>restoreTournament('${collection.activeId}'))">Absage zurücknehmen</button></div>`:''}<p class="hint">Die Turnierdaten bleiben zur Dokumentation erhalten. Änderungen sind gesperrt, bis die Absage zurückgenommen wird.</p></section>`:'';if(state.format==='ladder')return cancelled+`<section class="panel"><h2>Forderungswettbewerb</h2><p>Verwalte die Rangliste, Forderungen und Ergebnisse in der grafischen Pyramide. Die Rangfolge wird nach bestätigten Ergebnissen automatisch angepasst.</p><button class="btn" onclick="switchTab('ladder')">Forderungsbaum öffnen</button></section>`;return cancelled+`<div class="grid"><section class="panel"><h2>Nächste Schritte</h2><p class="hint">1. Turnier konfigurieren. 2. Teilnehmer hinzufügen und einchecken. 3. Auslosung durchführen. 4. Spiele starten und Ergebnisse melden.</p><div class="actions"><button class="btn" onclick="switchTab('${state.players.length?'draw':'participants'}')">${state.players.length?'Zur Auslosung':'Teilnehmer erfassen'}</button><button class="btn alt" onclick="switchTab('setup')">Einstellungen</button></div></section><section class="panel"><h2>Turnierstatus</h2><p><span class="pill ${state.stage==='cancelled'?'cancelled':state.stage==='finished'?'finished':state.matches.length?'playing':''}">${esc(stageText(state))}</span></p><p class="hint">${state.matches.length?'Auslosung Version '+state.drawVersion+' · '+openMatches().length+' Begegnungen offen':'Noch keine Auslosung erstellt.'}</p>${!state.cancellation&&allowed('draw')&&state.format==='groups'&&groupsComplete()&&!hasFinal()?'<button class="btn" onclick="guarded(buildFinals)">Finalrunde erstellen</button>':''}</section></div><section class="panel"><h2>Umfang dieser Demo</h2><p class="hint">Gruppen mit Finalrunde, K.-o.-Turniere und Jeder-gegen-jeden. sportartspezifische Ergebnisregeln für Tennis, Padel, Pickleball und Beachvolleyball, automatische Court-Zuteilung, Live-Courtstatus, Satz- und Spieldifferenz in Gruppentabellen und Datenexport. Anmeldung und Warteliste nur lokal im Browser simuliert; keine echte geräteübergreifende Registrierung, Stripe-Zahlung, Benachrichtigung oder Buchungsintegration. Startgelder können manuell als Testbuchungen erfasst werden.</p></section>`}
 function setup(){
  const locked=registrationLocked()||!allowed('settings')?'disabled':'';
  const racquet=state.sport==='Tennis'||state.sport==='Padel';
@@ -1308,12 +1544,12 @@ function setup(){
  <div class="field"><label>Frist bis zum Spiel (Tage)</label><input id="ladderPlay" type="number" min="1" max="90" value="${state.ladder.playDays}"></div>
  </div><button class="btn" ${locked} onclick="guarded(saveSetup)">Einstellungen speichern</button>
  <div class="sep"></div><h2>Online-Anmeldung und Teilnehmerlimit (Demo)</h2><p class="hint">Die hier eingestellte Kapazität gilt für Anmeldungen/Teams, nicht für einzelne Personen im Doppel. Freiwerdende Plätze werden vor der Auslosung automatisch an die Warteliste vergeben.</p><div class="grid"><div class="field"><label>Maximale Teilnehmer / Teams</label><input id="regCapacity" type="number" min="1" max="1024" value="${state.registration.maxEntries}" ${!allowed('settings')||registrationLocked()?'disabled':''}></div><div class="field"><label>Anmeldephase</label><select id="regOpen" ${!allowed('settings')||registrationLocked()?'disabled':''}><option value="1" ${state.registration.open?'selected':''}>Anmeldung geöffnet</option><option value="0" ${!state.registration.open?'selected':''}>Anmeldung geschlossen</option></select></div></div><button class="btn alt" onclick="guarded(saveRegistrationSettings)" ${!allowed('settings')||registrationLocked()?'disabled':''}>Anmeldebedingungen speichern</button><button class="btn alt" onclick="switchTab('registration')">Zur Turnierausschreibung und Anmeldung</button>
- <div class="sep"></div><h2>Teilnahmegebühren</h2><p class="hint">${feeLocked()?'Gebühren gesperrt, weil bereits eine Zahlung dokumentiert wurde.':'Die Gebühren können bis zur ersten erfassten Zahlung geändert werden.'} Stripe-Zahlungen sind in dieser Browser-Demo nicht angeschlossen.</p>
+ <div class="sep"></div><h2>Teilnahmegebühren</h2><p class="hint">${feeLocked()?'Gebühren gesperrt, weil bereits eine Zahlung dokumentiert wurde.':'Die Gebühren können bis zur ersten erfassten Zahlung geändert werden.'} Bei Online-Anmeldungen ist Stripe die einzige zulässige Zahlungsart. Stripe-Zahlungen sind in dieser Browser-Demo nur simuliert.</p>
  <div class="grid"><div class="field"><label>Teilnahmegebühr</label><select id="feeEnabled" ${feeDisabled}><option value="0" ${!state.fee.enabled?'selected':''}>Kostenlos</option><option value="1" ${state.fee.enabled?'selected':''}>Kostenpflichtig</option></select></div>
  <div class="field"><label>Betrag in Euro</label><input id="feeAmount" type="number" min="0" max="100000" step="0.01" value="${(state.fee.cents/100).toFixed(2)}" ${feeDisabled}></div>
  <div class="field"><label>Gebühr berechnen</label><select id="feeUnit" ${feeDisabled}><option value="entry" ${state.fee.unit==='entry'?'selected':''}>Pro Anmeldung / Team</option><option value="person" ${state.fee.unit==='person'?'selected':''}>Pro Spieler</option></select></div>
  <div class="field"><label>Spieler pro Anmeldung (für Gebühr pro Spieler)</label><input id="feeMembers" type="number" min="1" max="8" step="1" value="${state.fee.membersPerEntry}" ${feeDisabled}></div>
- <div class="field"><label>Zahlungsart</label><select id="feeMethod" ${feeDisabled}><option value="stripe" ${state.fee.method==='stripe'?'selected':''}>Stripe (spätere Anbindung)</option><option value="transfer" ${state.fee.method==='transfer'?'selected':''}>Banküberweisung</option><option value="cash" ${state.fee.method==='cash'?'selected':''}>Zahlung vor Ort</option></select></div></div>
+ <div class="field"><label>Zahlungsart für Online-Anmeldungen</label><select id="feeMethod" disabled><option value="stripe" selected>Ausschließlich Stripe</option></select><p class="hint">Keine Überweisung und keine Barzahlung im Online-Anmeldeprozess.</p></div></div>
  <button class="btn alt" ${feeDisabled} onclick="guarded(saveFeeSettings)">Gebühreneinstellungen speichern</button><button class="btn alt" onclick="switchTab('payments')">Zur Zahlungsübersicht</button><p class="hint">${registrationLocked()?'Nach Turnierstart sind die Spielregeln gesperrt.':allowed('settings')?'Sportartwechsel setzt das sichtbare Sportprofil sofort. Bitte danach alle Einstellungen speichern.':'Zum Ändern der Einstellungen ist die Berechtigung „Turnier konfigurieren“ erforderlich.'}</p></section>`;
 }
 function saveSetup(){
@@ -1334,23 +1570,23 @@ function saveSetup(){
   state.tennisSetsToWin=state.sport==='Padel'?2:+document.getElementById('sTennisSets').value;
   state.tennisDecider=state.tennisSetsToWin===3?'full':document.getElementById('sDecider').value;
  }
- save();notify('Multisport-Turniereinstellungen gespeichert.');
+ if(save()){guidedSetupSaved('configuration');notify('Multisport-Turniereinstellungen gespeichert.');}
 }
 // V3.4 – local-only manual entry fee ledger, separate from payment-service integration.
 function eur(cents){return (cents/100).toLocaleString('de-DE',{style:'currency',currency:'EUR'})}
 function feeMethodLabel(method){
- return ({stripe:'Stripe (nicht verbunden)',transfer:'Banküberweisung',cash:'Zahlung vor Ort'})[method];
+ return ({stripe:'Stripe (Online-Anmeldung)',transfer:'Banküberweisung (Altbestand)',cash:'Zahlung vor Ort (Altbestand)'})[method]||'Stripe (Online-Anmeldung)';
 }
 function feeDue(){return state.fee.enabled?state.fee.cents*(state.fee.unit==='person'?state.fee.membersPerEntry:1):0}
 function paidRecord(id){return state.paymentRecords[id]||{events:[]}}
 function totals(id){const events=paidRecord(id).events||[];const paid=events.filter(e=>e.type==='paid').reduce((n,e)=>n+e.cents,0);const refunded=events.filter(e=>e.type==='refund').reduce((n,e)=>n+e.cents,0);const due=feeDue();return {due,paid,refunded,balance:paid-refunded,open:Math.max(0,due-(paid-refunded))}}
 function feeLocked(){return Object.values(state.paymentRecords).some(r=>(r.events||[]).length)}
-function saveFeeSettings(){requirePerm('settings');assert(!state.finance?.closed,'Finanzabrechnung zuerst wieder öffnen.');assert(!feeLocked(),'Gebühren können nach der ersten Zahlungsbuchung nicht mehr geändert werden.');const enabled=document.getElementById('feeEnabled').value==='1';const val=Number(document.getElementById('feeAmount').value);assert(Number.isFinite(val)&&val>=0&&val<=100000,'Bitte einen gültigen Betrag eingeben.');const cents=Math.round(val*100);assert(!enabled||cents>0,'Für kostenpflichtige Turniere einen Betrag größer 0 angeben.');const members=Number(document.getElementById('feeMembers').value);assert(Number.isInteger(members)&&members>=1&&members<=8,'Spieler pro Anmeldung: 1 bis 8.');state.fee={enabled,cents,unit:document.getElementById('feeUnit').value,membersPerEntry:members,method:document.getElementById('feeMethod').value};save();notify('Teilnahmegebühren gespeichert. Zahlungen können unter „Startgelder“ manuell erfasst werden.')}
+function saveFeeSettings(){requirePerm('settings');assert(!state.finance?.closed,'Finanzabrechnung zuerst wieder öffnen.');assert(!feeLocked(),'Gebühren können nach der ersten Zahlungsbuchung nicht mehr geändert werden.');const enabled=document.getElementById('feeEnabled').value==='1';const val=Number(document.getElementById('feeAmount').value);assert(Number.isFinite(val)&&val>=0&&val<=100000,'Bitte einen gültigen Betrag eingeben.');const cents=Math.round(val*100);assert(!enabled||cents>0,'Für kostenpflichtige Turniere einen Betrag größer 0 angeben.');const members=Number(document.getElementById('feeMembers').value);assert(Number.isInteger(members)&&members>=1&&members<=8,'Spieler pro Anmeldung: 1 bis 8.');state.fee={enabled,cents,unit:document.getElementById('feeUnit').value,membersPerEntry:members,method:'stripe'};if(save()){guidedSetupSaved('fee');notify('Teilnahmegebühren gespeichert. Kostenpflichtige Online-Anmeldungen werden ausschließlich über Stripe bestätigt.')}}
 function recordPayment(id,type){requirePerm('payments');assert(!state.finance?.closed,'Finanzabrechnung zuerst wieder öffnen.');const p=state.players.find(x=>x.id===id);assert(p,'Teilnehmer nicht gefunden.');assert(state.fee.enabled&&feeDue()>0,'Dieses Turnier ist kostenlos.');const t=totals(id);const max=type==='paid'?t.open:t.balance;assert(max>0,type==='paid'?'Bereits vollständig bezahlt.':'Kein erstattbarer Betrag vorhanden.');const promptText=type==='paid'?'Manuellen Zahlungseingang in Euro erfassen (keine Stripe-Abbuchung):':'Manuelle Rückerstattung in Euro dokumentieren (keine Stripe-Erstattung):';const input=prompt(promptText,(max/100).toFixed(2).replace('.',','));if(input===null)return;const clean=input.trim().replace(',','.');assert(/^\d+(?:\.\d{1,2})?$/.test(clean),'Bitte einen gültigen Euro-Betrag eingeben.');const cents=Math.round(Number(clean)*100);assert(cents>0&&cents<=max,'Betrag muss größer 0 und höchstens '+eur(max)+' sein.');const note=prompt('Buchungsnotiz (optional, keine sensiblen Zahlungsdaten):','') ;if(note===null)return;const rec=state.paymentRecords[id]||{events:[]};rec.events.push({id:uid(),type,cents,at:new Date().toISOString(),actor:actor().name,note:note.trim().slice(0,120),method:state.fee.method,source:'manual'});state.paymentRecords[id]=rec;save();notify(type==='paid'?'Manueller Zahlungseingang dokumentiert.':'Rückerstattung nur dokumentiert – bitte tatsächlich über den Zahlungsanbieter / die Bank ausführen.')}
 function paymentStatus(t){if(!state.fee.enabled)return 'Kostenlos';if(t.balance<=0)return t.refunded>0?'Erstattet':'Offen';if(t.balance<t.due)return 'Teilweise bezahlt';return 'Bezahlt'}
 function csvCell(s){let v=String(s??'');if(/^[\s]*[=+@-]/.test(v))v="'"+v;return '"'+v.replace(/"/g,'""')+'"'}
 function exportPayments(){requirePerm('payments');const rows=[['Teilnehmer','Soll (EUR)','Bezahlt (EUR)','Erstattet (EUR)','Offen (EUR)','Status','Zahlungsweg'],...state.players.map(p=>{const t=totals(p.id);return [p.name,(t.due/100).toFixed(2),(t.paid/100).toFixed(2),(t.refunded/100).toFixed(2),(t.open/100).toFixed(2),paymentStatus(t),state.fee.method]})];const blob=new Blob(['\ufeff'+rows.map(r=>r.map(csvCell).join(';')).join('\r\n')],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='bookandplay-startgelder-'+state.name.replace(/[^a-z0-9-]/gi,'-').slice(0,35)+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
-function paymentsView(){const due=feeDue();const summary=state.players.reduce((a,p)=>{const t=totals(p.id);a.due+=t.due;a.paid+=t.paid;a.refunded+=t.refunded;a.open+=t.open;return a},{due:0,paid:0,refunded:0,open:0});const can=allowed('payments');return `<section class="panel"><h2>Startgelder und Zahlungsstatus</h2><p class="warn"><b>Prototyp:</b> Keine echte Zahlungsabwicklung. Nachrückende Teilnehmer müssen die Teilnahmegebühr gegebenenfalls noch bezahlen; stornierte Zahlungen müssen manuell geprüft werden. Auch bei der Auswahl „Stripe“ werden weder Geld eingezogen noch Erstattungen ausgeführt. Buchungen hier sind ausschließlich manuelle Testeinträge.</p><p class="hint">${state.fee.enabled?`Gebühr: <b>${eur(state.fee.cents)}</b> ${state.fee.unit==='person'?'je Spieler · '+state.fee.membersPerEntry+' Spieler pro Anmeldung':'je Anmeldung / Team'} · Soll pro Anmeldung: <b>${eur(due)}</b> · Zahlungsweg: ${esc(feeMethodLabel(state.fee.method))}`:'Dieses Turnier ist kostenlos. Eine Teilnahmegebühr kann unter „Turnier anlegen“ aktiviert werden.'}</p><div class="grid3"><div class="stat"><b>${eur(summary.due)}</b><span>Gesamtsoll</span></div><div class="stat"><b>${eur(summary.paid-summary.refunded)}</b><span>Netto erfasst</span></div><div class="stat"><b>${eur(summary.open)}</b><span>Noch offen</span></div></div><div class="actions">${can?'<button class="btn alt" onclick="guarded(exportPayments)">Zahlungsübersicht als CSV</button>':''}<button class="btn alt" onclick="switchTab('setup')">Gebühren konfigurieren</button></div><div class="tablewrap"><table><thead><tr><th>Teilnehmer / Team</th><th>Soll</th><th>Erfasst</th><th>Erstattet</th><th>Offen</th><th>Status</th><th>Aktion</th></tr></thead><tbody>${state.players.map(p=>{const t=totals(p.id);return `<tr><td><b>${esc(p.name)}</b></td><td>${eur(t.due)}</td><td>${eur(t.paid)}</td><td>${eur(t.refunded)}</td><td>${eur(t.open)}</td><td><span class="pill ${t.open===0&&t.due>0?'playing':''}">${esc(paymentStatus(t))}</span></td><td>${can&&state.fee.enabled?`<div class="actions"><button class="btn small" ${t.open===0?'disabled':''} onclick="guarded(()=>recordPayment('${p.id}','paid'))">Zahlung erfassen</button><button class="btn alt small" ${t.balance===0?'disabled':''} onclick="guarded(()=>recordPayment('${p.id}','refund'))">Erstattung dokumentieren</button></div>`:'–'}</td></tr>`}).join('')||'<tr><td colspan="7">Noch keine bestätigten Startplätze.</td></tr>'}</tbody></table></div></section><section class="panel"><h2>Manuelles Buchungsprotokoll</h2>${Object.entries(state.paymentRecords).flatMap(([id,r])=>(r.events||[]).map(e=>({participant:state.players.find(p=>p.id===id)?.name||state.registration.cancelled.find(p=>p.id===id)?.name||'Nicht mehr aktiver Teilnehmer',...e}))).length?`<div class="tablewrap"><table><thead><tr><th>Datum</th><th>Teilnehmer</th><th>Art</th><th>Betrag</th><th>Benutzer</th><th>Notiz</th></tr></thead><tbody>${Object.entries(state.paymentRecords).flatMap(([id,r])=>(r.events||[]).map(e=>({participant:state.players.find(p=>p.id===id)?.name||state.registration.cancelled.find(p=>p.id===id)?.name||'Nicht mehr aktiver Teilnehmer',...e}))).sort((a,b)=>b.at.localeCompare(a.at)).map(e=>`<tr><td>${esc(new Date(e.at).toLocaleString('de-DE'))}</td><td>${esc(e.participant)}</td><td>${e.type==='paid'?'Zahlung erfasst':'Erstattung dokumentiert'}</td><td>${eur(e.cents)}</td><td>${esc(e.actor)}</td><td>${esc(e.note||'–')}</td></tr>`).join('')}</tbody></table></div>`:'<p class="empty">Noch keine manuellen Zahlungsbuchungen.</p>'}</section>`}
+function paymentsView(){const due=feeDue();const summary=state.players.reduce((a,p)=>{const t=totals(p.id);a.due+=t.due;a.paid+=t.paid;a.refunded+=t.refunded;a.open+=t.open;return a},{due:0,paid:0,refunded:0,open:0});const can=allowed('payments');return `<section class="panel"><h2>Startgelder und Zahlungsstatus</h2><p class="warn"><b>Prototyp:</b> Keine echte Zahlungsabwicklung. Kostenpflichtige Online-Anmeldungen sind ausschließlich für Stripe vorgesehen. Bei einer Spielerabsage wird eine vorhandene Stripe-Zahlung zur serverseitigen Rückerstattung vorgemerkt; Geld wird in dieser Demo weder eingezogen noch automatisch zurückgezahlt.</p><p class="hint">${state.fee.enabled?`Gebühr: <b>${eur(state.fee.cents)}</b> ${state.fee.unit==='person'?'je Spieler · '+state.fee.membersPerEntry+' Spieler pro Anmeldung':'je Anmeldung / Team'} · Soll pro Anmeldung: <b>${eur(due)}</b> · Zahlungsweg: ${esc(feeMethodLabel(state.fee.method))}`:'Dieses Turnier ist kostenlos. Eine Teilnahmegebühr kann unter „Turnier anlegen“ aktiviert werden.'}</p><div class="grid3"><div class="stat"><b>${eur(summary.due)}</b><span>Gesamtsoll</span></div><div class="stat"><b>${eur(summary.paid-summary.refunded)}</b><span>Netto erfasst</span></div><div class="stat"><b>${eur(summary.open)}</b><span>Noch offen</span></div></div><div class="actions">${can?'<button class="btn alt" onclick="guarded(exportPayments)">Zahlungsübersicht als CSV</button>':''}<button class="btn alt" onclick="switchTab('setup')">Gebühren konfigurieren</button></div><div class="tablewrap"><table><thead><tr><th>Teilnehmer / Team</th><th>Soll</th><th>Erfasst</th><th>Erstattet</th><th>Offen</th><th>Status</th><th>Aktion</th></tr></thead><tbody>${state.players.map(p=>{const t=totals(p.id);return `<tr><td><b>${esc(p.name)}</b></td><td>${eur(t.due)}</td><td>${eur(t.paid)}</td><td>${eur(t.refunded)}</td><td>${eur(t.open)}</td><td><span class="pill ${t.open===0&&t.due>0?'playing':''}">${esc(paymentStatus(t))}</span></td><td>${can&&state.fee.enabled?`<div class="actions"><button class="btn small" ${t.open===0?'disabled':''} onclick="guarded(()=>recordPayment('${p.id}','paid'))">Zahlung erfassen</button><button class="btn alt small" ${t.balance===0?'disabled':''} onclick="guarded(()=>recordPayment('${p.id}','refund'))">Erstattung dokumentieren</button></div>`:'–'}</td></tr>`}).join('')||'<tr><td colspan="7">Noch keine bestätigten Startplätze.</td></tr>'}</tbody></table></div></section><section class="panel"><h2>Manuelles Buchungsprotokoll</h2>${Object.entries(state.paymentRecords).flatMap(([id,r])=>(r.events||[]).map(e=>({participant:state.players.find(p=>p.id===id)?.name||state.registration.cancelled.find(p=>p.id===id)?.name||'Nicht mehr aktiver Teilnehmer',...e}))).length?`<div class="tablewrap"><table><thead><tr><th>Datum</th><th>Teilnehmer</th><th>Art</th><th>Betrag</th><th>Benutzer</th><th>Notiz</th></tr></thead><tbody>${Object.entries(state.paymentRecords).flatMap(([id,r])=>(r.events||[]).map(e=>({participant:state.players.find(p=>p.id===id)?.name||state.registration.cancelled.find(p=>p.id===id)?.name||'Nicht mehr aktiver Teilnehmer',...e}))).sort((a,b)=>b.at.localeCompare(a.at)).map(e=>`<tr><td>${esc(new Date(e.at).toLocaleString('de-DE'))}</td><td>${esc(e.participant)}</td><td>${e.type==='paid'?'Zahlung erfasst':'Erstattung dokumentiert'}</td><td>${eur(e.cents)}</td><td>${esc(e.actor)}</td><td>${esc(e.note||'–')}</td></tr>`).join('')}</tbody></table></div>`:'<p class="empty">Noch keine manuellen Zahlungsbuchungen.</p>'}</section>`}
 function participantsBase(){return `<section class="panel"><h2>Teilnehmer und Check-in</h2><p class="hint">Startplätze: ${state.players.length} / ${state.registration.maxEntries} · Warteliste: ${state.registration.waitlist.length}. Bei einer Abmeldung vor Auslosung rückt automatisch der nächste Wartende nach. <button class="btn alt small" onclick="switchTab('registration')">Anmeldung &amp; Warteliste</button></p>${!state.matches.length?`<div class="formInline"><input id="newPlayer" style="max-width:360px" placeholder="Spieler / Doppelteam eingeben" onkeydown="if(event.key==='Enter')guarded(addPlayer)"><button class="btn" onclick="guarded(addPlayer)">Hinzufügen</button></div>${!registrationLocked()&&!canSelfRegister(state)?'<p class="hint">Die Selbstanmeldung ist geschlossen. Die Turnierleitung kann vor der Auslosung weiterhin Teilnehmer manuell hinzufügen.</p>':''}`:'<p class="hint">Nach der Auslosung können Teilnehmer nicht mehr geändert werden. Störfälle am Turniertag werden im eigenen Bereich darunter dokumentiert.</p>'}<div class="tablewrap"><table><thead><tr><th>Name</th>${state.sport==='Tennis'?'<th>DTB-Spielerkennung</th><th>LK (Anzeige)</th>':''}<th>Check-in</th><th>Gruppe</th><th>Aktion</th></tr></thead><tbody>${state.players.map(p=>`<tr><td>${esc(p.name)}</td>${state.sport==='Tennis'?`<td><input aria-label="DTB-Spielerkennung ${esc(p.name)}" placeholder="optional" style="min-width:110px" value="${esc(p.dtbId||'')}" onchange="updatePlayerMeta('${p.id}','dtbId',this.value)"></td><td><input aria-label="LK ${esc(p.name)}" placeholder="z. B. 14,2" style="min-width:95px" value="${esc(p.lk||'')}" onchange="updatePlayerMeta('${p.id}','lk',this.value)"></td>`:''}<td><label><input type="checkbox" ${p.checked?'checked':''} ${state.matches.length?'disabled':''} onchange="state.players.find(p=>p.id==='${p.id}').checked=this.checked;save()"> ${participantNoShow(p.id)?'Nicht erschienen':participantWithdrawn(p.id)?'Zurückgezogen':'Anwesend'}</label></td><td>${p.group||'–'}</td><td>${!state.matches.length?`<button class="btn alt small danger" onclick="removePlayer('${p.id}')">Entfernen</button>`:'–'}</td></tr>`).join('')}</tbody></table></div>${!state.players.length?'<div class="empty">Noch keine Teilnehmer. Lade Beispieldaten oder füge Teams hinzu.</div>':''}</section>`}
 function markParticipantNoShow(id){
  requirePerm('participants');
@@ -1703,7 +1939,7 @@ function recordParticipantMessages(before){
   if(priorPlayers.has(p.id))continue;
   const promoted=priorWaiting.has(p.id);
   addParticipantMessage([p.id],promoted?'Nachgerückt':'Startplatz bestätigt',
-   promoted?'Du bist von der Warteliste nachgerückt. Dein Startplatz ist bestätigt.':'Dein Startplatz ist bestätigt.');
+   promoted?(p.onlinePayment==='stripe_pending'?'Du bist von der Warteliste nachgerückt. Dein Startplatz ist vorläufig reserviert. Bitte bezahle die Startgebühr jetzt ausschließlich über Stripe.':'Du bist von der Warteliste nachgerückt. Dein Startplatz ist bestätigt.'):'Dein Startplatz ist bestätigt.');
  }
  for(const p of state.players){
   const old=previousPlayers.get(p.id);if(!old)continue;
@@ -1717,7 +1953,7 @@ function recordParticipantMessages(before){
  }
  const priorCancelled=new Set((before.registration?.cancelled||[]).map(p=>p.id));
  for(const p of state.registration.cancelled){
-  if(!priorCancelled.has(p.id))addParticipantMessage([p.id],'Abmeldung','Deine Anmeldung wurde storniert.');
+  if(!priorCancelled.has(p.id)){const process=p.cancellationProcess,refund=process?.refundCents||0;addParticipantMessage([p.id],'Abmeldung bestätigt',process?.status==='stripe_refund_pending'?`Deine Anmeldung wurde storniert. Die Rückerstattung über ${eur(refund)} wurde für die Bearbeitung über Stripe vorgemerkt. Du erhältst nach der serverseitigen Bestätigung eine weitere Nachricht.`:process?.status==='manual_review'?`Deine Anmeldung wurde storniert. Die Rückerstattung über ${eur(refund)} wird von der Turnierleitung geprüft.`:'Deine Anmeldung wurde storniert. Es ist keine Rückerstattung erforderlich.');}
  }
 
  const previous=new Map(before.matches.map(m=>[m.id,m]));
@@ -1928,7 +2164,7 @@ function selectPlayerEntry(id){
 }
 function playerEntries(tournament){
  return [
-  ...tournament.players.map(entry=>({entry,status:'Startplatz bestätigt'})),
+  ...tournament.players.map(entry=>({entry,status:entry.onlinePayment==='stripe_pending'?'Stripe-Zahlung ausstehend':'Startplatz bestätigt'})),
   ...tournament.registration.waitlist.map((entry,index)=>({entry,status:'Warteliste · Platz '+(index+1)})),
   ...tournament.registration.cancelled.map(entry=>({entry,status:'Abgemeldet'}))
  ];
@@ -1976,7 +2212,8 @@ function playerTournamentDetails(record,selection){
   if(running)return court?'Läuft · Platz '+court:'Spiel läuft';
   return 'Uhrzeit und Court sind noch nicht freigegeben.';
  };
- return `<section class="panel"><h2>${esc(t.name)}</h2><p><strong>${esc(selection.entry.name)}</strong> · ${esc(t.sport)} · ${esc(participation)}</p>${publicationCriteria(t.publication)}</section>
+ const canCancel=!registrationLocked(t)&&!selection.entry.cancelledAt;
+ return `<section class="panel"><h2>${esc(t.name)}</h2><p><strong>${esc(selection.entry.name)}</strong> · ${esc(t.sport)} · ${esc(participation)}</p>${publicationCriteria(t.publication)}${selection.entry.onlinePayment==='stripe_pending'?`<div class="notice"><b>Startplatz vorläufig reserviert</b><p>Schließe jetzt die Stripe-Zahlung ab, damit dein Startplatz verbindlich wird.</p><button class="btn" onclick="guarded(()=>beginPromotedStripeCheckout('${record.id}','${id}'))">Jetzt über Stripe bezahlen</button></div>`:''}${canCancel?`<div class="actions"><button class="btn alt danger" onclick="guarded(()=>playerCancelRegistration('${record.id}','${id}'))">Teilnahme absagen</button></div><p class="hint">Bei einer Absage wird der Stornoprozess gestartet. Eine gezahlte Stripe-Gebühr wird zur Rückerstattung vorgemerkt und ein freier Platz an die Warteliste vergeben.</p>`:''}</section>
  ${t.format==='ladder'&&confirmed?playerLadderPanel(t,id,nameOf):`<section class="panel"><h2>${next?.status==='playing'?'Aktuelles Spiel':'Nächstes Spiel'}</h2>
  ${next?`<p><strong>${esc(phaseLabel(next,t.matches))} · gegen ${esc(opponent(next))}</strong></p><p>${esc(matchTime(next))}</p>
  ${upcoming.length>1?`<h3>Weitere Spiele</h3><ul>${upcoming.slice(1).map(m=>`<li>${esc(phaseLabel(m,t.matches))} · gegen ${esc(opponent(m))} · ${esc(matchTime(m))}</li>`).join('')}</ul>`:''}`:
@@ -2338,7 +2575,7 @@ const helpTopics={
  'Turnier auf Vereinsseite anzeigen':['Veröffentlichung','Erst nach dem Aktivieren und Speichern erscheint das Turnier in der lokalen Spieleransicht. Bestehende Turniere bleiben bis zur bewussten Veröffentlichung unsichtbar.'],
  'Turnierbeschreibung':['Turnierbeschreibung','Kurze Information zum Turnier für Spieler auf der Vereinsseite, z. B. Spielmodus, Termin und Teilnahmevoraussetzungen.'],
  'Teilnahmegebühr':['Teilnahmegebühr','Lege fest, ob ein Turnier kostenpflichtig ist und ob die Gebühr pro Team/Anmeldung oder pro Spieler berechnet wird. Stripe-Zahlungen sind in der Demo nicht aktiv.'],
- 'Zahlungsweg':['Zahlungsweg','Vorgesehener Weg: Stripe, Banküberweisung oder vor Ort. In dieser Demo können Zahlungen nur manuell als Testbuchung dokumentiert werden.'],
+ 'Zahlungsweg':['Zahlungsweg','Kostenpflichtige Online-Anmeldungen werden ausschließlich über Stripe bezahlt. Überweisung und Barzahlung sind im Online-Anmeldeprozess nicht zulässig. In dieser Demo wird die Stripe-Bestätigung nur simuliert.'],
  'Regelmodell':['Forderungsregel','Klassische Pyramide oder freie Forderung nach Rangabstand. Nur tatsächlich erlaubte Gegner werden angeboten.'],
 
  'Turniername':['Turniername','Eindeutiger Name, der in Turnierlisten, Spielplänen, Druckansichten und Abschlussberichten erscheint. Beispiel: Padel-Sommercup 2027.'],
@@ -2403,7 +2640,7 @@ const guideSections=[
  ['Vor der Auslosung kontrollieren','Teilnehmer, Nachrücker und Zahlungslage prüfen. Mit der Auslosung wird die Demo-Anmeldung gesperrt, damit Begegnungen nicht unbemerkt geändert werden.','draw']]},
  {id:'paymentGuide',name:'4. Teilnahmegebühren und Zahlungen',summary:'Startgelder konfigurieren und Zahlungseingänge nachvollziehen',items:[
  ['Startgeld festlegen','Unter „Turnier anlegen“ die Gebühren aktivieren, Betrag und Berechnung pro Spieler oder Anmeldung/Team wählen.','setup'],
- ['Zahlungsart wählen','Stripe, Überweisung oder Zahlung vor Ort auswählen. Die Demo verarbeitet keine realen Überweisungen oder Stripe-Transaktionen.','setup'],
+ ['Stripe als festen Zahlungsweg verwenden','Kostenpflichtige Online-Anmeldungen werden ausschließlich über Stripe bezahlt. Der Startplatz wird erst nach bestätigter Zahlung vergeben; Wartende zahlen erst beim Nachrücken. Die Demo simuliert nur die Stripe-Bestätigung.','setup'],
  ['Zahlungsübersicht kontrollieren','Unter „Startgelder“ Soll, erhaltene Testzahlungen, offene Beträge und Teilzahlungen einsehen. Zahlungseingänge werden manuell erfasst.','payments'],
  ['Absagen und Rückerstattungen prüfen','Bei Rückzug oder Nachrücken den Zahlungsstatus prüfen. In der Demo werden Erstattungen nur dokumentiert, nicht automatisch ausgezahlt.','payments'],
  ['CSV exportieren','Zahlungsübersicht als CSV sichern; für produktive Buchhaltung sind die Daten aus dem späteren Backend und Zahlungsanbieter maßgeblich.','payments']]},
@@ -2414,6 +2651,7 @@ const guideSections=[
  ['Forderung durchführen','Erlaubten Gegner wählen, Forderung erstellen und innerhalb der Frist annehmen oder ablehnen.','ladder'],
  ['Ergebnis bestätigen','Nach bestätigtem Ergebnis wird die Rangfolge automatisch aktualisiert; Ereignisse bleiben im Verlauf dokumentiert.','ladder']]},
  {id:'adminGuide',name:'6. Rollen, Daten und Grenzen der Demo',summary:'Berechtigungen verstehen und sichere Übernahme vorbereiten',items:[
+ ['Betriebsart durch Root festlegen','Nur Root darf zwischen „In BOOKANDPLAY integriert“ und „Stand-alone“ umschalten. Vereinsmanager und Trainer sehen die Einstellung nur lesend. Vorhandene Turniere werden dabei nicht verändert.','tournaments'],
  ['Rechte prüfen','Vereinsmanager vergibt Demo-Rollen an Turnierleiter, Trainer und Helfer; produktiv ist eine sichere serverseitige Berechtigungsprüfung notwendig.','permissions'],
  ['Änderungsprotokoll lesen','Aktionen mit Zeitpunkt und Demo-Benutzer nachvollziehen. Das lokale Protokoll ist nicht manipulationssicher.','permissions'],
  ['Turniere sichern','Regelmäßig unter „Meine Turniere“ „Alle Turniere sichern“ verwenden, besonders vor dem Austausch der index.html.','tournaments'],
@@ -2431,6 +2669,156 @@ const guideSections=[
  ['Turnierplan und Bericht drucken','Im „Turnierplan“ den grafischen Baum oder Live-Plan auswählen und über „Drucken / PDF“ ausgeben.','plan'],
  ['Datensicherung exportieren','In „Meine Turniere“ „Alle Turniere sichern“ wählen. Der Browser speichert Daten lokal und synchronisiert sie nicht zwischen Geräten.','tournaments']]}
 ];
+const assistantTopics={
+ create:{tab:'tournaments',label:'Neues Turnier',anchor:'createTournamentButton',permission:'create',keys:/turnier.*(?:anleg|erstell)|neues turnier|leg\w* .*turnier an\b|erstell\w* .*turnier/,text:'Wähle „+ Neues Turnier“ und gib einen Namen ein. Danach öffnet sich die Turnierkonfiguration.'},
+ setup:{tab:'setup',label:'Turnierkonfiguration',keys:/sportart|spielregeln|turnierformat|turnierbeginn|spielfelder|konfigurier/,text:'Lege Sportart, Turnierformat, Courts und Turnierbeginn fest. Bestätige mit „Einstellungen speichern“.'},
+ registration:{tab:'registration',label:'Anmeldung & Warteliste',keys:/wartelist|nachruck|anmeld|startplatze/,text:'Hier siehst du Startplätze und Warteliste. Die Aufnahmereihenfolge richtet sich nach dem Eingang der Anmeldung.'},
+ publish:{tab:'registration',label:'Ausschreibung',anchor:'pubClub',keys:/ausschreib|veroffentlich|anmeldeschluss/,text:'Ergänze die Ausschreibung und aktiviere „Turnier auf Vereinsseite anzeigen“. Wähle anschließend „Ausschreibung speichern“.'},
+ fees:{tab:'setup',label:'Teilnahmegebühren',anchor:'feeEnabled',permission:'settings',keys:/(?:gebuhr|startgeld).*(?:festleg|einstell|konfigurier|festsetz|erheb)|(?:festleg|einstell|konfigurier|festsetz|erheb).*(?:gebuhr|startgeld)|(?:stell|leg|setz)\w* .*(?:gebuhr|startgeld).* (?:ein|fest)\b/,text:'Unter „Teilnahmegebühren“ stellst du Betrag und Berechnung ein. Kostenpflichtige Online-Anmeldungen laufen über Stripe.'},
+ payments:{tab:'payments',label:'Startgelder',keys:/startgeld|gebuhr|stripe|zahlung|erstattung|storno/,text:'Prüfe offene Startgelder und erfasste Zahlungen. Die Übersicht zeigt auch den Status vorgemerkter Rückerstattungen.'},
+ finance:{tab:'finance',label:'Budget & Abrechnung',keys:/budget|ausgaben|abrechnung|finanzen|beleg/,text:'Hier erfasst du geplante und tatsächliche Einnahmen und Ausgaben und prüfst die Abrechnung.'},
+ participants:{tab:'participants',label:'Teilnehmer',keys:/teilnehmer|eincheck|check.in|anwesend/,text:'Erfasse Spieler oder Teams und markiere am Turniertag die anwesenden Teilnehmer.'},
+ draw:{tab:'draw',label:'Auslosung',keys:/auslos|finalrunde|gruppentabell/,text:'Kontrolliere den Check-in und erstelle die Begegnungen unter „Auslosung“.'},
+ plan:{tab:'plan',label:'Turnierplan',keys:/turnierplan|zeitplan|verschieb|verspat|verzoger|ruhezeit|wetterpause/,text:'Plane Spielzeit und Court im Turnierplan. Prüfe Konflikte und Folgeverschiebungen vor der Freigabe.'},
+ courts:{tab:'courts',label:'Courts',keys:/court|platzwechsel|spielaufruf|spiel starten/,text:'Weise spielfertige Begegnungen freien Courts zu oder rufe ein Spiel manuell auf.'},
+ closing:{tab:'closing',label:'Abschluss',keys:/platz 3|dritt|bronze|abschluss|sieger|platzierung/,text:'Prüfe Platzierungen und Abschlussbericht. Ein Spiel um Platz 3 ist möglich, sobald im passenden Format beide Halbfinalverlierer feststehen.'},
+ results:{tab:'results',label:'Ergebnisse',keys:/ergebnis|aufgabe|verletz|nichtantritt|kampflos/,text:'Erfasse und bestätige das Ergebnis einer laufenden Begegnung. Für eine Aufgabe steht die Störfallfunktion zur Verfügung.'},
+ notifications:{tab:'notifications',label:'Nachrichten',keys:/nachricht|benachrichtig|mail/,text:'Hier findest du die lokal vorbereiteten Benachrichtigungen und die dazugehörigen Auslöser.'},
+ ladder:{tab:'ladder',label:'Forderungsbaum',keys:/forderung|pyramide|rangliste/,text:'Beim Format „Forderungsbaum“ kannst du die Rangliste initialisieren und Forderungen bearbeiten.'},
+ cancellation:{tab:'tournaments',label:'Turnierabsage',keys:/turnier.*absag|sag\w* .*turnier ab\b|absage.*zuruck|turnier.*stornier/,text:'Vereinsmanager und Trainer können das Turnier mit einem Grund absagen oder die Absage zurücknehmen.'},
+ backup:{tab:'tournaments',label:'Turniere sichern',keys:/sicher|backup|import|export/,text:'Nutze „Alle Turniere sichern“ oder importiere eine vorhandene Turniersicherung.'},
+ permissions:{tab:'permissions',label:'Rechte & Protokoll',keys:/berechtig|rechte|rolle|protokoll/,text:'Hier findest du die Demo-Berechtigungen und das Änderungsprotokoll.'}
+};
+const assistantJourneys={
+ tournaments:['Turniere verwalten','create','setup','publish'],
+ overview:['Turnier vorbereiten','setup','registration','draw'],
+ setup:['Turnier anlegen und konfigurieren','setup','fees','publish'],
+ participants:['Teilnehmer und Check-in','participants','registration','draw'],
+ registration:['Ausschreibung und Anmeldung','publish','registration','payments'],
+ payments:['Startgelder prüfen','payments','fees','finance'],
+ finance:['Turnierfinanzen','finance','payments','backup'],
+ draw:['Begegnungen auslosen','draw','participants','plan'],
+ courts:['Spiele aufrufen','courts','results','plan'],
+ results:['Ergebnisse erfassen','results','courts','closing'],
+ plan:['Turniertag planen','plan','courts','notifications'],
+ notifications:['Teilnehmer informieren','notifications','registration','plan'],
+ ladder:['Forderungsbaum verwalten','ladder','participants','setup'],
+ closing:['Turnier abschließen','closing','results','backup'],
+ features:['Funktionen entdecken','setup','registration','plan'],
+ guide:['Hilfe zur Turnierverwaltung','setup','registration','closing'],
+ permissions:['Rechte und Änderungen prüfen','permissions','backup','finance']
+};
+const assistantSeen=new Set();
+let assistantReturn=null;
+function assistantTopicAvailable(topic){
+ return canOpenTab(topic.tab)&&(!topic.permission||allowed(topic.permission));
+}
+function assistantGuide(){
+ const journey=assistantJourneys[tab];
+ if(!journey||!canOpenTab(tab))return null;
+ const [label,...keys]=journey;
+ return {label,keys:keys.filter(key=>assistantTopicAvailable(assistantTopics[key]))};
+}
+function assistantSeenKey(){return 'bap-tournament-assistant-seen:'+actor().id+':'+tab}
+function assistantUnderstood(){
+ const key=assistantSeenKey();
+ assistantSeen.add(key);
+ try{localStorage.setItem(key,'1')}catch(_){}
+ closeTournamentAssistant();
+ renderTournamentAssistant();
+ document.getElementById('askTournamentAssistant')?.focus();
+}
+function assistantSteps(guide){
+ return '<ol class="assistant-steps">'+guide.keys.map(key=>'<li><strong>'+esc(assistantTopics[key].label)+'</strong><br>'+esc(assistantTopics[key].text)+'</li>').join('')+'</ol>';
+}
+function renderTournamentAssistant(){
+ const guide=assistantGuide();
+ const root=document.getElementById('tournamentAssistant');
+ if(!guide){root.innerHTML='';return}
+ let compact=assistantSeen.has(assistantSeenKey());
+ try{compact||=localStorage.getItem(assistantSeenKey())==='1'}catch(_){}
+ const back=assistantReturn&&assistantReturn.actorId===actor().id&&assistantReturn.tournamentId===collection.activeId;
+ const primary=guide.keys[0];
+ root.innerHTML=`<section class="panel assistant-card" aria-label="Turnierassistent">
+  <div class="assistant-heading"><div><span class="hint">Assistent · ${esc(guide.label)}</span><h2>${compact?'Kurzanleitung für diesen Bereich':'Du bist neu hier? So geht’s'}</h2></div>
+  ${compact?'':'<button class="btn alt small" onclick="assistantUnderstood()">Verstanden</button>'}</div>
+  ${compact?'':assistantSteps(guide)}
+  <div class="actions">
+   ${!compact&&primary?`<button class="btn" onclick="openAssistantTopic('${primary}')">${esc(assistantTopics[primary].label)} öffnen</button>`:''}
+   <button class="btn alt" id="askTournamentAssistant" onclick="openTournamentAssistant()">Assistent fragen</button>
+   ${back?'<button class="btn alt" onclick="returnToTournamentAssistant()">← Zurück zur Frage</button>':''}
+  </div>
+ </section>`;
+}
+function answerTournamentQuestion(question){
+ const query=question.toLowerCase().replace(/ß/g,'ss').normalize('NFD').replace(/\p{M}/gu,'');
+ const keys=['cancellation','create','publish','fees','plan','closing','ladder','payments','notifications',...Object.keys(assistantTopics)];
+ const key=keys.find(id=>assistantTopics[id].keys.test(query));
+ if(!key)return {text:'Dazu habe ich noch keine passende Anleitung. Frage zum Beispiel nach einem neuen Turnier, einem Courtwechsel oder dem Startgeld.'};
+ const topic=assistantTopics[key];
+ if(!assistantTopicAvailable(topic))return {text:'Dieser Bereich steht deiner aktuellen Rolle nicht zur Verfügung.'};
+ return {key,text:topic.text};
+}
+function showTournamentAssistantAnswer(question){
+ const answer=answerTournamentQuestion(question);
+ document.getElementById('tournamentAssistantAnswer').innerHTML=`<div class="assistant-answer"><p>${esc(answer.text)}</p>
+  ${answer.key?`<button class="btn alt" onclick="openAssistantTopic('${answer.key}')">${esc(assistantTopics[answer.key].label)} öffnen</button>`:''}</div>`;
+}
+function openTournamentAssistant(question=''){
+ const guide=assistantGuide();
+ if(!guide)return;
+ const dialog=document.getElementById('tournamentAssistantDialog');
+ dialog.innerHTML=`<div class="assistant-heading"><div><span class="hint">Turnierassistent</span><h2 id="tournamentAssistantTitle">${esc(guide.label)} · So geht’s</h2></div>
+  <button class="btn alt small" aria-label="Assistent schließen" onclick="closeTournamentAssistant()">×</button></div>
+  ${assistantSteps(guide)}
+  <form onsubmit="event.preventDefault();showTournamentAssistantAnswer(this.elements.question.value)">
+   <div class="field"><label for="tournamentQuestion">Was möchtest du tun?</label>
+    <input id="tournamentQuestion" name="question" maxlength="180" required autocomplete="off" value="${esc(question)}" placeholder="z. B. Wie lege ich ein Turnier an?"></div>
+   <p class="hint">Die Frage wird lokal ausgewertet und nicht gespeichert.</p>
+   <button class="btn" type="submit">Assistent fragen</button>
+  </form>
+  <div id="tournamentAssistantAnswer" aria-live="polite"></div>`;
+ if(question)showTournamentAssistantAnswer(question);
+ dialog.showModal();
+ document.getElementById('tournamentQuestion').focus();
+}
+function closeTournamentAssistant(){
+ const dialog=document.getElementById('tournamentAssistantDialog');
+ if(dialog.open)dialog.close();
+ dialog.innerHTML='';
+}
+function openAssistantTopic(key){
+ const topic=assistantTopics[key];
+ if(!topic||!assistantTopicAvailable(topic))return;
+ const dialog=document.getElementById('tournamentAssistantDialog');
+ const question=dialog.open?document.getElementById('tournamentQuestion').value.trim():'';
+ if(question){
+  assistantReturn={tab,fromCourts:resultsFromCourts,history:[...navigationHistory],actorId:actor().id,tournamentId:collection.activeId,question,scrollY:window.scrollY};
+ }
+ closeTournamentAssistant();
+ if(topic.tab!==tab)switchTab(topic.tab);
+ else renderTournamentAssistant();
+ const target=(topic.anchor&&document.getElementById(topic.anchor))||document.querySelector('#view h2');
+ if(target){
+  if(!target.matches('button:enabled,input:enabled,select:enabled'))target.setAttribute('tabindex','-1');
+  target.focus({preventScroll:true});
+  target.scrollIntoView({block:'center'});
+ }
+}
+function returnToTournamentAssistant(){
+ const origin=assistantReturn;
+ if(!origin||origin.actorId!==actor().id||origin.tournamentId!==collection.activeId||!canOpenTab(origin.tab))return;
+ assistantReturn=null;
+ navigationHistory.splice(0,navigationHistory.length,...origin.history);
+ if(tab!==origin.tab)showTab(origin.tab,origin.fromCourts);
+ else renderTournamentAssistant();
+ window.scrollTo(0,origin.scrollY);
+ openTournamentAssistant(origin.question);
+}
+document.getElementById('tournamentAssistantDialog').addEventListener('cancel',event=>{
+ event.preventDefault();
+ closeTournamentAssistant();
+});
 function helpButton(key,label=key){return `<button type="button" class="help-i no-print" data-help="${esc(key)}" aria-label="Information zu ${esc(label)}" title="Erklärung anzeigen">i</button>`}
 function enhanceHelp(){
  const root=document.getElementById('view');if(!root)return;
@@ -2468,23 +2856,24 @@ function helpClose(restoreFocus=true){
  helpTrigger=null;
 }
 document.addEventListener('click',e=>{const btn=e.target.closest('[data-help]');if(btn){e.preventDefault();helpOpen(btn.dataset.help,btn)}else if(e.target.id==='helpDialog')helpClose()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){helpClose();if(!document.getElementById('onboardingPrompt').hidden)onboardingLater();if(!document.getElementById('onboardingTour').hidden)onboardingCloseTour(false)}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){helpClose();if(!document.getElementById('tournamentCancellationDialog').hidden)closeTournamentCancellation();if(!document.getElementById('stripeCheckoutDialog').hidden)closeStripeCheckout()}});
 const featureCatalog=[
- {title:'Turniere planen und verwalten',status:'Verfügbar',kind:'available',target:'tournaments',text:'Mehrere Turniere, Sportarten und Formate parallel verwalten, kopieren, sortieren, sichern und wiederherstellen.'},
+ {title:'Turniere planen und verwalten',status:'Verfügbar',kind:'available',target:'tournaments',text:'Mehrere Turniere parallel verwalten, kopieren, sortieren, sichern sowie durch Vereinsmanager oder Trainer mit dokumentiertem Grund absagen und wieder öffnen.'},
  {title:'Assistent und Turnierkonfiguration',status:'Verfügbar',kind:'available',target:'setup',text:'Geführter Einstieg sowie Konfiguration von Termin, Sportart, Format, Regeln, Courts, Startgeld und Veröffentlichung.'},
  {title:'Anmeldung und Warteliste',status:'Prototyp',kind:'prototype',target:'registration',text:'Startplätze, Anmeldeschluss, Absagen, Warteliste und automatisches Nachrücken mit einer lokalen Spieleransicht testen.'},
  {title:'Zeit- und Courtplanung',status:'Verfügbar',kind:'available',target:'courts',text:'Begegnungen planen und verschieben, freie Courts erkennen sowie Doppelbelegungen und Ruhezeiten kontrollieren.'},
  {title:'Turniertag und Ergebnisse',status:'Verfügbar',kind:'available',target:'results',text:'Ergebnisse, Nichtantritt, Verletzungsaufgabe, kampflosen Sieg, Rückzug und nachträgliche Korrekturen dokumentieren.'},
- {title:'Finanzen und Startgelder',status:'Prototyp',kind:'prototype',target:'finance',text:'Budget, Startgelder, Teilzahlungen, Erstattungen, Ausgaben, Beschaffungen und Turnierabrechnung nachvollziehen.'},
+ {title:'Finanzen und Startgelder',status:'Prototyp',kind:'prototype',target:'finance',text:'Budget, Startgelder, Teilzahlungen und Abrechnung nachvollziehen. Kostenpflichtige Online-Anmeldungen werden ausschließlich über Stripe bestätigt.'},
  {title:'Spieleransicht und Nachrichten',status:'Prototyp',kind:'prototype',target:'playerAccount',text:'Anmeldung, Wartelistenplatz, offenes Startgeld, nächstes Spiel, Court, Uhrzeit und lokale Benachrichtigungen anzeigen.'},
  {title:'Turnierformate und Forderungsbaum',status:'Verfügbar',kind:'available',target:'ladder',text:'Gruppen mit K.-o., einfaches K.-o., Jeder gegen jeden und eine laufende Forderungspyramide durchführen.'},
  {title:'Abschluss, Berichte und Export',status:'Verfügbar',kind:'available',target:'closing',text:'Platzierungen, Spiel um Platz 3, Abschlussbericht, Druckansichten sowie Turnier- und Finanzexporte erzeugen.'},
  {title:'Rollen und Änderungsprotokoll',status:'Prototyp',kind:'prototype',target:'permissions',text:'Vereinsmanager, Turnierleitung, Trainer, Helfer und Zuschauer simulieren und Änderungen nachvollziehen.'},
+ {title:'Stand-alone oder BOOKANDPLAY-integriert',status:'Prototyp',kind:'prototype',target:'tournaments',text:'Root legt die systemweite Betriebsart fest. Vorhandene Turnierdaten bleiben beim Umschalten vollständig erhalten.'},
  {title:'Zentrale Konten und Synchronisierung',status:'Datenbankanbindung',kind:'backend',target:'guide',text:'Sichere Anmeldung, echte Benutzerrechte und identische Daten in Chrome, Firefox, Safari, Tablets und Smartphones.'},
  {title:'Reservierung, Zahlung und Versand',status:'Datenbankanbindung',kind:'backend',target:'guide',text:'BOOKANDPLAY-Platzbuchungen, Stripe-Zahlungen sowie echte E-Mail- und Push-Benachrichtigungen serverseitig verbinden.'}
 ];
-function featureOverviewView(){const counts=featureCatalog.reduce((sum,item)=>(sum[item.kind]++,sum),{available:0,prototype:0,backend:0});return `<section class="panel feature-hero"><span class="pill playing">BOOKANDPLAY Turnierverwaltung · Funktionsübersicht</span><h2>Alles für den Turniertag in einem Modul</h2><p>Von der Ausschreibung über Anmeldung, Finanzen, Courtplanung und Ergebnisse bis zum Abschlussbericht. Die Statusangaben unterscheiden klar zwischen bereits nutzbaren Funktionen, lokaler Demonstration und notwendiger Serveranbindung.</p><div class="feature-summary"><div><b>${counts.available}</b><span>direkt verfügbare Bereiche</span></div><div><b>${counts.prototype}</b><span>im Prototyp demonstriert</span></div><div><b>${counts.backend}</b><span>benötigen die Datenbankanbindung</span></div></div><div class="actions"><button class="btn" onclick="onboardingStart()">Geführte Einführung starten</button><button class="btn alt" onclick="switchTab('guide')">Schritt-für-Schritt-Anleitung</button></div></section><div class="feature-grid">${featureCatalog.map(item=>`<article class="feature-card ${item.kind==='backend'?'feature-boundary':''}"><span class="pill feature-status ${item.kind}">${item.status}</span><h3>${item.title}</h3><p>${item.text}</p><div class="actions"><button class="btn alt small" onclick="switchTab('${item.target}')">${item.kind==='backend'?'Mehr erfahren':'Funktion öffnen'}</button></div></article>`).join('')}</div><section class="panel feature-boundary"><h2>Transparente Abgrenzung</h2><p class="hint">Der Prototyp verarbeitet ausschließlich lokale Testdaten. Produktive Zahlungen, echte E-Mails, sichere Benutzerrechte, zentrale Synchronisierung und verbindliche BOOKANDPLAY-Platzreservierungen werden erst mit der Server- und Datenbankanbindung aktiviert.</p></section>`}
-function guideView(){return `<section class="panel"><h2>Anleitung: Von der Vereinsseite bis zum Turnierabschluss</h2><p>Diese Anleitung erklärt den gesamten Ablauf in BOOKANDPLAY. Über „Zum Bereich“ gelangst du direkt zur jeweiligen Funktion. Die <b>i</b>-Buttons neben den Unterpunkten im geöffneten Menü und an vielen Eingabefeldern öffnen eine passende Erklärung.</p><p class="notice">Hinweis: Dies ist ein lokaler Demonstrationsprototyp. Offizielle Verbandsgenehmigungen, echte Platzreservierungen und eine echte geräteübergreifende Online-Anmeldung sind noch nicht angebunden.</p>${actor().role==='manager'?'<div class="actions"><button class="btn" onclick="onboardingStart()">Geführte Einführung starten</button></div>':''}<div class="actions guide-actions">${guideSections.map(sec=>`<button class="btn alt small" onclick="document.getElementById('${sec.id}').scrollIntoView({behavior:'smooth'})">${sec.name}</button>`).join('')}</div></section>${guideSections.map(sec=>`<section class="guide-section" id="${sec.id}"><h2>${sec.name}</h2><p class="hint">${sec.summary}</p><ol class="help-steps">${sec.items.map(([title,desc,target])=>`<li><b>${title}</b><p class="hint">${desc}</p><button class="btn alt small guide-actions" onclick="switchTab('${target}');window.scrollTo({top:0,behavior:'smooth'})">Zum Bereich</button></li>`).join('')}</ol></section>`).join('')}<section class="panel"><h2>Wichtige Hinweise</h2><p class="hint"><b>Datensicherung:</b> Regelmäßig „Alle Turniere sichern“ verwenden. <b>Ruhepausen:</b> Das DTB-Profil ist eine vereinfachte Testumsetzung, keine offizielle Freigabe. <b>Turnierplan:</b> Vorgeschlagene Zeitfenster sind Prognosen und keine echten Platzbuchungen. <b>Forderungsbaum:</b> Lege ein neues Turnier im Format Forderungsbaum an, erfasse Teilnehmer, initialisiere die Rangliste und bearbeite Forderungen im eigenen Menü. Nach bestätigtem Ergebnis rückt der erfolgreiche Forderer auf den Platz des Geforderten. Standard ist die klassische Pyramide: in derselben Reihe links, eine Reihe darüber rechts. Der Vereinsmanager kann alternativ eine freie Ranglistenforderung aktivieren. <b>PDF:</b> Im Druckdialog des Browsers „Als PDF sichern“ wählen.</p></section>`}
+function featureOverviewView(){const counts=featureCatalog.reduce((sum,item)=>(sum[item.kind]++,sum),{available:0,prototype:0,backend:0});return `<section class="panel feature-hero"><span class="pill playing">BOOKANDPLAY Turnierverwaltung · Funktionsübersicht</span><h2>Alles für den Turniertag in einem Modul</h2><p>Von der Ausschreibung über Anmeldung, Finanzen, Courtplanung und Ergebnisse bis zum Abschlussbericht. Die Statusangaben unterscheiden klar zwischen bereits nutzbaren Funktionen, lokaler Demonstration und notwendiger Serveranbindung.</p><div class="feature-summary"><div><b>${counts.available}</b><span>direkt verfügbare Bereiche</span></div><div><b>${counts.prototype}</b><span>im Prototyp demonstriert</span></div><div><b>${counts.backend}</b><span>benötigen die Datenbankanbindung</span></div></div><div class="actions"><button class="btn" onclick="onboardingStart()">Einrichtung mit Assistent</button><button class="btn alt" onclick="switchTab('guide')">Schritt-für-Schritt-Anleitung</button></div></section><div class="feature-grid">${featureCatalog.map(item=>`<article class="feature-card ${item.kind==='backend'?'feature-boundary':''}"><span class="pill feature-status ${item.kind}">${item.status}</span><h3>${item.title}</h3><p>${item.text}</p><div class="actions"><button class="btn alt small" onclick="switchTab('${item.target}')">${item.kind==='backend'?'Mehr erfahren':'Funktion öffnen'}</button></div></article>`).join('')}</div><section class="panel feature-boundary"><h2>Transparente Abgrenzung</h2><p class="hint">Der Prototyp verarbeitet ausschließlich lokale Testdaten. Produktive Zahlungen, echte E-Mails, sichere Benutzerrechte, zentrale Synchronisierung und verbindliche BOOKANDPLAY-Platzreservierungen werden erst mit der Server- und Datenbankanbindung aktiviert.</p></section>`}
+function guideView(){return `<section class="panel"><h2>Anleitung: Von der Vereinsseite bis zum Turnierabschluss</h2><p>Diese Anleitung erklärt den gesamten Ablauf in BOOKANDPLAY. Über „Zum Bereich“ gelangst du direkt zur jeweiligen Funktion. Die <b>i</b>-Buttons neben den Unterpunkten im geöffneten Menü und an vielen Eingabefeldern öffnen eine passende Erklärung.</p><p class="notice">Hinweis: Dies ist ein lokaler Demonstrationsprototyp. Offizielle Verbandsgenehmigungen, echte Platzreservierungen und eine echte geräteübergreifende Online-Anmeldung sind noch nicht angebunden.</p>${actor().role==='manager'?'<div class="actions"><button class="btn" onclick="onboardingStart()">Einrichtung mit Assistent</button></div>':''}<div class="actions guide-actions">${guideSections.map(sec=>`<button class="btn alt small" onclick="document.getElementById('${sec.id}').scrollIntoView({behavior:'smooth'})">${sec.name}</button>`).join('')}</div></section>${guideSections.map(sec=>`<section class="guide-section" id="${sec.id}"><h2>${sec.name}</h2><p class="hint">${sec.summary}</p><ol class="help-steps">${sec.items.map(([title,desc,target])=>`<li><b>${title}</b><p class="hint">${desc}</p><button class="btn alt small guide-actions" onclick="switchTab('${target}');window.scrollTo({top:0,behavior:'smooth'})">Zum Bereich</button></li>`).join('')}</ol></section>`).join('')}<section class="panel"><h2>Wichtige Hinweise</h2><p class="hint"><b>Datensicherung:</b> Regelmäßig „Alle Turniere sichern“ verwenden. <b>Ruhepausen:</b> Das DTB-Profil ist eine vereinfachte Testumsetzung, keine offizielle Freigabe. <b>Turnierplan:</b> Vorgeschlagene Zeitfenster sind Prognosen und keine echten Platzbuchungen. <b>Forderungsbaum:</b> Lege ein neues Turnier im Format Forderungsbaum an, erfasse Teilnehmer, initialisiere die Rangliste und bearbeite Forderungen im eigenen Menü. Nach bestätigtem Ergebnis rückt der erfolgreiche Forderer auf den Platz des Geforderten. Standard ist die klassische Pyramide: in derselben Reihe links, eine Reihe darüber rechts. Der Vereinsmanager kann alternativ eine freie Ranglistenforderung aktivieren. <b>PDF:</b> Im Druckdialog des Browsers „Als PDF sichern“ wählen.</p></section>`}
 
 
 function permissionsView(){
@@ -2495,7 +2884,7 @@ function permissionsView(){
  <p class="hint">Der Vereinsmanager legt fest, wer Turniere planen, verwalten und auswerten darf. Die Rollen gelten in dieser Demo für alle angelegten Turniere.</p>
  ${canManage?`<div class="actions no-print"><button class="btn" onclick="guarded(addStaff)">+ Benutzer hinzufügen</button></div>`:''}
  <div class="tablewrap"><table><thead><tr><th>Benutzer</th><th>Rolle</th><th>Einzelrechte</th></tr></thead><tbody>
- ${staff.map(u=>`<tr><td><b>${esc(u.name)}</b>${u.id===personnel.active?' <span class="pill playing">Aktiv</span>':''}</td><td>${canManage&&u.id!=='manager'?`<select aria-label="Rolle für ${esc(u.name)}" onchange="guarded(()=>changeStaffRole('${esc(u.id)}',this.value))" style="min-width:145px">${Object.entries(ROLE_NAMES).filter(([v])=>v!=='manager').map(([v,label])=>`<option value="${v}" ${u.role===v?'selected':''}>${label}</option>`).join('')}</select>`:esc(ROLE_NAMES[u.role])}</td><td>${Object.entries(PERMS).map(([key,label])=>`<label style="display:inline-flex;align-items:center;gap:4px;margin:3px 10px 3px 0;font-weight:400"><input type="checkbox" ${u.role==='manager'||u.permissions.includes(key)?'checked':''} ${!canManage||u.role==='manager'?'disabled':''} onchange="guarded(()=>changePermission('${esc(u.id)}','${key}',this.checked))"> ${esc(label)}</label>`).join('')}${canManage&&u.id!=='manager'?`<div class="actions"><button class="btn alt small danger" onclick="guarded(()=>removeStaff('${esc(u.id)}'))">Benutzer entfernen</button></div>`:''}</td></tr>`).join('')}</tbody></table></div></section>
+ ${staff.map(u=>`<tr><td><b>${esc(u.name)}</b>${u.id===personnel.active?' <span class="pill playing">Aktiv</span>':''}</td><td>${canManage&&!['manager','root'].includes(u.id)?`<select aria-label="Rolle für ${esc(u.name)}" onchange="guarded(()=>changeStaffRole('${esc(u.id)}',this.value))" style="min-width:145px">${Object.entries(ROLE_NAMES).filter(([v])=>!['manager','root'].includes(v)).map(([v,label])=>`<option value="${v}" ${u.role===v?'selected':''}>${label}</option>`).join('')}</select>`:esc(ROLE_NAMES[u.role])}</td><td>${Object.entries(PERMS).map(([key,label])=>`<label style="display:inline-flex;align-items:center;gap:4px;margin:3px 10px 3px 0;font-weight:400"><input type="checkbox" ${['manager','root'].includes(u.role)||u.permissions.includes(key)?'checked':''} ${!canManage||['manager','root'].includes(u.role)?'disabled':''} onchange="guarded(()=>changePermission('${esc(u.id)}','${key}',this.checked))"> ${esc(label)}</label>`).join('')}${canManage&&!['manager','root'].includes(u.id)?`<div class="actions"><button class="btn alt small danger" onclick="guarded(()=>removeStaff('${esc(u.id)}'))">Benutzer entfernen</button></div>`:''}</td></tr>`).join('')}</tbody></table></div></section>
  ${auditAllowed?`<section class="panel"><div class="titlebar" style="margin:0 0 12px"><div><h2>Änderungsprotokoll · ${esc(state.name)}</h2><p class="hint">Wer hat wann welche Daten geändert? Zeiten werden in deiner lokalen Zeitzone angezeigt. Neue Einträge entstehen ab Version 3.0; ältere Änderungen können nicht nachträglich rekonstruiert werden.</p></div><button class="btn alt no-print" onclick="downloadAudit()">Protokoll als JSON exportieren</button></div>
  <div class="tablewrap"><table><thead><tr><th>Zeitpunkt</th><th>Benutzer</th><th>Aktion</th><th>Alt → Neu</th></tr></thead><tbody>${[...(rec.audit||[])].reverse().map(e=>`<tr><td style="white-space:nowrap">${esc(new Date(e.at).toLocaleString('de-DE'))}</td><td>${esc(e.actorName)}</td><td>${esc(e.action)}</td><td>${e.changes.map(c=>`<details><summary>${esc(c.field)}</summary><small><b>Alt:</b> ${esc(shortValue(c.old))}<br><b>Neu:</b> ${esc(shortValue(c.new))}</small></details>`).join('')}</td></tr>`).join('')||'<tr><td colspan="4">Noch keine protokollierten Änderungen in Version 3.0.</td></tr>'}</tbody></table></div></section><section class="panel"><h2>Vereinsweites Verwaltungsprotokoll</h2><div class="tablewrap"><table><thead><tr><th>Zeitpunkt</th><th>Benutzer</th><th>Aktion</th><th>Objekt</th></tr></thead><tbody>${[...(collection.systemAudit||[])].reverse().map(e=>`<tr><td>${esc(new Date(e.at).toLocaleString('de-DE'))}</td><td>${esc(e.actorName)}</td><td>${esc(e.action)}</td><td>${esc(e.subject)}</td></tr>`).join('')||'<tr><td colspan="4">Noch keine zentralen Verwaltungsaktionen.</td></tr>'}</tbody></table></div></section>`:''}`;
 }
@@ -2506,9 +2895,9 @@ function auditSecurityChange(action,changes){
  rec.audit.push({id:uid(),at:new Date().toISOString(),actorId:actor().id,actorName:actor().name,action,changes});systemAudit(action,changes.map(c=>c.field).join(', '));
 }
 function addStaff(){requirePerm('manage');const name=prompt('Name des neuen Benutzers:');if(name===null)return;assert(name.trim().length>=2,'Bitte einen Namen eingeben.');const user={id:uid(),name:name.trim(),role:'viewer',permissions:[]};personnel.users.push(user);auditSecurityChange('Benutzer hinzugefügt',[{field:'Benutzer',old:null,new:user.name}]);persistPersonnel();save()}
-function changeStaffRole(id,role){requirePerm('manage');assert(id!=='manager'&&ROLE_DEFAULTS[role],'Ungültige Rolle.');const u=personnel.users.find(u=>u.id===id);assert(u,'Benutzer fehlt.');const old=u.role;u.role=role;u.permissions=[...ROLE_DEFAULTS[role]];auditSecurityChange('Rolle vergeben',[{field:'Benutzer '+u.name,old:ROLE_NAMES[old],new:ROLE_NAMES[role]}]);persistPersonnel();save()}
-function changePermission(id,key,enabled){requirePerm('manage');assert(key in PERMS&&id!=='manager','Nicht veränderbar.');const u=personnel.users.find(u=>u.id===id);assert(u,'Benutzer fehlt.');const old=u.permissions.includes(key);u.permissions=Object.keys(PERMS).filter(k=>k===key?enabled:u.permissions.includes(k));auditSecurityChange('Einzelrecht geändert',[{field:u.name+' / '+PERMS[key],old,new:enabled}]);persistPersonnel();save()}
-function removeStaff(id){requirePerm('manage');assert(id!=='manager','Vereinsmanager darf nicht gelöscht werden.');const u=personnel.users.find(u=>u.id===id);assert(u,'Benutzer fehlt.');if(!confirm('Demo-Benutzer '+u.name+' entfernen? Historische Protokolle bleiben erhalten.'))return;personnel.users=personnel.users.filter(u=>u.id!==id);if(personnel.active===id)personnel.active='manager';auditSecurityChange('Benutzer entfernt',[{field:'Benutzer',old:u.name,new:null}]);persistPersonnel();save()}
+function changeStaffRole(id,role){requirePerm('manage');assert(!['manager','root'].includes(id)&&ROLE_DEFAULTS[role]&&!['manager','root'].includes(role),'Ungültige Rolle.');const u=personnel.users.find(u=>u.id===id);assert(u,'Benutzer fehlt.');const old=u.role;u.role=role;u.permissions=[...ROLE_DEFAULTS[role]];auditSecurityChange('Rolle vergeben',[{field:'Benutzer '+u.name,old:ROLE_NAMES[old],new:ROLE_NAMES[role]}]);persistPersonnel();save()}
+function changePermission(id,key,enabled){requirePerm('manage');assert(key in PERMS&&!['manager','root'].includes(id),'Nicht veränderbar.');const u=personnel.users.find(u=>u.id===id);assert(u,'Benutzer fehlt.');const old=u.permissions.includes(key);u.permissions=Object.keys(PERMS).filter(k=>k===key?enabled:u.permissions.includes(k));auditSecurityChange('Einzelrecht geändert',[{field:u.name+' / '+PERMS[key],old,new:enabled}]);persistPersonnel();save()}
+function removeStaff(id){requirePerm('manage');assert(!['manager','root'].includes(id),'Root und Vereinsmanager dürfen nicht gelöscht werden.');const u=personnel.users.find(u=>u.id===id);assert(u,'Benutzer fehlt.');if(!confirm('Demo-Benutzer '+u.name+' entfernen? Historische Protokolle bleiben erhalten.'))return;personnel.users=personnel.users.filter(u=>u.id!==id);if(personnel.active===id)personnel.active='manager';auditSecurityChange('Benutzer entfernt',[{field:'Benutzer',old:u.name,new:null}]);persistPersonnel();save()}
 function downloadAudit(){requirePerm('audit');const rec=collection.tournaments.find(x=>x.id===collection.activeId);const blob=new Blob([JSON.stringify({tournament:state.name,exportedAt:new Date().toISOString(),events:rec.audit||[],systemEvents:collection.systemAudit||[]},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='bookandplay-audit-'+rec.id+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 
 // V3.7: additive tournament finance. Existing fees and payment events remain authoritative.
