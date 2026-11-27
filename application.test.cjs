@@ -57,6 +57,37 @@ function resetTournament(config = '') {
   `);
 }
 
+resetTournament();
+assert.equal(run('answerTournamentQuestion("Wie lege ich ein Turnier an?").key'), 'create');
+assert.equal(run('answerTournamentQuestion("Wie stelle ich das Startgeld ein?").key'), 'fees');
+assert.equal(run('answerTournamentQuestion("Wie sage ich das Turnier ab?").key'), 'cancellation');
+assert.equal(run('answerTournamentQuestion("Wo sehe ich die Rückerstattung?").key'), 'payments');
+assert.equal(run('answerTournamentQuestion("Wie ist das Wetter morgen?").key'), undefined);
+run("personnel.active='viewer'");
+assert.equal(run('answerTournamentQuestion("Wo finde ich das Budget?").key'), undefined);
+resetTournament();
+
+assert.equal(run('isSetupPlaceholder(collection.tournaments[0])'), true);
+run("onboardingStart();guidedSetupMove('next')");
+assert.equal(run('guidedSetupRead().step'), 1);
+assert.equal(run("guidedSetupReady('tournament',guidedSetupRead())"), false);
+run("guidedSetupMove('pause');guidedSetupMemory.clear();onboardingRegisterVisit()");
+assert.equal(run('tab'), 'tournaments');
+run('onboardingStart()');
+assert.equal(run('guidedSetupRead().step'), 1);
+run("collection.tournaments[0].data.name='Einrichtungstest';snapshots.set('test',JSON.stringify(state));guidedSetupChoose('test');guidedSetupMove('next')");
+assert.equal(run("guidedSetupReady('organizer',guidedSetupRead())"), false);
+run("guidedSetupSaved('organizer');guidedSetupMove('next');guidedSetupSaved('configuration')");
+assert.equal(run("guidedSetupReady('configuration',guidedSetupRead())"), false);
+run("state.eventStart='2027-06-12T10:00';snapshots.set('test',JSON.stringify(state));guidedSetupMove('next');guidedSetupMove('skip')");
+assert.equal(run("guidedSetupReady('finish',guidedSetupRead())"), true);
+assert.equal(run('guidedSetupRead().skipped'), true);
+run("guidedSetupMove('next');personnel.active='trainer'");
+assert.equal(run('guidedSetupRead()'), null);
+run("personnel.active='viewer'");
+assert.equal(run("canOpenTab('guidedSetup')"), false);
+resetTournament();
+
 function players(count) {
   return Array.from({ length: count }, (_, index) => ({
     id: `p${index + 1}`,
@@ -75,6 +106,7 @@ const old = { name: 'Altbestand', sport: 'Tennis', format: 'ko', players: [], ma
 run(`globalThis.oldTournament=${JSON.stringify(old)};normalizeTournament(oldTournament)`);
 assert.equal(run('oldTournament.courtCount'), 4);
 assert.equal(run('oldTournament.stage'), 'draft');
+assert.equal(run('oldTournament.cancellation'), null);
 assert.deepEqual(JSON.parse(run('JSON.stringify(oldTournament.registration)')), { open: true, maxEntries: 16, waitlist: [], cancelled: [] });
 assert.throws(() => run("validateImportTournament({name:'Defekt',sport:'Tennis',format:'ko',players:[],matches:[{id:'m',status:'scheduled',a:'missing'}]})"), /unbekannte Teams/);
 
@@ -89,6 +121,39 @@ assert.equal(run('state.players.length'), 2);
 assert.equal(run('state.registration.waitlist.length'), 0);
 assert.equal(run("state.players.some(p=>p.name==='Team C')"), true);
 assert.equal(run('state.registration.cancelled.length'), 1);
+
+// Paid online registration: Stripe only, confirmed before the start slot; waitlist remains free.
+resetTournament("state.fee={enabled:true,cents:1500,unit:'entry',membersPerEntry:1,method:'stripe'}");
+assert.throws(() => run("registerParticipant('Online Team',true,'test')"), /zuerst vollständig über Stripe/);
+run("registerParticipant('Online Team',true,'test',{provider:'stripe',status:'paid',sessionRef:'demo_test'})");
+assert.equal(run('state.players.length'), 1);
+assert.equal(run("state.paymentRecords[state.players[0].id].events[0].method"), 'stripe');
+assert.equal(run("state.paymentRecords[state.players[0].id].events[0].cents"), 1500);
+assert.equal(run("state.players[0].onlinePayment"), 'stripe_paid_demo');
+resetTournament("state.fee={enabled:true,cents:1500,unit:'entry',membersPerEntry:1,method:'stripe'};state.registration.maxEntries=1;state.players=[{id:'full',name:'Belegt',checked:false,group:null}]");
+run("registerParticipant('Wartendes Team',true,'test')");
+assert.equal(run('state.registration.waitlist.length'), 1);
+assert.equal(run("state.registration.waitlist[0].onlinePayment"), 'stripe_required_on_promotion');
+assert.equal(run("Object.keys(state.paymentRecords).length"), 0);
+assert.doesNotMatch(run('setup()'), /Banküberweisung|Zahlung vor Ort/);
+
+// Player cancellation starts the refund workflow, frees the slot and notifies the promoted team.
+resetTournament("state.fee={enabled:true,cents:1500,unit:'entry',membersPerEntry:1,method:'stripe'};state.registration.maxEntries=1;state.players=[{id:'paid1',name:'Bezahltes Team',checked:false,group:null,onlinePayment:'stripe_paid_demo'}];state.registration.waitlist=[{id:'wait1',name:'Wartendes Team',checked:false,group:null,onlinePayment:'stripe_required_on_promotion'}];state.paymentRecords={paid1:{events:[{id:'pay1',type:'paid',cents:1500,at:new Date().toISOString(),method:'stripe',source:'stripe-demo'}]}}");
+run("processRegistrationCancellation('paid1',true,'test')");
+assert.equal(run('state.registration.cancelled.length'), 1);
+assert.equal(run("state.registration.cancelled[0].cancellationProcess.status"), 'stripe_refund_pending');
+assert.equal(run("state.registration.cancelled[0].cancellationProcess.refundCents"), 1500);
+assert.equal(run("state.players[0].id"), 'wait1');
+assert.equal(run("state.players[0].onlinePayment"), 'stripe_pending');
+assert.equal(run("state.notifications.some(m=>m.playerId==='paid1'&&m.type==='Abmeldung bestätigt')"), true);
+assert.equal(run("state.notifications.some(m=>m.playerId==='wait1'&&m.type==='Nachgerückt')"), true);
+assert.throws(() => run("state.format='round';state.players.push({id:'p2',name:'Team 2',checked:true,group:null});state.players[0].checked=true;draw()"), /Stripe-Zahlung abschließen/);
+run("stripeCheckoutDraft={kind:'promotion',tournamentId:'test',id:'wait1',name:'Wartendes Team',managementId:'test'};completeStripeDemoCheckout()");
+assert.equal(run("state.players.find(p=>p.id==='wait1').onlinePayment"), 'stripe_paid_demo');
+assert.equal(run("state.paymentRecords.wait1.events[0].method"), 'stripe');
+assert.equal(run("state.notifications.some(m=>m.playerId==='wait1'&&m.type==='Stripe-Zahlung bestätigt')"), true);
+run("state.players.forEach(p=>p.checked=true);draw()");
+assert.equal(run('state.matches.length'), 1);
 
 // Draw generation for round robin, groups and knock-out.
 resetTournament("state.format='round'"); setPlayers(4); run('draw()');
@@ -187,6 +252,25 @@ assert.equal(run('state.ladder.challenges[0].status'), 'finished');
 resetTournament(); setPlayers(2);
 run("personnel.active='viewer'");
 assert.throws(() => run('draw()'), /Keine Berechtigung/);
+assert.throws(() => run("cancelTournament('test','Krankheit')"), /Nur Vereinsmanager und Trainer/);
+run("personnel.active='director'");
+assert.throws(() => run("cancelTournament('test','Krankheit')"), /Nur Vereinsmanager und Trainer/);
+run("personnel.active='manager'");
+assert.throws(() => run("setDeploymentMode('standalone')"), /Nur Root/);
+run("personnel.active='root';setDeploymentMode('standalone')");
+assert.equal(run('deploymentMode'), 'standalone');
+assert.equal(storage.get('bap-tournament-demo-v38-deployment-mode'), 'standalone');
+assert.match(run('deploymentModeOverview()'), /Eigenständige Turnierverwaltung/);
+run("setDeploymentMode('integrated')");
+run("personnel.active='trainer';state.registration.waitlist=[{id:'wait1',name:'Wartendes Team'}];cancelTournament('test','Zu geringe Beteiligung','Mindestzahl nicht erreicht')");
+assert.equal(run('state.stage'), 'cancelled');
+assert.equal(run('state.cancellation.reason'), 'Zu geringe Beteiligung');
+assert.equal(run("state.notifications.filter(m=>m.type==='Turnier abgesagt').length"), 3);
+assert.throws(() => run("state.name='Nicht erlaubt';save()"), /zuerst die Absage zurücknehmen/);
+run("restoreTournament('test')");
+assert.equal(run('state.stage'), 'draft');
+assert.equal(run('state.cancellation'), null);
+assert.equal(run("state.notifications.filter(m=>m.type==='Turnierabsage zurückgenommen').length"), 3);
 run("personnel.active='manager'");
 for (const view of ['tournamentsView','overview','setup','participants','registrationView','paymentsView','financeView','drawView','courtsView','resultsView','planView','notificationsView','ladderView','closingView','featureOverviewView','guideView','permissionsView','playerAccountView']) {
   assert.equal(typeof run(`${view}()`), 'string', `${view} renders`);
@@ -195,4 +279,4 @@ assert.match(run('featureOverviewView()'), /Alles für den Turniertag/);
 assert.match(run('featureOverviewView()'), /Datenbankanbindung/);
 assert.equal(run("menuForTab('features')"), 'finish');
 
-console.log('PASS: migration/import validation, registration/waitlist, round-robin/groups/KO, bronze match, four sport score profiles, courts/navigation, three incident types, DTB rest periods, planning conflicts, ladder workflow, permissions, feature overview, and 19 views.');
+console.log('PASS: migration/import validation, registration/waitlist, Stripe-only paid online registration, player cancellation/refund/promotion workflow, round-robin/groups/KO, bronze match, four sport score profiles, courts/navigation, three incident types, DTB rest periods, planning conflicts, ladder workflow, Root-only deployment mode, manager/trainer cancellation with participant notifications, permissions, feature overview, and 19 views.');
